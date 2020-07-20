@@ -1,8 +1,6 @@
 # Bold BI
 
-Bold BI is a cloud based Business Intelligence Dashboard Software.
-
-This repository contains sample datasets used in Tutorial Videos, Sample Dashboards created using Bold BI for different Industries & Domains.
+Bold BI by Syncfusion is a simplified yet comprehensive business intelligence solution to help you see clearly and act boldly. With Bold BI Cloud, even non-technical users can create storytelling dashboards in few clicks. Use Bold BI Enterprise to deploy BI behind your organization's firewall. Bold BI Embedded can integrate BI into an app via JavaScript SDK or IFrame with ease. Bold BI comes with a data integration platform to handle the toughest challenges in data preparation and integration.
 
 To get started with Bold BI, refer to this video - [What is Bold BI - Getting Started Tutorial for Beginners](https://youtu.be/YZTBpGokO7Y).
 
