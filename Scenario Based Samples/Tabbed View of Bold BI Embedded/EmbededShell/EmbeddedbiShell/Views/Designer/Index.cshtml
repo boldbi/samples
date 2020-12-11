@@ -1,0 +1,50 @@
+﻿@{
+    var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
+    var serverUrl = globalAppSettings.EmbedDetails.Serverurl;
+    var environment = globalAppSettings.EmbedDetails.Environment;
+    var authorizeUrl = @Url.Action("GetDetails", "Home");
+    var deleteItemUrl = @Url.Action("DeleteItem", "Home");
+    var refreshItemUrl = @Url.Action("RefreshItem", "Home");
+    var permissionDbUrl = @Url.Action("DBPermission", "Home");
+    var permissionDsUrl = @Url.Action("DSPermission", "Home");
+    var isEdit = ViewBag.IsEdit != null && (bool)ViewBag.IsEdit;
+    var category = ViewBag.Category as ApiItems;
+    var baseUrl = globalAppSettings.EmbedDetails.BaseUrl;
+    var token = ViewBag.Token;
+    var draftId = ViewBag.DraftId;
+    var datasourceName = ViewBag.DatasourceName != null ? ViewBag.DatasourceName as string : "";
+}
+
+@model SampleCoreApp.Models.SamplesTreeViewModel
+@using Microsoft.AspNetCore.Http;
+@using SampleCoreApp.Controllers;
+@using SampleCoreApp;
+@using System.Web;
+@using Newtonsoft.Json;
+<div id="dashboardparent" class="tab-pane" style="height:100%;width:100%; overflow:hidden">
+    <div style="height:100%;width:100%;overflow: hidden !important;" id="sample_dashboard"></div>
+</div>
+<script type="text/javascript">
+     var category = @Html.Raw(JsonConvert.SerializeObject(category));
+    var designerUrl = "@Url.Action("Index", "Designer")";
+    var deleteItemUrl = "@Url.Action("DeleteItem", "Home")";
+    var mode = BoldBI.Mode.Design;
+    var serverUrl = "@serverUrl";
+    var dashboardPath = "";
+    var environment = "@environment" === "cloud" ? BoldBI.Environment.Cloud : BoldBI.Environment.Enterprise;
+    var authorizeUrl = "@authorizeUrl";
+    var deleteItem = "@deleteItemUrl";
+    var refreshItem = "@refreshItemUrl";
+    var noResourceFound = false;
+    var permissionDbUrl = "@permissionDbUrl";
+    var permissionDsUrl = "@permissionDsUrl";
+    var baseUrl = "@baseUrl";
+    var id = "@draftId"; 
+    var token = "@Html.Raw(@token)";
+    var catagoryId = "1";
+    var datasourceName = "@datasourceName";
+
+    $(document).ready(function () {https://gitlab.syncfusion.com/data-science/embedded-bi-shell/blob/development/EmbededShell/EmbeddedbiShell/Models/SamplesManager.cs
+        embedSample();
+    });
+</script>

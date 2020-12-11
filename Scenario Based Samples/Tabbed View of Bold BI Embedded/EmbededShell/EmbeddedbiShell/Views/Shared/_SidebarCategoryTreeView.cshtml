@@ -1,0 +1,111 @@
+﻿@using Newtonsoft.Json;
+@{ 
+    var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
+    var index = 0;
+    var dashboardServerApiUrl = globalAppSettings.EmbedDetails.RootUrl + "/api/" + globalAppSettings.EmbedDetails.SiteIdentifier;
+    var accessToken = globalAppSettings.UserToken != null ? globalAppSettings.UserToken.AccessToken : "";
+    var currentUserEmail = globalAppSettings.UserToken != null ? globalAppSettings.UserToken.Email : "";
+    var email = Model != null && Model.UserDetails != null && !string.IsNullOrWhiteSpace(Model.UserDetails.Email) ? Model.UserDetails.Email : null;
+    var userID = ViewBag.UserId;
+    var updateSampleUrl = Url.Action("", "Home");
+    var dashboardName = ViewBag.Name;
+    List<ApiItems> categories = ViewBag.Categories;
+    List<ApiItems> myCategories = new List<ApiItems>();
+    var dashboards = globalAppSettings.SamplesSchemaCollection[0].Samples;
+    var mydashboards = dashboards.Where(x => (x.CreatedById == userID && x.Id != 101)).ToList();
+    if (categories != null && categories.Count > 0)
+    {
+        myCategories = categories.Where(x => (x.CreatedById == userID)).ToList();
+    }
+    var categoriesList = @Html.Raw(myCategories);
+    var backAllActive = (ViewBag.CategoryName == null || ViewBag.CategoryName.ToLower() == "all") ? "categoryActive" : "";
+}
+
+<script>
+    var categoreyList = "@categoriesList";
+</script>
+<div class="sidebar" style="padding:0px; background:#EBEDEC">
+    <nav>
+        <ul id="sidebar-menu" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item  " has-treeview">
+                <a href="#" id="item_1" class="nav-link category active" style="background-color:transparent !important; font-size: 24px; padding: 10px 0 !important">
+                    <i class="nav-icon fas " style="margin-right: 5px; color: #000"></i>
+                    <p style="color: #000; font-weight:bold;">Manage Dashboards</p>
+                    @*@if (category.Samples != null && !category.AsTab)
+            {
+                <i class="left fas fa-angle-right" style="float: right; color: #000; margin-top: 5px;"></i>
+            }*@
+                </a>
+                <ul id="sidemenu-item" class="nav">
+                    @*<li class="nav-item nav-item-heading" style="background-color: lightgray; width: 100%">
+                        <a id="create-new" onclick="CreateNew()" class="nav-link sample no-hover" style="color: #000; font-size:15px; padding-left:50px; cursor:pointer">
+                            <p>
+                                <i class="fas fa-plus nav-icon"></i>
+                                Create New Dashboard
+                            </p>
+                        </a>
+                        <div id="dbrd-name" class="input-group input-group-sm" style="display:none">
+                            <input id="dashboard-name" class="form-control form-control-navbar" style="border:none;" type="text" placeholder="Enter the dashboard name" aria-label="Search">
+                            <div class="input-group-append">
+                                <button id="create-dashboard" class="btn btn-navbar" style="color: #115e94" type="submit">
+                                    <i class="fas fa-save"></i>
+                                </button>
+                                <button class="btn btn-navbar" onclick="CloseItem()" style="color: #115e94" type="submit">
+                                    <i class="fas fa-ban"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>*@
+                    @*<li class="nav-item nav-item-heading @backAllActive" style="width:100%; margin-top: 8px;">
+                        <a id="all-dbrd" class="nav-link sample no-hover" style="color: #000; font-size:15px; padding-left:50px; cursor:pointer">
+                            <p data-src="@Url.Action("Index", "Home", new { categoryName = "all"})" onclick="specficCategory(this)"; style="width: 100%">
+                                All
+                            </p>
+                        </a>
+                    </li>*@
+                    @foreach (var category in @myCategories)
+                    {
+                        //var sampleUrl = @Url.Action("Index", "Home", new { categoryName = @category.Name.ToLower() });
+                        var backActive = (ViewBag.CategoryName != null && ViewBag.CategoryName.ToLower() == category.Name.ToLower()) ? "categoryActive" : "";
+                    <li class="nav-item nav-item-heading" style="width:100%; margin-top: 8px">
+                        <a id="all-dbrd" class="nav-link sample no-hover" style="color: #000; font-size:15px; padding-left:50px; cursor:pointer">
+                            @foreach (var sample in mydashboards)
+                            {
+                                @if (sample.CategoryName == category.Name)
+                                {
+                                    <i class="fas fa-angle-right rotate" style="margin:0 5px 0 -10px"></i>
+                                    break;
+                                }
+                            }
+                            <p style="width: 100%" class="rotate">
+                                @*onclick="specficCategory(this)">*@
+                                @category.Name
+                            </p>
+                        </a>
+                        <ul class="nested">
+                            @foreach (var sample in mydashboards)
+                            {
+                                var sampleUrl = @Url.Action("Index", "Home", new { categoryName = @category.Name.ToLower(), sampleName = @sample.Name.ToLower() });
+                                var dbrdActive = (ViewBag.Name != null && ViewBag.Name.ToLower() == sample.Name.ToLower()) ? "categoryActive" : "";
+                                @if (sample.CategoryName == category.Name)
+                                {
+                                    <li class="nav-item nav-item-heading @dbrdActive" style="width:100%;">
+                                        <a class="nav-link sample" style="font-size:14px; cursor:pointer; float: left; width: 100%; position: relative">
+                                            <p data-src="@sampleUrl" categoryName="@sample.CategoryName.ToLower()" sampleName="@sample.Name.ToLower()" dbrdId="@sample.ItemID" onclick="ViewDashboard(this)" class="dashboard-text" style="text-align: center; color: #000; float: left; width: 25%; text-overflow: ellipsis; white-space: nowrap">
+                                                @sample.Name
+                                            </p>
+                                            @*<i id="edit-item" onclick="EditDashboard(this)" categoryName="@sample.CategoryName.ToLower()" sampleName="@sample.Name.ToLower()" data-ng-animate="@sample.Name" style="display:none;vertical-align: super; float: right;" class="nav-option dbrd-icon fas fa-pencil-alt"> </i>
+                                            <i id="delete-item" onclick="deleteItem(this, '@sample.Name','@sample.ItemID')" style="display:none; vertical-align: super; float: right; margin-right: 10px" class="nav-option fas fa-trash-alt dbrd-icon"> </i>*@
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+

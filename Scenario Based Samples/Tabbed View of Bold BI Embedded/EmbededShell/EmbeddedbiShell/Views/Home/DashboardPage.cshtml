@@ -1,0 +1,450 @@
+﻿@model SampleCoreApp.Models.SamplesTreeViewModel
+@using Microsoft.AspNetCore.Http;
+@using SampleCoreApp.Controllers;
+@using SampleCoreApp;
+@using System.Web;
+@using Newtonsoft.Json;
+@{
+    Layout = null;
+    var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
+    var serverUrl = globalAppSettings.EmbedDetails.Serverurl;
+    var baseUrl = globalAppSettings.EmbedDetails.BaseUrl;
+    var environment = globalAppSettings.EmbedDetails.Environment;
+    var authorizeUrl = @Url.Action("GetDetails", "Home");
+    var deleteItemUrl = @Url.Action("DeleteItem", "Home");
+    var refreshItemUrl = @Url.Action("RefreshItem", "Home");
+    var shareItemUrl = @Url.Action("ShareItem", "Home");
+    var permissionDbUrl = @Url.Action("DBPermission", "Home");
+    var permissionDsUrl = @Url.Action("DSPermission", "Home");
+    var getCategoryUrl = @Url.Action("getCategory", "Home");
+    var getDbrdUrl = @Url.Action("DashboardPage", "Home");
+    var category = ViewBag.Category as ApiItems;
+    var isEdit = ViewBag.IsEdit != null && (bool)ViewBag.IsEdit;
+    var email = globalAppSettings != null && globalAppSettings.UserDetails != null && !string.IsNullOrWhiteSpace(globalAppSettings.UserDetails.Email) ? globalAppSettings.UserDetails.Email : null;
+    var noResourceFound = ViewBag.NoResourceFound != null && (bool)ViewBag.NoResourceFound;
+    var token = ViewBag.Token;
+    var userID = ViewBag.UserId;
+    var draftId = ViewBag.DraftId;
+    var title = string.IsNullOrWhiteSpace(Model?.Title) ? "" : Model.Title;
+    var dashboardPath = string.IsNullOrWhiteSpace(Model?.DashboardPath) ? "" : Model.DashboardPath;
+    var parentId = Model != null && Model.ParentId > 0 ? Model.ParentId : 0;
+    var dashboardName = string.IsNullOrWhiteSpace(Model?.Name) ? "" : Model.Name;
+    var dashboardId = string.IsNullOrWhiteSpace(Model?.ItemID) ? "" : Model.ItemID;
+    var samples = ViewBag.Samples as SamplesSchemaViewModel;
+    var dashboards = globalAppSettings.SamplesSchemaCollection[0].Samples;
+    var mydashboards = dashboards.Where(x => (x.CreatedById == userID && x.Id != 101)).ToList();
+    var currentUserEmail = globalAppSettings.UserToken != null ? globalAppSettings.UserToken.Email : "";
+    var widthSize = (dashboardId == "0df45dcd-8977-44ff-b2a3-862753fd5e61" ? "305px" : "0px");
+}
+<div id="tab_element"></div>
+<div id="dashboardparent" class="tab-pane" style="height:100%;width:100%; overflow:hidden">
+    <div id="mobileProperties" class="e-dashboardviewer" style="height:calc(100% - 0px);float:left;width:300px;border: 1px solid #D9DEDD;background-color: white;overflow:hidden; display: none">
+        <div id="sample_properties" class="e-dbrd-control">
+            <div id="sample_properties" class="e-dbrd-control">
+                @*<div class="btn btn_red"><span class="icon"></span><a href="#">Crimson</a><span></span></div>*@
+                <div class="e-prop-header" style="margin-left: 10px;height: 30px;margin-top: 20px;">
+                    @*<div class="dbrd-sdk-closeProBtn" onclick="closepro()"></div>*@
+                    <div id="prop-header" style="float: left;height: 20px;"><p>Filters</p></div>
+                    <div style="float: right;margin-right: -10px;margin-top: -5px;"><a class="nav-link" id="push_menu" data-widget="push_menu" href="#" role="button"><i class="fas fa-bars"></i></a></div>
+                </div>
+                <hr style="margin: 0px;">
+                <div id="dateElement" class="e-prop-div" style="margin-left: 10px;">
+                    <div id="filterSettings" style="">
+                        <div class="e-prop-item">
+                            <label style="font-weight:normal;">Date</label>
+                        </div>
+                        <div class="e-prop-item">
+                            <div id="date_element"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="paraElement" style="margin-left: 10px;">
+                    <div id="paraElementChild" class="e-prop-item" style="margin-top: 10px;margin-bottom: 10px;">
+                        <label style="font-weight:normal;" for="paraElementChild">Enterprise</label>
+                        <input id='enterprise-items' class='form-control user-input' />
+                        @*<div style="margin-left: 15px;">
+                                <input type="checkbox" id="69KL5ZL33L2CNWR" style="height:10px; width:10px" name="69KL5ZL33L2CNWR" value="true" checked="checked">
+                                <label for="69KL5ZL33L2CNWR" class="e-label">69KL5ZL33L2CNWR</label>
+                            </div>
+                            <div style="margin-left: 15px;">
+                                <input type="checkbox" id="DZRPUUFWI1X3C80" style="height:10px; width:10px" name="DZRPUUFWI1X3C80" value="true" checked="checked">
+                                <label for="DZRPUUFWI1X3C80" class="e-label">DZRPUUFWI1X3C80</label>
+                            </div>
+                            <div style="margin-left: 15px;">
+                                <input type="checkbox" id="O05PC2NDG2XS3JE" style="height:10px; width:10px" name="O05PC2NDG2XS3JE" value="true" checked="checked">
+                                <label for="O05PC2NDG2XS3JE" class="e-label">O05PC2NDG2XS3JE</label>
+                            </div>
+                            <div style="margin-left: 15px;">
+                                <input type="checkbox" id="V5J5GJU3QNKZ2MD" style="height:10px; width:10px" name="V5J5GJU3QNKZ2MD" value="true" checked="checked">
+                                <label for="V5J5GJU3QNKZ2MD" class="e-label">V5J5GJU3QNKZ2MD</label>
+                            </div>*@
+                    </div>
+                    <div id="paraElementChild" class="e-prop-item" style="margin-top: 10px;margin-bottom: 10px;">
+                        <label style="font-weight:normal;" for="paraElementChild">Line Of Business</label>
+                        <input id='lob-items' class='form-control user-input' />
+                        @*<div style="margin-left: 15px;">
+                                <input type="checkbox" id="showDahsboardHeaderChkBox" style="height:10px; width:10px" name="showDahsboardHeaderChkBox" value="true" checked="checked">
+                                <label for="showDahsboardHeaderChkBox" class="e-label">Medicare</label>
+                            </div>
+                            <div style="margin-left: 15px;">
+                                <input type="checkbox" id="showDahsboardHeaderChkBox" style="height:10px; width:10px" name="showDahsboardHeaderChkBox" value="true" checked="checked">
+                                <label for="showDahsboardHeaderChkBox" class="e-label">Medicaid</label>
+                            </div>*@
+                    </div>
+                    <div id="paraElementChild" class="e-prop-item" style=" margin-top: 10px;margin-bottom: 10px;">
+                        <label style="font-weight:normal;" for="paraElementChild">Rendering Provider NPI</label>
+                        <input id='npi-items' class='form-control user-input' />
+                        @*<div style="margin-left: 15px;">
+                                <input type="checkbox" id="showDahsboardHeaderChkBox" style="height:10px; width:10px" name="showDahsboardHeaderChkBox" value="true" checked="checked">
+                                <label for="showDahsboardHeaderChkBox" class="e-label">69KL5ZL33L2CNWR</label>
+                            </div>
+                            <div style="margin-left: 15px;">
+                                <input type="checkbox" id="showDahsboardHeaderChkBox" style="height:10px; width:10px" name="showDahsboardHeaderChkBox" value="true" checked="checked">
+                                <label for="showDahsboardHeaderChkBox" class="e-label">DZRPUUFWI1X3C80</label>
+                            </div>*@
+                    </div>
+                    <div id="paraElementChild" class="e-prop-item" style="margin-top: 10px;margin-bottom: 10px;">
+                        <label style="font-weight:normal;" for="paraElementChild">Rendering Provider Group</label>
+                        <input id='group-items' class='form-control user-input' />
+                        @*<div style="margin-left: 15px;">
+                                <input type="checkbox" id="showDahsboardHeaderChkBox" style="height:10px; width:10px" name="showDahsboardHeaderChkBox" value="true" checked="checked">
+                                <label for="showDahsboardHeaderChkBox" class="e-label">69KL5ZL33L2CNWR</label>
+                            </div>
+                            <div style="margin-left: 15px;">
+                                <input type="checkbox" id="showDahsboardHeaderChkBox" style="height:10px; width:10px" name="showDahsboardHeaderChkBox" value="true" checked="checked">
+                                <label for="showDahsboardHeaderChkBox" class="e-label">DZRPUUFWI1X3C80</label>
+                            </div>*@
+                    </div>
+                    <input class="" type="button" id="applyBtn" value="Apply Filter" role="button" aria-describedby="applyBtn" aria-disabled="false" style="margin-left:20px; margin-top: 10px; background: #1b1bad; color: white; border: 1px solid #1b1bad; padding: 5px; margin-top: 10px; width: 209px;"><br />
+                    <input class="" type="button" id="clearBtn" value="Clear Filter" role="button" aria-describedby="clearBtn" aria-disabled="false" style="margin-left:20px; margin-top: 10px; background: #1b1bad; color: white; border: 1px solid #1b1bad; padding: 5px; margin-top: 10px; width: 209px;">
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-beta/jsrender.js"></script>
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.1.2.min.js"></script>
+@*<script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/v3.2.16/embed-js.beta.min.js"></script>*@
+@*<script type="text/javascript" src="~/js/EmbedBiWrapper.js"></script>*@
+@if ((isEdit.ToString().ToLower()) == "true")
+{
+    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/v3.3.40/embed-js.js"></script>
+}
+<script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+<link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet">
+<link href="//cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet">
+<link href="//cdn.syncfusion.com/ej2/ej2-dropdowns/styles/material.css" rel="stylesheet">
+<link href="//cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/css/themes/all.css">
+
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+<link rel="stylesheet" href="~/css/themes/tempusdominus-bootstrap-4.css">
+
+<link rel="stylesheet" href="~/css/themes/icheck-bootstrap.css">
+
+<link rel="stylesheet" href="~/css/themes/jqvmap.css">
+
+<link rel="stylesheet" href="~/css/themes/adminlte.css">
+
+<link rel="stylesheet" href="~/css/themes/OverlayScrollbars.css">
+
+<link rel="stylesheet" href="~/css/themes/daterangepicker.css">
+
+<link rel="stylesheet" href="~/css/themes/summernote-bs4.css">
+<link rel="stylesheet" href="~/css/site.css">
+<script type="text/javascript" src="~/js/Index.js"></script>
+<script type="text/javascript">
+    document.title = "@title";
+    var category = @Html.Raw(JsonConvert.SerializeObject(category));
+    var noResourceFound = "@(noResourceFound.ToString().ToLower())" === "true";
+    var designerUrl = "@Url.Action("Index", "Designer")";
+    var mode = "@(isEdit.ToString().ToLower())" === "true" ? "design" : "view";
+    var serverUrl = "@serverUrl";
+    var dashboardPath = "@dashboardPath";
+    var environment = "@environment" === "cloud" ? "cloud" : "onpremise";
+    var authorizeUrl = "@authorizeUrl";
+    var deleteItemUrl = "@deleteItemUrl";
+    var refreshItemUrl = "@refreshItemUrl";
+    var shareItem = "@shareItemUrl";
+    var permissionDbUrl = "@permissionDbUrl";
+    var permissionDsUrl = "@permissionDsUrl";
+    var getCategoryUrl = "@getCategoryUrl";
+    var token = "@Html.Raw(@token)";
+    var baseUrl = "@baseUrl";
+    var id = "@draftId";
+    var catagoryId = "@parentId";
+    var datasourceName = "";
+    var currentUserEmail = "@currentUserEmail";
+    var getDbrdUrl = "@getDbrdUrl";
+    var tabIndex = 0;
+
+    var logData = [];
+    var value = 0;
+    var point = {};
+    for (var j = 1; j < 732; j++) {
+        value += (Math.random() * 10 - 5);
+        value = value < 0 ? Math.abs(value) : value;
+        point = { x: new Date(2019, 1, j), y: value, z: value + 10 };
+        logData.push(point);
+    }
+    var dateRangaValue = [new Date('2019-05-03'), new Date('2020-09-09')];
+    var range = new ej.charts.RangeNavigator({
+        tooltip: { enable: true, displayMode: 'Always' },
+        value: [new Date('2019-05-03'), new Date('2020-09-09')],
+        valueType: 'DateTime',
+        //intervalType: 'Quarter',
+        //enableGrouping: true,
+        //groupBy: 'Years',
+        labelFormat: 'yy-MMM',
+        dataSource: logData,
+        enableDeferredUpdate: true,
+        xName: 'x', yName: 'y',
+        //series: [{
+        //    dataSource: logData, xName: 'x', yName: 'y', width: 2,
+        //}],
+        changed: rangechanged,
+    });
+    range.appendTo('#date_element');
+
+    var enterprise_items = ['69KL5ZL33L2CNWR','DZRPUUFWI1X3C80','O05PC2NDG2XS3JE','V5J5GJU3QNKZ2MD'];
+    //function renderEnterpriseItems() {
+        enterpriselistboxObj = new ej.dropdowns.MultiSelect({
+            popupWidth: '250px',
+            width: '250px',
+            //index: 0,
+            open: function () {
+                //document.getElementById('usersddl_popup').style.pointerEvents = "auto";
+            },
+            popupHeight: "200px",
+            dataSource: enterprise_items,
+            showSelectAll: true,
+            //isSelectAll: true,
+            mode: 'CheckBox',
+            fields: { text: 'Value', value: 'Key' }
+        });
+    enterpriselistboxObj.appendTo('#enterprise-items');
+    enterpriselistboxObj.value = enterprise_items;
+    //}
+
+    var lob_items = ['Medicare', 'Medicaid'];
+    //function renderEnterpriseItems() {
+    loblistboxObj = new ej.dropdowns.MultiSelect({
+        popupWidth: '250px',
+        width:'250px',
+        //index: 0,
+        open: function () {
+            //document.getElementById('usersddl_popup').style.pointerEvents = "auto";
+        },
+        popupHeight: "200px",
+        dataSource: lob_items,
+        showSelectAll: true,
+        //isSelectAll: true,
+        mode: 'CheckBox',
+        //fields: { text: 'Value', value: 'Key' }
+    });
+    loblistboxObj.appendTo('#lob-items');
+    loblistboxObj.value = lob_items;
+    //}
+
+    var npi_items = ['0001062074', '0001103828', '0001019943','0001093380','0000977882','0000977742','0000977710','0001051671','0000998972','0001019708'];
+    //function renderEnterpriseItems() {
+    npilistboxObj = new ej.dropdowns.MultiSelect({
+        popupWidth: '250px',
+        width: '250px',
+        //index: 0,
+        open: function () {
+            //document.getElementById('usersddl_popup').style.pointerEvents = "auto";
+        },
+        popupHeight: "200px",
+        dataSource: npi_items,
+        showSelectAll: true,
+        //isSelectAll: true,
+        mode: 'CheckBox',
+        //fields: { text: 'Value', value: 'Key' }
+    });
+    npilistboxObj.appendTo('#npi-items');
+    npilistboxObj.value = npi_items;
+    //}
+
+    var group_items = ['PLNGRP0001247773 - PVGRP0001252089', 'PLNGRP0001248555 - PVGRP0001252490', 'PLNGRP0001248191 - PVGRP0001251729', 'PLNGRP0001246993 - PVGRP0001251736',
+        'PLNGRP0001247121 - PVGRP0001250281', 'PLNGRP0001249043 - PVGRP0001252593', 'PLNGRP0001250067 - PVGRP0001251602', 'PLNGRP0001249214 - PVGRP0001251962', 'PLNGRP0001247111 - PVGRP0001250269','PLNGRP0001247532 - PVGRP0001251448'];
+    //function renderEnterpriseItems() {
+    grouplistboxObj = new ej.dropdowns.MultiSelect({
+        popupWidth: '250px',
+        width: '250px',
+        //index: 0,
+        open: function () {
+            //document.getElementById('usersddl_popup').style.pointerEvents = "auto";
+        },
+        popupHeight: "200px",
+        dataSource: group_items,
+        showSelectAll: true,
+        //isSelectAll: true,
+        mode: 'CheckBox',
+        //fields: { text: 'Value', value: 'Key' }
+    });
+    grouplistboxObj.appendTo('#group-items');
+    grouplistboxObj.value = group_items;
+    //}
+
+    $(document).ready(function () {https://gitlab.syncfusion.com/data-science/embedded-bi-shell/blob/development/EmbededShell/EmbeddedbiShell/Models/SamplesManager.cs
+        embedSample();
+    });
+
+    var dateQuery = "";
+
+    $("#applyBtn").on("click", function (e) {
+        var enter_list = enterpriselistboxObj.value;
+        var enter_list_query = "";
+        var enterpriseQuery = "";
+        if (enter_list.length !== 4) {
+            if (enter_list.length === 0) {
+                enter_list_query = "";
+            }
+            if (enter_list.length === 1) {
+                enter_list_query = enter_list[0];
+            }
+            else if (enter_list.length >= 1) {
+                enter_list_query = "";
+                for (var i = 0; i < enter_list.length; i++) {
+                    if (i === 0) {
+                        enter_list_query = enter_list[i];
+                    }
+                    else if (i > 0) {
+                        enter_list_query += ',' + enter_list[i];
+                    }
+                }
+            }
+            enterpriseQuery = "payername=" + enter_list_query;
+        }
+
+        var lob_list = loblistboxObj.value;
+        var lob_list_query = "";
+        var lobQuery = "";
+        if (lob_list.length !== 2) {
+            if (lob_list.length === 0) {
+                lob_list_query = "";
+            }
+            if (lob_list.length === 1) {
+                lob_list_query = lob_list[0];
+            }
+            else if (lob_list.length >= 1) {
+                lob_list_query = "";
+                for (var j = 0; j < lob_list.length; j++) {
+                    if (j === 0) {
+                        lob_list_query = lob_list[j];
+                    }
+                    else if (j > 0) {
+                        lob_list_query += ',' + lob_list[j];
+                    }
+                }
+            }
+            lobQuery = "&" + "line_of_business_modified=" + lob_list_query;
+        }
+
+
+        var npi_list = npilistboxObj.value;
+        var npi_list_query = "";
+        var npiQuery = "";
+        if (npi_list.length !== 10) {
+            if (npi_list.length === 0) {
+                npi_list_query = "";
+            }
+            if (npi_list.length === 1) {
+                npi_list_query = npi_list[0];
+            }
+            else if (npi_list.length >= 1) {
+                npi_list_query = "";
+                for (var k = 0; k < npi_list.length; k++) {
+                    if (k === 0) {
+                        npi_list_query = npi_list[k];
+                    }
+                    else if (k > 0) {
+                        npi_list_query += ',' + npi_list[k];
+                    }
+                }
+            }
+            npiQuery = "&" + "renderingprovnpi=" + npi_list_query;
+        }
+
+        var rpgroup_list = grouplistboxObj.value;
+        var rpgroup_list_query = "";
+        var rpgroupQuery = "";
+        if (rpgroup_list.length !== 10) {
+            if (rpgroup_list.length === 0) {
+                rpgroup_list_query = "";
+            }
+            if (rpgroup_list.length === 1) {
+                rpgroup_list_query = rpgroup_list[0];
+            }
+            else if (rpgroup_list.length >= 1) {
+                rpgroup_list_query = "";
+                for (var l = 0; l < rpgroup_list.length; l++) {
+                    if (l === 0) {
+                        rpgroup_list_query = rpgroup_list[l];
+                    }
+                    else if (l > 0) {
+                        rpgroup_list_query += ',' + rpgroup_list[l];
+                    }
+                }
+            }
+            rpgroupQuery = "&" + "rend provider group=" + rpgroup_list_query;
+        }
+
+        var query = enterpriseQuery + lobQuery + npiQuery + rpgroupQuery;
+
+        if (dateQuery !== "") {
+            if (query === "") {
+                query = dateQuery;
+            }
+            else {
+                query = query + "&" + dateQuery;
+            }
+        }
+
+        var instance = BoldBI.getInstance($($(e.target).parents('#mobileProperties').parent().children()[1]).children().attr('id'));
+        instance.updateFilters(query);
+
+    });
+
+    $("#clearBtn").on("click", function (e) {
+        enterpriselistboxObj.value = enterprise_items;
+        loblistboxObj.value = lob_items;
+        npilistboxObj.value = npi_items;
+        grouplistboxObj.value = group_items;
+        range.value = dateRangaValue;
+        var instance = BoldBI.getInstance($($(e.target).parents('#mobileProperties').parent().children()[1]).children().attr('id'));
+        instance.updateFilters("");
+    });
+
+    $("#push_menu").click(function (e) {
+        var instance = BoldBI.getInstance($($(e.target).parents('#mobileProperties').parent().children()[1]).children().attr('id'));
+
+        if (document.getElementById("push_menu").classList.contains('collapsed')) {
+            $("#prop-header, #dateElement, #paraElement").removeClass("hide");
+            $("#push_menu").removeClass("collapsed");
+            $("#mobileProperties").addClass("property-expanded");
+            $("#mobile-dashbrds").addClass("dashboard-partialview");
+
+            $("#mobileProperties").removeClass("property-collapsed");
+            $("#" + $($(e.target).parents('#mobileProperties').parent().children()[1]).attr('id')).removeClass("dashboard-fullview");
+            instance.resizeDashboard("");
+        }
+        else {
+            $("#prop-header, #dateElement, #paraElement").addClass("hide");
+            $("#push_menu").addClass("collapsed");
+            $("#mobileProperties").removeClass("property-expanded");
+            $("#mobile-dashbrds").removeClass("dashboard-partialview");
+
+            $("#mobileProperties").addClass("property-collapsed");
+            $("#" + $($(e.target).parents('#mobileProperties').parent().children()[1]).attr('id')).addClass("dashboard-fullview");
+            instance.resizeDashboard("");
+        }
+    });
+</script>

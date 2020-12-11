@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%;width:100%;overflow: hidden !important;">
+<head>
+
+    <link rel="stylesheet" href="../../../css/themes/all.css">
+    <link rel="stylesheet" href="../../../css/themes/adminlte.css">
+    <link rel="stylesheet" href="properties.css">
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body style="background-color:#f9f9f9;height:100%;width:100%;overflow: hidden !important;">
+    <div style="height:100%;width:100%;">
+        <div id="mobile-dashbrd" style="height:100%;float:left;width:100% ;border: 1px solid #D9DEDD;background-color: white;overflow:hidden !important;">
+            <div style="height:100%;width:100%;overflow: hidden !important;" id="sample_dashboard">
+                <div id="app-content" class="content">
+                    <div class="about">
+                        <div class="about-heading">About this sample</div>
+                        <div class="about-description">
+                            This sample browser illustrates, how to integrate the dashboard and widget into your Sample browser. You could able to load each widgets from the dashboard by selection.
+                        </div>
+                        <div class="about-heading">More links</div>
+                        <div class="list-heading">
+                            <ul id="parent-list" style="list-style-type:none;padding-left:0px;">
+                                <li style="float:left;"><a href="https://help.syncfusion.com/bold-bi/embedded-bi/javascript/overview" target="_blank"><i class="fas fa-home"></i> Overview</a></li>
+                                <li><a style="padding: 16px;" href="https://help.syncfusion.com/bold-bi/embedded-bi/javascript/getting-started" target="_blank"><i class="fas fa-rocket"></i> Getting Started</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="about-heading">Samples</div>
+                        <div class="about-description">
+                            Embedded SDK is a JavaScript library that enables you to embed your BoldBI dashboards in your applications which may be ASP.NET MVC application, ASP.NET Core application, Angular, and React application. Fore more please check below links.
+                        </div>
+                        <div class="list-heading">
+                            <ul id="parent-list" style="list-style-type:none;padding-left:0px;">
+                                <li style="float:left;"><a href="https://help.syncfusion.com/bold-bi/embedded-bi/javascript/sample/asp-net-mvc" target="_blank"><i class="fas fa-file"></i> ASP.Net MVC</a></li>
+                                <li style="float:left;"><a style="padding-left: 16px;" href="https://help.syncfusion.com/bold-bi/embedded-bi/javascript/sample/asp-net-core" target="_blank"><i class="fas fa-file"></i> ASP.Net Core</a></li>
+                                <li style="float:left;"><a style="padding-left: 16px;" href="https://help.syncfusion.com/bold-bi/embedded-bi/javascript/sample/angular" target="_blank"><i class="fas fa-file"></i> Angular</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener('message', receiveMessage, false);
+        function receiveMessage(event) {
+            if (event.data.ServiceUrl !== null && event.data.ServiceUrl !== undefined) {
+                window.ServiceUrl = event.data.ServiceUrl;
+                window.DashboardPath = event.data.DashboardPath;
+                window.AuthorizeAPI = event.data.AuthorizeAPI;
+                window.Environment = event.data.Environment;
+                window.OverlayElement = event.data.OverLayId;
+                window.parent.document.getElementById(window.OverlayElement).style.display = "none";
+                renderDashboard(window.DashboardPath);
+            }
+        }
+    </script>
+</body>
+</html>

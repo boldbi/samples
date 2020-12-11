@@ -1,0 +1,8 @@
+{
+  "EmbedSecret": "v9EKQrXQKR7ToUYwdI4SBuBrftBMOBf",
+  "Serverurl": "http://localhost/bi/site/site1",
+  "Email": "mahendranm@syncfusion.com",
+  "Environment": "on-premise",
+  "DisplayName": "John Doe",
+  "BaseUrl": "https://localhost:44390/"
+}

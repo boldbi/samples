@@ -1,0 +1,80 @@
+﻿@model SampleCoreApp.Models.SamplesTreeViewModel
+@using Microsoft.AspNetCore.Http;
+@using SampleCoreApp.Controllers;
+@using SampleCoreApp;
+@using System.Web;
+@using Newtonsoft.Json;
+
+@{
+    var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
+    var category = ViewBag.Category as ApiItems;
+    var isEdit = ViewBag.IsEdit != null && (bool)ViewBag.IsEdit;
+    var email = globalAppSettings != null && globalAppSettings.UserDetails != null && !string.IsNullOrWhiteSpace(globalAppSettings.UserDetails.Email) ? globalAppSettings.UserDetails.Email : null;
+    var noResourceFound = ViewBag.NoResourceFound != null && (bool)ViewBag.NoResourceFound;
+    var token = ViewBag.Token;
+    var userID = ViewBag.UserId;
+    var draftId = ViewBag.DraftId;
+    var samples = ViewBag.Samples;
+    var title = string.IsNullOrWhiteSpace(Model?.Title) ? "" : Model.Title;
+    var dashboardPath = string.IsNullOrWhiteSpace(Model?.DashboardPath) ? "" : Model.DashboardPath;
+    var parentId = Model != null && Model.ParentId > 0 ? Model.ParentId : 0;
+    var dashboards = globalAppSettings.SamplesSchemaCollection[0].Samples;
+    var mydashboards = dashboards.Where(x => (x.CreatedById == userID && x.Id != 101)).ToList();
+}
+
+@*<div style="width: 100%; float: left; border-bottom: 1px solid lightgray">
+    <div style="float: left; margin-top: 10px;color: gray;line-height: 21px;text-align: center;width: 25%;">Name</div>
+    <div style="float: left; margin: 10px 0 0 25px;color: gray;line-height: 21px;text-align: center;width: 20%;">Owner</div>
+    <div style="float: left; margin-top: 10px;color: gray;line-height: 21px;text-align: center;width: 20%;">Last Modified</div>
+    <div style="float: left; margin: 10px 0 0 15px;color: gray;line-height: 21px;text-align: center;width: 15%;">Status</div>
+</div>
+<div style="float: left; overflow: auto; height: 80%; width: 100%">
+    <ul class="nav nav-treeview">
+
+        @foreach (var sample in mydashboards)
+        {
+            var sampleUrl = @Url.Action("Index", "Home", new { categoryName = @sample.CategoryName.ToLower(), sampleName = @sample.Name.ToLower(), email = @email });
+            <li class="nav-item" style="width: 100%">
+                <a class="nav-link sample" style="font-size:14px; cursor:pointer; float: left; width: 100%; border-bottom: 1px solid lightgray; position: relative">
+                    @if (sample.CanWrite)
+                    {
+                        @if (!sample.IsEdit)
+                        {
+                            <i class="far"> </i>
+                            <div categoryName="@sample.CategoryName.ToLower()" sampleName="@sample.Name.ToLower()" onclick="ViewDashboard(this)" class="dashboard-text" style="padding-top: 15px; color: #000; float: left; width: 25%; text-overflow: ellipsis; white-space: nowrap">
+                                @sample.Name
+                            </div>
+                            <div style="padding-top: 15px; color: #000; float: left; width: 20%; text-align: center">
+                                @sample.CreatedByDisplayName
+                            </div>
+                            <div style="padding-top: 15px; color: #000; float: left; width: 20%; text-align: center">
+                                @sample.ModifiedDate
+                            </div>
+                            <div style="padding-top: 15px; color: #000; float: left; width: 20%; text-align: center">
+                                Active
+                            </div>
+                            <div style="float: right">
+                                <i id="share-item" onclick="ShareDashboard('@sample.IsPublic', '@sample.Name', '@sample.ItemID')" style="display:none; vertical-align: super;" class="nav-option fas fa-share-alt dbrd-icon"> </i>
+                                <i id="delete-item" onclick="deleteItem(this, '@sample.Name','@sample.ItemID')" style="display:inline-block; vertical-align: super; color: #1a1a1a;opacity: .8; float: right; padding-top: 15px;" class="nav-option fas fa-trash-alt dbrd-icon"> </i>
+                                <i id="edit-item" categoryName="@sample.CategoryName.ToLower()" sampleName="@sample.Name.ToLower()" onclick="EditDashboard(this)" data-ng-animate="@sample.Name" style="display:inline-block; opacity: .8;vertical-align: super; color: #1a1a1a; float: right; padding-top: 15px;" class="nav-option dbrd-icon fas fa-pencil-alt"> </i>
+                                <i id="refresh-item" onclick="RefreshDashboard('@sample.ItemID')" style="display:inline-block; vertical-align: super; color: #000; float: right; padding-top: 15px;" class="nav-option fas fa-sync-alt dbrd-icon"> </i>
+                            </div>
+                        }
+                        else
+                        {
+                            <i class="far"> </i>
+                            <p class="dashboard-item" style="width: 200px;cursor:pointer; padding-top: 5px;">@sample.Name</p>
+                            <i id="save-item" style="vertical-align: super; cursor:pointer" class="nav-option dbrd-icon fas fa-save"> </i>
+                        }
+                    }
+                    else
+                    {
+                        <i class="far"> </i>
+                        <p data-src="@sampleUrl" onclick="ViewDashboard(this)" class="dashboard-text" style="padding-top: 5px; color: #000; float: left">@sample.Name</p>
+                        <i id="refresh-item" onclick="RefreshDashboard('@sample.ItemID')" style="display:inline-block; vertical-align: super; color: #000; float: right; padding-top: 5px;" class="nav-option fas fa-sync-alt dbrd-icon"> </i>
+                    }
+                </a>
+            </li>
+        }
+    </ul>
+</div>*@

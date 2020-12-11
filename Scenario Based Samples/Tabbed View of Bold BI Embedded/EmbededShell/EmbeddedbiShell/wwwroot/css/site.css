@@ -1,0 +1,323 @@
+﻿.profile-menu-action {
+    color: #686868;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.profile-info {
+    border-bottom: 1px solid #bcc3cb;
+    height: 40px;
+}
+
+.tab-pane > .overlay-wrapper > .overlay {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+.e-dashboarddesigner-designPanel .e-dashboarddesigner-bannerPanel, #sample_dashboard_embeddedbi_designAreaContainer {
+    border: 0px !important
+}
+
+.has-treeview.menu-open {
+    width: 100%;
+}
+
+.multi-tab.nav-link {
+    cursor: pointer;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.show-flex {
+    display: flex !important;
+    z-index: 150 !important;
+}
+
+.has-treeview.menu-open .nav-item {
+    width: 100%;
+}
+
+    .has-treeview.menu-open .nav-item p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.nav-option {
+    padding-right: 10px;
+    /*display:none !important; */
+}
+
+/*.nav-link.sample.active .nav-option {
+    display: inline !important;
+}*/
+
+.nav-link.sample:hover .nav-option {
+    display: inline !important;
+}
+
+.nav-link.category {
+    padding: 10px 10px 10px 15px !important;
+}
+
+.nav-link.sample {
+    padding: 5px 5px 5px 47px;
+    line-height: 1.25;
+}
+
+#edit-nav-button, #cancel-nav-button {
+    background-color: #007bff;
+    color: #ffffff;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+#create-nav-button, #save-nav-button {
+    color: #007bff;
+    background-color: #ffffff;
+    margin-left: 10px;
+    border-radius: 5px;
+    border-color: #007bff;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#dashboard-name-text {
+    margin-top: 5px;
+}
+
+.os-content{
+    padding: 0 !important;
+}
+
+.nav-link {
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#sidebar-menu {
+    /*border-left-width: 5px;*/
+    border-left-color: white;
+    /*border-left-style: solid;*/
+}
+
+#sidebar-menu .categoryActive{
+    background-color: darkgray;
+}
+
+    .nav-link sample i {
+        display: none;
+    }
+
+.nav-treeview > .nav-item > .no-hover:hover {
+    background-color: transparent !important;
+}
+
+.dbrd-icon:hover {
+    color: #1A8DDF;
+}
+
+.brand-link {
+    background: #0D1157;
+    color: #fff !important;
+    /*border-bottom: 1px solid #3bacf3 !important;*/
+}
+
+.nav-treeview > .nav-item > .nav-link {
+    color: #fff !important;
+}
+
+.nav-treeview > .nav-item > .nav-link.active {
+    background-color: #1A8DDF !important;
+    color: #fff !important;
+}
+
+.nav-treeview > .nav-item > .nav-link:hover {
+    background-color: lightgray !important;
+}
+
+.brand-link .brand-image {
+    max-height: 45px !important;
+}
+
+#dashboard-name {
+    padding-left: 5px;
+    margin-left: 50px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.nav-treeview > .nav-item-heading > .nav-link:hover {
+    background-color: transparent !important;
+}
+
+.nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #1A8DDF !important;
+    color: #fff !important;
+}
+
+.toaster-block {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    float: right;
+    display: none;
+}
+
+/*.nav-link.sample:hover .dashboard-text {
+    width: 100%;
+}*/
+
+
+/*.layout-fixed .brand-link {
+    width: 299px !important;
+}*/
+
+/*.main-sidebar {
+    width: 251px !important;
+}*/
+
+button.e-control.e-btn.e-lib.e-primary.e-flat {
+    background-color: #3bacf6 !important;
+    width: 50px !important;
+}
+
+.e-control.e-dialog .e-footer-content .e-btn {
+    width: 50px !important;
+    margin-right: 5px;
+    border-radius: 5px !important;
+}
+
+.e-footer-content {
+    padding-bottom: 20px !important;
+}
+
+.card-success.card-outline {
+    border-top: 5px solid #3bacf6 !important;
+}
+
+#loader {
+    border: 5px solid transparent;
+    border-radius: 50%;
+    border-top: 5px solid #000;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    margin: 0px auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: block;
+    z-index: 99999;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.overlayload {
+    background: transparent;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 99999;
+}
+
+.dbrdName{
+    font-size: 24px;
+    margin: 10px 0 0 20px;
+}
+
+.ui-widget{
+    font-size: 13px !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane{
+    padding: 0px !important;
+}
+
+.property-collapsed {
+    width: 30px !important;
+}
+
+.property-expanded {
+    width: 300px !important;
+}
+
+.dashboard-fullview {
+    width: calc(100% - 30px) !important;
+}
+
+.dashboard-partialview {
+    width: calc(100% - 305px) !important;
+}
+
+.nested {
+    display: none;
+    list-style-type: none;
+}
+
+.nested-active {
+    display: block;
+}
+
+.down {
+    transform: rotate(90deg);
+}
+
+.tabs_anchor {
+    color: #000;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    margin: 10px 0 0 20px; 
+    float:left;
+    width: 100px;
+}
+
+#tab_element.tab-class .e-tab-header .e-toolbar-item .e-tab-text {
+    display: inline-block;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-boldbi-logo {
+    margin-left: 30px;
+    height: 40px;
+    width: 150px;
+    background-image: url(/images/application/change_HealthCare.png);
+    background-repeat: no-repeat;
+    font-size: 40px;
+    cursor: pointer;
+}
