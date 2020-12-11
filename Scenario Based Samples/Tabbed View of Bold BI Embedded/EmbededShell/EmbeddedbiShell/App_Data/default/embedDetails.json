@@ -1,21 +1,11 @@
-//{
-//  "EmbedSecret": "dwnHuhU2onXZ6Hy6AM5zKpgVorD58cD",
-//  "Serverurl": "https://demo-phoenix.boldbi.com/bi/site/site1",
-//  "Email": "demo@boldbi.com",
-//  "Environment": "on-premise",
-//  "DisplayName": "John Doe",
-//  "BaseUrl": "https://localhost:44390/",
-//  "SiteIdentifier": "site/site1",
-//  "RootUrl": "https://demo-phoenix.boldbi.com/bi/"
-//}
 {
-  "EmbedSecret": "HpXtTlnclXrPP04qpHl9ljESJTcnwhoO", //"WDts8uMg0i5ixq0lJB3pMqYRjnLjHRD9",
-  "Serverurl": "https://demo-changehealthcare.boldbi.com/bi/site/site1", //"https://adhoc.boldbi.com/bi/site/site1",
-  "Email": "demo@boldbi.com",
-  "AdminEmail": "demo@boldbi.com",
+  "EmbedSecret": "xxxxxxxxxxxxxxxx", 
+  "Serverurl": "https://localhost/bi/site/site1",
+  "Email": "demo@example.com",
+  "AdminEmail": "demo@example.com",
   "Environment": "on-premise",
   "DisplayName": "John Doe",
   "BaseUrl": "https://localhost:44390/",
   "SiteIdentifier": "site/site1",
-  "RootUrl": "https://demo-changehealthcare.boldbi.com/bi" //"https://adhoc.boldbi.com/bi"
+  "RootUrl": "https://localhost/bi"
 }
