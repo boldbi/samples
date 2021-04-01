@@ -1,0 +1,11 @@
+{
+  "EmbedSecret": "Embed Secret code",
+  "Serverurl": "Enter Server Url",
+  "Email": "User mail id",
+  "AdminEmail": "Admin mail id",
+  "Environment": "on-premise",
+  "DisplayName": "John Doe",
+  "BaseUrl": "https://localhost:44390/",
+  "SiteIdentifier": "site/site1",
+  "RootUrl": "Enter root url"
+}
