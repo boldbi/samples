@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
-using Syncfusion.Server.EmbedBoldBI.Models;
+using BoldBI.Embedded.Sample.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-namespace Syncfusion.Server.EmbedBoldBI.Controllers
+namespace BoldBI.Embedded.Sample.Controllers
 {
     public class HomeController : Controller
     {

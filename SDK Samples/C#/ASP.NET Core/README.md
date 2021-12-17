@@ -1,9 +1,12 @@
+# How to run the sample
+
 Once downloaded the source code, open the solution in the Visual studio. 
 Copy the downloaded embedConfig.json file, which is generated from the embed settings page and paste into the following location.
 /App_Data/embedConfig.json
  
 Now, run the sample.
 
+# Properties to be configured in the sample
 The following properties are used in embedConfig.json file:
 
 | ServerUrl        | Dashboard Server BI URL (ex: http://localhost:5000/bi, http://demo.boldbi.com/bi)                                                            |
