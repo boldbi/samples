@@ -1,20 +1,18 @@
-# How to run the sample
+# Run the application with embedded dashboard in three steps
 
-Once downloaded the source code, open the solution in the Visual studio. 
-Copy the downloaded embedConfig.json file, which is generated from the embed settings page and paste into the following location.
-/App_Data/embedConfig.json
- 
-Now, run the sample.
+1. Download the sample application and open the solution file in the Visual Studio IDE. 
+1. Copy the downloaded `embedConfig.json` file, which is generated from the embed settings page of Bold BI server and paste into the `App_Data` folder of sample application.
+1. Run the application.
 
-# Properties to be configured in the sample
-The following properties are used in embedConfig.json file:
+# Properties that are configured in the sample
+The following properties are used in `embedConfig.json` file:
 
 <meta charset="utf-8"/>
 <table>
   <tbody>
     <tr>
         <td align="left">ServerUrl</td>
-        <td align="left">Dashboard Server BI URL (ex: http://localhost:5000/bi, http://demo.boldbi.com/bi)</td>
+        <td align="left">Dashboard Server URL (Eg: http://localhost:5000/bi, http://demo.boldbi.com/bi)</td>
     </tr>
     <tr>
         <td align="left">SiteIdentifier</td>
