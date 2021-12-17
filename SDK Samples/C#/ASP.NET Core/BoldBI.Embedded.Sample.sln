@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.Server.EmbedBoldBI", "Syncfusion.Server.EmbedBoldBI\Syncfusion.Server.EmbedBoldBI.csproj", "{1796FF86-6F6F-4BE2-91EB-462E96CA0144}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoldBI.Embedded.Sample", "BoldBI.Embedded.Sample\BoldBI.Embedded.Sample.csproj", "{1796FF86-6F6F-4BE2-91EB-462E96CA0144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

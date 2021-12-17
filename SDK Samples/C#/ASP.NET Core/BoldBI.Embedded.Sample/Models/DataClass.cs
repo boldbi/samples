@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Runtime.Serialization;
 
-namespace Syncfusion.Server.EmbedBoldBI.Models
+namespace BoldBI.Embedded.Sample.Models
 {
     [DataContract]
     public class EmbedClass

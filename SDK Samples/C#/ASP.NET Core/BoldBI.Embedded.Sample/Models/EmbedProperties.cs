@@ -1,4 +1,4 @@
-﻿namespace Syncfusion.Server.EmbedBoldBI.Models
+﻿namespace BoldBI.Embedded.Sample.Models
 {
     public class EmbedProperties
     {

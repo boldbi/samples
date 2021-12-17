@@ -1,4 +1,4 @@
-{  
+{
   "DashboardId": "",
   "ServerUrl": "",
   "UserEmail": "",
@@ -6,5 +6,5 @@
   "EmbedType": "",
   "Environment": "",
   "ExpirationTime": "",
-  "SiteIdentifier" :  ""
+  "SiteIdentifier": ""
 }

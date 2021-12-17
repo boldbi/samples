@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Syncfusion.Server.EmbedBoldBI
+namespace BoldBI.Embedded.Sample
 {
     public class Program
     {

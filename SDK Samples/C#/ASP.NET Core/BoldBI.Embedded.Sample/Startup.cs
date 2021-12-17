@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using Syncfusion.Server.EmbedBoldBI.Models;
+using BoldBI.Embedded.Sample.Models;
 
-namespace Syncfusion.Server.EmbedBoldBI
+namespace BoldBI.Embedded.Sample
 {
     public class Startup
     {
