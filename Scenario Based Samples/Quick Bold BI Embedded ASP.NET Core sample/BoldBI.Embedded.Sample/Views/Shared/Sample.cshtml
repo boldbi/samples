@@ -1,0 +1,43 @@
+﻿@{ 
+    var currentDashboard = string.Empty;
+    var currentDatasourceId = string.Empty;
+    var currentDatasourceName = string.Empty;
+    currentDashboard = "/Human Resources/Workforce Performance Management Dashboard";
+}
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        window.ServiceUrl = "@ViewBag.ServerUrl";
+        window.DashboardPath = "@currentDashboard";
+        window.DatasourceName = "@currentDatasourceName";
+        window.DatasourceId = "@currentDatasourceId";
+        window.AuthorizeAPI = "@Url.Action("GetEmbedDetails", "Sample")";
+        window.datasourceAPI = "@Url.Action("GetDataSourceContent", "Sample")";
+        window.Environment = "Cloud";
+        selectedOption = "@ViewBag.currentPage";
+        window.IsInitialRender = false;
+        
+    </script>
+    <div id="body-container">
+        <div id="property-container" class="rows">
+            <div id="image-container">
+                <nav>
+                    <div class="tab-content">
+                        <div id="demo-content" role="tabpanel" class="tab-pane active">
+                            <div id='dashboard-frame-container' style="width: 100%;height: 100%;overflow: hidden !important;"></div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="dashboard-property">
+                @{
+                    @await Html.PartialAsync("_dashboard");
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
