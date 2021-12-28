@@ -1,0 +1,77 @@
+﻿@{
+   // var IsHttps = Context.Request.IsHttps.ToString().ToLower();
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+   
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/css/site.css?ver=1.0">
+    <link rel="stylesheet" href="~/css/themes/all.css?ver=1.0">
+
+    <link rel="stylesheet" href="~/css/themes/adminlte.css?ver=1.0">
+
+    <link href="~/css/ejDashboard/ej1.web.all.min.css?ver=1.0" rel="stylesheet" />
+    
+    @*<style>
+        #body-container {
+            visibility: hidden;
+        }
+    </style>*@
+    <script src="~/js/jquery/jquery-1.10.2.js"></script>
+
+</head>
+<body class="sidebar-mini layout-fixed">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5J8ZJQ6"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrapper  overlay-wrapper">
+        <div id="loading-item" class="overlay hide"><i class="fas fa-3x fa-sync-alt fa-spin" style="float: left;"></i><div class="text-bold pt-2" style="float: left;">  Loading...</div></div>
+        <div id="loader"><i class="fas fa-2x fa-spinner fa-spin" style="float: left; color:#283A5F;"></i><span class="text-bold pt-2" style="float: left; color:#283A5F; font-family:Caros-bold; margin-left:15px"> Loading...</span></div>
+        <div class="content-wrapper">
+            <div class="toaster-block">
+                <div id="card_item" class="card card-outline card-success">
+                    <div class="card-header" style="height: 40px">
+                        <h3 id="header-text" style="font-size: 15px" class="card-title"></h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" style="padding-top: 0px;" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            @RenderBody()
+        </div>
+       
+    </div>
+
+    <script src="~/js/bootstrap/bootstrap.bundle.js?ver=1.0"></script>
+    <script src="~/js/application/adminlte.js?ver=1.0"></script> 
+    <script src="~/js/jquery/jquery.easing.min.js"></script>
+    <script src="~/js/jquery/jsrender.js"></script>
+    <script src="~/js/site.js?ver=1.0"></script>
+    <script src="~/js/EmbedBiWrapper.js?ver=1.0"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            document.querySelector(
+                "#loader").style.display = "none";
+            document.querySelector(
+                "#body-container").style.visibility = "visible";
+        });
+        
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
