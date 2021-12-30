@@ -16,11 +16,11 @@ The following properties are used in `embedConfig.json` file:
     </tr>
     <tr>
         <td align="left">SiteIdentifier</td>
-        <td align="left">For Bold BI On-Premise Edition, it should be like `site/site1`. For Bold BI Cloud, it should be an empty string.</td>
+        <td align="left">For Bold BI installed on your server, it should be like `site/site1`. For Bold BI cloud analytics server, it should be an empty string.</td>
     </tr>
     <tr>
         <td align="left">Environment</td>
-        <td align="left">Your Bold BI application environment. (If Cloud, use `cloud`; if On-Premise, use `enterprise`)</td>
+        <td align="left">Your Bold BI application environment. (If it is cloud analytics server, use `cloud`; if it is your own server, use `enterprise`)</td>
     </tr>
     <tr>
         <td align="left">UserEmail</td>
