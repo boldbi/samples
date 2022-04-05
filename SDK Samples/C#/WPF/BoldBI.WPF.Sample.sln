@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoldBI.WPF.Sample", "BoldBI.WPF.Sample\BoldBI.WPF.Sample.csproj", "{79C31DFB-C931-449F-A14C-ECA12623FB0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79C31DFB-C931-449F-A14C-ECA12623FB0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C31DFB-C931-449F-A14C-ECA12623FB0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C31DFB-C931-449F-A14C-ECA12623FB0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C31DFB-C931-449F-A14C-ECA12623FB0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F20834A4-CFC7-4995-BD56-7554B0A0AA1C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html style="height:100%;width:100%">
+	<head>
+		<meta name="" viewport="" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js"></script>
+		<script type="text/javascript" src="EmbedBiWrapper.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				this.dashboard = BoldBI.create({ 
+					serverUrl: "EmbedProperties_RootUrl" + "/" + "EmbedProperties_SiteIdentifier",
+					dashboardPath: "EmbedProperties_DashboardPath",
+					embedContainerId: "dashboard",
+					embedType: "EmbedProperties_EmbedType",
+					environment: "EmbedProperties_Environment",
+					width: "100%",
+					height: "100%",
+					expirationTime: 100000,
+					authorizationServer:
+					{
+						url: "",
+						data: "embedAuthorizeDetails"
+					},
+					dashboardSettings:
+					{
+						showExport: false,
+						showRefresh: false,
+						showMoreOption: false
+					}
+				});
+				console.log(this.dashboard);
+				this.dashboard.loadDashboard();
+			});
+		</script>
+	</head>
+	<body style="background-color: white;height:100%;width:100%">
+		<div id ="viewer-section" style="background-color: white;height:100%;width:100%">
+			<div id ="dashboard">
+			</div>
+		</div>
+	</body>
+</html>
+</html>
