@@ -1,0 +1,65 @@
+﻿@page "/"
+@namespace WebApplication1.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoldBI Blazor Embed</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+<body>
+    @*<app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>*@
+
+    
+    <div id="dashboard"></div>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js"></script>
+    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/v4.1.36/embed-js.js"></script>
+    <script>
+        var rootUrl = ""; //Please provide the server url
+        var siteIdentifier = "site/site1";
+        var authorizationServerUrl = "api/EmbedData/GetDetails";
+        var dashboardId = "8f24de87-1489-441a-8935-8dcc7d91fd9f"; //Please provide the required dashboard Id.
+        $(document).ready(function(){
+            this.dashboard = BoldBI.create({
+                serverUrl: rootUrl + "/" + siteIdentifier,
+                dashboardId: dashboardId,
+                embedContainerId: "dashboard",
+                embedType: BoldBI.EmbedType.Component,
+                environment: BoldBI.Environment.Enterprise,
+                width: window.innerWidth + "px",
+                height: window.innerHeight + "px",
+                expirationTime: 100000,
+                authorizationServer: {
+                    url: authorizationServerUrl
+                }
+            });
+            this.dashboard.loadDashboard();
+        });
+    </script>
+</body>
+</html>
