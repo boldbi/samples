@@ -63,7 +63,7 @@ namespace BoldBI.WPF.Sample
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js'></script>
 <script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>
-<script type='text/javascript' src='https://cdn.boldbi.com/embedded-sdk/v4.1.36/embed-js.js'></script>" +
+<script type='text/javascript' src='https://cdn.boldbi.com/embedded-sdk/v4.2.68/embed-js.js'></script>" +
 "<script type='text/javascript'>$(document).ready(function() " +
 "{this.dashboard = BoldBI.create({ serverUrl:'" + EmbedProperties.RootUrl + EmbedProperties.SiteIdentifier + "', dashboardId:'" + EmbedProperties.DashboardId + "',embedContainerId: 'dashboard',embedType:'" + EmbedProperties.EmbedType + "',environment:'" + EmbedProperties.Environment + "',width: window.innerWidth - 20 + 'px',height: window.innerHeight - 20 + 'px',expirationTime: 100000,authorizationServer:{url: '', data:" + resultContent + "},dashboardSettings:{showExport: false,showRefresh: false,showMoreOption: false}});console.log(this.dashboard);this.dashboard.loadDashboard();});</script>" +
 "</head>" +
