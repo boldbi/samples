@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-beta/jsrender.js"></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.1.2.min.js"></script>
-    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/v4.1.36/embed-js.js"></script>
+    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/v4.2.68/embed-js.js"></script>
 </head>
 <body>
 	
