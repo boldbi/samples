@@ -1,0 +1,31 @@
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.deps.json
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.runtimeconfig.json
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.runtimeconfig.dev.json
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.dll
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.pdb
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.csprojAssemblyReference.cache
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.csproj.CoreCompileInputs.cache
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.RazorAssemblyInfo.cache
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.RazorAssemblyInfo.cs
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.AssemblyInfoInputs.cache
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.AssemblyInfo.cs
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.RazorTargetAssemblyInfo.cache
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.dll
+D:\Samples\v3.3_Samples\react-asp-net-core-v3.3\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.pdb
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\appsettings.json
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.deps.json
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.runtimeconfig.json
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.runtimeconfig.dev.json
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.dll
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\bin\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.pdb
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.csprojAssemblyReference.cache
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.AssemblyInfoInputs.cache
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.AssemblyInfo.cs
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.csproj.CoreCompileInputs.cache
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.RazorAssemblyInfo.cache
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.RazorAssemblyInfo.cs
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.RazorTargetAssemblyInfo.cache
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.dll
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.pdb
+D:\Samples\v4.1_Samples\Vue with ASP.NET core\ASP.NET Core\Syncfusion.Server.EmbedBoldBI\obj\Debug\netcoreapp2.1\Syncfusion.Server.EmbedBoldBI.genruntimeconfig.cache

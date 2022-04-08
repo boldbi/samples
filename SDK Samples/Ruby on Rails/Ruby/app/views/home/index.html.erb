@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto:400,700', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "https://cdn.boldbi.com/embedded-sdk/v3.3.40/embed-js.js", "data-turbolinks-track" => true  %>
+  </head>
+
+  <body onload="embedSample();">
+    <div id="dashboard-container"></div>
+    <script>
+    function embedSample() {
+            var boldbiEmbedInstance = BoldBI.create({
+                //Bold BI server URL (ex: http://localhost:5000/bi/site/site1, http://demo.boldbi.com/bi/site/site1)
+                serverUrl: "http://localhost:64503/bi/site/site1",
+                //Get and set the item id of the dashboard to embed from BI server(https://help.syncfusion.com/bold-bi/enterprise-bi/share-dashboards/get-dashboard-link#get-link).
+                dashboardId: "63ca4d7a-cbe4-4894-bd32-6fdcd51cb1cd",
+                embedContainerId: "dashboard-container",
+                embedType: BoldBI.EmbedType.Component,
+                //Your Bold BI application environment. (If Cloud, you should use `Cloud`, if Enterprise, you should use `Enterprise`)
+                environment: BoldBI.Environment.Enterprise,
+                height: "800px",
+                width: "1200px",
+                authorizationServer: {
+                  //URL pointing to AuthorizeServer API file. We are running ruby sample in 3000 port(http://localhost:3000/api/v1/authorizes). Learn more about authorize server(https://help.syncfusion.com/bold-bi/embedded-bi/javascript/authorize-server)
+                    url: "http://localhost:3000/api/v1/authorizes"
+                },
+                expirationTime: "100000",
+            });
+            boldbiEmbedInstance.loadDashboard();
+        }
+    </script>
+  </body>
+</html>
