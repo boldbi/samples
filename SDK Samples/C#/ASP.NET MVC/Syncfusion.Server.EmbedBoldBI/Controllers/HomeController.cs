@@ -42,15 +42,14 @@
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("grant_type", "password"),
-                    new KeyValuePair<string, string>("UserId", EmbedProperties.UserEmail),
-                    new KeyValuePair<string, string>("Password", EmbedProperties.UserPassword)
+                    new KeyValuePair<string, string>("grant_type", "embed_secret"),
+                    new KeyValuePair<string, string>("Username", EmbedProperties.UserEmail),
+                    new KeyValuePair<string, string>("embed_secret", EmbedProperties.EmbedSecret)
                 });
-                var result = client.PostAsync(EmbedProperties.RootUrl + "/api/" + EmbedProperties.SiteIdentifier + "/get-user-key", content).Result;
+                var result = client.PostAsync(EmbedProperties.RootUrl + "/api/" + EmbedProperties.SiteIdentifier + "/token", content).Result;
                 string resultContent = result.Content.ReadAsStringAsync().Result;
-                var response = JsonConvert.DeserializeObject<TokenObject>(resultContent);//Token token = new Token();
-                var tokenObj = JsonConvert.DeserializeObject<Token>(response.Token);
-                return tokenObj;
+                var response = JsonConvert.DeserializeObject<Token>(resultContent);
+                return response;
             }
         }
 
@@ -59,7 +58,7 @@
         public ActionResult GetEmbedDetails(string embedQuerString, string dashboardServerApiUrl)
         {
             embedQuerString += "&embed_user_email=" + EmbedProperties.UserEmail;
-            var embedDetailsUrl = "/embed/authorize?" + embedQuerString.ToLower() + "&embed_signature=" + GetSignatureUrl(embedQuerString.ToLower());
+            var embedDetailsUrl = "/embed/authorize?" + embedQuerString + "&embed_signature=" + GetSignatureUrl(embedQuerString);
 
             using (var client = new HttpClient())
             {
