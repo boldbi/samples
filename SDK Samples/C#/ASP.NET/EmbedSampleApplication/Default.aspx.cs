@@ -17,7 +17,7 @@ namespace EmbedSampleApplication
         public static void GetEmbedDetails(string embedQuerString, string dashboardServerApiUrl)
         {
             embedQuerString += "&embed_user_email=" + EmbedProperties.UserEmail;
-            var embedDetailsUrl = "/embed/authorize?" + embedQuerString.ToLower() + "&embed_signature=" + GetSignatureUrl(embedQuerString.ToLower());
+            var embedDetailsUrl = "/embed/authorize?" + embedQuerString + "&embed_signature=" + GetSignatureUrl(embedQuerString);
 
             using (var client = new System.Net.Http.HttpClient())
             {

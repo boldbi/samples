@@ -14,17 +14,17 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
     <link rel="stylesheet" href="~/Content/Site.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js"></script>
-    <script src="https://cdn.boldbi.com/embedded-sdk/v5.1.55/embed-js.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-beta/jsrender.min.js"></script>
+    <script src="https://cdn.boldbi.com/embedded-sdk/v5.2.48/embed-js.js"></script>
     <script type="text/javascript">
-        var rootUrl = "http://localhost:12345/bi/";
-        var siteIdentifier = "site/site1";
-        var environment = "enterprise";
-        var dashboardId = "db8d3eb2-a608-4ffd-9aad-cd51278e1531";
+        var rootUrl = "";   // Dashboard Server BI URL(ex: http://localhost:5000/bi, http://demo.boldbi.com/bi)
+        var siteIdentifier = "site/site1";   //  For Bold BI Enterprise edition, it should be like `site/site1`. For Bold BI Cloud, it should be empty string.
+        var environment = "enterprise";  // Your Bold BI application environment. (If Cloud, you should use `cloud`, if Enterprise, you should use `enterprise`)
+        var dashboardId = "";  // Enter DashboardId you want to render
         function Init() {
             this.dashboard = BoldBI.create({
                 serverUrl: rootUrl + "/" + siteIdentifier,
