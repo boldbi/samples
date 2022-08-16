@@ -24,7 +24,7 @@
     </tr>
     <tr>
         <td align="left">UserPassword</td>
-        <td align="left">Password of the admin in your Bold BI account, which ise used to get the dashboard list.</td>
+        <td align="left">Password of the admin in your Bold BI account, which is used to get the dashboard list.</td>
     </tr>
     <tr>
         <td align="left">EmbedSecret</td>
