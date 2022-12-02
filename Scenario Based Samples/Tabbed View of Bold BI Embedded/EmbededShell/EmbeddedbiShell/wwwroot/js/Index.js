@@ -124,7 +124,7 @@ function clientAuthorizionComplete(arg) {
     dashboardId = arg.ItemDetail.Id;
     $("#dashboard-name-text").val(dashboardName);
     var tabObj = document.querySelector('#tab_element.e-tab').ej2_instances[0];
-    tabObj.refreshActElePosition();
+    tabObj.resizeContext();
     //var toolbarItem = document.querySelectorAll('#tab_element .e-tab-header .e-toolbar-item')[tabIndex];
     //toolbarItem.setAttribute('title', arg.ItemDetail.Name);
 }
