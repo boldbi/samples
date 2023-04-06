@@ -1,10 +1,10 @@
 {
-  "DashboardId": "",
-  "ServerUrl": "",
-  "UserEmail": "",
-  "EmbedSecret": "",
-  "EmbedType": "",
-  "Environment": "",
-  "ExpirationTime": "",
-  "SiteIdentifier": ""
+  "DashboardId": "dbd1fce0-45ee-4571-a2bf-9b8be0ce4b98",
+  "ServerUrl": "http://localhost:5315/bi",
+  "UserEmail": "nithya.gopal@syncfusion.com",
+  "EmbedSecret": "dxV9qdjwQywkRKqYYsbKuFslcxkw8vBQ",
+  "EmbedType": "Component",
+  "Environment": "Enterprise",
+  "ExpirationTime": "10000",
+  "SiteIdentifier": "site/site1"
 }

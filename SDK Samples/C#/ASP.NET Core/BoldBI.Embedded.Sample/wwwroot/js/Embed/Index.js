@@ -19,10 +19,10 @@
 
     this.dashboard = BoldBI.create({
         serverUrl: rootUrl + "/" + siteIdentifier,
-        dashboardId: "dbd1fce0-45ee-4571-a2bf-9b8be0ce4b98",
+        dashboardId: dashboardId,
         embedContainerId: "dashboard",
-        embedType: embedType,
-        environment: environment,
+        embedType: embedType.toLowerCase() == "component" ? BoldBI.EmbedType.Component : BoldBI.EmbedType.IFrame,
+        environment: environment.toLowerCase() == "cloud" ? BoldBI.Environment.Cloud : BoldBI.Environment.Enterprise,
         width: "100%",
         height: "100%",
         expirationTime: 100000,
