@@ -19,7 +19,7 @@
 
     this.dashboard = BoldBI.create({
         serverUrl: rootUrl + "/" + siteIdentifier,
-        dashboardId: dashboardId,
+        dashboardId: "dbd1fce0-45ee-4571-a2bf-9b8be0ce4b98",
         embedContainerId: "dashboard",
         embedType: embedType,
         environment: environment,
