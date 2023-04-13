@@ -15,6 +15,10 @@ namespace BoldBI.Embedded.Sample.Controllers
             return View();
         }
 
+        public IActionResult EmbedConfigErrorLog()
+        {
+            return View();
+        }
 
         [HttpGet]
         [Route("GetDashboards")]
