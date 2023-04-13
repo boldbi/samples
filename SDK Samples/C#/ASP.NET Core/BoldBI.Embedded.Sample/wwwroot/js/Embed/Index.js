@@ -12,7 +12,6 @@
             url: authorizationServerUrl
         }
     });
-    console.log("content");
     this.dashboard.loadDashboard();
 };
 
