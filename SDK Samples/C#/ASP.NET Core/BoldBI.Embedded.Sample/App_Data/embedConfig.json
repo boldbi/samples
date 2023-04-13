@@ -3,7 +3,8 @@
   "ServerUrl": "",
   "UserEmail": "",
   "EmbedSecret": "",
-  "EmbedType":  "",
+  "EmbedType": "",
   "Environment": "",
+  "ExpirationTime": "",
   "SiteIdentifier": ""
 }
