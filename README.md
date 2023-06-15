@@ -21,10 +21,12 @@ This project was created using ASP.NET Core MVC 6. The application aims to demon
  
     ![JWT Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/99381eeb-5b82-4a84-843f-56417efb782e)
 
- * Enter `Remote Login URL` and `Remote Logout URL` as they appear in the image.  Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
+ * Enter `Remote Login URL` and `Remote Logout URL` as they appear in the image.
  
     ![JWT Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/c070b494-39ce-4aa3-9bd5-482f647f9c82)
     
+ * Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
+ 
     ![appsettings.json](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/b3dfeb8f-77ef-403b-9dd7-f26648b5f81d)
 
  * Open the UMS Site Settings page in Bold BI Server. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
