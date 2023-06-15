@@ -1,0 +1,16 @@
+﻿
+<form asp-controller="Home" asp-action="Login" method="post" accept-charset="utf-8" style="align-items: center; display: flex; justify-content: center;">
+    <input type="hidden" name="returnURL" value="@ViewBag.ReturnURL" />
+
+    <table cellspacing="30px" style="border-spacing: 100px;">
+        <caption>Login Form</caption>
+        <tr>
+            <td style="padding: 15px 15px 0 0;">Email</td>
+            <td style="padding: 15px 15px 0 0; "><input type="text" name="user" value="" placeholder="Email" /></td>
+        </tr>
+        <tr>
+            <td />
+            <td style="padding: 15px 15px 0 0; float: right;"><input style="width: 70px;" type="submit" name="login" value="Login"></td>
+        </tr>
+    </table>
+</form>
