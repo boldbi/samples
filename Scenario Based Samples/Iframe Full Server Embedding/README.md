@@ -17,17 +17,19 @@ This project was created using ASP.NET Core MVC 6. The application aims to demon
 
  ## Configuration
  
- * Please ensure that you have enabled JWT Authentication on UMS page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) to enable it.
+ * Please configure the JWT Authentication in you UMS page based on your application Login and Logout URL. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) to enable it. (ex: http://localhost:50000/ums/sites)
  
     ![JWT Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/99381eeb-5b82-4a84-843f-56417efb782e)
 
- * Enter `Remote Login URL` and `Remote Logout URL` as they appear in the image.  Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
+ * As the application based url is localhost, we are setting the `Remote Login URL` and `Remote Logout URL` as below.
  
     ![JWT Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/c070b494-39ce-4aa3-9bd5-482f647f9c82)
     
+ * Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
+ 
     ![appsettings.json](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/b3dfeb8f-77ef-403b-9dd7-f26648b5f81d)
 
- * Open the UMS Site Settings page in Bold BI Server. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
+ * Open the UMS Site Settings page in `Bold BI Server`. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
  
     ![Default Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/e4fd3ec2-f54b-4a0b-a7ac-ea2e70e89b62)
     
@@ -35,7 +37,7 @@ This project was created using ASP.NET Core MVC 6. The application aims to demon
     
     ![Configuration](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/cd177ca7-2218-47c4-a05e-2a60a545a1a0)
 
- * Open the Administration Site Settings page in Bold BI Server. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `save` the changes.
+ * Open the Administration Site Settings page in `Bold BI Server`. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `save` the changes. (ex: http://localhost:50000/bi/site/site1)
     
     ![Admin Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/a4530a87-1708-453e-9a68-e8c3f7f3b998)
     
