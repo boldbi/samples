@@ -9,7 +9,9 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
 ## Requirements/Prerequisites
 
  * [Visual Studio Code](https://code.visualstudio.com/download)
- * [.NET Framework 7.0](https://dotnet.microsoft.com/download/dotnet-core)
+ * [.NET Framework](https://dotnet.microsoft.com/download/dotnet-core)
+
+ > **NOTE:** .NET 6.0 and 7.0 are supported
 
 #### Supported browsers
   
