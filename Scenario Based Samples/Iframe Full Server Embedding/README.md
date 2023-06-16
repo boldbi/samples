@@ -1,8 +1,8 @@
-# Bold BI Embedded Sample in .NET Core MVC
+# Bold BI Full Server Based Embedding in ASP .NET Core MVC using IFrame
 
 This project was created using ASP.NET Core MVC 6. The application aims to demonstrate how to render Bold BI server with JWT in Iframe Embedding.
 
-## Bold BI Server view
+## Bold BI Server Embedding view
 
 ![Bold BI Server View](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/23c26113-126e-4e09-b9b8-5faf8d554b09)
 
@@ -13,11 +13,11 @@ This project was created using ASP.NET Core MVC 6. The application aims to demon
 
 #### Supported browsers
   
-  * Google Chrome, Microsoft Edge, Mozilla Firefox, Safari and MAC.
+  * Google Chrome, Microsoft Edge, Mozilla Firefox and Safari.
 
  ## Configuration
  
- * Please configure the JWT Authentication in you UMS page based on your application Login and Logout URL. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) to enable it. (ex: http://localhost:50000/ums/sites)
+ * Please configure the JWT Authentication in you UMS page based on your application Login and Logout URL. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) to enable it. (ex: http://localhost:50000/ums/administration)
  
     ![JWT Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/99381eeb-5b82-4a84-843f-56417efb782e)
 
@@ -27,7 +27,7 @@ This project was created using ASP.NET Core MVC 6. The application aims to demon
     
  * Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
  
-    ![appsettings.json](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/b3dfeb8f-77ef-403b-9dd7-f26648b5f81d)
+    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/47e62f99-a41f-4170-9acb-0c195dc27a1b)
 
  * Open the UMS Site Settings page in `Bold BI Server`. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
  
@@ -37,21 +37,17 @@ This project was created using ASP.NET Core MVC 6. The application aims to demon
     
     ![Configuration](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/cd177ca7-2218-47c4-a05e-2a60a545a1a0)
 
- * Open the Administration Site Settings page in `Bold BI Server`. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `save` the changes. (ex: http://localhost:50000/bi/site/site1)
+ * Open the Administration Site Settings page in `Bold BI Server`. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `save` the changes. (ex: http://localhost:50000/bi/site/site1/administration)
     
     ![Admin Authentication](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/a4530a87-1708-453e-9a68-e8c3f7f3b998)
     
  * In the application, change the `jwt:ourserverurl` value in the `appsettings.json` file to the URL of our Bold BI server.
   
-    ![appsettings.json](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/3412b366-7f5c-4301-832f-481e65638631)
-   
+    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/bb54aea0-6ed2-4f08-aa7a-1ca0e3586f68)
+    
  * In the Application, within the `Embed.cshtml` file located in the `View` folder, update the iframe URL of our Bold BI server.
  
     ![embed.cshtml](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/091e0b1d-d8a4-4aa1-afad-ab5290706237)
-    
- * In the Application, within the `HomeController.cs` file located in the `Controllers` folder, update to the URL of our Bold BI server.
-
-    ![HomeController.cs](https://github.com/bold-bi/embedded-bi-samples/assets/129487075/a141b35e-4cf4-4ed6-8b10-5ed605c066fe)
 
  ## Developer IDE
 
