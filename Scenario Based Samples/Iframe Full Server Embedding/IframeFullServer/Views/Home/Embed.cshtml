@@ -1,0 +1,12 @@
+<div id="container">
+    @if (ViewBag.IsAuthenticated)
+    {
+        <iframe src='http://localhost:58295/bi/site/site1' width='100%' height='850px'></iframe>
+    }
+    else
+    {
+        <p style="margin-top: 20px">
+            Please <a asp-controller="Home" asp-action="Loginpage" asp-route-returnURL="http://localhost:44383/Home/Embed">login</a> to the application for embedding.
+        </p>
+    }
+</div>
