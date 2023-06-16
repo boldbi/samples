@@ -79,7 +79,6 @@ public class HomeController : Controller
     public ActionResult Logout()
     {
         HttpContext.SignOutAsync("Cookies");
-        //var url = "http://localhost:58295/oauth/logout?redirect_uri=localhost:44383/Home/Loginpage";// Here localhost with port number 53623 refers the Bold BI server URL
         var url = _configuration["jwt:ourserverurl"].TrimEnd('/') + "/oauth/logout?redirect_uri=localhost:44383/Home/Loginpage";
         return Redirect(url);
     }

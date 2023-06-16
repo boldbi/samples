@@ -31,7 +31,6 @@ namespace IframeFullServer.Models
         new Claim(JWTSSOClaims.Sub, _configuration["user:userid"].ToLower())
             };
 
-            //int.TryParse(_configuration["ExpirationTimeInMinutes"], out int expirationTimeInMinutes);
             var token = new JwtSecurityToken(claims: claims,
                 expires: DateTime.Now.AddMinutes(Convert.ToInt32(_configuration["ExpirationTimeInMinutes"])),
                 signingCredentials: credentials);
