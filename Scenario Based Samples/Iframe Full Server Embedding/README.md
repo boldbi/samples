@@ -29,7 +29,7 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
     
  * Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
  
-    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/0f4b9605-16c2-4308-b3ab-81c98d8d01d7)
+    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/8bec663f-6c2f-46b1-9ff9-de462e36128a)
 
  * Open the UMS Site Settings page in `Bold BI Server`. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
  
@@ -43,10 +43,10 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
     
     ![Admin Authentication](https://github.com/boldbi/samples/assets/129487075/b1d52bc4-9ee6-49c6-8ad4-31cdf16c22bd)
 
- * In the application, change the `jwt:ourserverurl` value in the `appsettings.json` file to the URL of our Bold BI server.
+ * In the application, change the `jwt:boldbiserverurl` value in the `appsettings.json` file to the URL of our Bold BI server.
   
-    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/e2ee98be-dd93-4134-b96d-c96adeb7502b)
-    
+    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/ada1b8bd-ed1e-4863-8cd5-6beb5fc74639)
+
  * In the Application, within the `Embed.cshtml` file located in the `View` folder, update the iframe URL of our Bold BI server.
  
     ![embed.cshtml](https://github.com/boldbi/samples/assets/129487075/26ad7b2b-f21b-46dd-9eca-61d4430f96fb)
