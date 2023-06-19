@@ -27,12 +27,11 @@ namespace IframeFullServer.Models
         new Claim(JWTSSOClaims.Upn, new System.Net.Mail.MailAddress(userInfo.Email).User),
         new Claim(JWTSSOClaims.Email, userInfo.Email),
         new Claim(JWTSSOClaims.FirstName, new System.Net.Mail.MailAddress(userInfo.Email).User),
-        new Claim(JWTSSOClaims.LastName, new System.Net.Mail.MailAddress(userInfo.Email).User),
-        new Claim(JWTSSOClaims.Sub, _configuration["user:userid"].ToLower())
+        new Claim(JWTSSOClaims.LastName, new System.Net.Mail.MailAddress(userInfo.Email).User)
             };
 
             var token = new JwtSecurityToken(claims: claims,
-                expires: DateTime.Now.AddMinutes(Convert.ToInt32(_configuration["ExpirationTimeInMinutes"])),
+                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_configuration["ExpirationTimeInMinutes"])),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

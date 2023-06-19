@@ -60,7 +60,7 @@ public class HomeController : Controller
         {
             var email = HttpContext.User.Identity.Name;
             var token = new TokenHelper().GenerateJSONWebToken(new User { Email = email });
-            var url = _configuration["jwt:ourserverurl"].TrimEnd('/') + "/sso/jwt/callback?jwt=" + token;
+            var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback?jwt=" + token;
             return Redirect(url);
         }
         else
@@ -79,7 +79,7 @@ public class HomeController : Controller
     public ActionResult Logout()
     {
         HttpContext.SignOutAsync("Cookies");
-        var url = _configuration["jwt:ourserverurl"].TrimEnd('/') + "/oauth/logout?redirect_uri=localhost:44383/Home/Loginpage";
+        var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/')+"/oauth/logout?redirect_uri=localhost:44383/Home/Loginpage";
         return Redirect(url);
     }
 
