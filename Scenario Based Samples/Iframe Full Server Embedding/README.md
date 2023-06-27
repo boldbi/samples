@@ -29,7 +29,7 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
     
  * Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
  
-    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/8bec663f-6c2f-46b1-9ff9-de462e36128a)
+    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/37f439d6-3f58-43b3-807f-b90aeb3e2fbe)
 
  * Open the UMS Site Settings page in `Bold BI Server`. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
  
@@ -45,19 +45,16 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
 
  * In the application, change the `jwt:boldbiserverurl` value in the `appsettings.json` file to the URL of our Bold BI server.
   
-    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/ada1b8bd-ed1e-4863-8cd5-6beb5fc74639)
+    ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/efb08c80-ffcc-453e-b216-0949b06b9126)
 
- * In the Application, within the `Embed.cshtml` file located in the `View` folder, update the iframe URL of our Bold BI server.
- 
-    ![embed.cshtml](https://github.com/boldbi/samples/assets/129487075/26ad7b2b-f21b-46dd-9eca-61d4430f96fb)
     
  ## Run a Sample Using Command Prompt 
     
-  1. Open the command prompt and navigate to the specified file [location](https://github.com/boldbi/aspnet-mvc-sample/tree/master) where the project is located.
+  1. Open the command prompt and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples) where the project is located.
 
   2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
-  3. Finally, run the application using the command `dotnet run`.
+  3. Finally, run the application using the command `dotnet run`.  It will display a URL typically something like (e.g., http://localhost:40000).  Copy this URL and paste it into your default web browser.
 
  ## Developer IDE
 
@@ -71,12 +68,12 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
  
   * Build your .NET project by executing the `dotnet build` command in the terminal.
  
-  * To run the application, use the command `dotnet run` in the terminal. After executing the command, the application will automatically launch in the default browser. You can access it at the specified port number (e.g., http://localhost:50001/).
+  * To run the application, use the command `dotnet run` in the terminal. After executing the command, the application has started and it will display a URL typically something like (e.g., http://localhost:40000).  Copy this URL and paste it into your default web browser.
+    
     ![Bold BI Server image](https://github.com/boldbi/samples/assets/129487075/37e0af6a-bd96-478c-ae91-5948840f257d)
 
     > **NOTE:** To mitigate issues related to NuGet packages, run the following command in terminal `dotnet add package Microsoft.IdentityModel.Tokens` and `dotnet add package System.IdentityModel.Tokens.Jwt`
 
-Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/asp-net-mvc/#how-to-run-the-sample) to know how to run the sample.
 
 ## Important notes
 
