@@ -11,37 +11,38 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
  * [Visual Studio Code](https://code.visualstudio.com/download)
  * [.NET Framework](https://dotnet.microsoft.com/download/dotnet-core)
 
- > **NOTE:** .NET 6.0 and 7.0 are supported
-
 #### Supported browsers
   
   * Google Chrome, Microsoft Edge, Mozilla Firefox and Safari.
 
  ## Configuration
  
- * Please configure the JWT Authentication in you UMS page based on your application Login and Logout URL. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) to enable it. (ex: http://localhost:50000/ums/administration)
+ * Please configure the JWT Authentication in your UMS page (ex: http://localhost:50000/ums/administration).  Open the UMS Site Settings page in Bold BI Server. 
+ Select `Authentication` and click `JWT` tab.  Enable the `Enable JWT`. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) to enable it. 
  
-    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/0dc156e9-4d18-4ebf-b671-a72e045c70a6)
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/4e90e36d-2eeb-408b-b215-ca48160f5719)
 
- * As the application based url is localhost, we are setting the `Remote Login URL` and `Remote Logout URL` as below.
+ * Enter any name in `Name` and upload any picture for logo in `Provider Logo`.  As the application based url is localhost, we are setting the `Remote Login URL` and `Remote Logout URL` as below.
  
-    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/97a6e08b-328a-42fb-a323-1b3784420960)
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/129a52df-d7e9-4b82-8ca5-7300e22ea4e3)
     
  * Copy the `Signing Key` from the JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
+   
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/c7d429ee-eb6e-4d3f-aa49-0e9d9bddef91)
  
     ![appsettings.json](https://github.com/boldbi/samples/assets/129487075/37f439d6-3f58-43b3-807f-b90aeb3e2fbe)
 
- * Open the UMS Site Settings page in `Bold BI Server`. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, and `save` the changes.
+ * Open the UMS Site Settings page in Bold BI Server. Within `Authentication`, select the `General` tab, enable `Enable Default Authentication`, select `JWT SSO` from dropdown in `Default Authentication Provider` and `Save` the changes.
  
-    ![Default Authentication](https://github.com/boldbi/samples/assets/129487075/9de1893d-52f0-40f7-b246-35169e97012a)
+    ![Default Authentication](https://github.com/boldbi/samples/assets/129487075/a81894ac-c147-41df-8c97-ed9928d16953)
     
- * Search for the `config.xml` file in the `Configuration` directory and change the value of the `<EnableSameTabLinkTarget>` tag from `false` to `true` in order to render the URL within the same application."
+ * Click `Configuration` in UMS Settings, select `config.xml` file from dropdown, change the value of the `<EnableSameTabLinkTarget>` tag from `false` to `true` in order to render the URL within the same application and `Save` the changes.
     
-    ![Configuration](https://github.com/boldbi/samples/assets/129487075/d091f037-3be3-42cb-973a-517df6af2497)
+    ![Configuration](https://github.com/boldbi/samples/assets/129487075/b3d65c3c-d470-4f53-9983-a35291bb6bfe)
 
- * Open the Administration Site Settings page in `Bold BI Server`. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `save` the changes. (ex: http://localhost:50000/bi/site/site1/administration)
+ * Open the Administration Site Settings page in Bold BI Server. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `Save` the changes. (ex: http://localhost:50000/bi/site/site1/administration)
     
-    ![Admin Authentication](https://github.com/boldbi/samples/assets/129487075/b1d52bc4-9ee6-49c6-8ad4-31cdf16c22bd)
+    ![Admin Authentication](https://github.com/boldbi/samples/assets/129487075/763ae9a6-4448-40c3-9897-afb28db745ed)
 
  * In the application, change the `jwt:boldbiserverurl` value in the `appsettings.json` file to the URL of our Bold BI server.
   
@@ -50,7 +51,7 @@ This project was created using ASP.NET Core MVC. The application aims to demonst
     
  ## Run a Sample Using Command Prompt 
     
-  1. Open the command prompt and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples) where the project is located.
+  1. Open the command prompt and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Iframe%20Full%20Server%20Embedding) where the project is located.
 
   2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
@@ -85,4 +86,4 @@ Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based/).
+A JSON Web Token documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/).
