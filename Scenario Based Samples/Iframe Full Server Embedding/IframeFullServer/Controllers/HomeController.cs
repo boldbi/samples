@@ -37,7 +37,7 @@ public class HomeController : Controller
     public ActionResult Login()
     {
         var email = Request.Form["user"].ToString();
-        string redirectUrl = Request.Form["returnURL"];
+        string redirectUrl = "http://localhost:44383/Home/Embed";
         if (email != null)
         {
             var claims = new List<Claim>
@@ -79,13 +79,13 @@ public class HomeController : Controller
     public ActionResult Logout()
     {
         HttpContext.SignOutAsync("Cookies");
-        var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/')+"/oauth/logout?redirect_uri=localhost:44383/Home/Loginpage";
+        var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/')+"/oauth/logout?redirect_uri=http://localhost:44383/Home/Loginpage";
         return Redirect(url);
     }
 
     public ActionResult JWTLogOut()
     {
-        return RedirectToAction("Index");
+        return RedirectToAction("Logout");
     }
 
     public ActionResult Embed()

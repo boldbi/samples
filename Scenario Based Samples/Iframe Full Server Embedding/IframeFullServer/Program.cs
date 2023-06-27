@@ -43,7 +43,7 @@ public class Program
         .AddCookie(options =>
         {
             options.Cookie.Name = "UserCookie"; //Use any name
-            options.LoginPath = "/Home/Login"; // Specify your login page URL
+            options.LoginPath = "/Home/Login"; 
         });
 
         services.AddAuthorization();

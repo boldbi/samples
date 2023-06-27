@@ -24,7 +24,6 @@ namespace IframeFullServer.Models
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature, SecurityAlgorithms.Sha256Digest);
 
             var claims = new[] {
-        //new Claim(JWTSSOClaims.Upn, new System.Net.Mail.MailAddress(userInfo.Email).User),
         new Claim(JWTSSOClaims.Sub, _configuration["user:userid"].ToLower()),
         new Claim(JWTSSOClaims.Email, userInfo.Email),
         new Claim(JWTSSOClaims.FirstName, new System.Net.Mail.MailAddress(userInfo.Email).User),
@@ -32,7 +31,7 @@ namespace IframeFullServer.Models
             };
 
             var token = new JwtSecurityToken(claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_configuration["ExpirationTimeInMinutes"])),
+                expires: DateTime.Now.AddMinutes(Convert.ToInt32(_configuration["ExpirationTimeInMinutes"])),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
@@ -43,15 +42,12 @@ namespace IframeFullServer.Models
     {
         public const string Sub = "sub";
 
-        //public const string Upn = "upn";
-
         public const string Email = "email";
 
         public const string FirstName = "first_name";
 
         public const string LastName = "last_name";
 
-        public const string Phone = "phone";
     }
 
 }
