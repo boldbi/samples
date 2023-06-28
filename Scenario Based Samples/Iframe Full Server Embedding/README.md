@@ -16,16 +16,16 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
  ## Configuration
  
- * Please configure the `JWT Authentication` in your `UMS Administration` page based on your Client Application's Login and Logout URL.(ex: http://localhost:50000/ums/administration)
- * To do this, navigate to the `UMS Site Settings` page on the Bold BI Server. From there, choose `Authentication` and click on the `JWT` tab.  Enable the `Enable JWT`. If it's not, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) on how to enable it. 
+ * Please configure the `JWT Authentication` in your `UMS Administration` page based on your Client Application's Login and Logout URL. (ex: http://localhost:50000/ums/administration)
+ * To do this, navigate to the `UMS Site Settings` page on the Bold BI Server.  From there, choose `Authentication` and click on the `JWT` tab.  Enable the `Enable JWT`.  If it's not, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) on how to enable it. 
  
     ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/4e90e36d-2eeb-408b-b215-ca48160f5719)
 
  * Provide the following details in the `JWT`.  As the application base URL is localhost, we are setting the `Remote Login URL` and `Remote Logout URL` as below and `Save` the changes.
  
-    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/129a52df-d7e9-4b82-8ca5-7300e22ea4e3)
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/51152a00-c9e6-4b97-9123-c962997e15e4)
     
- * Copy the `Signing Key` from the above JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
+ * Copy the `Signing Key` from the below JWT Authentication page and paste it into the `jwt:signingkey` value in the `appsettings.json` file.
    
     ![JWT Authentication](https://github.com/boldbi/samples/assets/129487075/c7d429ee-eb6e-4d3f-aa49-0e9d9bddef91)
  
@@ -35,13 +35,9 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
  
     ![Default Authentication](https://github.com/boldbi/samples/assets/129487075/a81894ac-c147-41df-8c97-ed9928d16953)
     
- * Click on `Configuration` in UMS Settings, then select the `config.xml` file from the dropdown.  Change the value of the `<EnableSameTabLinkTarget>` tag from `false` to `true` in order to render the URL within the same application and `Save` the changes.
+ * Click on `Configuration` in `UMS Site Settings`, then select the `config.xml` file from the dropdown.  Change the value of the `<EnableSameTabLinkTarget>` tag from `false` to `true` in order to render the URL within the same application and `Save` the changes.
     
     ![Configuration](https://github.com/boldbi/samples/assets/129487075/b3d65c3c-d470-4f53-9983-a35291bb6bfe)
-
- * Open the Administration Site Settings page in Bold BI Server. Under `Authentication`, select the `General` tab and enable `Enable Default Authentication`, then `Save` the changes. (ex: http://localhost:50000/bi/site/site1/administration)
-    
-    ![Admin Authentication](https://github.com/boldbi/samples/assets/129487075/763ae9a6-4448-40c3-9897-afb28db745ed)
 
  * In the application, change the `jwt:boldbiserverurl` value in the `appsettings.json` file to the URL of our Bold BI server.
   
@@ -54,11 +50,11 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
   2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
-  3. Finally, run the application using the command `dotnet run`.  It will display a URL typically something like (e.g., http://localhost:40000).  Copy this URL and paste it into your default web browser.
+  3. Finally, run the application using the command `dotnet run`.  It will display a URL typically something like (e.g., http://localhost:4000).  Copy the URL and paste it into your web browser.
 
  ## Developer IDE
 
-  * [Visual studio code](https://code.visualstudio.com/download)
+  * [Visual Studio Code](https://code.visualstudio.com/download)
   
 ### Run a Sample Using Visual Studio Code
  
@@ -68,11 +64,11 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
  
   * Build your .NET project by executing the `dotnet build` command in the terminal.
  
-  * To run the application, use the command `dotnet run` in the terminal. After executing the command, the application has started and it will display a URL typically something like (e.g., http://localhost:40000).  Copy this URL and paste it into your default web browser.
+  * To run the application, use the command `dotnet run` in the terminal. After executing the command, the application has started and it will display a URL typically something like (e.g., http://localhost:4000).  Copy the URL and paste it into your web browser.
     
     ![Bold BI Server image](https://github.com/boldbi/samples/assets/129487075/37e0af6a-bd96-478c-ae91-5948840f257d)
 
-    > **NOTE:** To mitigate issues related to NuGet packages, run the following command in terminal `dotnet add package Microsoft.IdentityModel.Tokens` and `dotnet add package System.IdentityModel.Tokens.Jwt`
+> **NOTE:** To mitigate issues related to NuGet packages, run the following command in terminal `dotnet add package Microsoft.IdentityModel.Tokens` and `dotnet add package System.IdentityModel.Tokens.Jwt`
 
 
 ## Important notes
