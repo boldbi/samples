@@ -1,0 +1,222 @@
+﻿body html {
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body,
+app-root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: Roboto;
+    font-size: 13px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab {
+    padding-top: 2px;
+    padding-bottom: 18px;
+    cursor: pointer
+}
+
+.active {
+    background-color: burlywood;
+}
+
+.e-dbrd-blueWaitingIndcator {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    height: 54px;
+    width: 54px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+}
+
+.e-waiting {
+    position: fixed;
+    display: block;
+    margin: 0px auto;
+    width: 54px;
+    height: 54px;
+    zoom: 0.5;
+    margin-left: 55px;
+}
+
+#container {
+    width: 20%;
+    float: left;
+    height: 100%;
+    float: left;
+    background: #f4f4f4;
+    height: 100%;
+    box-shadow: 2px 0 4px 0 rgba(0, 0, 0, .12);
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#property {
+    width: 19.9%;
+    float: left;
+    height: 100%;
+    background: #f4f4f4;
+    border-left: 0.5px solid #7F889E;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.property-header {
+    height: 5%;
+    display: block;
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+.dimension-filter {
+    height: 50%;
+    font-size: 12px;
+    padding: 0 12px;
+}
+.property-header h5 {
+    margin: 8px;
+}
+
+.inter {
+    height: 2%;
+    margin: 0 10px !important;
+}
+
+.date-filter {
+    height: 40%;
+    font-size: 12px;
+    padding: 0 12px;
+}
+
+.dimension-initial, .dimension-ondemand, .date-initial, .date-ondemand {
+    font-size: 10px;
+    margin: 10px;
+}
+
+.dimension-ondemand button, .date-ondemand button {
+    border: 0;
+    line-height: 2.5;
+    font-size: 10px;
+    padding: 0 5px;
+    color: white;
+    background-color: #7F8787;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.dimension-ondemand button:hover, .date-ondemand button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: lightgray;
+}
+
+.filter-button {
+    text-align: center;
+}
+
+.dimension-header {
+    margin-bottom: 2px;
+}
+
+.dimension-initial ul, .dimension-ondemand ul {
+    padding: 5px 15px;
+    list-style: auto;
+    margin: 2px !important;
+}
+
+.separator {
+    width: 100%;
+    margin: 5px 0;
+    border-top: 1px solid #7F889E;
+}
+
+#grid-title {
+    font-size: 17px;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+}
+
+#panel {
+    width: 100%;
+    float: left;
+    background: #f4f4f4;
+    overflow: auto;
+}
+
+#dashboard {
+    width: 100%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.dashboard-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#viewer-section {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+#viewer-header {
+    padding: 10px;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#create-dashboard {
+    float: right;
+    margin-right: 20px;
+    background: #0565ff;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 28px;
+    line-height: 28px;
+    min-width: 90px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #0450cc;
+}
+
+#edit-dashboard {
+    float: right;
+    background: #fff;
+    margin-right: 20px;
+    border: 0;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 28px;
+    line-height: 28px;
+    min-width: 90px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #b3b3b3;
+}
+
+#dashboardDesigner {
+    height: 900px;
+    border: 2px solid #333;
+}
