@@ -1,42 +1,35 @@
-var isMultiTabDashboard = false;
-var activeChild = 0;
-
 // This function is responsible for displaying the dashboard views in view panel by view Informations.
-function getDashboardViews(viewInfos, isMultiTab) {
+function getDashboardViews(viewInfos) {
+    var instance = BoldBI.getInstance("dashboard");
     // Check if the element with the class "view-list-column" is visible
     if ($(".view-list-column").is(":visible")) {
-        closeViewPanel(isMultiTab.toString());
+        closeViewPanel(instance.isMultiTab.toString());
     } else {
         // Remove existing view-list-column element
         $(".view-list-column").remove();
 
         // Create a new view-list-column element
         var viewListPanel = $('<div class="view-list-column"></div>');
-
-        // Set the display property to block
         viewListPanel.css("display", "block");
-        var dbrdInstance = BoldBI.getInstance("dashboard");
 
         // Determine whether it's a multi-tab dashboard or not
-        if (dbrdInstance.isMultiTab) {
-            isMultiTabDashboard = true;
+        if (instance.isMultiTab) {
             $("#multi_" + childDashboardId.replaceAll("-", "") + "_embeddedbi_designerContainer").addClass("dashboard-resize");
             $("#multi_" + childDashboardId.replaceAll("-", "") + "_embeddedbi").append(viewListPanel);
         } else {
-            isMultiTabDashboard = false;
             $("#dashboard_embeddedbi_designerContainer").addClass("dashboard-resize");
             $("#dashboard_embeddedbi").append(viewListPanel);
         }
 
         // Resize the dashboard
-        dbrdInstance.resizeDashboard();
+        instance.resizeDashboard();
 
         // Create view panel header elements
         var viewPanelHeaderDiv = $('<div id="view-panel-header"></div>');
         $(".view-list-column").append(viewPanelHeaderDiv);
         var viewPanelHeader = $('<div id="view-panel-header-name">VIEWS</div>');
         viewPanelHeaderDiv.append(viewPanelHeader);
-        var viewPanelClose = $('<div onclick="closeViewPanel(\'' + isMultiTabDashboard + '\')" id="view-panel-close"><span class="su su-close"></span></div>');
+        var viewPanelClose = $('<div onclick="closeViewPanel()" id="view-panel-close"><span class="su su-close"></span></div>');
         viewPanelHeaderDiv.append(viewPanelClose);
 
         // Create elements for no-filter-views and saved-filter-view-list
@@ -46,7 +39,7 @@ function getDashboardViews(viewInfos, isMultiTab) {
         $(".view-list-column").append(savedViewList);
 
         // Check if viewInfos is defined
-        if (viewInfos != undefined) {
+        if (viewInfos) {
             $("#saved-filter-view-list").css("display", "block");
             $("#no-filter-views").css("display", "none");
             for (var x = viewInfos.length - 1; x >= 0; x--) {
@@ -103,7 +96,7 @@ function listViewsInViewPanel(viewInfo) {
     // Append the view label to the list item
     listView.append(viewLabel);
 
-    // Append the list item to the saved view list
+    // Insert the list item to the index of saved view list
     savedViewList.insertBefore(listView, savedViewList.firstChild);
 }
 
@@ -122,27 +115,28 @@ function createViewOption(className, title, onclick, viewInfo) {
 
 // This function generates a view URL based on the provided viewId and copies it to the clipboard.
 function copyViewURL(viewId) {
+    var instance = BoldBI.getInstance("dashboard");
     // Construct the view URL
-    var viewURL = `${rootUrl}/${siteIdentifier}/dashboards/${currentDashboardId}/${currentDashboardPath}?viewid=${viewId}${isMultiTabDashboard ? "&tab=" + childDashboardName : ""}`;
+    var viewURL = `${rootUrl}/${siteIdentifier}/dashboards/${currentDashboardId}/${currentDashboardPath}?viewid=${viewId}${instance.isMultiTab ? "&tab=" + childDashboardName : ""}`;
 
     // Copy the view URL to the clipboard
     navigator.clipboard.writeText(viewURL);
-
     // Display a success message
-    alert("View URL copied successfully");
+    successPopup("View URL copied successfully", false);
 }
 
 
 // This function is responsible for closing the view panel by removing the view-list-column element.
-function closeViewPanel(isMultitab) {
+function closeViewPanel() {
+    var instance = BoldBI.getInstance("dashboard");
+
     // Remove the resize class of dashboard element.
-    var dashboardContainerId = isMultitab == "true" ? "#multi_" + childDashboardId.replaceAll("-", "") + "_embeddedbi_designerContainer" : "#dashboard_embeddedbi_designerContainer";
+    var dashboardContainerId = instance.isMultiTab ? "#multi_" + childDashboardId.replaceAll("-", "") + "_embeddedbi_designerContainer" : "#dashboard_embeddedbi_designerContainer";
     $(dashboardContainerId).removeClass("dashboard-resize");
 
     $(".view-list-column").remove();
 
     // Resize the dashboard
-    var instance = BoldBI.getInstance("dashboard");
     instance.resizeDashboard();
 }
 
@@ -150,11 +144,11 @@ function closeViewPanel(isMultitab) {
 // This method is responsible for deleting a view with the specified viewId.
 function deleteView(viewId) {
     var instance = BoldBI.getInstance("dashboard");
-    instance.deleteFilterView(viewId, "removeFilterView");
+    instance.deleteFilterView(viewId, "removeDeletedView");
 }
 
 // This method is responsible for removing a filter view with the specified viewId from the View panel.
-function removeFilterView(viewId) {
+function removeDeletedView(viewId) {
     var filterViewList = $('#saved-filter-view-list li');
 
     // Iterates through the list items and removes the item that matches the given viewId.
@@ -170,32 +164,39 @@ function removeFilterView(viewId) {
         $("#saved-filter-view-list").hide();
         $("#no-filter-views").show();
     }
-    var embedInstance = BoldBI.getInstance("dashboard");
-    var dashboardInstance = isMultiTabDashboard ? bbEmbed('#multi_' + childDashboardId.replaceAll("-", "") + '_embeddedbi').data('BoldBIDashboardDesigner') : bbEmbed('#' + this.embedOptions.embedContainerId + '_embeddedbi').data('BoldBIDashboardDesigner');
-    if (dashboardInstance.model.filterOverviewSettings.viewId == viewId) {
+    successPopup("Views deleted successfully", false);
+    var instance = BoldBI.getInstance("dashboard");
+    var dashboardContainer = instance.isMultiTab ? 'multi_' + childDashboardId.replaceAll("-", "") + '_embeddedbi' : this.embedOptions.embedContainerId + '_embeddedbi';
+    var dbrdInstance = bbEmbed('#' + dashboardContainer).data('BoldBIDashboardDesigner');
+    if (dbrdInstance.model.filterOverviewSettings.viewId == viewId) {
         location.reload();
     }
 }
 
 
 // Updates the dashboard views in view panel based on the provided view information.
-function updateDashboardViews(viewInfo) {
-    var viewListColumn = $(".view-list-column");
+function updateDashboardViews(viewInfo, statusMessage) {
+    if (viewInfo) {
+        var viewListColumn = $(".view-list-column");
 
-    // If the view list column is visible, performs additional actions.
-    if (viewListColumn.is(":visible")) {
-        var noFilterViews = $("#no-filter-views");
+        // If the view list column is visible, performs additional actions.
+        if (viewListColumn.is(":visible")) {
+            var noFilterViews = $("#no-filter-views");
 
-        // If the "no-filter-views" element is visible, hides it and shows the "saved-filter-view-list" element.
-        if (noFilterViews.is(":visible")) {
-            $("#saved-filter-view-list").show();
-            noFilterViews.hide();
+            // If the "no-filter-views" element is visible, hides it and shows the "saved-filter-view-list" element.
+            if (noFilterViews.is(":visible")) {
+                $("#saved-filter-view-list").show();
+                noFilterViews.hide();
+            }
+            listViewsInViewPanel(viewInfo);
         }
-        listViewsInViewPanel(viewInfo);
+        var instance = BoldBI.getInstance("dashboard");
+        instance.updateFilterOverview(viewInfo);
+        successPopup(statusMessage, false);
     }
-    var instance = BoldBI.getInstance("dashboard");
-    instance.updateFilterOverview(viewInfo);
-    alert("View has been added successfully.");
+    else {
+        successPopup(statusMessage, true);
+    }
 }
 
 // This event handler is triggered when elements with the class "e-toolbar-items" (header tab of multitab dashboard) are clicked.
@@ -210,13 +211,11 @@ $(document).on("click", ".e-toolbar-items", function () {
         }
     }
     var instance = BoldBI.getInstance("dashboard");
-    if (instance.isMultiTab && dashboard) {
-        childDashboardId = Object.entries(dashboard.dashboardDetails)[activeChild][1].ItemDetail.Id;
-        childDashboardName = Object.entries(dashboard.dashboardDetails)[activeChild][1].ItemDetail.Name;
-    }
+    childDashboardId = getChildDashboardId(instance);
+    childDashboardName = getChildDashboardName(instance);
     // If the view panel is visible, closes the view panel.
     if ($(".view-list-column").is(":visible")) {
-        closeViewPanel(isMultiTabDashboard.toString());
+        closeViewPanel();
     }
 });
 
@@ -228,27 +227,30 @@ $(document).on("click", ".saved-view-link", function () {
     }
     var instance = BoldBI.getInstance("dashboard");
     instance.destroy();
+    activeChild = 0;
     renderDashboard(currentDashboardId, viewInfo);
 });
 
-$(document).on("click", ".view-list", function () {
-    $(".view-list").removeClass("active-view-list");
-    $(".applied-filters").remove();
-    $(this).addClass("active-view-list");
-    var viewId = $(this).attr("viewid");
-    var instance = BoldBI.getInstance("dashboard");
-    instance.getViewItemByViewId(viewId, "updateViewItem");
+document.addEventListener('click', function (event) {
+    if (event.target == document.querySelector(".saved-view-label")) {
+        $(".view-list").removeClass("active-view-list");
+        $(".applied-filters").remove();
+        $(event.target).parent().addClass("active-view-list");
+        var viewId = $(event.target).attr("viewid");
+        var instance = BoldBI.getInstance("dashboard");
+        instance.getViewItemByViewId(viewId, "showFilterInfo");
+    }
 });
 
-function updateViewItem(viewInfo) {
+function showFilterInfo(viewInfo) {
     var filterQueryArray = JSON.parse(decodeURIComponent(viewInfo.QueryString).split("filterQuery=")[1]);
     var filterQueryArrayLength = filterQueryArray.length;
     for (var x = 0; x < filterQueryArrayLength; x++) {
         var columnName = filterQueryArray[x].cn;
-        if (!filterQueryArray[x].dimfi.c.toLowerCase().includes("include")) {
-            columnName = columnName + " (" + filterQueryArray[x].dimfi.c + ")";
-        }
         if (filterQueryArray[x].dimfi) {
+            if (!filterQueryArray[x].dimfi.c.toLowerCase().includes("include")) {
+                columnName = columnName + " (" + filterQueryArray[x].dimfi.c + ")";
+            }
             var columnValueArray = filterQueryArray[x].dimfi.t;
         } else {
             var columnValueArray = filterQueryArray[x].idf.dfl;
@@ -260,6 +262,7 @@ function updateViewItem(viewInfo) {
 function createAppliedFiltersElement(name, values) {
     var activeListElement = document.getElementsByClassName("active-view-list");
     activeListElement = $(activeListElement)[0];
+
     // Create the view options container
     var appliedFilters = document.createElement("div");
     appliedFilters.className = "applied-filters";
@@ -282,4 +285,37 @@ function createAppliedFiltersElement(name, values) {
         var valueBreak = document.createElement("br");
         appliedFilters.append(valueBreak);
     }
+}
+
+function successPopup(message, isErrorMsg) {
+    cancelView();
+    var popupHeader = isErrorMsg ? "Failure" : "Success";
+    // Create a new dialog box for saving views
+    var successDialogDiv = $('<div id="view-save-success-div"></div>').appendTo('body');
+
+    var successDialog = $('<div id="view-save-success-dialog"></div>');
+    successDialogDiv.append(successDialog);
+
+    var successHeader = '<div id="save-view-header-div">' +
+        '<div id="success-label">' + popupHeader + '</div>' +
+        '</div>';
+
+    var successContent = '<div id="view-save-success-content">' + message + '</div>';
+
+    var successFooter = $('<div id="save-view-footer-div">' +
+        '<button class="footer-button-class" onclick="cancelView()">Ok</button>' +
+        '</div>');
+    successDialog.append(successFooter);
+
+    var successDialogModel = new window.ejs.popups.Dialog({
+        header: successHeader,
+        width: "450px",
+        isModal: true,
+        showCloseIcon: true,
+        target: successDialogDiv[0],
+        content: successContent
+    });
+
+    // Append the dialog box to the element with the id "save-view-dialog"
+    successDialogModel.appendTo('#view-save-success-dialog');
 }

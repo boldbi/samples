@@ -49,7 +49,7 @@ ul {
 }
 
 #container {
-    width: 13%;
+    width: 13.9%;
     float: left;
     height: 100%;
     float: left;
@@ -189,3 +189,21 @@ ul {
         text-align: center;
         line-height: 14px;
     }
+
+#custom_ok_button {
+    margin: 10px 0;
+    padding: 4px 8px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 4px;
+    background: #fff;
+    border: 0.5px solid #e2e8f0;
+    color: #2d3748;
+    float: right;
+    margin-left: 12px;
+    margin-right: 17px;
+}
+
+#sample_dialog {
+    width: 385px;
+}

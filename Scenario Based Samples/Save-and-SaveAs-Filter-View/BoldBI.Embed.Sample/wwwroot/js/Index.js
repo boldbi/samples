@@ -1,12 +1,12 @@
 ﻿var queryData = {};
-var currentDashboardId = "1fcc4fff-2329-46db-9373-6d04bdb0651b";
-//var currentDashboardId = "f620e3a7-ef8f-4d8e-b5c5-196f01e0721b"; /*multitab dashboard*/
+var currentDashboardId = "";
 var currentDashboardPath = "";
 var childDashboardId = "";
 var childDashboardName = "";
+var activeChild = 0;
 
 function Init(dashboardId) {
-    currentDashboardId = dashboardId;
+    currentDashboardId = dashboardId ? dashboardId : currentDashboardId;
     renderDashboard(currentDashboardId);
 }
 
@@ -66,8 +66,7 @@ function renderDashboard(dashboardId, viewInfo) {
             onSaveFilter: function (args) {
                 console.log(args);
                 queryData = args.data;
-                childDashboardId = args.model.itemId,
-                    saveViewFilter(args);
+                saveViewFilter(args);
             },
             onSaveAsFilter: function (args) {
                 console.log(args);
@@ -105,42 +104,41 @@ function renderActionBegin(args) {
 // This function is responsible for creating save view dialog box.
 function saveViewFilter(args) {
     cancelView();
+    var instance = BoldBI.getInstance("dashboard");
+    childDashboardId = getChildDashboardId(instance);
+    childDashboardName = getChildDashboardName(instance);
     if (args && args.viewId) {
+
         // Update the filter view with the provided information
-        var instance = BoldBI.getInstance("dashboard");
-        if (instance.isMultiTab && this.dashboard) {
-            childDashboardId = Object.entries(this.dashboard.dashboardDetails)[activeChild][0];
-            childDashboardName = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Name;
-        }
         var itemId = instance.isMultiTab ? childDashboardId : currentDashboardId;
         var viewInformations = {
             ViewId: args.viewId,
             DashboardId: itemId,
             QueryString: this.queryData.encryptedData,
         };
-        var instance = BoldBI.getInstance("dashboard");
-        instance.updateFilterView(viewInformations);
+        instance.updateFilterView(viewInformations, "successPopup");
     } else {
         createSaveViewDialog();
     }
 }
 
 function saveAsViewFilter(args) {
+    var instance = BoldBI.getInstance("dashboard");
+    childDashboardId = getChildDashboardId(instance);
+    childDashboardName = getChildDashboardName(instance);
     createSaveViewDialog(args.viewId);
 }
 
 // This function is responsible for saving the filter view by BoldBI instance.
 function saveView(viewId) {
-    var viewName = $("#view-name-textbox-input").val();
-    var itemId = currentDashboardId;
+    var instance = BoldBI.getInstance("dashboard");
     var viewInformations = {
-        ViewName: viewName,
-        ItemId: itemId,
+        ViewName: $("#view-name-textbox-input").val(),
+        ItemId: currentDashboardId,
         QueryString: this.queryData.encryptedData,
         ChildItemId: childDashboardId
     };
     cancelView();
-    var instance = BoldBI.getInstance("dashboard");
     if (viewId == "undefined") {
         instance.saveFilterView(viewInformations, "updateDashboardViews");
     } else {
@@ -151,15 +149,14 @@ function saveView(viewId) {
 // This function is responsible for cancelling the save View dialog box.
 function cancelView() {
     $('body').find('#save-view-dialog-div').remove();
+    $('body').find('#view-save-success-div').remove();    
 }
 
 // This function is responsible for opening the view panel for a specified dashboard.
 function openViewPanel(dashboardId) {
     var instance = BoldBI.getInstance("dashboard");
-    if (instance.isMultiTab && this.dashboard && activeChild < 1) {
-        childDashboardId = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Id;
-        childDashboardName = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Name;
-    }
+    childDashboardId = getChildDashboardId(instance);
+    childDashboardName = getChildDashboardName(instance);
     var itemId = instance.isMultiTab ? childDashboardId : currentDashboardId;
     instance.getViewItemsByDashboardId(itemId, "getDashboardViews");
 }
@@ -181,7 +178,7 @@ function createSaveViewDialog(viewId) {
         '<div id="view-name-label" class="label-view">Name*</div>' +
         '<div id="view-name-textbox" class="input-view">' +
         '<input type="text" id="view-name-textbox-input">' +
-        '<span id="view-name-error-msg"></span>' +
+        '<span id="view-name-error-msg">Please avoid special characters.</span>' +
         '</div>' +
         '</div>' +
         '</div>';
@@ -194,7 +191,7 @@ function createSaveViewDialog(viewId) {
 
     var saveViewDialogModel = new window.ejs.popups.Dialog({
         header: saveViewHeader,
-        width: "600px",
+        width: "450px",
         isModal: true,
         showCloseIcon: true,
         target: saveViewDialogDiv[0],
@@ -240,3 +237,61 @@ function getDashboardLists(data) {
         });
     }
 }
+
+function getChildDashboardId(instance) {
+    var childId = "";
+    if (instance.isMultiTab && this.dashboard) {
+        childId = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Id;
+    }
+    return childId;
+}
+
+function getChildDashboardName(instance) {
+    var childName = "";
+    if (instance.isMultiTab && this.dashboard) {
+        childName = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Name;
+    }
+    return childName;
+}
+
+function embedConfigErrorDialog() {
+    var targetContainer = $('<div id="custom_dialog"></div>');
+    var dlgDiv = $('<div id="sample_dialog" ></div>');
+    targetContainer.append(dlgDiv);
+    $('body').append(targetContainer);
+    var dialog = new window.ejs.popups.Dialog({
+        header: 'Error Message',
+        width: '500px',
+        isModal: true,
+        showCloseIcon: true,
+        target: document.getElementById('custom_dialog'),
+        content: '<div>To compile and run the project, an embed config file needs to be required. Please use the <a href="https://help.boldbi.com/embedded-bi/site-administration/embed-settings/" target="_blank">URL</a> to obtain the JSON file from the Bold BI server.</div>'
+    });
+    dialog.appendTo('#sample_dialog');
+    var dialogFooter = $('<div id="sample_dialog_footer"><button id="custom_ok_button"onclick="Cancel()">OK</button></div>')
+    $('#sample_dialog').append(dialogFooter);
+    $('.e-dlg-overlay').css('position', 'fixed');
+};
+
+function Cancel() {
+    $("#custom_dialog").html('');
+}
+
+document.addEventListener("input", function () {
+    var textBox = document.getElementById("view-name-textbox-input");
+    var saveButton = document.getElementById("save-view-button");
+    var errorMessage = document.getElementById("view-name-error-msg");
+    var specialCharsRegex = /^[a-zA-Z0-9!@$^ ()_=\-}{.`~]*$/;
+    var inputValue = textBox.value;
+    if (!specialCharsRegex.test(inputValue)) {
+        errorMessage.style.display = "block";
+        saveButton.style.opacity = "0.4";
+        saveButton.style.cursor = "not-allowed";
+        $("#view-name-textbox-input").addClass("error-view-input");
+    } else {
+        errorMessage.style.display = "none";
+        saveButton.style.opacity = "1";
+        saveButton.style.cursor = "pointer";
+        $("#view-name-textbox-input").removeClass("error-view-input");
+    }
+});

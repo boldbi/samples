@@ -4035,107 +4035,180 @@ class BoldBI {
         }
     }
     saveFilterView(viewInfo, callBackFunc) {
-        const that = this;
-        const data = {
-            'ViewName': viewInfo.ViewName,
-            'ItemId': viewInfo.ItemId,
-            'QueryString': viewInfo.QueryString,
-            'IsPublic': true,
-            'ChildItemId': this.isMultiTab ? viewInfo.ChildItemId : null
-        };
-        bbEmbed.ajax({
-            async: false,
-            type: 'POST',
-            url: this.dashboardServerApiUrl + '/v4.0/dashboards/views',
-            headers: {
-                'Authorization': 'bearer ' + this.accessToken
-            },
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function (result) {
-                if (result.Status) {
-                    that.savedViewItems = {}; // Create a new object in each iteration
-                    that.savedViewItems['ItemId'] = viewInfo.ItemId;
-                    that.savedViewItems['ViewId'] = result.Data;
-                    that.savedViewItems['ViewName'] = viewInfo.ViewName;
-                    if (window[`${callBackFunc}`] instanceof Function) {
-                        window[`${callBackFunc}`].call(that, that.savedViewItems);
+        const regex = /^(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})$/;
+        const isGuidDbrd = regex.exec(viewInfo.ItemId);
+        const isGuidChildDbrd = this.isMultiTab ? regex.exec(viewInfo.ChildItemId) : false;
+        if ((!this._isEmptyOrSpaces(viewInfo.ViewName)) && (!this._isEmptyOrSpaces(viewInfo.QueryString)) && ((this.isMultiTab && isGuidChildDbrd && isGuidDbrd) || (isGuidDbrd))) {
+            const that = this;
+            const data = {
+                'ViewName': viewInfo.ViewName,
+                'ItemId': viewInfo.ItemId,
+                'QueryString': viewInfo.QueryString,
+                'IsPublic': true,
+                'ChildItemId': this.isMultiTab ? viewInfo.ChildItemId : null
+            };
+            bbEmbed.ajax({
+                async: false,
+                type: 'POST',
+                url: this.dashboardServerApiUrl + '/v4.0/dashboards/views',
+                headers: {
+                    'Authorization': 'bearer ' + this.accessToken
+                },
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (result) {
+                    if (result.Status) {
+                        that.savedViewItems = {}; // Create a new object in each iteration
+                        that.savedViewItems['ItemId'] = viewInfo.ItemId;
+                        that.savedViewItems['ViewId'] = result.Data;
+                        that.savedViewItems['ViewName'] = viewInfo.ViewName;
+                        if (window[`${callBackFunc}`] instanceof Function) {
+                            window[`${callBackFunc}`].call(that, that.savedViewItems, result.StatusMessage);
+                        }
+                        else {
+                            callBackFunc.call(that, that.savedViewItems, result.StatusMessage);
+                        }
+                    } else {
+                        if (window[`${callBackFunc}`] instanceof Function) {
+                            window[`${callBackFunc}`].call(that, null, result.StatusMessage);
+                        }
+                        else {
+                            callBackFunc.call(that, null, result.StatusMessage);
+                        }
                     }
-                    else {
-                        callBackFunc.call(that, that.savedViewItems);
-                    }
-                }
-            },
-            error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
-        });
+                },
+                error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
+            });
+        }
+        else {
+            if (!isGuidDbrd) {
+                console.error('Please provide valid dashboard ID.');
+            }
+            if (that.isMultiTab && !isGuidChildDbrd) {
+                console.error('Please provide valid child dashboard ID.');
+            }
+            if (this._isEmptyOrSpaces(viewInfo.ViewName)) {
+                console.error('Please provide valid view name.');
+            }
+            if (this._isEmptyOrSpaces(viewInfo.QueryString)) {
+                console.error('Please provide valid query string.');
+            }
+        }
     }
 
     saveAsFilterView(viewInfo, callBackFunc) {
-        const that = this;
-        const data = {
-            'ViewName': viewInfo.ViewName,
-            'ItemId': viewInfo.ItemId,
-            'QueryString': viewInfo.QueryString,
-            'ChildItemId': this.isMultiTab ? viewInfo.ChildItemId : null
-        };
-        bbEmbed.ajax({
-            async: false,
-            type: 'POST',
-            url: this.dashboardServerApiUrl + '/v4.0/dashboards/views',
-            headers: {
-                'Authorization': 'bearer ' + this.accessToken
-            },
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function (result) {
-                if (result.Status) {
-                    that.savedViewItems = {}; // Create a new object in each iteration
-                    that.savedViewItems['ItemId'] = viewInfo.ItemId;
-                    that.savedViewItems['ViewId'] = result.Data;
-                    that.savedViewItems['ViewName'] = viewInfo.ViewName;
-                    if (window[`${callBackFunc}`] instanceof Function) {
-                        window[`${callBackFunc}`].call(that, that.savedViewItems);
+        const regex = /^(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})$/;
+        const isGuidDbrd = regex.exec(viewInfo.ItemId);
+        const isGuidChildDbrd = this.isMultiTab ? regex.exec(viewInfo.ChildItemId) : false;
+        if ((!this._isEmptyOrSpaces(viewInfo.ViewName)) && (!this._isEmptyOrSpaces(viewInfo.QueryString)) && ((this.isMultiTab && isGuidChildDbrd && isGuidDbrd) || (isGuidDbrd))) {
+            const that = this;
+            const data = {
+                'ViewName': viewInfo.ViewName,
+                'ItemId': viewInfo.ItemId,
+                'QueryString': viewInfo.QueryString,
+                'ChildItemId': this.isMultiTab ? viewInfo.ChildItemId : null
+            };
+            bbEmbed.ajax({
+                async: false,
+                type: 'POST',
+                url: this.dashboardServerApiUrl + '/v4.0/dashboards/views',
+                headers: {
+                    'Authorization': 'bearer ' + this.accessToken
+                },
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (result) {
+                    if (result.Status) {
+                        that.savedViewItems = {}; // Create a new object in each iteration
+                        that.savedViewItems['ItemId'] = viewInfo.ItemId;
+                        that.savedViewItems['ViewId'] = result.Data;
+                        that.savedViewItems['ViewName'] = viewInfo.ViewName;
+                        if (window[`${callBackFunc}`] instanceof Function) {
+                            window[`${callBackFunc}`].call(that, that.savedViewItems, result.StatusMessage);
+                        }
+                        else {
+                            callBackFunc.call(that, that.savedViewItems, result.StatusMessage);
+                        }
+                    } else {
+                        if (window[`${callBackFunc}`] instanceof Function) {
+                            window[`${callBackFunc}`].call(that, null, result.StatusMessage);
+                        }
+                        else {
+                            callBackFunc.call(that, null, result.StatusMessage);
+                        }
                     }
-                    else {
-                        callBackFunc.call(that, that.savedViewItems);
-                    }
-                }
-            },
-            error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
-        });
+                },
+                error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
+            });
+        }
+        else {
+            if (!isGuidDbrd) {
+                console.error('Please provide valid dashboard ID.');
+            }
+            if (this.isMultiTab && !isGuidChildDbrd) {
+                console.error('Please provide valid child dashboard ID.');
+            }
+            if (this._isEmptyOrSpaces(viewInfo.ViewName)) {
+                console.error('Please provide valid view name.');
+            }
+            if (this._isEmptyOrSpaces(viewInfo.QueryString)) {
+                console.error('Please provide valid query string.');
+            }
+        }
     }
 
     updateFilterView(viewInfo, callBackFunc) {
-        const that = this;
-        const data = {
-            'DashboardId': viewInfo.DashboardId,
-            'QueryString': viewInfo.QueryString,
-            'ViewId': viewInfo.ViewId
-        };
-        bbEmbed.ajax({
-            async: false,
-            type: 'PUT',
-            url: this.dashboardServerApiUrl + '/v4.0/dashboards/views',
-            headers: {
-                'Authorization': 'bearer ' + this.accessToken
-            },
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function (result) {
-                alert(result.StatusMessage);
-            },
-            error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
-        });
+        const regex = /^(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})$/;
+        const isGuidDbrd = regex.exec(viewInfo.DashboardId);
+        const isGuidView = regex.exec(viewInfo.ViewId);
+        if (isGuidDbrd && (!this._isEmptyOrSpaces(viewInfo.QueryString)) && isGuidView) {
+            const that = this;
+            const data = {
+                'DashboardId': viewInfo.DashboardId,
+                'QueryString': viewInfo.QueryString,
+                'ViewId': viewInfo.ViewId
+            };
+            bbEmbed.ajax({
+                async: false,
+                type: 'PUT',
+                url: this.dashboardServerApiUrl + '/v4.0/dashboards/views',
+                headers: {
+                    'Authorization': 'bearer ' + this.accessToken
+                },
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (result) {
+                    if (window[`${callBackFunc}`] instanceof Function) {
+                        window[`${callBackFunc}`].call(that, result.StatusMessage);
+                    }
+                    else {
+                        callBackFunc.call(that, result.StatusMessage);
+                    }
+                },
+                error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
+            });
+        }
+        else {
+            if (!isGuidDbrd) {
+                console.error('Please provide valid dashboard ID.');
+            }
+            if (!isGuidView) {
+                console.error('Please provide valid view ID.');
+            }
+            else if (this._isEmptyOrSpaces(viewInfo.QueryString)) {
+                console.error('Please provide valid query string.');
+            }
+        }
     }
 
     getViewItemsByDashboardId(dashboardId, callBackFunc) {
-        const that = this;
-        const data = {
-            'DashboardId': dashboardId
-        };
         const regex = /^(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})$/;
         const isGuidDbrd = regex.exec(dashboardId);
         if (isGuidDbrd) {
+            const that = this;
+            const data = {
+                'DashboardId': dashboardId
+            };
             bbEmbed.ajax({
                 async: false,
                 type: 'GET',
@@ -4157,29 +4230,22 @@ class BoldBI {
                             that.savedViews.push(that.savedViewItems); // Push the new object to the array
                         }
                         if (window[`${callBackFunc}`] instanceof Function) {
-                            window[`${callBackFunc}`].call(that, that.savedViews, that.isMultiTab);
+                            window[`${callBackFunc}`].call(that, that.savedViews);
                         }
                         else {
-                            callBackFunc.call(that, that.savedViews, that.isMultiTab);
+                            callBackFunc.call(that, that.savedViews);
                         }
                     }
                     else {
                         if (window[`${callBackFunc}`] instanceof Function) {
-                            window[`${callBackFunc}`].call(that, null, that.isMultiTab);
+                            window[`${callBackFunc}`].call(that);
                         }
                         else {
-                            callBackFunc.call(that, null, that.isMultiTab);
+                            callBackFunc.call(that);
                         }
                     }
                 },
-                error: function () {
-                    if (window[`${callBackFunc}`] instanceof Function) {
-                        window[`${callBackFunc}`].call(that, null, that.isMultiTab);
-                    }
-                    else {
-                        callBackFunc.call(that, null, that.isMultiTab);
-                    }
-                }
+                error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
             });
         }
         else {
@@ -4190,65 +4256,84 @@ class BoldBI {
     }
 
     getViewItemByViewId(viewId, callBackFunc) {
-        const that = this;
-        const data = {
-            'ViewId': viewId
-        };
-        bbEmbed.ajax({
-            async: false,
-            type: 'GET',
-            url: this.dashboardServerApiUrl + '/v4.0/dashboards/views/' + viewId,
-            headers: {
-                'Authorization': 'bearer ' + this.accessToken
-            },
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function (result) {
-                if (result) {
-                    that.savedViewItems = {}; // Create a new object in each iteration
-                    that.savedViewItems['QueryString'] = result.QueryString;
-                }
-                if (window[`${callBackFunc}`] instanceof Function) {
-                    window[`${callBackFunc}`].call(that, that.savedViewItems);
-                }
-                else {
-                    callBackFunc.call(that, that.savedViewItems);
-                }
-            },
-            error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
-        });
+        const regex = /^(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})$/;
+        const isGuidView = regex.exec(viewId);
+        if (isGuidView) {
+            const that = this;
+            const data = {
+                'ViewId': viewId
+            };
+            bbEmbed.ajax({
+                async: false,
+                type: 'GET',
+                url: this.dashboardServerApiUrl + '/v4.0/dashboards/views/' + viewId,
+                headers: {
+                    'Authorization': 'bearer ' + this.accessToken
+                },
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (result) {
+                    if (result) {
+                        that.savedViewItems = {}; // Create a new object in each iteration
+                        that.savedViewItems['QueryString'] = result.QueryString;
+                    }
+                    if (window[`${callBackFunc}`] instanceof Function) {
+                        window[`${callBackFunc}`].call(that, that.savedViewItems);
+                    }
+                    else {
+                        callBackFunc.call(that, that.savedViewItems);
+                    }
+                },
+                error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
+            });
+        }
+        else {
+            if (!isGuidView) {
+                console.error('Please provide valid view ID.');
+            }
+        }
     }
 
     deleteFilterView(viewId, callBackFunc) {
-        const that = this;
-        const data = {
-            'ViewId': viewId
-        };
-        bbEmbed.ajax({
-            async: false,
-            type: 'DELETE',
-            url: this.dashboardServerApiUrl + '/v4.0/dashboards/views/' + viewId,
-            headers: {
-                'Authorization': 'bearer ' + this.accessToken
-            },
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function (result) {
-                alert("Views deleted successfully");
-                if (window[`${callBackFunc}`] instanceof Function) {
-                    window[`${callBackFunc}`].call(that, viewId);
-                }
-                else {
-                    callBackFunc.call(that, viewId);
-                }
-            },
-            error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
-        });
+        const regex = /^(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})$/;
+        const isGuidView = regex.exec(viewId);
+        if (isGuidView) {
+            const that = this;
+            const data = {
+                'ViewId': viewId
+            };
+            bbEmbed.ajax({
+                async: false,
+                type: 'DELETE',
+                url: this.dashboardServerApiUrl + '/v4.0/dashboards/views/' + viewId,
+                headers: {
+                    'Authorization': 'bearer ' + this.accessToken
+                },
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (result) {
+                    if (window[`${callBackFunc}`] instanceof Function) {
+                        window[`${callBackFunc}`].call(that, viewId);
+                    }
+                    else {
+                        callBackFunc.call(that, viewId);
+                    }
+                },
+                error: function (jqXHR) { that.ajaxErrorFnc(jqXHR); }
+            });
+        }
+        else {
+            if (!isGuidView) {
+                console.error('Please provide valid view ID.');
+            }
+        }
     }
 
     updateFilterOverview(viewInfo) {
-        const that = this;
-        const dashboardInstance = that.isMultiTab ? window.bbEmbed('.e-content .e-active').find('.bbembed-multitab-dbrd').data('BoldBIDashboardDesigner') : that._getDashboardInstance();
+        let dashboardInstance = this._getDashboardInstance();
+        if (this.isMultiTab) {
+            dashboardInstance = window.bbEmbed('.e-content .e-active').find('.bbembed-multitab-dbrd').data('BoldBIDashboardDesigner');
+        }
         dashboardInstance._updateFilterOverview(viewInfo.ViewName, viewInfo.ViewId);
     }
 }

@@ -19,22 +19,26 @@
 }
 
 .label-view {
-    width: 25%;
+    width: 20%;
     float: left;
     text-align: right;
     margin: 5px 0px;
 }
 
 .input-view {
-    width: 66%;
+    width: 75%;
     float: left;
-    margin-left: 50px;
+    margin-left: 15px;
 }
 
 #view-name-textbox-input {
     width: 85%;
     border: 1px solid #c8c8c8;
     padding: 6px 12px;
+}
+
+.error-view-input {
+    border: 1px solid #ff3b30 !important;
 }
 
 label.switch {
@@ -123,13 +127,19 @@ input:checked + .slider:before {
     color: #fff;
 }
 
+#view-save-success-dialog .footer-button-class {
+    background: #0565ff;
+    border: 1px solid #0565ff;
+    color: #fff;
+}
+
 #cancel-view-button:hover {
     background: #eee;
     border: 1px solid #b3b3b3;
     color: #333;
 }
 
-#save-view-button:hover {
+#save-view-button:hover, view-save-success-dialog .footer-button-class:hover {
     margin-right: 20px;
     background: #007aff;
     border: 1px solid #0565ff;
@@ -140,6 +150,8 @@ input:checked + .slider:before {
     padding: 10px 20px;
     border-top: 1px solid #c8c8c8;
     background: #f9f9f9;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .input-view .fa-info-circle {
@@ -148,8 +160,17 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.e-dlg-header-content {
+#save-view-dialog .e-dlg-header-content {
     border-bottom: 1px solid #c8c8c8 !important;
+    padding: 8px 0px 8px 12px;
+    height: 45px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#save-view-dialog .e-dlg-closeicon-btn {
+    margin-right: 12px;
+    padding-top: 9px;
 }
 
 .e-dlg-overlay {
@@ -163,7 +184,6 @@ input:checked + .slider:before {
     right: 0;
     background-color: #ffffff;
     height: 100% !important;
-    border-top: 1px solid #c8c8c8;
     border-right: 1px solid #c8c8c8;
     margin-bottom: 0 !important;
     position: absolute;
@@ -245,7 +265,7 @@ input:checked + .slider:before {
     float: right;
     margin-top: 2px;
     display: none;
-    width: 35%;
+    width: 20%;
 }
 
 .saved-filter-view-options .view-options {
@@ -261,7 +281,7 @@ input:checked + .slider:before {
 
 .saved-view-label {
     font-weight: inherit !important;
-    width: 60%;
+    width: 75%;
     display: inline-block;
     margin-bottom: 5px;
 }
@@ -301,5 +321,15 @@ input:checked + .slider:before {
 
 .applied-filters .applied-column-value {
     margin-bottom: 5px;
+    font-size: 12px;
+}
+
+#save-view-dialog {
+    border-radius: 8px;
+}
+
+#view-name-error-msg {
+    display: none;
+    color: #ff3b30;
     font-size: 12px;
 }
