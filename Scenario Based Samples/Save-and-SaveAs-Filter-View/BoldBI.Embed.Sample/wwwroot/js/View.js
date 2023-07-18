@@ -210,13 +210,13 @@ $(document).on("click", ".e-toolbar-items", function () {
             break; // Exit loop if active child is found
         }
     }
-    var instance = BoldBI.getInstance("dashboard");
-    childDashboardId = getChildDashboardId(instance);
-    childDashboardName = getChildDashboardName(instance);
     // If the view panel is visible, closes the view panel.
     if ($(".view-list-column").is(":visible")) {
         closeViewPanel();
     }
+    var instance = BoldBI.getInstance("dashboard");
+    childDashboardId = getChildDashboardId(instance);
+    childDashboardName = getChildDashboardName(instance);
 });
 
 $(document).on("click", ".saved-view-link", function () {
@@ -232,7 +232,7 @@ $(document).on("click", ".saved-view-link", function () {
 });
 
 document.addEventListener('click', function (event) {
-    if (event.target == document.querySelector(".saved-view-label")) {
+    if ($(event.target).hasClass("saved-view-label")) {
         $(".view-list").removeClass("active-view-list");
         $(".applied-filters").remove();
         $(event.target).parent().addClass("active-view-list");
