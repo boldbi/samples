@@ -150,6 +150,7 @@ function deleteView(viewId) {
 // This method is responsible for removing a filter view with the specified viewId from the View panel.
 function removeDeletedView(viewId) {
     var filterViewList = $('#saved-filter-view-list li');
+    successPopup("Views deleted successfully", false);
 
     // Iterates through the list items and removes the item that matches the given viewId.
     for (var x = 0; x < filterViewList.length; x++) {
@@ -164,7 +165,6 @@ function removeDeletedView(viewId) {
         $("#saved-filter-view-list").hide();
         $("#no-filter-views").show();
     }
-    successPopup("Views deleted successfully", false);
     var instance = BoldBI.getInstance("dashboard");
     var dashboardContainer = instance.isMultiTab ? 'multi_' + childDashboardId.replaceAll("-", "") + '_embeddedbi' : this.embedOptions.embedContainerId + '_embeddedbi';
     var dbrdInstance = bbEmbed('#' + dashboardContainer).data('BoldBIDashboardDesigner');
@@ -296,13 +296,13 @@ function successPopup(message, isErrorMsg) {
     var successDialog = $('<div id="view-save-success-dialog"></div>');
     successDialogDiv.append(successDialog);
 
-    var successHeader = '<div id="save-view-header-div">' +
+    var successHeader = '<div id="view-save-success-header-div">' +
         '<div id="success-label">' + popupHeader + '</div>' +
         '</div>';
 
     var successContent = '<div id="view-save-success-content">' + message + '</div>';
 
-    var successFooter = $('<div id="save-view-footer-div">' +
+    var successFooter = $('<div id="view-save-success-footer-div">' +
         '<button class="footer-button-class" onclick="cancelView()">Ok</button>' +
         '</div>');
     successDialog.append(successFooter);

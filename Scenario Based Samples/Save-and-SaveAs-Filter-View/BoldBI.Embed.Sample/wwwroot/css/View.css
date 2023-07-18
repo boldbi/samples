@@ -324,7 +324,7 @@ input:checked + .slider:before {
     font-size: 12px;
 }
 
-#save-view-dialog {
+#save-view-dialog, #view-save-success-dialog {
     border-radius: 8px;
 }
 
@@ -332,4 +332,20 @@ input:checked + .slider:before {
     display: none;
     color: #ff3b30;
     font-size: 12px;
+}
+
+#view-save-success-dialog .e-dlg-header-content {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#view-save-success-footer-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #c8c8c8;
+    background: #f9f9f9;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
