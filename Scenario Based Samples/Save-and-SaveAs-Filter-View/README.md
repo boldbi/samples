@@ -77,37 +77,35 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 
     ![save-saveas-viewsavedfilters-API](https://github.com/boldbi/samples/assets/92368448/af824a38-6ef2-4e62-82c3-450ccd836b89)
 
-    ![enable-save-saveas-viewsavedfilter-icon](https://github.com/boldbi/aspnet-core-sample/assets/92368448/fdebfae4-fd86-45ce-bab4-52fcc0907f2c)
-
+    ![enable-save-saveas-viewsavedfilter-icon](https://github.com/boldbi/samples/assets/92368448/40deb9e1-1a4a-4c93-99d7-4696cb23b4ad)
 
 ### Save Filter Views
   1. To open the `Save View` dialog, use the [onSaveFilter]() event in BoldBI.create() as follows:
 
-      ![onsavefilter-event](https://github.com/boldbi/aspnet-core-sample/assets/92368448/35cbb4f5-7b2e-4dd1-86a8-74ced5b311b6)
+      ![onsavefilter-event](https://github.com/boldbi/samples/assets/92368448/5609255f-1cbe-4b32-a2c2-a3650515f32e)
 
   2. When the `Save` icon is clicked in the filter overview, the `onSaveFilter` event will be triggered, and a dialog box will be created using ej2 controls.
 
       ![save-new-view-icon-click](https://github.com/boldbi/samples/assets/92368448/acb09629-b6b9-4675-a879-91c7a6cd07be)
 
-      ![save-view-dialog](https://github.com/boldbi/aspnet-core-sample/assets/92368448/22f53317-822b-45f3-b3cd-b9dbb812e79a)
+      ![save-view-dialog](https://github.com/boldbi/samples/assets/92368448/9e5142f9-1ad9-4d7b-bb80-a4312fca7126)
 
   3. Retrieve the name of the view from the `Save View` dialog and save it using the [saveFilterView]() method available in BoldBI.
 
-      ![save-view-dialog-viewname](https://github.com/boldbi/aspnet-core-sample/assets/92368448/8a10abda-fffc-4ea4-9683-20c842bd067f)
+      ![save-view-dialog-viewname](https://github.com/boldbi/samples/assets/92368448/c570f75d-a504-44f7-b437-f9748a62a583)
 
-      ![save-view-filter-method](https://github.com/boldbi/aspnet-core-sample/assets/92368448/7994a999-c106-404c-bb23-5333ac91402a)
+      ![save-view-filter-method](https://github.com/boldbi/samples/assets/92368448/6b07b000-89f1-4953-9352-f21a16193239)
 
   4. Filter Overview panel get updated with the saved view once it saved.
 
-      ![updated-filter-overview-savedview](https://github.com/boldbi/aspnet-core-sample/assets/92368448/640f3b10-9364-471b-a289-afa760feac19)
+      ![updated-filter-overview-savedview](https://github.com/boldbi/samples/assets/92368448/b6bea3b0-eea3-4184-9ce0-98dcce0227d5)
 
 >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_AddItemView) for know more details to save the filter view in the dashboard.
-
 
 ### Save as Filter Views
   1. To open the `Save View` dialog, use the [onSaveAsFilter]() event in BoldBI.create() as follows:
 
-      ![onsaveasfilter-event](https://github.com/boldbi/aspnet-core-sample/assets/92368448/13873db1-76d8-4218-8f01-cd97ab213fc9)
+      ![onsaveasfilter-event](https://github.com/boldbi/samples/assets/92368448/20794174-a954-491a-baf7-d9a1fea9d762)
 
   2. When the `Save As` icon is clicked in the filter overview, the `onSaveAsFilter` event will be triggered, and a dialog box will be created using ej2 controls.
 
@@ -115,14 +113,13 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 
   3. Retrieve the name of the view from the `Save As View` dialog and save it using the [saveAsFilterView]() method available in BoldBI.
 
-      ![save-as-view-dialog-viewname](https://github.com/boldbi/aspnet-core-sample/assets/92368448/d5eeae13-318b-4a2c-9d43-085e563c708e)
+      ![save-as-view-dialog-viewname](https://github.com/boldbi/samples/assets/92368448/ec907f6b-3289-4aa7-95f9-d161c3904464)
 
-      ![saveas-filter-view-method](https://github.com/boldbi/aspnet-core-sample/assets/92368448/8e8d5df0-1716-45bf-a94a-1a910dd3907d)
+      ![saveas-filter-view-method](https://github.com/boldbi/samples/assets/92368448/ea6123be-8425-4f03-858a-18b92347eac2)
 
   4. Filter Overview panel get updated with the saved view once it saved.
 
-      ![updated-filter-overview-savedasview](https://github.com/boldbi/aspnet-core-sample/assets/92368448/e969b71d-e35b-4501-931b-f9109a452caa)
-
+      ![updated-filter-overview-savedasview](https://github.com/boldbi/samples/assets/92368448/7ab2009a-6bd9-40bc-9814-30ab4a9906bb)
 
 >**NOTE**: The same method will be used to save the new filter view and save as the filter view from the existing one.
 
@@ -148,7 +145,7 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
       
       ![views-panel-opened](https://github.com/boldbi/samples/assets/92368448/36e56692-c1f8-4340-9f8c-8930069c9a58)
 
-  3. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByItemId]() method as follows.
+  3. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByDashboardId]() method as follows.
 
       ![view-saved-filters-method](https://github.com/boldbi/samples/assets/92368448/cc04249b-3309-42a7-81fe-9fc46c03f388)
 
