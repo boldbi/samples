@@ -228,7 +228,7 @@ $(document).on("click", ".saved-view-link", function () {
     var instance = BoldBI.getInstance("dashboard");
     instance.destroy();
     activeChild = 0;
-    renderDashboard(currentDashboardId, viewInfo);
+    renderDashboardView(currentDashboardId, viewInfo);
 });
 
 document.addEventListener('click', function (event) {
@@ -238,7 +238,7 @@ document.addEventListener('click', function (event) {
         $(event.target).parent().addClass("active-view-list");
         var viewId = $(event.target).attr("viewid");
         var instance = BoldBI.getInstance("dashboard");
-        instance.getViewItemByViewId(viewId, "showFilterInfo");
+        instance.getDashboardViewByViewId(viewId, "showFilterInfo");
     }
 });
 

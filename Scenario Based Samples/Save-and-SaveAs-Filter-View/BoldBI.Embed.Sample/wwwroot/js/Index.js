@@ -39,7 +39,7 @@ function retrievePathByDashboardList(data) {
     }
 }
 
-function renderDashboard(dashboardId, viewInfo) {
+function renderDashboard(dashboardId) {
     currentDashboardId = dashboardId;
     getDashboardPath();
     this.dashboard = BoldBI.create({
@@ -57,8 +57,6 @@ function renderDashboard(dashboardId, viewInfo) {
         },
         dashboardSettings: {
             filterOverviewSettings: {
-                viewId: viewInfo ? viewInfo.viewId : '',
-                viewName: viewInfo ? viewInfo.viewName : null,
                 showSaveIcon: true,
                 showSaveAsIcon: true,
                 showViewSavedFilterIcon: true
@@ -89,8 +87,59 @@ function renderDashboard(dashboardId, viewInfo) {
                 args.iconsinformation[0].items.push(icon);
             }
         },
-        actionBegin: "renderActionBegin",
-        filterParameters: viewInfo ? viewInfo.queryString : ""
+        actionBegin: "renderActionBegin"
+    });
+    console.log(this.dashboard);
+    this.dashboard.loadDashboard();
+};
+
+function renderDashboardView(dashboardId, viewInfo) {
+    this.dashboard = BoldBI.create({
+        serverUrl: rootUrl + "/" + siteIdentifier,
+        dashboardId: currentDashboardId,
+        embedContainerId: "dashboard",
+        mode: BoldBI.Mode.View,
+        embedType: BoldBI.EmbedType.Component,
+        environment: BoldBI.Environment.Enterprise,
+        width: "100%",
+        height: "100%",
+        expirationTime: 10000,
+        authorizationServer: {
+            url: authorizationServerUrl
+        },
+        filterParameters: viewInfo ? viewInfo.queryString : "",
+        dashboardSettings: {
+            filterOverviewSettings: {
+                viewId: viewInfo ? viewInfo.viewId : '',
+                viewName: viewInfo ? viewInfo.viewName : null,
+                showSaveIcon: true,
+                showSaveAsIcon: true,
+                showViewSavedFilterIcon: true
+            },
+            onSaveFilter: function (args) {
+                queryData = args.data;
+                saveViewFilter(args);
+            },
+            onSaveAsFilter: function (args) {
+                queryData = args.data;
+                saveAsViewFilter(args);
+            },
+            onViewSavedFilters: function (args) {
+                openViewPanel(currentDashboardId);
+            },
+            beforeIconRender: function (args) {
+                var icon = $("<div/>", {
+                    "class": "server-banner-icon e-dashboard-banner-icon bbi-dbrd-designer-hoverable su su-view e-icon-dbrd-theme",
+                    "data-tooltip": "Views",
+                    "data-name": "dashboardviews",
+                    "data-event": true,
+                    "onclick": "openViewPanel(\'" + currentDashboardId + "\')",
+                    css: { "font-size": "18px" }
+                });
+                args.iconsinformation[0].items.push(icon);
+            }
+        },
+        actionBegin: "renderActionBegin"
     });
     console.log(this.dashboard);
     this.dashboard.loadDashboard();
@@ -158,7 +207,7 @@ function openViewPanel(dashboardId) {
     childDashboardId = getChildDashboardId(instance);
     childDashboardName = getChildDashboardName(instance);
     var itemId = instance.isMultiTab ? childDashboardId : currentDashboardId;
-    instance.getViewItemsByDashboardId(itemId, "getDashboardViews");
+    instance.getDashboardViewsByDashboardId(itemId, "getDashboardViews");
 }
 
 function createSaveViewDialog(viewId) {

@@ -59,35 +59,39 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/asp-net-core/#how-to-run-the-sample) to know how to run the sample.
 
-## How to create your own filter view dashboard in Javascript embedding
+## How to create own filter view dashboard in Javascript embedding
 
 In Javascript-based embedding, there are methods for saving, modifying, updating, retrieving and deleting filter views actions. With the help of those method, design your dashboard and bind action to your UI. So, this section explains how to create your dashboard with filter views with the necessary steps to use in your dashboard embedding.
 
-## Steps to follow for customizing the dashboard view in JavaScript embedding
+>**NOTE**: Please refer the [link](https://help.boldbi.com/managing-resources/manage-dashboards/manage-dashboard-views/) for know more about the Dashboard Views.
+
+## Steps to follow for customizing the dashboard using Views API in JavaScript embedding
 
 1. Once configured the embedConfig.JSON file in the designated location, then run your application.
 
-2. Apply Filters in the dashboard to see the `Save`,`Save As` and `View Saved Filters` options enabled in Filter overview panel. To enable these options in dashboard, we need to set the below APIs as `true` in BoldBI.create().
+2. Applying filters in the dashboard to view the `Save`,`Save As` and `View Saved Filters` options enabled in Filter overview panel. To enable these options in dashboard, we need to set the below APIs as `true` in BoldBI.create().
 
-    * dasboardSettings.filterOverviewSettings.showSaveIcon - Specifies whether to show or hide the Save icon in filter overview.
-    * dasboardSettings.filterOverviewSettings.showSaveAsIcon - Specifies whether to show or hide the Save As icon in filter overview.
-    * dasboardSettings.filterOverviewSettings.showViewSavedFilterIcon - Specifies whether to show or hide the View Saved Filters icon in filter overview.
+    * [dasboardSettings.filterOverviewSettings.showSaveIcon]() - Specifies whether to show or hide the Save icon in filter overview.
+    * [dasboardSettings.filterOverviewSettings.showSaveAsIcon]() - Specifies whether to show or hide the Save As icon in filter overview.
+    * [dasboardSettings.filterOverviewSettings.showViewSavedFilterIcon]() - Specifies whether to show or hide the View Saved Filters icon in filter overview.
 
-    ![save-saveas-viewsavedfilters-API](https://github.com/boldbi/aspnet-core-sample/assets/92368448/1e800aa7-fbf1-41b0-a851-18ff39251db2)
+    ![save-saveas-viewsavedfilters-API](https://github.com/boldbi/samples/assets/92368448/af824a38-6ef2-4e62-82c3-450ccd836b89)
 
     ![enable-save-saveas-viewsavedfilter-icon](https://github.com/boldbi/aspnet-core-sample/assets/92368448/fdebfae4-fd86-45ce-bab4-52fcc0907f2c)
 
 
 ### Save Filter Views
-  1. To open the `Save View` dialog, use the `onSaveFilter` event in BoldBI.create() as follows:
+  1. To open the `Save View` dialog, use the [onSaveFilter]() event in BoldBI.create() as follows:
 
       ![onsavefilter-event](https://github.com/boldbi/aspnet-core-sample/assets/92368448/35cbb4f5-7b2e-4dd1-86a8-74ced5b311b6)
 
   2. When the `Save` icon is clicked in the filter overview, the `onSaveFilter` event will be triggered, and a dialog box will be created using ej2 controls.
 
+      ![save-new-view-icon-click](https://github.com/boldbi/samples/assets/92368448/acb09629-b6b9-4675-a879-91c7a6cd07be)
+
       ![save-view-dialog](https://github.com/boldbi/aspnet-core-sample/assets/92368448/22f53317-822b-45f3-b3cd-b9dbb812e79a)
 
-  3. Retrieve the name of the view from the `Save View` dialog and save it using the `saveFilterView` method available in BoldBI.
+  3. Retrieve the name of the view from the `Save View` dialog and save it using the [saveFilterView]() method available in BoldBI.
 
       ![save-view-dialog-viewname](https://github.com/boldbi/aspnet-core-sample/assets/92368448/8a10abda-fffc-4ea4-9683-20c842bd067f)
 
@@ -97,16 +101,19 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 
       ![updated-filter-overview-savedview](https://github.com/boldbi/aspnet-core-sample/assets/92368448/640f3b10-9364-471b-a289-afa760feac19)
 
+>**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_AddItemView) for know more details to save the filter view in the dashboard.
+
 
 ### Save as Filter Views
-  1. To open the `Save View` dialog, use the `onSaveAsFilter` event in BoldBI.create() as follows:
+  1. To open the `Save View` dialog, use the [onSaveAsFilter]() event in BoldBI.create() as follows:
 
       ![onsaveasfilter-event](https://github.com/boldbi/aspnet-core-sample/assets/92368448/13873db1-76d8-4218-8f01-cd97ab213fc9)
 
-
   2. When the `Save As` icon is clicked in the filter overview, the `onSaveAsFilter` event will be triggered, and a dialog box will be created using ej2 controls.
 
-  3. Retrieve the name of the view from the `Save As View` dialog and save it using the `saveAsFilterView` method available in BoldBI.
+      ![save-as-icon-click](https://github.com/boldbi/samples/assets/92368448/87deb53f-ff4f-4319-a065-42ad453f562c)
+
+  3. Retrieve the name of the view from the `Save As View` dialog and save it using the [saveAsFilterView]() method available in BoldBI.
 
       ![save-as-view-dialog-viewname](https://github.com/boldbi/aspnet-core-sample/assets/92368448/d5eeae13-318b-4a2c-9d43-085e563c708e)
 
@@ -117,31 +124,71 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
       ![updated-filter-overview-savedasview](https://github.com/boldbi/aspnet-core-sample/assets/92368448/e969b71d-e35b-4501-931b-f9109a452caa)
 
 
-### Update Filter Views
-  1. To update a saved filter view in the dashboard, you must modify the desired filter views.
+>**NOTE**: The same method will be used to save the new filter view and save as the filter view from the existing one.
 
-  2. By clicking the `Save` icon in the filter overview, the `onSaveFilter` event will be triggered, updating the filter view using the `updateFilterView` method available in BoldBI.
+### Update Filter Views
+  1. To update a saved filter view in the dashboard, you must `modify` the saved filter views by applying filters in the view.
+
+      ![modify-filter-view](https://github.com/boldbi/samples/assets/92368448/366e9e2b-a41c-4260-aa7e-1a21b8e91e80)
+
+  2. By clicking the `Save` icon in the filter overview, the filter view will be updated using the [updateFilterView]() method available in BoldBI.
+
+      ![save-exist-view-icon-click](https://github.com/boldbi/samples/assets/92368448/5c480b93-f66e-47fb-aa02-ebe672ce1d9a)
+
+>**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_UpdateItemView) for know more details to update the filter view in the dashboard.
 
 ### Retrieve Dashboard Views
-  1. When the `View Saved Filters` icon is clicked in the filter overview, the `onViewSavedFilters` event will be triggered, displaying the saved filter views of the dashboard in the views panel.
+  1. To open the `Views` panel with displaying the saved filter views, use the event [onViewSavedFilters]() in BoldBI.create() as follows.
 
-  2. To retrieve the saved filter views from the dashboard, use the `getDashboardViewsByItemId` method as follows.
+      ![on-view-saved-filters-event](https://github.com/boldbi/samples/assets/92368448/0685b1a2-fa8e-418f-8047-d766817a0579)
 
-  3. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
+  2. When the `View Saved Filters` option is clicked in the filter overview, the `onViewSavedFilters` event will be triggered, and opening the `views` panel with the list of saved filter views.
+
+      ![view-saved-filters-icon-click](https://github.com/boldbi/samples/assets/92368448/b1d6e156-2aa5-4fb8-8c20-91fb1b3b574d)
+      
+      ![views-panel-opened](https://github.com/boldbi/samples/assets/92368448/36e56692-c1f8-4340-9f8c-8930069c9a58)
+
+  3. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByItemId]() method as follows.
+
+      ![view-saved-filters-method](https://github.com/boldbi/samples/assets/92368448/cc04249b-3309-42a7-81fe-9fc46c03f388)
+
+      >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewsByItemId) for know more details to retrieve the filter views from the dashboard.
+
+  4. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
+
+      ![filter-applied-value-in-filter-view](https://github.com/boldbi/samples/assets/92368448/bc366272-28c1-4d4c-a17b-cf063aab3437)
   
-  4. To retrieve the filter values for the specific view, use the `getDashboardViewByViewId` method as follows.
+  5. To retrieve the filter values for the specific view, use the [getDashboardViewByViewId]() method as follows.
+
+      ![get-view-tem-view-id](https://github.com/boldbi/samples/assets/92368448/5ef39954-f30e-4549-b4b6-8992809d4052)
+
+      >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewByViewId) for know more details to retrieve the filter view from the specific view.
 
 ### Delete Filter View
-  1. To delete a filter view, select the `Delete` option in the Filter view and remove it using the `deleteFilterView` method in BoldBI.
+  1. To delete a filter view, select the `Delete` option in the filter view and remove it using the [deleteFilterView]() method in BoldBI.
+
+      ![delete-option](https://github.com/boldbi/samples/assets/92368448/e4708157-801f-4198-9cf6-28128b0ea440)
+
+      ![delete-filter-view-method](https://github.com/boldbi/samples/assets/92368448/9996b321-7230-4c8a-930b-2c17cd8b79fd)
+
+  >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewDelete) for know more details to delete the filter view from the dashboard.
 
 ### Copy Dashboard View URL
   1. To copy the dashboard view URL, choose the `Copy` option in the Filter view and use the provided URL.
 
+      ![copy-view-url-option](https://github.com/boldbi/samples/assets/92368448/104bf820-0373-4a9b-bca9-aa84a759f936)
+
 ### Filter View Dashboard in JavaScript embedding
-  1. By clicking the name of a filter view in the view panel, the dashboard will reload with the filtered view dashboard using the following APIs (such as `viewId`, `viewName` and `filterParameters`) in BoldBI.create():
+  1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the below APIs (such as `viewId`, `viewName` and `filterParameters`) in BoldBI.create() as below.
 
-      * dashboardSettings.filterOverviewSettings.viewId - Specifies the unique ID of the filter view.
-      * dashboardSettings.filterOverviewSettings.viewName - Specifies the name of the filter view.
-      * filterParameters - Specifies the filter query of the specific view.
+      ![filter-view-select](https://github.com/boldbi/samples/assets/92368448/5adb8502-fcc9-4328-8069-28575035deaf)
 
-  2. Thus, we have rendered own dashboard view with multiple actions in JavaScript embedding.
+      * [dashboardSettings.filterOverviewSettings.viewId]() - Specifies the unique ID of the filter view.
+      * [dashboardSettings.filterOverviewSettings.viewName]() - Specifies the name of the filter view.
+      * [filterParameters]() - Specifies the filter query of the specific view.
+
+      ![viewid-viewname-boldbi-create](https://github.com/boldbi/samples/assets/92368448/a4239821-0f5c-429b-9daa-954a739d1603)
+
+  2. Thus, we have rendered own dashboard view in JavaScript embedding.
+
+      ![view-dashboard-rendering](https://github.com/boldbi/samples/assets/92368448/7a1308bf-dc2f-4520-8344-99fd7aa42eab)      
