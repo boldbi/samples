@@ -126,11 +126,11 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 ### Update Filter Views
   1. To update a saved filter view in the dashboard, you must `modify` the saved filter views by applying filters in the view.
 
-      ![modify-filter-view](https://github.com/boldbi/samples/assets/92368448/366e9e2b-a41c-4260-aa7e-1a21b8e91e80)
+      ![modify-filter-view](https://github.com/boldbi/samples/assets/92368448/4b43cc57-201b-426a-b9eb-b0d145bd2ac4)
 
   2. By clicking the `Save` icon in the filter overview, the filter view will be updated using the [updateFilterView]() method available in BoldBI.
 
-      ![save-exist-view-icon-click](https://github.com/boldbi/samples/assets/92368448/5c480b93-f66e-47fb-aa02-ebe672ce1d9a)
+      ![save-exist-view-icon-click](https://github.com/boldbi/samples/assets/92368448/89dc5363-d3ca-4987-acef-473a817d703c)
 
 >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_UpdateItemView) for know more details to update the filter view in the dashboard.
 
@@ -141,9 +141,9 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 
   2. When the `View Saved Filters` option is clicked in the filter overview, the `onViewSavedFilters` event will be triggered, and opening the `views` panel with the list of saved filter views.
 
-      ![view-saved-filters-icon-click](https://github.com/boldbi/samples/assets/92368448/b1d6e156-2aa5-4fb8-8c20-91fb1b3b574d)
+      ![view-saved-filters-icon-click](https://github.com/boldbi/samples/assets/92368448/1c4ad35a-d428-40f7-9ac6-57817811a10d)
       
-      ![views-panel-opened](https://github.com/boldbi/samples/assets/92368448/36e56692-c1f8-4340-9f8c-8930069c9a58)
+      ![views-panel-opened](https://github.com/boldbi/samples/assets/92368448/e96b4218-6e65-4ca9-889f-cc8a03c26d1b)
 
   3. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByDashboardId]() method as follows.
 
@@ -153,7 +153,7 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 
   4. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
 
-      ![filter-applied-value-in-filter-view](https://github.com/boldbi/samples/assets/92368448/bc366272-28c1-4d4c-a17b-cf063aab3437)
+      ![filter-applied-value-in-filter-view](https://github.com/boldbi/samples/assets/92368448/826605e4-457e-4bad-bec7-ff56054846d6)
   
   5. To retrieve the filter values for the specific view, use the [getDashboardViewByViewId]() method as follows.
 
@@ -164,7 +164,7 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 ### Delete Filter View
   1. To delete a filter view, select the `Delete` option in the filter view and remove it using the [deleteFilterView]() method in BoldBI.
 
-      ![delete-option](https://github.com/boldbi/samples/assets/92368448/e4708157-801f-4198-9cf6-28128b0ea440)
+      ![delete-option](https://github.com/boldbi/samples/assets/92368448/e0246042-9358-40fb-b240-5b6cbfc23a17)
 
       ![delete-filter-view-method](https://github.com/boldbi/samples/assets/92368448/9996b321-7230-4c8a-930b-2c17cd8b79fd)
 
@@ -173,12 +173,12 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 ### Copy Dashboard View URL
   1. To copy the dashboard view URL, choose the `Copy` option in the Filter view and use the provided URL.
 
-      ![copy-view-url-option](https://github.com/boldbi/samples/assets/92368448/104bf820-0373-4a9b-bca9-aa84a759f936)
+      ![copy-view-url-option](https://github.com/boldbi/samples/assets/92368448/e64fb0ad-dae8-48dd-886a-bd8703810afc)
 
 ### Filter View Dashboard in JavaScript embedding
   1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the below APIs (such as `viewId`, `viewName` and `filterParameters`) in BoldBI.create() as below.
 
-      ![filter-view-select](https://github.com/boldbi/samples/assets/92368448/5adb8502-fcc9-4328-8069-28575035deaf)
+      ![filter-view-select](https://github.com/boldbi/samples/assets/92368448/c64a5650-c30b-46de-8dc6-c45b8aa118a5)
 
       * [dashboardSettings.filterOverviewSettings.viewId]() - Specifies the unique ID of the filter view.
       * [dashboardSettings.filterOverviewSettings.viewName]() - Specifies the name of the filter view.
@@ -188,4 +188,4 @@ In Javascript-based embedding, there are methods for saving, modifying, updating
 
   2. Thus, we have rendered own dashboard view in JavaScript embedding.
 
-      ![view-dashboard-rendering](https://github.com/boldbi/samples/assets/92368448/7a1308bf-dc2f-4520-8344-99fd7aa42eab)      
+      ![view-dashboard-rendering](https://github.com/boldbi/samples/assets/92368448/f4c334f9-7fb2-44b7-9636-66a96b0624e0)
