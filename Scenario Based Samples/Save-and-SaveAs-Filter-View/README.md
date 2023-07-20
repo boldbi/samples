@@ -1,18 +1,14 @@
-# Bold BI Embedded Sample in .NET Core
+# Bold BI Dashboard Views Sample in ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to render the dashboard available on your Bold BI server.
+This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to customize BoldBI dashboards with the Dashboard Views API in JavaScript embedding.
 
-## Dashboard view
+## Dashboard views in JavaScript Embedding
 
-![Dashboard View](https://github.com/boldbi/aspnet-core-sample/assets/91586758/4af68f49-ffc0-400a-a323-55a3f3600a1d)
+![DashboardViews](https://github.com/boldbi/aspnet-core-sample/assets/91586758/4af68f49-ffc0-400a-a323-55a3f3600a1d)
 
  ## Requirements/Prerequisites
 
  * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
-
- #### Help link
-
- * https://help.boldbi.com/embedded-bi/faq/where-can-i-find-the-product-version/
 
  #### Supported browsers
   
@@ -63,14 +59,89 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/asp-net-core/#how-to-run-the-sample) to know how to run the sample.
 
-## Important notes
+## How to create your own filter view dashboard in Javascript embedding
 
-It is recommended not to store passwords and sensitive information in configuration files for security reasons in a real-world application. Instead, it would be best if you considered using a secure application, such as Key Vault, to safeguard your credentials.
+In Javascript-based embedding, there are methods for saving, modifying, updating, retrieving and deleting filter views actions. With the help of those method, design your dashboard and bind action to your UI. So, this section explains how to create your dashboard with filter views with the necessary steps to use in your dashboard embedding.
 
-## Online demos
+## Steps to follow for customizing the dashboard view in JavaScript embedding
 
-Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed).
+1. Once configured the embedConfig.JSON file in the designated location, then run your application.
 
-## Documentation
+2. Apply Filters in the dashboard to see the `Save`,`Save As` and `View Saved Filters` options enabled in Filter overview panel. To enable these options in dashboard, we need to set the below APIs as `true` in BoldBI.create().
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based/).
+    * dasboardSettings.filterOverviewSettings.showSaveIcon - Specifies whether to show or hide the Save icon in filter overview.
+    * dasboardSettings.filterOverviewSettings.showSaveAsIcon - Specifies whether to show or hide the Save As icon in filter overview.
+    * dasboardSettings.filterOverviewSettings.showViewSavedFilterIcon - Specifies whether to show or hide the View Saved Filters icon in filter overview.
+
+    ![save-saveas-viewsavedfilters-API](https://github.com/boldbi/aspnet-core-sample/assets/92368448/1e800aa7-fbf1-41b0-a851-18ff39251db2)
+
+    ![enable-save-saveas-viewsavedfilter-icon](https://github.com/boldbi/aspnet-core-sample/assets/92368448/fdebfae4-fd86-45ce-bab4-52fcc0907f2c)
+
+
+### Save Filter Views
+  1. To open the `Save View` dialog, use the `onSaveFilter` event in BoldBI.create() as follows:
+
+      ![onsavefilter-event](https://github.com/boldbi/aspnet-core-sample/assets/92368448/35cbb4f5-7b2e-4dd1-86a8-74ced5b311b6)
+
+  2. When the `Save` icon is clicked in the filter overview, the `onSaveFilter` event will be triggered, and a dialog box will be created using ej2 controls.
+
+      ![save-view-dialog](https://github.com/boldbi/aspnet-core-sample/assets/92368448/22f53317-822b-45f3-b3cd-b9dbb812e79a)
+
+  3. Retrieve the name of the view from the `Save View` dialog and save it using the `saveFilterView` method available in BoldBI.
+
+      ![save-view-dialog-viewname](https://github.com/boldbi/aspnet-core-sample/assets/92368448/8a10abda-fffc-4ea4-9683-20c842bd067f)
+
+      ![save-view-filter-method](https://github.com/boldbi/aspnet-core-sample/assets/92368448/7994a999-c106-404c-bb23-5333ac91402a)
+
+  4. Filter Overview panel get updated with the saved view once it saved.
+
+      ![updated-filter-overview-savedview](https://github.com/boldbi/aspnet-core-sample/assets/92368448/640f3b10-9364-471b-a289-afa760feac19)
+
+
+### Save as Filter Views
+  1. To open the `Save View` dialog, use the `onSaveAsFilter` event in BoldBI.create() as follows:
+
+      ![onsaveasfilter-event](https://github.com/boldbi/aspnet-core-sample/assets/92368448/13873db1-76d8-4218-8f01-cd97ab213fc9)
+
+
+  2. When the `Save As` icon is clicked in the filter overview, the `onSaveAsFilter` event will be triggered, and a dialog box will be created using ej2 controls.
+
+  3. Retrieve the name of the view from the `Save As View` dialog and save it using the `saveAsFilterView` method available in BoldBI.
+
+      ![save-as-view-dialog-viewname](https://github.com/boldbi/aspnet-core-sample/assets/92368448/d5eeae13-318b-4a2c-9d43-085e563c708e)
+
+      ![saveas-filter-view-method](https://github.com/boldbi/aspnet-core-sample/assets/92368448/8e8d5df0-1716-45bf-a94a-1a910dd3907d)
+
+  4. Filter Overview panel get updated with the saved view once it saved.
+
+      ![updated-filter-overview-savedasview](https://github.com/boldbi/aspnet-core-sample/assets/92368448/e969b71d-e35b-4501-931b-f9109a452caa)
+
+
+### Update Filter Views
+  1. To update a saved filter view in the dashboard, you must modify the desired filter views.
+
+  2. By clicking the `Save` icon in the filter overview, the `onSaveFilter` event will be triggered, updating the filter view using the `updateFilterView` method available in BoldBI.
+
+### Retrieve Dashboard Views
+  1. When the `View Saved Filters` icon is clicked in the filter overview, the `onViewSavedFilters` event will be triggered, displaying the saved filter views of the dashboard in the views panel.
+
+  2. To retrieve the saved filter views from the dashboard, use the `getDashboardViewsByItemId` method as follows.
+
+  3. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
+  
+  4. To retrieve the filter values for the specific view, use the `getDashboardViewByViewId` method as follows.
+
+### Delete Filter View
+  1. To delete a filter view, select the `Delete` option in the Filter view and remove it using the `deleteFilterView` method in BoldBI.
+
+### Copy Dashboard View URL
+  1. To copy the dashboard view URL, choose the `Copy` option in the Filter view and use the provided URL.
+
+### Filter View Dashboard in JavaScript embedding
+  1. By clicking the name of a filter view in the view panel, the dashboard will reload with the filtered view dashboard using the following APIs (such as `viewId`, `viewName` and `filterParameters`) in BoldBI.create():
+
+      * dashboardSettings.filterOverviewSettings.viewId - Specifies the unique ID of the filter view.
+      * dashboardSettings.filterOverviewSettings.viewName - Specifies the name of the filter view.
+      * filterParameters - Specifies the filter query of the specific view.
+
+  2. Thus, we have rendered own dashboard view with multiple actions in JavaScript embedding.
