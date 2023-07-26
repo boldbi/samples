@@ -215,8 +215,10 @@ $(document).on("click", ".e-toolbar-items", function () {
         closeViewPanel();
     }
     var instance = BoldBI.getInstance("dashboard");
-    childDashboardId = getChildDashboardId(instance);
-    childDashboardName = getChildDashboardName(instance);
+    if (instance.isMultiTab) {
+        childDashboardId = getChildDashboardId(instance);
+        childDashboardName = getChildDashboardName(instance);
+    }
 });
 
 $(document).on("click", ".saved-view-link", function () {
@@ -288,7 +290,7 @@ function createAppliedFiltersElement(name, values) {
 }
 
 function successPopup(message, isErrorMsg) {
-    cancelView();
+    cancelFilterView();
     var popupHeader = isErrorMsg ? "Failure" : "Success";
     // Create a new dialog box for saving views
     var successDialogDiv = $('<div id="view-save-success-div"></div>').appendTo('body');
@@ -303,7 +305,7 @@ function successPopup(message, isErrorMsg) {
     var successContent = '<div id="view-save-success-content">' + message + '</div>';
 
     var successFooter = $('<div id="view-save-success-footer-div">' +
-        '<button class="footer-button-class" onclick="cancelView()">Ok</button>' +
+        '<button class="footer-button-class" onclick="cancelFilterView()">Ok</button>' +
         '</div>');
     successDialog.append(successFooter);
 

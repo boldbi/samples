@@ -1,5 +1,4 @@
-﻿var queryData = {};
-var currentDashboardId = "";
+﻿var currentDashboardId = "";
 var currentDashboardPath = "";
 var childDashboardId = "";
 var childDashboardName = "";
@@ -62,18 +61,13 @@ function renderDashboard(dashboardId) {
                 showViewSavedFilterIcon: true
             },
             onSaveFilter: function (args) {
-                console.log(args);
-                queryData = args.data;
-                saveViewFilter(args);
+                openViewDialog(args);
             },
             onSaveAsFilter: function (args) {
-                console.log(args);
-                queryData = args.data;
-                saveAsViewFilter(args);
+                openViewDialog(args);
             },
             onViewSavedFilters: function (args) {
-                console.log(args);
-                openViewPanel(currentDashboardId);
+                openViewsPanel(currentDashboardId);
             },
             beforeIconRender: function (args) {
                 var icon = $("<div/>", {
@@ -81,7 +75,7 @@ function renderDashboard(dashboardId) {
                     "data-tooltip": "Views",
                     "data-name": "dashboardviews",
                     "data-event": true,
-                    "onclick": "openViewPanel(\'" + currentDashboardId + "\')",
+                    "onclick": "openViewsPanel(\'" + currentDashboardId + "\')",
                     css: { "font-size": "18px" }
                 });
                 args.iconsinformation[0].items.push(icon);
@@ -117,15 +111,13 @@ function renderDashboardView(dashboardId, viewInfo) {
                 showViewSavedFilterIcon: true
             },
             onSaveFilter: function (args) {
-                queryData = args.data;
-                saveViewFilter(args);
+                openViewDialog(args);
             },
             onSaveAsFilter: function (args) {
-                queryData = args.data;
-                saveAsViewFilter(args);
+                openViewDialog(args);
             },
             onViewSavedFilters: function (args) {
-                openViewPanel(currentDashboardId);
+                openViewsPanel(currentDashboardId);
             },
             beforeIconRender: function (args) {
                 var icon = $("<div/>", {
@@ -133,7 +125,7 @@ function renderDashboardView(dashboardId, viewInfo) {
                     "data-tooltip": "Views",
                     "data-name": "dashboardviews",
                     "data-event": true,
-                    "onclick": "openViewPanel(\'" + currentDashboardId + "\')",
+                    "onclick": "openViewsPanel(\'" + currentDashboardId + "\')",
                     css: { "font-size": "18px" }
                 });
                 args.iconsinformation[0].items.push(icon);
@@ -151,44 +143,42 @@ function renderActionBegin(args) {
     }
 }
 // This function is responsible for creating save view dialog box.
-function saveViewFilter(args) {
-    cancelView();
+function openViewDialog(args) {
+    cancelFilterView();
     var instance = BoldBI.getInstance("dashboard");
-    childDashboardId = getChildDashboardId(instance);
-    childDashboardName = getChildDashboardName(instance);
-    if (args && args.viewId) {
-
+    var itemId = "";
+    if (instance.isMultiTab) {
+        childDashboardId = getChildDashboardId(instance);
+        childDashboardName = getChildDashboardName(instance);
+        itemId = childDashboardId;
+    } else {
+        itemId = currentDashboardId;
+    }
+    if (args && args.viewId && (!args.type.toLowerCase().includes("saveas"))) {
         // Update the filter view with the provided information
-        var itemId = instance.isMultiTab ? childDashboardId : currentDashboardId;
         var viewInformations = {
             ViewId: args.viewId,
             DashboardId: itemId,
-            QueryString: this.queryData.encryptedData,
+            QueryString: args.data.encryptedData,
         };
         instance.updateFilterView(viewInformations, "successPopup");
     } else {
-        createSaveViewDialog();
+        createSaveViewDialog(args);
     }
 }
 
-function saveAsViewFilter(args) {
-    var instance = BoldBI.getInstance("dashboard");
-    childDashboardId = getChildDashboardId(instance);
-    childDashboardName = getChildDashboardName(instance);
-    createSaveViewDialog(args.viewId);
-}
-
 // This function is responsible for saving the filter view by BoldBI instance.
-function saveView(viewId) {
+function saveFilterView() {
+    var inputElement = document.getElementById("view-name-textbox-input");
     var instance = BoldBI.getInstance("dashboard");
     var viewInformations = {
-        ViewName: $("#view-name-textbox-input").val(),
+        ViewName: inputElement.value,
         ItemId: currentDashboardId,
-        QueryString: this.queryData.encryptedData,
+        QueryString: inputElement.getAttribute("data-query"),
         ChildItemId: childDashboardId
     };
-    cancelView();
-    if (viewId == "undefined") {
+    cancelFilterView();
+    if (inputElement.getAttribute("data-id") === "null") {
         instance.saveFilterView(viewInformations, "updateDashboardViews");
     } else {
         instance.saveAsFilterView(viewInformations, "updateDashboardViews");
@@ -196,21 +186,27 @@ function saveView(viewId) {
 }
 
 // This function is responsible for cancelling the save View dialog box.
-function cancelView() {
+function cancelFilterView() {
     $('body').find('#save-view-dialog-div').remove();
     $('body').find('#view-save-success-div').remove();    
 }
 
 // This function is responsible for opening the view panel for a specified dashboard.
-function openViewPanel(dashboardId) {
+function openViewsPanel(dashboardId) {
     var instance = BoldBI.getInstance("dashboard");
-    childDashboardId = getChildDashboardId(instance);
-    childDashboardName = getChildDashboardName(instance);
-    var itemId = instance.isMultiTab ? childDashboardId : currentDashboardId;
+    var itemId = "";
+    if (instance.isMultiTab) {
+        childDashboardId = getChildDashboardId(instance);
+        childDashboardName = getChildDashboardName(instance);
+        itemId = childDashboardId;
+    } else {
+        itemId = currentDashboardId;
+    }
     instance.getDashboardViewsByDashboardId(itemId, "getDashboardViews");
 }
 
-function createSaveViewDialog(viewId) {
+function createSaveViewDialog(args) {
+    var headerName = args.type.toLowerCase().includes("saveas") ? "Save As View" : "Save View";
     // Create a new dialog box for saving views
     var saveViewDialogDiv = $('<div id="save-view-dialog-div"></div>').appendTo('body');
 
@@ -219,22 +215,22 @@ function createSaveViewDialog(viewId) {
 
     var saveViewHeader = '<div id="save-view-header-div">' +
         '<i class="fa fa-glasses"></i>' +
-        '<div id="save-view-label">Save View</div>' +
+        '<div id="save-view-label">' + headerName + '</div>' +
         '</div>';
 
     var saveViewContent = '<div id="save-view-content-div">' +
         '<div id="view-name-div" class="view-row">' +
         '<div id="view-name-label" class="label-view">Name*</div>' +
         '<div id="view-name-textbox" class="input-view">' +
-        '<input type="text" id="view-name-textbox-input">' +
+        '<input type="text" id="view-name-textbox-input" data-query=' + args.data.encryptedData + ' data-id=' + args.viewId + '>' +
         '<span id="view-name-error-msg">Please avoid special characters.</span>' +
         '</div>' +
         '</div>' +
         '</div>';
 
     var saveViewFooterDiv = $('<div id="save-view-footer-div">' +
-        '<button id="cancel-view-button" class="footer-button-class" onclick="cancelView()">Cancel</button>' +
-        '<button id="save-view-button" class="footer-button-class" onclick="saveView(\'' + viewId + '\')">Save</button>' +
+        '<button id="cancel-view-button" class="footer-button-class" onclick="cancelFilterView()">Cancel</button>' +
+        '<button id="save-view-button" class="footer-button-class" onclick="saveFilterView()">Save</button>' +
         '</div>');
     saveViewDialog.append(saveViewFooterDiv);
 
