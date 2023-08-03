@@ -1,0 +1,195 @@
+﻿body html {
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body,
+app-root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: Roboto;
+    font-size: 13px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab {
+    padding-top: 2px;
+    padding-bottom: 18px;
+    cursor: pointer
+}
+
+.active {
+    background-color: burlywood;
+}
+
+.e-dbrd-blueWaitingIndcator {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    height: 54px;
+    width: 54px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+}
+
+.e-waiting {
+    position: fixed;
+    display: block;
+    margin: 0px auto;
+    width: 54px;
+    height: 54px;
+    zoom: 0.5;
+    margin-left: 55px;
+}
+
+#container {
+    width: 19.9%;
+    float: left;
+    height: 100%;
+    float: left;
+    background: #fff;
+    height: 100%;
+    box-shadow: 2px 0 4px 0 rgba(0, 0, 0, .12);
+    overflow: auto;
+    overflow-x: hidden;
+    border-left: 1px solid #c8c8c8;
+}
+
+#grid-title {
+    font-size: 17px;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+}
+
+#panel {
+    width: 100%;
+    float: left;
+    background: #f4f4f4;
+    overflow: auto;
+}
+
+#dashboard {
+    width: 100%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.dashboard-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#viewer-section {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+#viewer-header {
+    padding: 10px;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#create-dashboard {
+    float: right;
+    margin-right: 20px;
+    background: #0565ff;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 28px;
+    line-height: 28px;
+    min-width: 90px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #0450cc;
+}
+
+#edit-dashboard {
+    float: right;
+    background: #fff;
+    margin-right: 20px;
+    border: 0;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 28px;
+    line-height: 28px;
+    min-width: 90px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #b3b3b3;
+}
+
+#dashboardDesigner {
+    height: 900px;
+    border: 2px solid #333;
+}
+
+.e-prop-header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+    .e-prop-header p {
+        color: #1b1e24;
+        font-family: 'Roboto';
+        font-size: 15px;
+        font-weight: bold;
+        font-style: normal;
+        padding-left: 10px;
+    }
+
+.e-prop-item {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+
+#paraElement .dropdown-control span {
+    margin-left: 8px;
+}
+
+.apply-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+    .apply-button button {
+        background: #ff4081;
+        color: #fff;
+        border: 1px solid #ff4081;
+        margin-top: 10px;
+        padding: 8px;
+        margin-top: 10px;
+        width: 90%;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 14px;
+    }
+
+#label_description {
+    padding-left: 5px !important;
+}
