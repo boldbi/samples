@@ -64,8 +64,6 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
 JavaScript embedding provides support for filtering widgets with dashboard parameters. This section will elaborate on how to effectively utilize dashboard parameters in JavaScript embedding to filter the widgets.
 
->**NOTE:** Please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for know more about the widget embedding.
-
 ### Steps to follow for applying filters into widgets,
 1. In the Bold BI Server, load the `Workforce Performance Dashboard` from Sample Dashboards.
 
@@ -84,7 +82,7 @@ JavaScript embedding provides support for filtering widgets with dashboard param
 
 4. Once configured the embedConfig.JSON file in the designated [location](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample), then run your application.
 
-5. Upon initial rendering, the widget will display with the default value of the dashboard parameter, which, in this case, is set to `Sales`. The property panel, by default, will show the name of the dashboard parameter in the text field. 
+5. Upon initial rendering, the widget is rendered using the [loadDashboardWidget()](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) API with the default value of the dashboard parameter, which, in this case, is set to `Sales`. The property panel, by default, will show the name of the dashboard parameter in the text field. 
 
     ![initial-widget-rendering](https://github.com/boldbi/samples/assets/92368448/a072988b-1b8b-4bd3-9303-121a5da1442f)
 
