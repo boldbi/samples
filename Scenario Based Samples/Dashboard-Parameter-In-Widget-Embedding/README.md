@@ -82,24 +82,18 @@ JavaScript embedding provides support for filtering widgets with dashboard param
 
 4. Once configured the embedConfig.JSON file in the designated [location](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample), then run your application.
 
-5. Upon initial rendering, the widget is rendered using the [loadDashboardWidget()](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) API with the default value of the dashboard parameter, which, in this case, is set to `Sales`. The property panel, by default, will show the name of the dashboard parameter in the text field. 
+5. Upon initial rendering, the widget will display with the default value of the dashboard parameter, which, in this case, is set to `Sales`. The property panel, by default, will show the name of the dashboard parameter in the text field. 
 
     ![initial-widget-rendering](https://github.com/boldbi/samples/assets/92368448/a072988b-1b8b-4bd3-9303-121a5da1442f)
 
-6.  To update the widget based on a specific dashboard parameter value, enter the value of the dashboard parameter in the textbox. After entering the value, click `Apply` and update it using [updateFilters()](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters) API available in BoldBI. For example, `Department=IT`.
+>**Note:** For more information about the initial rendering of the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/).
+
+6.  To update the widget based on a specific dashboard parameter value, enter the value of the dashboard parameter in the textbox and click `Apply` to update the widget. For example, `Department=IT`.
 
     ![enter-value-click-apply](https://github.com/boldbi/samples/assets/92368448/25fe2f42-a28d-474f-8dc2-222b6a1a81e0)
+
+>**Note:** For more information about updating the widget with dashboard parameter, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters).
 
 7. Thus, the widget will be loaded with the applied dashboard parameter value in the viewer section.
 
     ![updated-widget-with-dp](https://github.com/boldbi/samples/assets/92368448/80ea027d-c18f-4f7c-b0a2-e727b3c4479c)
-
-
-
-
-
-
-
-
-
-
