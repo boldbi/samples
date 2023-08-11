@@ -32,7 +32,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
  ## Run a Sample Using Command Line Interface 
 
-  1. Please [get](https://github.com/boldbi/samples) the GitHub sample for applying Dashboard Parameters for Widget Embedding using .NET Core
+  1. Please [get](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Dashboard-Parameter-In-Widget-Embedding) the GitHub sample for applying Dashboard Parameters for Widget Embedding using .NET Core
 
   2. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Dashboard-Parameter-In-Widget-Embedding) where the project is located.
 
