@@ -1,4 +1,4 @@
-# Applying Dashboard Parameters in Widget Embedding BoldBI in .NET Core
+# Applying Dashboard Parameters for Widget Embedding using .NET Core
 
 This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to showcase the implementation of dashboard parameters in a BoldBI widget through JavaScript Embedding.
 
@@ -31,12 +31,14 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
     ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/bdb83a3e-02e4-4e99-ad57-717438e5ec5c)
 
  ## Run a Sample Using Command Line Interface 
-    
-  1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample) where the project is located.
 
-  2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
+  1. Please [get](https://github.com/boldbi/samples) the GitHub sample for applying Dashboard Parameters for Widget Embedding using .NET Core
+
+  2. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Dashboard-Parameter-In-Widget-Embedding) where the project is located.
+
+  3. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
-  3. Finally, run the application using the command `dotnet run`. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., http://localhost:5000). Copy this URL and paste it into your default web browser.
+  4. Finally, run the application using the command `dotnet run`. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., http://localhost:5000). Copy this URL and paste it into your default web browser.
 
 > **NOTE:** We represent the dashboard embedding by default without the dashboards listing sidebar. You must navigate to the `dashboardlisting` URL (such as http://localhost:5000/dashboardlisting) to enable the dashboards list.
 
@@ -90,7 +92,7 @@ JavaScript embedding provides support for filtering widgets with dashboard param
 
     ![select-department-values](https://github.com/boldbi/samples/assets/92368448/6003e0dc-216f-4654-9217-4ff76cac32d0)
 
->**Note:** For more information about updating the widget with dashboard parameter, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters).
+>**Note:** For more information about updating the widget with dashboard parameter without re-render the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters).
 
 7. Thus, the widget will be loaded with the applied dashboard parameter value in the viewer section.
 
