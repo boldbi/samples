@@ -31,14 +31,36 @@
     <div id="container">
         <div id="property-header" style="font-size: 15px; font-weight: 600; padding: 20px 0px 6px 15px;">Dashboard Parameter</div>
         <div id="sample_properties" class="e-dbrd-control" style="padding:12px;">
-            <textarea id="description" spellcheck="false" style="padding-left:5px; height:90px; border-color: rgba(0, 0, 0, 0.22); border-width: 1px; resize: none;"></textarea>
-            <div class="apply-button">
-                <button id="applyBtn" role="button" onclick="applyDashboardParameterFilter()" aria-describedby="applyBtn" aria-disabled="false">Apply</button><br />
-            </div>
+            <textarea id="description" spellcheck="false" style="padding-left:5px; height:90px; border-color: rgba(0, 0, 0, 0.22); border-width: 1px; resize: none;" disabled></textarea>
 
             <div style="margin-top:20px;margin-bottom:10px;margin-right:10px;margin-left:2px;font-size:12px;width: 90%;">
-                <p><b>Note:</b> The widget initially displays with the default value of the dashboard parameter, and the value is 'Sales.' By default, the text field displayed the name of the dashboard parameter. Enter the value of the dashboard parameter here to update the widget. For example, <b>Department=IT</b></p>
+                <p>
+                    <b>Note:</b> The widget is initially presented with the default value of the dashboard parameter, which is set to <b>IT</b>. By default, the text field showcases the name of the dashboard parameter. To modify the widget, kindly input the desired value for the dashboard parameter in this field. For instance, you can explore alternative departments such as:</p>
+                    <ul>
+                        <li>
+                            <label><input class="department-list" type="radio" name="Department" value="IT" checked> IT</label>
+                        </li>
+                        <li>
+                            <label><input class="department-list" type="radio" name="Department" value="Accounts"> Accounts</label>
+                        </li>
+                        <li>
+                            <label><input class="department-list" type="radio" name="Department" value="Marketing"> Marketing</label>
+                        </li>
+                        <li>
+                            <label><input class="department-list" type="radio" name="Department" value="Operations"> Operations</label>
+                        </li>
+                        <li>
+                            <label><input class="department-list" type="radio" name="Department" value="HR"> HR</label>
+                        </li>
+                        <li>
+                            <label><input class="department-list" type="radio" name="Department" value="Analytics"> Analytics</label>
+                        </li>
+                    </ul>
             </div>
+        </div>
+
+        <div class="apply-button">
+            <button id="applyBtn" role="button" onclick="applyDashboardParameterFilter()" aria-describedby="applyBtn" aria-disabled="false">Apply</button><br />
         </div>
     </div>
 </body>

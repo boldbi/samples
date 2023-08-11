@@ -65,35 +65,33 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 JavaScript embedding provides support for filtering widgets with dashboard parameters. This section will elaborate on how to effectively utilize dashboard parameters in JavaScript embedding to filter the widgets.
 
 ### Steps to follow for applying filters into widgets,
-1. In the Bold BI Server, load the `Workforce Performance Dashboard` from Sample Dashboards.
+1. In the Bold BI Server, load the `HR Recruitment Dashboard` from Sample Dashboards.
 
-   ![load-dashboard-from-server](https://github.com/boldbi/samples/assets/92368448/a49eeac2-3ac2-494b-b50e-33ba16f45e65)
+    ![load-dashboard-from-server](https://github.com/boldbi/samples/assets/92368448/fa007d90-4b55-4d42-9562-9cb120876f4d)
 
-2. By default, the `Workforce Performance Dashboard` does not have [Dashboard Parameters](https://help.boldbi.com/cloud-bi/working-with-data-source/configuring-dashboard-parameters/#configuring-dashboard-parameters) configured. For demonstration, follow these steps to configure the Dashboard Parameter with `Literal Mode` as shown in the screenshot below:
+2. By default, the `HR Recruitment Dashboard` does not have [Dashboard Parameters](https://help.boldbi.com/cloud-bi/working-with-data-source/configuring-dashboard-parameters/#configuring-dashboard-parameters) configured. For demonstration, follow these steps to configure the Dashboard Parameter with `Literal Mode` as shown in the screenshot below:
 
     * Enter the Parameter Name: `Department`
-    * Enter the Parameter Value: `Sales`
+    * Enter the Parameter Value: `IT`
 
-    ![enter-parameter-name-value](https://github.com/boldbi/samples/assets/92368448/e7c59bb7-f691-43a3-a21e-9438d6dd10a1)
+    ![enter-parameter-name-value](https://github.com/boldbi/samples/assets/92368448/d4041b0a-517a-4c3d-abf7-c05e25615630)
 
 3. After successfully publishing the dashboard with configured dashboard parameters, download the [embedConfig JSON](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file) file associated with that specific dashboard. 
 
-    ![select-dashboard-from-embed-json](https://github.com/boldbi/samples/assets/92368448/9f295d67-39b3-49fd-83cd-ca53e44fd513)
-
 4. Once configured the embedConfig.JSON file in the designated [location](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample), then run your application.
 
-5. Upon initial rendering, the widget will display with the default value of the dashboard parameter, which, in this case, is set to `Sales`. The property panel, by default, will show the name of the dashboard parameter in the text field. 
+5. Upon initial rendering, the widget will display with the default value of the dashboard parameter, which, in this case, is set to `IT`. The property panel, by default, will show the name of the dashboard parameter in the text field. 
 
-    ![initial-widget-rendering](https://github.com/boldbi/samples/assets/92368448/a072988b-1b8b-4bd3-9303-121a5da1442f)
+      ![initial-widget-rendering](https://github.com/boldbi/samples/assets/92368448/14b07a07-0f18-42e8-a130-f85a092ffffa)
 
 >**Note:** For more information about the initial rendering of the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/).
 
-6.  To update the widget based on a specific dashboard parameter value, enter the value of the dashboard parameter in the textbox and click `Apply` to update the widget. For example, `Department=IT`.
+6.  To modify the widget according to a particular dashboard parameter value, choose a different value from the list of `Departments`, then click on `Apply`. For example, select `Accounts` to demonstrate.
 
-    ![enter-value-click-apply](https://github.com/boldbi/samples/assets/92368448/25fe2f42-a28d-474f-8dc2-222b6a1a81e0)
+    ![select-department-values](https://github.com/boldbi/samples/assets/92368448/6003e0dc-216f-4654-9217-4ff76cac32d0)
 
 >**Note:** For more information about updating the widget with dashboard parameter, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters).
 
 7. Thus, the widget will be loaded with the applied dashboard parameter value in the viewer section.
 
-    ![updated-widget-with-dp](https://github.com/boldbi/samples/assets/92368448/80ea027d-c18f-4f7c-b0a2-e727b3c4479c)
+    ![updated-widget-with-dp](https://github.com/boldbi/samples/assets/92368448/1c9ff397-9b63-465d-9697-ffa2006ed247)

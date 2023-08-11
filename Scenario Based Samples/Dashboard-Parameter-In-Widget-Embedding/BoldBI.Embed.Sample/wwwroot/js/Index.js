@@ -54,7 +54,7 @@ function renderDashboard(dashboardId) {
         }
     });
 
-    this.dashboard.loadDashboardWidget("Employee Details");
+    this.dashboard.loadDashboardWidget("Open Positions by Department");
     filterTextBox();   
 };
 
@@ -63,7 +63,7 @@ function filterTextBox() {
         placeholder: 'Enter Filtering value',
         floatLabelType: 'Auto',
         height: '90px',
-        value: "Department="
+        value: "Department=IT"
     })
     textBox.appendTo('#description');
 }
@@ -75,6 +75,12 @@ function applyDashboardParameterFilter() {
         instance.updateFilters(filterValue);
     }
 }
+
+$(document).on("click", ".department-list", function () {
+    var parameterName = $(this).attr("name");
+    var parameterValue = $(this).attr("value");
+    $("#description").val(parameterName + "=" + parameterValue);
+});
 
 function embedConfigErrorDialog() {
     var targetContainer = $('<div id="custom_dialog"></div>');
