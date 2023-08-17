@@ -1,0 +1,38 @@
+﻿.e-prop-header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.e-prop-header p {
+    color: #1b1e24;
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    padding-left: 10px;
+}
+
+.e-prop-item {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+
+#paraElement span {
+    margin-left: 8px;
+}
+
+.apply-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.apply-button button:hover {
+    background: dodgerblue !important;
+    color: black !important;
+    border: 1px solid dodgerblue !important;
+    cursor: pointer;
+}
