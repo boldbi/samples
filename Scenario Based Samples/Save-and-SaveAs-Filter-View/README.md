@@ -121,7 +121,7 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 ### Save as Filter Views
   1. To open the `Save View` dialog, click `Save As` icon in Filter overview panel.
   
-        >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveAsFilter` event within the `BoldBI.create()` function as per your requirements.
+        >**Note:** To customize the behavior when clicking the save as icon, you can utilize the `onSaveAsFilter` event within the `BoldBI.create()` function as per your requirements.
 
         ![save-as-icon-click](https://github.com/boldbi/samples/assets/92368448/87deb53f-ff4f-4319-a065-42ad453f562c)
 
