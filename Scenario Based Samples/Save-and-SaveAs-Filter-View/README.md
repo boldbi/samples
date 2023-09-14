@@ -102,13 +102,11 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 ### Save Filter Views
   1. To open the `Save View` dialog, click `Save` icon in Filter overview panel. 
   
-  >**Note:** If you want to customize when you click save icon, you can use the [onSaveFilter]() event in BoldBI.create() as like you need.
+        >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveFilter` event within the `BoldBI.create()` function as per your requirements.
 
-  2. When the `Save` icon is clicked in the filter overview, a dialog box will be created using ejDashboard controls.
+        ![save-new-view-icon-click](https://github.com/boldbi/samples/assets/92368448/acb09629-b6b9-4675-a879-91c7a6cd07be)
 
-      ![save-new-view-icon-click](https://github.com/boldbi/samples/assets/92368448/acb09629-b6b9-4675-a879-91c7a6cd07be)
-
-      ![save-view-dialog](https://github.com/boldbi/samples/assets/92368448/900c5cd1-ab10-40a5-8879-5860571d4f85)
+        ![save-view-dialog](https://github.com/boldbi/samples/assets/92368448/900c5cd1-ab10-40a5-8879-5860571d4f85)
 
   3. Retrieve the name of the view from the `Save View` dialog and save it using the [saveFilterView]() method available in BoldBI.
 
@@ -123,11 +121,9 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 ### Save as Filter Views
   1. To open the `Save View` dialog, click `Save As` icon in Filter overview panel.
   
-  >**Note:** If you want to customize when you click save as icon, you can use the [onSaveAsFilter]() event in BoldBI.create() aslike need.
+        >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveAsFilter` event within the `BoldBI.create()` function as per your requirements.
 
-  2. When the `Save As` icon is clicked in the filter overview, a dialog box will be created using ejDashboard controls.
-
-      ![save-as-icon-click](https://github.com/boldbi/samples/assets/92368448/87deb53f-ff4f-4319-a065-42ad453f562c)
+        ![save-as-icon-click](https://github.com/boldbi/samples/assets/92368448/87deb53f-ff4f-4319-a065-42ad453f562c)
 
   3. Retrieve the name of the view from the `Save View` dialog and save it using the [saveAsFilterView]() method available in BoldBI.
 
