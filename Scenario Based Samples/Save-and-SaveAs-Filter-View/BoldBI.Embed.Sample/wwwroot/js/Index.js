@@ -1,22 +1,11 @@
-﻿var currentDashboardId = "";
-var currentDashboardPath = "";
-var childDashboardId = "";
-var childDashboardName = "";
-var activeChild = 0;
-
-function Init(dashboardId) {
-    currentDashboardId = dashboardId ? dashboardId : currentDashboardId;
-    renderDashboard(currentDashboardId);
-}
-
-function getDashboardPath() {
+﻿function Init() {
     var http = new XMLHttpRequest();
     http.open("GET", getDashboardsUrl, true);
     http.responseType = 'json';
     http.setRequestHeader("Content-type", "application/json");
     http.onreadystatechange = function () {
         if (http.readyState == 4 && http.status == 200) {
-            retrievePathByDashboardList.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
+            ListDashboards.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
         }
         else if (http.readyState == 4 && http.status == 404) {
             console.log("Server not found");
@@ -25,248 +14,11 @@ function getDashboardPath() {
             console.log(http.statusText);
         }
     };
+
     http.send();
 };
 
-function retrievePathByDashboardList(data) {
-    if (typeof (data) != "undefined" && data != null) {
-        data.forEach(function (element) {
-            if (element.Id == this.currentDashboardId) {
-                this.currentDashboardPath = element.CategoryName + "/" + element.Name;
-            }
-        });
-    }
-}
-
-function renderDashboard(dashboardId) {
-    currentDashboardId = dashboardId;
-    getDashboardPath();
-    this.dashboard = BoldBI.create({
-        serverUrl: rootUrl + "/" + siteIdentifier,
-        dashboardId: currentDashboardId,
-        embedContainerId: "dashboard",
-        mode: BoldBI.Mode.View,
-        embedType: BoldBI.EmbedType.Component,
-        environment: BoldBI.Environment.Enterprise,
-        width: "100%",
-        height: "100%",
-        expirationTime: 10000,
-        authorizationServer: {
-            url: authorizationServerUrl
-        },
-        dashboardSettings: {
-            filterOverviewSettings: {
-                showSaveIcon: true,
-                showSaveAsIcon: true,
-                showViewSavedFilterIcon: true
-            },
-            onSaveFilter: function (args) {
-                openViewDialog(args);
-            },
-            onSaveAsFilter: function (args) {
-                openViewDialog(args);
-            },
-            onViewSavedFilters: function (args) {
-                openViewsPanel(currentDashboardId);
-            },
-            beforeIconRender: function (args) {
-                var icon = $("<div/>", {
-                    "class": "server-banner-icon e-dashboard-banner-icon bbi-dbrd-designer-hoverable su su-view e-icon-dbrd-theme",
-                    "data-tooltip": "Views",
-                    "data-name": "dashboardviews",
-                    "data-event": true,
-                    "onclick": "openViewsPanel(\'" + currentDashboardId + "\')",
-                    css: { "font-size": "18px" }
-                });
-                args.iconsinformation[0].items.push(icon);
-            }
-        },
-        actionBegin: "renderActionBegin"
-    });
-    console.log(this.dashboard);
-    this.dashboard.loadDashboard();
-};
-
-function renderDashboardView(dashboardId, viewInfo) {
-    this.dashboard = BoldBI.create({
-        serverUrl: rootUrl + "/" + siteIdentifier,
-        dashboardId: currentDashboardId,
-        embedContainerId: "dashboard",
-        mode: BoldBI.Mode.View,
-        embedType: BoldBI.EmbedType.Component,
-        environment: BoldBI.Environment.Enterprise,
-        width: "100%",
-        height: "100%",
-        expirationTime: 10000,
-        authorizationServer: {
-            url: authorizationServerUrl
-        },
-        filterParameters: viewInfo ? viewInfo.queryString : "",
-        dashboardSettings: {
-            filterOverviewSettings: {
-                viewId: viewInfo ? viewInfo.viewId : '',
-                viewName: viewInfo ? viewInfo.viewName : null,
-                showSaveIcon: true,
-                showSaveAsIcon: true,
-                showViewSavedFilterIcon: true
-            },
-            onSaveFilter: function (args) {
-                openViewDialog(args);
-            },
-            onSaveAsFilter: function (args) {
-                openViewDialog(args);
-            },
-            onViewSavedFilters: function (args) {
-                openViewsPanel(currentDashboardId);
-            },
-            beforeIconRender: function (args) {
-                var icon = $("<div/>", {
-                    "class": "server-banner-icon e-dashboard-banner-icon bbi-dbrd-designer-hoverable su su-view e-icon-dbrd-theme",
-                    "data-tooltip": "Views",
-                    "data-name": "dashboardviews",
-                    "data-event": true,
-                    "onclick": "openViewsPanel(\'" + currentDashboardId + "\')",
-                    css: { "font-size": "18px" }
-                });
-                args.iconsinformation[0].items.push(icon);
-            }
-        },
-        actionBegin: "renderActionBegin"
-    });
-    console.log(this.dashboard);
-    this.dashboard.loadDashboard();
-};
-
-function renderActionBegin(args) {
-    if (args.eventType == "renderDashboard") {
-        $("#dashboard").css("border-right", "1px solid rgb(200, 200, 200)");
-    }
-}
-// This function is responsible for creating save view dialog box.
-function openViewDialog(args) {
-    cancelFilterView();
-    var instance = BoldBI.getInstance("dashboard");
-    var itemId = "";
-    if (instance.isMultiTab) {
-        childDashboardId = getChildDashboardId(instance);
-        childDashboardName = getChildDashboardName(instance);
-        itemId = childDashboardId;
-    } else {
-        itemId = currentDashboardId;
-    }
-    if (args && args.viewId && (!args.type.toLowerCase().includes("saveas"))) {
-        // Update the filter view with the provided information
-        var viewInformations = {
-            ViewId: args.viewId,
-            DashboardId: itemId,
-            QueryString: args.data.encryptedData,
-        };
-        instance.updateFilterView(viewInformations, "successPopup");
-    } else {
-        createSaveViewDialog(args);
-    }
-}
-
-// This function is responsible for saving the filter view by BoldBI instance.
-function saveFilterView() {
-    var inputElement = document.getElementById("view-name-textbox-input");
-    var instance = BoldBI.getInstance("dashboard");
-    var viewInformations = {
-        ViewName: inputElement.value,
-        ItemId: currentDashboardId,
-        QueryString: inputElement.getAttribute("data-query"),
-        ChildItemId: childDashboardId
-    };
-    cancelFilterView();
-    if (inputElement.getAttribute("data-id") === "null") {
-        instance.saveFilterView(viewInformations, "updateDashboardViews");
-    } else {
-        instance.saveAsFilterView(viewInformations, "updateDashboardViews");
-    }
-}
-
-// This function is responsible for cancelling the save View dialog box.
-function cancelFilterView() {
-    $('body').find('#save-view-dialog-div').remove();
-    $('body').find('#view-save-success-div').remove();    
-}
-
-// This function is responsible for opening the view panel for a specified dashboard.
-function openViewsPanel(dashboardId) {
-    var instance = BoldBI.getInstance("dashboard");
-    var itemId = "";
-    if (instance.isMultiTab) {
-        childDashboardId = getChildDashboardId(instance);
-        childDashboardName = getChildDashboardName(instance);
-        itemId = childDashboardId;
-    } else {
-        itemId = currentDashboardId;
-    }
-    instance.getDashboardViewsByDashboardId(itemId, "getDashboardViews");
-}
-
-function createSaveViewDialog(args) {
-    var headerName = args.type.toLowerCase().includes("saveas") ? "Save As View" : "Save View";
-    // Create a new dialog box for saving views
-    var saveViewDialogDiv = $('<div id="save-view-dialog-div"></div>').appendTo('body');
-
-    var saveViewDialog = $('<div id="save-view-dialog"></div>');
-    saveViewDialogDiv.append(saveViewDialog);
-
-    var saveViewHeader = '<div id="save-view-header-div">' +
-        '<i class="fa fa-glasses"></i>' +
-        '<div id="save-view-label">' + headerName + '</div>' +
-        '</div>';
-
-    var saveViewContent = '<div id="save-view-content-div">' +
-        '<div id="view-name-div" class="view-row">' +
-        '<div id="view-name-label" class="label-view">Name*</div>' +
-        '<div id="view-name-textbox" class="input-view">' +
-        '<input type="text" id="view-name-textbox-input" data-query=' + args.data.encryptedData + ' data-id=' + args.viewId + '>' +
-        '<span id="view-name-error-msg">Please avoid special characters.</span>' +
-        '</div>' +
-        '</div>' +
-        '</div>';
-
-    var saveViewFooterDiv = $('<div id="save-view-footer-div">' +
-        '<button id="cancel-view-button" class="footer-button-class" onclick="cancelFilterView()">Cancel</button>' +
-        '<button id="save-view-button" class="footer-button-class" onclick="saveFilterView()">Save</button>' +
-        '</div>');
-    saveViewDialog.append(saveViewFooterDiv);
-
-    var saveViewDialogModel = new window.ejs.popups.Dialog({
-        header: saveViewHeader,
-        width: "450px",
-        isModal: true,
-        showCloseIcon: true,
-        target: saveViewDialogDiv[0],
-        content: saveViewContent
-    });
-
-    // Append the dialog box to the element with the id "save-view-dialog"
-    saveViewDialogModel.appendTo('#save-view-dialog');
-}
-
-function DashboardListing() {
-    var http = new XMLHttpRequest();
-    http.open("GET", getDashboardsUrl, true);
-    http.responseType = 'json';
-    http.setRequestHeader("Content-type", "application/json");
-    http.onreadystatechange = function () {
-        if (http.readyState == 4 && http.status == 200) {
-            getDashboardLists.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
-        }
-        else if (http.readyState == 4 && http.status == 404) {
-            console.log("Server not found");
-        }
-        else if (http.readyState == 4) {
-            console.log(http.statusText);
-        }
-    };
-    http.send();
-}
-
-function getDashboardLists(data) {
+function ListDashboards(data) {
     if (typeof (data) != "undefined" && data != null) {
         renderDashboard(data[0].Id);
         data.forEach(function (element) {
@@ -283,21 +35,33 @@ function getDashboardLists(data) {
     }
 }
 
-function getChildDashboardId(instance) {
-    var childId = "";
-    if (instance.isMultiTab && this.dashboard) {
-        childId = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Id;
-    }
-    return childId;
-}
-
-function getChildDashboardName(instance) {
-    var childName = "";
-    if (instance.isMultiTab && this.dashboard) {
-        childName = Object.entries(this.dashboard.dashboardDetails)[activeChild][1].ItemDetail.Name;
-    }
-    return childName;
-}
+function renderDashboard(dashboardId) {
+    this.dashboard = BoldBI.create({
+        serverUrl: rootUrl + "/" + siteIdentifier,
+        dashboardId: dashboardId,
+        embedContainerId: "dashboard",
+        mode: BoldBI.Mode.View,
+        embedType: embedType,
+        environment: environment,
+        width: "100%",
+        height: "100%",
+        expirationTime: 10000,
+        authorizationServer: {
+            url: authorizationServerUrl
+        },
+        dashboardSettings: {
+            filterOverviewSettings: {
+                showSaveAsIcon: true,
+                showSaveIcon: true,
+                showViewSavedFilterIcon: true
+            },
+            onViewSavedFilters: function (args) {
+                getDashboardViews();
+            }
+        }
+    });
+    this.dashboard.loadDashboard();
+};
 
 function embedConfigErrorDialog() {
     var targetContainer = $('<div id="custom_dialog"></div>');
@@ -321,22 +85,3 @@ function embedConfigErrorDialog() {
 function Cancel() {
     $("#custom_dialog").html('');
 }
-
-document.addEventListener("input", function () {
-    var textBox = document.getElementById("view-name-textbox-input");
-    var saveButton = document.getElementById("save-view-button");
-    var errorMessage = document.getElementById("view-name-error-msg");
-    var specialCharsRegex = /^[a-zA-Z0-9!@$^ ()_=\-}{.`~]*$/;
-    var inputValue = textBox.value;
-    if (!specialCharsRegex.test(inputValue)) {
-        errorMessage.style.display = "block";
-        saveButton.style.opacity = "0.4";
-        saveButton.style.cursor = "not-allowed";
-        $("#view-name-textbox-input").addClass("error-view-input");
-    } else {
-        errorMessage.style.display = "none";
-        saveButton.style.opacity = "1";
-        saveButton.style.cursor = "pointer";
-        $("#view-name-textbox-input").removeClass("error-view-input");
-    }
-});
