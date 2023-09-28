@@ -151,7 +151,7 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 ### Retrieve Dashboard Views
   1. To open the `Views` panel displaying the saved filter views, use the [viewSavedFiltersClick]() event in BoldBI create method as follows.
 
-      ![on-view-saved-filter](https://github.com/boldbi/samples/assets/92368448/4d0aeef4-aff0-48b9-8969-5a0feb10e183)
+      ![on-view-saved-filter](<img width="386" alt="Filter-events" src="https://github.com/boldbi/samples/assets/92370364/9b8ae5c8-e1a2-4621-91b5-949d3d138340">)
 
   2. When the `View Saved Filters` option is clicked in the filter overview, the `viewSavedFiltersClick` event will be triggered, opening the `views` panel with the list of saved filter views.
 
