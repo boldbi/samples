@@ -55,7 +55,7 @@ function renderDashboard(dashboardId) {
                 showSaveIcon: true,
                 showViewSavedFilterIcon: true
             },
-            onViewSavedFilters: function (args) {
+            viewSavedFiltersClick: function (args) {
                 getDashboardViews();
             }
         }
