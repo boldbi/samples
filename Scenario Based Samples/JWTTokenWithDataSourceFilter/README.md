@@ -25,7 +25,7 @@
 
     ![Embed-Config-JSON](https://github.com/boldbi/samples/assets/92368448/53c1eddb-1d55-47d7-8e12-502ad6d74dd9)
 
-  * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/JWTTokenWithDataSourceFilter) within the application. Please ensure you have placed it in the application, as shown in the following image.
+  * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/JWTTokenWithDataSourceFilter/web-api) within the application. Please ensure you have placed it in the application, as shown in the following image.
     
     ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/129486688/3186f0f9-6a14-409d-8ee0-7e838db51a68)
 
