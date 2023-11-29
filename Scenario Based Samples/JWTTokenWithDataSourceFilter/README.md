@@ -1,6 +1,7 @@
 ## Dashboard view
 
-   ![Dashboard-View](https://github.com/boldbi/samples/assets/92368448/a79b6660-10f9-4f9a-a4ee-e03832db57dd)
+   ![Dashboard-View](https://github.com/boldbi/samples/assets/129486688/5ee41d0b-85bf-4be7-943a-4eac835a2d54)
+
 
  ## Requirements/Prerequisites
 
@@ -24,9 +25,9 @@
 
     ![Embed-Config-JSON](https://github.com/boldbi/samples/assets/92368448/53c1eddb-1d55-47d7-8e12-502ad6d74dd9)
 
-  * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/JWTTokenWithDataSourceFilter) within the application. Please ensure you have placed it in the application, as shown in the following image.
+  * Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/JWTTokenWithDataSourceFilter/web-api) within the application. Please ensure you have placed it in the application, as shown in the following image.
     
-    ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/92368448/e7fe5e57-9cdf-4ec3-8dda-91703a061873)
+    ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/129486688/3186f0f9-6a14-409d-8ee0-7e838db51a68)
 
   * Open the boldbi.web.api.sln in **VS2022**.
 
