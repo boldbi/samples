@@ -36,6 +36,7 @@ namespace boldbi.web.api.Services
             return new JwtAuthResult
             {
                 AccessToken = accessToken,
+                Expires = jwtToken.ValidTo
             };
         }
         public (ClaimsPrincipal, JwtSecurityToken) DecodeJwtToken(string token)
@@ -66,5 +67,8 @@ namespace boldbi.web.api.Services
     {
         [JsonPropertyName("accessToken")]
         public string AccessToken { get; set; }
+
+        [JsonPropertyName("expires")]
+        public DateTime Expires { get; set; }
     }
 }

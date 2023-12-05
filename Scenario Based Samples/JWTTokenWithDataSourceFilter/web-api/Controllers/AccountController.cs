@@ -51,7 +51,8 @@ namespace boldbi.web.api.Controllers
             {
                 UserName = request.UserName,
                 Role = role,
-                AccessToken = jwtResult.AccessToken
+                AccessToken = jwtResult.AccessToken,
+                Expires = jwtResult.Expires
             });
         }
 

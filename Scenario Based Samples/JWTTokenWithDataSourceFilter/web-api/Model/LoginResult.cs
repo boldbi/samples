@@ -16,5 +16,8 @@ namespace boldbi.web.api.Model
         [JsonPropertyName("accessToken")]
         public string AccessToken { get; set; }
 
+        [JsonPropertyName("expires")]
+        public DateTime Expires { get; set; }
+
     }
 }

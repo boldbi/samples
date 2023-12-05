@@ -16,8 +16,22 @@ export class DashboardComponent implements OnInit {
   private dashboard: BoldBI | null = null;
   private boldbisettings: BoldBISettings | null = null;
   ngOnInit(): void {
-    this.fetchBoldBISettings();
-   }
+    const expirationTime: string | null = localStorage.getItem('expirationTime');
+    let embedURLExpiryTime: boolean;
+    if (expirationTime !== null) {
+      const expirationTimeLocal: Date = new Date(expirationTime);
+      const currentTime = new Date();    
+      embedURLExpiryTime = expirationTimeLocal > currentTime;  
+      if (!embedURLExpiryTime ) {
+        this.authService.logout();
+      } else {
+        this.fetchBoldBISettings();
+      }
+    }
+    else{
+      this.authService.logout();
+    }
+}
   fetchBoldBISettings() {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -30,14 +44,12 @@ export class DashboardComponent implements OnInit {
       (error) => {
         console.error('Error fetching data:', error);
         // Check if the error is an HTTP error
-      if (error instanceof HttpErrorResponse) {
-        if (error.status === 401 || error.status === 403) {
-          this.authService.logout();
-        } else {
-          // Handle other HTTP errors here
+        if (error instanceof HttpErrorResponse) {
+          if (error.status === 401 || error.status === 403) {
+            this.authService.logout();
+          } 
         }
       }
-    }
     );
   }
 

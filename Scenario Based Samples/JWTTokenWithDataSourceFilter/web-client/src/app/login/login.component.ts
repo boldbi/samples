@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit{
         if (response.accessToken) {
           // Store the token securely (e.g., in local storage)
           localStorage.setItem('token', response.accessToken);
+          localStorage.setItem('expirationTime', response.expires);
           this.router.navigate(["/dashboard"]);
           // Redirect to a protected route or perform necessary actions upon successful login
           // You can use Angular Router for navigation
