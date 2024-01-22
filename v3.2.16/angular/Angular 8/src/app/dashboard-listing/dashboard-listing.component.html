@@ -1,0 +1,14 @@
+
+<div id="container">
+    <div class="header-section">
+        <div id="grid-title">All Dashboard</div>
+    </div>
+    <div id="panel">
+        <div (click)="renderDashboard(i)" *ngFor="let i of dashboardsList" class="dashboard-item"
+            [attr.name]="i.Name" [attr.itemid]="i.Id" [attr.version]="i.Version" [attr.ispublic]="i.IsPublic">{{i.Name}}
+        </div>
+    </div>
+</div>
+<div id="viewer-section">
+    <div id="dashboard"></div>
+</div>
