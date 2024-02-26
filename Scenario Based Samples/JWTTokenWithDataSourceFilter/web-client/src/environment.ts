@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'https://demo-filters.boldbidemo.com/webapi/'
+    apiUrl: 'http://localhost:5023/'
 }
