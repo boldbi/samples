@@ -7,10 +7,10 @@ namespace boldbi.web.api.Services
         private readonly ILogger<UserService> _logger;
         private readonly IDictionary<string, (string, string)> _users = new Dictionary<string, (string, string)>
         {
-            { "John Smith", ("password1", "john.smith@example.com") },
-            { "Sarah Johnson", ("password2", "sarah.johnson@example.com") },
-            { "Michael Brown",("password3","michael.brown@example.com")},
-            { "Admin", ("securePassword", "") }
+            { "John", ("John@123", "john.smith@example.com") },
+            { "Sarah", ("Sarah@123", "sarah.johnson@example.com") },
+            { "Michael",("Michael@123","michael.brown@example.com")},
+            { "Admin", ("Admin@123", "") }
         };
 
 
