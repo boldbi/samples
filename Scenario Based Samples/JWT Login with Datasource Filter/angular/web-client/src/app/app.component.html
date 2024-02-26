@@ -1,0 +1,12 @@
+<ng-container *ngIf="!authService.isAuthenticated(); else mainContent">
+  <!-- Display the login page when not authenticated -->
+  <router-outlet></router-outlet>
+</ng-container>
+<ng-template #mainContent>
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<main class="main-content">
+  <!-- The router-outlet will display the component based on the current route -->
+  <router-outlet></router-outlet>
+</main>
+</ng-template>

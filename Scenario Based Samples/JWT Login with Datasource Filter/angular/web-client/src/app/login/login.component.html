@@ -1,0 +1,39 @@
+<!-- login.component.html -->
+
+<div class="login-container">
+    <h2 class="login-header">Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+    <div class="small text-secondary mt-3 d-none d-sm-flex">
+      <strong>Example logins</strong>
+      <ul>
+        <li>Admin: securePassword</li>
+        <li>John Smith: password1</li>
+        <li>Sarah Johnson: password2</li>
+        <li>Michael Brown: password3</li>
+      </ul>
+    </div>
+  </div>
+  
