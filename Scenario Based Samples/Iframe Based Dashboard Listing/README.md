@@ -4,7 +4,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
 ## Dashboard view
 
-![iframe-dashboard-listing](https://github.com/boldbi/samples/assets/129487075/e6530a06-3ab1-4a75-9646-7fc83d577b5c)
+![iframe-dashboard-listing](https://github.com/boldbi/samples/assets/129487075/631d9c33-cb8d-4faf-94fa-79cf115cad09)
 
  ## Requirements/Prerequisites
 
@@ -72,7 +72,9 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
  
   * To run the application, use the command `dotnet run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., https://localhost:7168). Copy this URL and paste it into your default web browser.
 
-    ![iframe-dashboard-listing](https://github.com/boldbi/samples/assets/129487075/e6530a06-3ab1-4a75-9646-7fc83d577b5c)
+    ![iframe-dashboard-listing](https://github.com/boldbi/samples/assets/129487075/af1d5fe0-fc17-4cb1-ad6c-d7c37beeb80b)
+
+> **NOTE:**  You can use your own images for your dashboards in the dashboard listing by placing them at the following [path](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Iframe%20Based%20Dashboard%20Listing/IframeSolutionSample/wwwroot/images/dashboards) and updating the file name in the imagePaths array in the `site.js` file.
 
 ## Important notes
 
