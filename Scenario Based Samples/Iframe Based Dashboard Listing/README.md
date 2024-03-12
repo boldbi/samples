@@ -1,10 +1,10 @@
-# Bold BI Embedded Sample in .NET Core
+# Bold BI Iframe Embedded Sample in .NET Core
 
 This project was created using ASP.NET Core 6.0. The application aims to demonstrate how to render the dashboard listing using Iframe which is available on your Bold BI server.
 
 ## Dashboard view
 
-![Dashboard View](https://github.com/boldbi/aspnet-core-sample/assets/91586758/6c03cba1-beeb-4be2-8a9e-f77f6a3ebf91)
+![iframe-dashboard-listing](https://github.com/boldbi/samples/assets/129487075/e6530a06-3ab1-4a75-9646-7fc83d577b5c)
 
  ## Requirements/Prerequisites
 
@@ -18,7 +18,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
   * To set the mandatory properties in the `appsettings.json` file, follow these instructions:
     
-    ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/bdb83a3e-02e4-4e99-ad57-717438e5ec5c)
+    ![iframe-appsettings](https://github.com/boldbi/samples/assets/129487075/6506258b-8916-4f2b-9c6f-25e95928c6e1)
 
 <meta charset="utf-8"/>
     <table>
@@ -52,7 +52,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
  ## Run a Sample Using Command Line Interface 
     
-  1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample) where the project is located.
+  1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Iframe%20Based%20Dashboard%20Listing/IframeSolutionSample) where the project is located.
 
   2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
@@ -64,7 +64,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
   ### Run a Sample Using Visual Studio Code
  
-  * Open the [sample](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample) in Visual Studio Code.
+  * Open the [sample](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Iframe%20Based%20Dashboard%20Listing/IframeSolutionSample) in Visual Studio Code.
    
   * Open the terminal in Visual Studio Code and execute the command `dotnet restore` to restore the required dependencies.
  
@@ -72,7 +72,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
  
   * To run the application, use the command `dotnet run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., https://localhost:7168). Copy this URL and paste it into your default web browser.
 
-    ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/6c03cba1-beeb-4be2-8a9e-f77f6a3ebf91)
+    ![iframe-dashboard-listing](https://github.com/boldbi/samples/assets/129487075/e6530a06-3ab1-4a75-9646-7fc83d577b5c)
 
 ## Important notes
 
