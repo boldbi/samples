@@ -1,5 +1,11 @@
 ﻿var loadedTileImgCount = 0;
-
+var imagePaths = [
+    "/images/dashboards/sales-activities-dashboard.svg",
+    "/images/dashboards/healthcare-executive-dashboard.svg",
+    "/images/dashboards/hr-recruitment-dashboard.svg",
+    "/images/dashboards/real-estate-management-dashboard.svg",
+    "/images/dashboards/school-performance-dashboard.svg"
+];
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
         document.querySelector("#body-container").style.visibility = "hidden";
@@ -50,9 +56,7 @@ function renderTileContainer(dashboardData, categoryName) {
         // Create an 'img' element to add the dashboard image inside the dashboard container.
         var aDashboardImgTag = document.createElement('img');
         aDashboardImgTag.classList.add('dashboard-image', 'sol-grid-container-full-width');
-        //setAttributes(aDashboardImgTag, { "src": `/images/dashboards/default-image1.png`, "onload": "checkImageLoad()", "alt": value["name"] });
-        setAttributes(aDashboardImgTag, { "src": `/images/dashboards/sales-activities-dashboard.svg`, "onload": "checkImageLoad()", "alt": value["name"] });
-
+        setAttributes(aDashboardImgTag, { "src": getRandomImagePath(), "onload": "checkImageLoad()", "alt": value["name"] });
 
         // Create a 'div' element that appears when hovering over the 'a' tag element.
         var aDashboardHoverTag = document.createElement('div');
@@ -84,6 +88,11 @@ function renderTileContainer(dashboardData, categoryName) {
 
         $('.sol-grid-container').append(dashboardDivTag);
     });
+}
+
+// Function to randomly select an image path
+function getRandomImagePath() {
+    return imagePaths[Math.floor(Math.random() * imagePaths.length)];
 }
 
 //Methods to set the attributes to the DOM element.
