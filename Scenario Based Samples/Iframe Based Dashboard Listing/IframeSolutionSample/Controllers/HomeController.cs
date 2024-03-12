@@ -1,7 +1,6 @@
 ﻿using IframeSolutionSample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -112,7 +111,6 @@ namespace IframeSolutionSample.Controllers
                 if (configuration.GetSection("EmbedProperties:Environment").Value == "cloud")
                 {
                     result = client.GetAsync(configuration.GetSection("EmbedProperties:RootUrl").Value + "/api/v4.0/dashboards").Result;
-                    //result = client.GetAsync(configuration.GetSection("EmbedProperties:RootUrl").Value + "/api/v2.0/items?ItemType=2").Result;
                 }
                 else
                 {

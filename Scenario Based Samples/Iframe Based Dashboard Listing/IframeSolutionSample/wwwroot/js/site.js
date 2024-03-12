@@ -56,7 +56,7 @@ function renderTileContainer(dashboardData, categoryName) {
         // Create an 'img' element to add the dashboard image inside the dashboard container.
         var aDashboardImgTag = document.createElement('img');
         aDashboardImgTag.classList.add('dashboard-image', 'sol-grid-container-full-width');
-        setAttributes(aDashboardImgTag, { "src": getRandomImagePath(), "onload": "checkImageLoad()", "alt": value["name"] });
+        setAttributes(aDashboardImgTag, { "src": getImagePath(value["name"]), "onload": "checkImageLoad()", "alt": value["name"] });
 
         // Create a 'div' element that appears when hovering over the 'a' tag element.
         var aDashboardHoverTag = document.createElement('div');
@@ -90,9 +90,18 @@ function renderTileContainer(dashboardData, categoryName) {
     });
 }
 
-// Function to randomly select an image path
-function getRandomImagePath() {
-    return imagePaths[Math.floor(Math.random() * imagePaths.length)];
+// Function to get image path based on dashboard name
+function getImagePath(dashboard_name) {
+    // Convert dashboard name to lowercase and replace spaces with dashes
+    var formattedName = dashboard_name.toLowerCase().replace(/\s/g, '-');
+    // Check if there's a matching SVG for the formatted dashboard name
+    var matchingSVG = imagePaths.find(path => path.toLowerCase().includes(formattedName));
+    if (matchingSVG) {
+        return matchingSVG;
+    } else {
+        // If no matching SVG, return a random image path
+        return imagePaths[Math.floor(Math.random() * imagePaths.length)];
+    }
 }
 
 //Methods to set the attributes to the DOM element.
