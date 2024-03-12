@@ -1,0 +1,25 @@
+﻿@using IframeSolutionSample.Models;
+@{
+    var categoryList = ViewBag.CategoryItems;
+    var categoryName = ViewBag.CategoryName;
+    var dashboardName = ViewBag.DashboardName;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var categorylist = @Html.Raw(Json.Serialize(categoryList));
+        var categoryname = '@categoryName';
+        var dashboardname = '@dashboardName';
+    </script>
+</head>
+<body>
+    <div id="body-container">
+        <div id="soln-bread-crumb">Solutions<span style="padding:0 5px"> ></span><a class="soln-bread-dbrdCateName">@categoryName</a></div>
+        <div id="property-container" class="rows">
+            <div class="row sol-grid-container" style="width:100%; float: left"></div>
+        </div>
+    </div>
+</body>
+</html>
