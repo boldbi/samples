@@ -32,7 +32,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
             <td align="left">Get your EmbedSecret key from embed tab by enabling <code>Enable embed authentication</code> in the <a href='https://help.boldbi.com/embedded-bi/site-administration/embed-settings/'>Administration page</a>. </td>
         </tr>  
         <tr>
-            <td align="left">RootUrl</td>
+            <td align="left">RootURL</td>
             <td align="left">Use your Bold BI root url (http://localhost:[portno]/bi)</td>
         </tr>
         <tr>
