@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="/favicon.ico">
+    <title>Iframe Dashboards</title>
+    <link href="~/css/themes/adminlte.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+</head>
+<body class="sidebar-mini layout-fixed">
+    <div class="wrapper overlay-wrapper">
+        <div id="loading-item" class="overlay hide">
+            <i class="fas fa-3x fa-sync-alt fa-spin" style="float: left;"></i>
+            <div class="text-bold pt-2" style="float: left;">Loading...</div>
+        </div>
+        <nav class="header">
+            <div class="header-left-side">
+                <a href="https://www.boldbi.com/">
+                    <div class="header-boldbi-logo"></div>
+                </a>
+                <div class="header-divider"></div>
+                <h1 class="header-platform">Iframe Embedded Dashboards</h1>
+            </div>
+        </nav>
+        <div id="loader">
+            <i class="fas fa-2x fa-spinner fa-spin" style="float: left; color:#283A5F;"></i>
+            <span class="text-bold pt-2" style="float: left; color:#283A5F; font-family:Caros-bold; margin-left:15px"> Loading...</span>
+        </div>
+        <div class="content-wrapper">
+            <div class="toaster-block">
+                <div id="card_item" class="card card-outline card-success">
+                    <div class="card-header" style="height: 40px">
+                        <h3 id="header-text" style="font-size: 15px" class="card-title"></h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" style="padding-top: 0px;" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <div id="footer-copyright">
+                <a id="copyright" target="_blank" href="https://www.boldbi.com/copyright">Copyright © 2001 - <span id="copyright-year"> @DateTime.UtcNow.Year.ToString()</span> Syncfusion Inc. All Rights Reserved</a>
+            </div>
+        </div>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
