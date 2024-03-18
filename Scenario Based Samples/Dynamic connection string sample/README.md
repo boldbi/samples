@@ -16,9 +16,9 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 ## Configuration
 
  1. Create 2 databases in SQL Server with the same table and column names. For example, I have created 2 databases named `DCS_DB1` and `DCS_DB2`, both with a table named `StudentTable`.
-    ![DCSUser1DB](https://github.com/boldbi/samples/assets/129487075/8d9854cc-9c8f-471e-9f46-3b0b10391a32)
-    
-    ![DCSUser2DB](https://github.com/boldbi/samples/assets/129487075/35cca738-b642-4d6d-9121-6332b2e53831)
+    ![DCSUser1DBNew](https://github.com/boldbi/samples/assets/129487075/58d8fdfc-e962-45b4-91a1-d53794765ae3)
+
+    ![DCSUser2DBNew](https://github.com/boldbi/samples/assets/129487075/f5ff056f-fbb5-4315-93ca-01c67272fcda)
 
  3. Create 2 users in your BoldBI Server. For example, I have created 2 users with the email IDs `testuser1@gmail.com` and `testuser2@gmail.com`.
 
@@ -33,7 +33,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
  1. Open the solution file `Dynamic Connection String.sln` in Visual Studio.
 
  2. Open the `ConnectionController.cs` file and enter the user1 details by referring to the image below.
-    * Enter user1 email id in CustomIdentity1. (Eg: `customIdentity.ToString().ToLowerInvariant().Equals("testuser1@gmail.com")`)
+    * Enter user1 email Id in CustomIdentity1.
     * Enter SQL Server Id in the DataSource. (Eg: `DataSource = "SYNCLAPN-12345"`)
     * Enter the Database Name in the InitialCatalog. (Eg: `InitialCatalog = "DCS_DB1"`)
     * Enter the SQL Server Username and Password.
@@ -41,7 +41,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
     ![DCSUser1details](https://github.com/boldbi/samples/assets/129487075/5bb92c31-82d2-4090-8b47-fb17716ec8e7)
 
  3. Enter the user2 details by referring to the image below.
-    * Enter user2 email id in CustomIdentity2. (Eg: `customIdentity.ToString().ToLowerInvariant().Equals("testuser2@gmail.com")`)
+    * Enter user2 email Id in CustomIdentity2.
     * Enter SQL Server Id in the DataSource. (Eg: `DataSource = "SYNCLAPN-12345"`)
     * Enter the Database Name in the InitialCatalog. (Eg: `InitialCatalog = "DCS_DB2"`)
     * Enter the SQL Server Username and Password.
@@ -64,7 +64,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
  1. Please refer this [link](https://github.com/boldbi/aspnet-core-sample) to run the ASP.Net Core sample. You will need to render the sample with the created dashboard for Dynamic Connection String.
 
- 2. Enter the dynamicConnection API in the `Index.js` file by referring to the image below.
+ 2. Enter the dynamicConnection API in the `Index.js` file by referring to the code below.
     ```js
         dynamicConnection: {
             isEnabled: true,
