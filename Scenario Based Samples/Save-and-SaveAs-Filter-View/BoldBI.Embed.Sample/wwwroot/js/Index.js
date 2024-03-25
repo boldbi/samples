@@ -53,14 +53,35 @@ function renderDashboard(dashboardId) {
             filterOverviewSettings: {
                 showSaveAsIcon: true,
                 showSaveIcon: true,
-                showViewSavedFilterIcon: true
+                showViewSavedFilterIcon: true,
             },
+            beforeIconRender: "createNewDashboardIcon",
+            onIconClick: "dashboardIconClick",
             viewSavedFiltersClick: function (args) {
                 getDashboardViews();
             }
         }
     });
     this.dashboard.loadDashboard();
+};
+
+function createNewDashboardIcon(args) {
+    var icon = bbEmbed("<div/>", {
+        "class": "server-banner-icon e-dashboard-banner-icon bbi-dbrd-designer-hoverable su su-view e-icon-dbrd-theme",
+        "data-tooltip": "Views",
+        "data-name": "dashboardviews",
+        "data-event": true,
+        css: { "font-size": "15px" }
+    });
+    args.iconsinformation[0].items.push(icon);
+
+}
+
+function dashboardIconClick(args) {
+    // Write a code to perform a required operation when clicking this icon.
+    if (args.name == "dashboardviews") {
+        getDashboardViews();
+    }
 };
 
 function embedConfigErrorDialog() {
