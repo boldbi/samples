@@ -167,13 +167,13 @@ function _renderViewDashboard(targetElement) {
     dbrdInstance.destroy();
 
     // Configure the viewid, viewname, and filterparameters embed option
-    dbrdInstance.embedOptions.dashboardSettings.filterOverviewSettings.viewId = bbEmbed(targetElement).parent().attr('viewId');
-    dbrdInstance.embedOptions.dashboardSettings.filterOverviewSettings.viewName = bbEmbed(targetElement).text();
-    dbrdInstance.embedOptions.filterParameters = bbEmbed(targetElement).parent().attr('filterquery');
+    dbrdInstance.embedOptions.viewId = bbEmbed(targetElement).parent().attr('viewId');
+    //dbrdInstance.embedOptions.viewName = bbEmbed(targetElement).text();
+    //dbrdInstance.embedOptions.filterParameters = bbEmbed(targetElement).parent().attr('filterquery');
 
     // Create and load a new BoldBI dashboard
     const dashboard = BoldBI.create(dbrdInstance.embedOptions);
-    dashboard.loadDashboard();
+    dashboard.loadView();
 }
 
 // Triggers when we click delete option in the saved view for deleting the view
