@@ -149,35 +149,36 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_UpdateItemView) for know more details to update the filter view in the dashboard.
 
 ### Retrieve Dashboard Views
-    `Views` panel displaying the saved filter views can be opened in two ways,
-  1. use the [viewSavedFiltersClick]() event in BoldBI create method as follows.
+  1. `Views` panel displaying the saved filter views can be opened in two ways,
+     * Using the [viewSavedFiltersClick]() event in BoldBI create method as follows.
 
      ![view-saved-filters](https://github.com/boldbi/samples/assets/149655444/5bc7a875-a332-492b-a1f3-a5c641b8ca86)
- ![on-view-saved-filter](<img width="386" alt="Filter-events" src="https://github.com/boldbi/samples/assets/92370364/9b8ae5c8-e1a2-4621-91b5-949d3d138340">)
 
-  2. When the `View Saved Filters` option is clicked in the filter overview, the `viewSavedFiltersClick` event will be triggered, opening the `views` panel with the list of saved filter views.
+     When the `View Saved Filters` option is clicked in the filter overview, the `viewSavedFiltersClick` event will be triggered, opening the `views` panel with 
+     the list of saved filter views.
 
       ![view-saved-filters-icon-click](https://github.com/boldbi/samples/assets/92368448/1c4ad35a-d428-40f7-9ac6-57817811a10d)
       ![saved-view-list](https://github.com/boldbi/samples/assets/92368448/b6e9fa26-e2cb-486f-ae4d-dbbd66fef513)
 
-  3. Click the views icon in dashboard header area.(Refer below image)
+     * Clicking the views icon in dashboard header area.(Refer below image)
+     
       ![views-icon](https://github.com/boldbi/samples/assets/149655444/4ee39dff-e8ba-4308-854c-a46a5f2924ca)
 
-  4. When views icon is clicked,'onIconClick' event will be trigerred and `views` panel will be opened.
+     When views icon is clicked,'onIconClick' event will be trigerred and `views` panel will be opened.
       
-        ![saved-view-list](https://github.com/boldbi/samples/assets/92368448/b6e9fa26-e2cb-486f-ae4d-dbbd66fef513)
+     ![saved-view-list](https://github.com/boldbi/samples/assets/92368448/b6e9fa26-e2cb-486f-ae4d-dbbd66fef513)
 
-  5. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByDashboardId]() method as follows.
+  2. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByDashboardId]() method as follows.
 
       ![get-views-by-dashboard-id-method](https://github.com/boldbi/samples/assets/92368448/d8302d54-8a8b-4d95-91fd-6885a18c1343)
 
       >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewsByItemId) for know more details to retrieve the filter views from the dashboard.
 
-  6. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
+  3. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
 
       ![saved-view-parameters](https://github.com/boldbi/samples/assets/92368448/32c5c20a-24b7-4ed3-8332-1d0eb0818d56)
   
-  7. To retrieve the filter values for the specific view, use the [getDashboardViewByViewId]() method as follows.
+  4. To retrieve the filter values for the specific view, use the [getDashboardViewByViewId]() method as follows.
 
       ![get-view-by-view-id-method](https://github.com/boldbi/samples/assets/92368448/2f51b702-8607-4fab-a86e-e9012eda712d)
 
