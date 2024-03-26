@@ -1,3 +1,4 @@
+![loadView-using-viewId](https://github.com/boldbi/samples/assets/149655444/5d1143c3-33cd-483d-825c-0bf2bbfddae1)
 # Bold BI Dashboard Views Sample in ASP.NET Core
 
 This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to customize BoldBI dashboards with the Dashboard Views API in JavaScript embedding.
@@ -185,32 +186,11 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
   >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewDelete) for know more details to delete the filter view from the dashboard.
 
 ### Render Views Dashboard in JavaScript embedding
-  1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the below APIs in BoldBI.create() as below.
+  1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the viewId in embedOptions and using loadView method as below.
 
       ![filter-view-select](https://github.com/boldbi/samples/assets/92368448/c64a5650-c30b-46de-8dc6-c45b8aa118a5)
 
-      <table style="width: 60%; float: left;">
-        <thead>
-        <tr>
-        <th style="width: 20%;">API</th>
-        <th style="width: 40%;">Description</th>
-        </tr>
-        </thead>
-        <tr>
-        <td><a href="">viewId</a></td>
-        <td>Specifies the unique ID of the filter view.</td>
-        </tr>
-        <tr>
-        <td><a href="">viewName</a></td>
-        <td>Specifies the name of the filter view.</td>
-        </tr>
-        <tr>
-        <td><a href="">filterParameters</a></td>
-        <td>Specifies the filter query of the specific view.</td>
-        </tr>
-        </table>
-
-      ![render-views-dashboard-method](https://github.com/boldbi/samples/assets/92368448/fd808930-3623-4eaa-9bcb-d6f88827331d)
+      ![loadView-using-viewId](https://github.com/boldbi/samples/assets/149655444/5d1143c3-33cd-483d-825c-0bf2bbfddae1)
 
   2. Thus, we have created own custom filter view dashboard view using JavaScript embedding.
 
