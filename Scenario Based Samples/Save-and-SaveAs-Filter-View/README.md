@@ -194,12 +194,17 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
   >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewDelete) for know more details to delete the filter view from the dashboard.
 
 ### Render Views Dashboard in JavaScript embedding
-  1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the viewId in embedOptions and using loadView method as below.
+  1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the viewId in embedOptions and loadView method as given below.
 
       ![filter-view-select](https://github.com/boldbi/samples/assets/92368448/c64a5650-c30b-46de-8dc6-c45b8aa118a5)
 
       ![loadView-using-viewId](https://github.com/boldbi/samples/assets/149655444/5d1143c3-33cd-483d-825c-0bf2bbfddae1)
+     
+  2. To initially render the dashboard with specific filter view,loadView method can be used in `Index.js` file along with the view's viewId in embedOptions or viewName in embedOptions(Refer the code below)
+     ![loadView-viewName](https://github.com/boldbi/samples/assets/149655444/ff8ee0b6-c959-4b0b-a578-72b667b40f32)
+     ![loadView-viewId](https://github.com/boldbi/samples/assets/149655444/62139301-9a0b-4c49-b3ba-91dcdb834d78)
 
-  2. Thus, we have created own custom filter view dashboard view using JavaScript embedding.
+
+  3. Thus, we have created own custom filter view dashboard view using JavaScript embedding.
 
       ![view-dashboard-rendering](https://github.com/boldbi/samples/assets/92368448/f4c334f9-7fb2-44b7-9636-66a96b0624e0)
