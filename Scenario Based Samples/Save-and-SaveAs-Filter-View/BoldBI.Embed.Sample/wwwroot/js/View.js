@@ -166,10 +166,8 @@ function _renderViewDashboard(targetElement) {
     // Destroy the existing dashboard instance
     dbrdInstance.destroy();
 
-    // Configure the viewid, viewname, and filterparameters embed option
+    // Configure the viewid in embed option
     dbrdInstance.embedOptions.viewId = bbEmbed(targetElement).parent().attr('viewId');
-    //dbrdInstance.embedOptions.viewName = bbEmbed(targetElement).text();
-    //dbrdInstance.embedOptions.filterParameters = bbEmbed(targetElement).parent().attr('filterquery');
 
     // Create and load a new BoldBI dashboard
     const dashboard = BoldBI.create(dbrdInstance.embedOptions);
