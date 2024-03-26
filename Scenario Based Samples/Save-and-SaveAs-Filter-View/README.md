@@ -161,7 +161,7 @@ This section has steps on how to access the list of saved views of the respectiv
 #### Save Filter Views
   1. Click `Save` icon in Filter overview panel,if any view is already applied to the dashboard current filters will be saved in that view name.Otherwise `Save View` dialog will be opened.
   
-        >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveFilter` event within the `BoldBI.create()` function as per your requirements.
+     >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveFilter` event within the `BoldBI.create()` function as per your requirements.
 
         ![save-new-view-icon-click](https://github.com/boldbi/samples/assets/92368448/acb09629-b6b9-4675-a879-91c7a6cd07be)
 
@@ -173,11 +173,12 @@ This section has steps on how to access the list of saved views of the respectiv
 
       ![updated-filter-overview-savedview](https://github.com/boldbi/samples/assets/92368448/b6bea3b0-eea3-4184-9ce0-98dcce0227d5)
 
->**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_AddItemView) for know more details to save the filter view in the dashboard.
+   >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_AddItemView) for know more details to save the filter view in the dashboard.
 
->**NOTE**: `Mark as default` option can be enabled only when the dashboard has no default views.
+   >**NOTE**: `Mark as default` option can be enabled only when the dashboard has no default views.
 
 #### Save as Filter Views
+
   1. `save As` option can be used to save a view with the current filters.To open the `Save View` dialog, click `Save As` icon in Filter overview panel.
   
         >**Note:** To customize the behavior when clicking the save as icon, you can utilize the `onSaveAsFilter` event within the `BoldBI.create()` function as per your requirements.
@@ -193,7 +194,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
       ![updated-filter-overview-savedasview](https://github.com/boldbi/samples/assets/92368448/7ab2009a-6bd9-40bc-9814-30ab4a9906bb)
 
->**NOTE**: The same method will be used to save a new filter view and save as the filter view from an existing one.
+  >**NOTE**: The same method will be used to save a new filter view and save as the filter view from an existing one.
 
 #### Update Filter Views
   1. To update a saved filter view in the dashboard, `modify` the saved filter views by applying another filters in the view.
@@ -206,7 +207,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
       ![save-exist-view-icon-click](https://github.com/boldbi/samples/assets/92368448/bab18636-de60-44d5-a0b5-d72de05abf59)
 
->**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_UpdateItemView) for know more details to update the filter view in the dashboard.
+   >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_UpdateItemView) for know more details to update the filter view in the dashboard.
 
 #### Delete Filter View
   1. To delete a filter view, select the `Delete` option in the filter view and remove it using the [deleteFilterView]() method in BoldBI.
@@ -215,4 +216,4 @@ This section has steps on how to access the list of saved views of the respectiv
 
       ![deleter-view-method](https://github.com/boldbi/samples/assets/92368448/a8cd7c71-b13d-46ca-b79d-b1e2de046dc4)
 
-  >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewDelete) for know more details to delete the filter view from the dashboard.
+   >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewDelete) for know more details to delete the filter view from the dashboard.
