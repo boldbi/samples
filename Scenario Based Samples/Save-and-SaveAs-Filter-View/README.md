@@ -100,26 +100,25 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
     ![enable-save-saveas-viewsavedfilter-icon](https://github.com/boldbi/samples/assets/92368448/40deb9e1-1a4a-4c93-99d7-4696cb23b4ad)
 
 ### Save Filter Views
-  1. To open the `Save View` dialog, click `Save` icon in Filter overview panel. 
+  1. Click `Save` icon in Filter overview panel,if any view is already applied to the dashboard current filters will be saved in that view name.Otherwise `Save View` dialog will be opened.
   
         >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveFilter` event within the `BoldBI.create()` function as per your requirements.
 
         ![save-new-view-icon-click](https://github.com/boldbi/samples/assets/92368448/acb09629-b6b9-4675-a879-91c7a6cd07be)
 
-        ![save-view-dialog](https://github.com/boldbi/samples/assets/92368448/900c5cd1-ab10-40a5-8879-5860571d4f85)
-
-  3. Retrieve the name of the view from the `Save View` dialog and save it using the [saveFilterView]() method available in BoldBI.
-
-      ![view-name-added-in save-view-dialog](https://github.com/boldbi/samples/assets/92368448/8bc45fc3-ced5-40ae-b3c5-dfb184f09751)
-
+  3. Provide a name for the view in the `Save View` dialog and save it using the [saveFilterView]() method available in BoldBI.`Mark as Default` toggle can be enabled to set the view as default view.
+        ![save dialog](https://github.com/boldbi/samples/assets/149655444/6ff1fd62-ebac-40fc-ac67-06877cb87119)
+        
   4. The `Filter Overview` panel will get updated with the saved view.
 
       ![updated-filter-overview-savedview](https://github.com/boldbi/samples/assets/92368448/b6bea3b0-eea3-4184-9ce0-98dcce0227d5)
 
 >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_AddItemView) for know more details to save the filter view in the dashboard.
 
+>**NOTE**: `Mark as default` option can be enabled only when the dashboard has no default views.
+
 ### Save as Filter Views
-  1. To open the `Save View` dialog, click `Save As` icon in Filter overview panel.
+  1. `save As` option can be used to save a view with the current filters.To open the `Save View` dialog, click `Save As` icon in Filter overview panel.
   
         >**Note:** To customize the behavior when clicking the save as icon, you can utilize the `onSaveAsFilter` event within the `BoldBI.create()` function as per your requirements.
 
@@ -127,7 +126,8 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 
   3. Retrieve the name of the view from the `Save View` dialog and save it using the [saveAsFilterView]() method available in BoldBI.
 
-      ![view-name-added-for-save-as](https://github.com/boldbi/samples/assets/92368448/464c0f34-e597-476c-8c2f-bc45d0a227d6)
+     ![save as dialog](https://github.com/boldbi/samples/assets/149655444/b0666572-d382-4c85-8f70-e950e0c6d240)
+
 
   4. The `Filter Overview` panel will get updated with the saved view.
 
