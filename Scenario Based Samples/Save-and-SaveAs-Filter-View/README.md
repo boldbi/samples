@@ -68,7 +68,7 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
 
 >**NOTE**: Please refer the [link](https://help.boldbi.com/managing-resources/manage-dashboards/manage-dashboard-views/) for know more about the Dashboard Views.
 
-## Retrieve Saved Views of the Dashboard
+ ### Retrieve Saved Views of the Dashboard
 This section has steps on how to access the list of saved views of the respective dashboard.
 
   1. `Views` panel displaying the saved filter views can be opened in two ways,
@@ -107,7 +107,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
       >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewByViewId) for know more details to retrieve the filter view from the specific view.
 
-### Render Dashboard with View in JavaScript embedding
+ ### Render Dashboard with View in JavaScript embedding
 
   1. By clicking the name of a filter view in the view panel, the dashboard will be loaded with the filter view using the viewId in embedOptions and loadView method as given below.
 
@@ -127,7 +127,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
       ![view-dashboard-rendering](https://github.com/boldbi/samples/assets/92368448/f4c334f9-7fb2-44b7-9636-66a96b0624e0)
      
-## Steps to follow for creating own filter view dashboard and customizing the dashboard using Views API in JavaScript embedding
+### Steps to follow for creating own filter view dashboard and customizing the dashboard using Views API in JavaScript embedding
 
 1. Once configured the embedConfig.JSON file in the designated location, then run your application.
 
@@ -158,7 +158,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
     ![enable-save-saveas-viewsavedfilter-icon](https://github.com/boldbi/samples/assets/92368448/40deb9e1-1a4a-4c93-99d7-4696cb23b4ad)
 
-### Save Filter Views
+#### Save Filter Views
   1. Click `Save` icon in Filter overview panel,if any view is already applied to the dashboard current filters will be saved in that view name.Otherwise `Save View` dialog will be opened.
   
         >**Note:** To customize the behavior when clicking the save icon, you can utilize the `onSaveFilter` event within the `BoldBI.create()` function as per your requirements.
@@ -177,7 +177,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
 >**NOTE**: `Mark as default` option can be enabled only when the dashboard has no default views.
 
-### Save as Filter Views
+#### Save as Filter Views
   1. `save As` option can be used to save a view with the current filters.To open the `Save View` dialog, click `Save As` icon in Filter overview panel.
   
         >**Note:** To customize the behavior when clicking the save as icon, you can utilize the `onSaveAsFilter` event within the `BoldBI.create()` function as per your requirements.
@@ -195,7 +195,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
 >**NOTE**: The same method will be used to save a new filter view and save as the filter view from an existing one.
 
-### Update Filter Views
+#### Update Filter Views
   1. To update a saved filter view in the dashboard, `modify` the saved filter views by applying another filters in the view.
 
       ![modify-filter-values](https://github.com/boldbi/samples/assets/92368448/fa5e2af7-2186-49b8-b0ca-fabe00960746)
@@ -208,7 +208,7 @@ This section has steps on how to access the list of saved views of the respectiv
 
 >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_UpdateItemView) for know more details to update the filter view in the dashboard.
 
-### Delete Filter View
+#### Delete Filter View
   1. To delete a filter view, select the `Delete` option in the filter view and remove it using the [deleteFilterView]() method in BoldBI.
 
       ![deleter-view-option](https://github.com/boldbi/samples/assets/92368448/4f37ff4c-2a1c-4b8a-a259-5a3b0240b17f)
