@@ -158,6 +158,7 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
      the list of saved filter views.
 
       ![view-saved-filters-icon-click](https://github.com/boldbi/samples/assets/92368448/1c4ad35a-d428-40f7-9ac6-57817811a10d)
+     
       ![saved-view-list](https://github.com/boldbi/samples/assets/92368448/b6e9fa26-e2cb-486f-ae4d-dbbd66fef513)
 
      * Clicking the views icon in dashboard header area.(Refer below image)
@@ -168,17 +169,17 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
       
      ![saved-view-list](https://github.com/boldbi/samples/assets/92368448/b6e9fa26-e2cb-486f-ae4d-dbbd66fef513)
 
-  2. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByDashboardId]() method as follows.
+  3. To retrieve the saved filter views from the dashboard, use the [getDashboardViewsByDashboardId]() method as follows.
 
       ![get-views-by-dashboard-id-method](https://github.com/boldbi/samples/assets/92368448/d8302d54-8a8b-4d95-91fd-6885a18c1343)
 
       >**NOTE**: Please refer the [REST API](https://help.boldbi.com/server-api-reference/v4.0/api-reference/#operation/ItemViews_ItemViewsByItemId) for know more details to retrieve the filter views from the dashboard.
 
-  3. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
+  4. Clicking on a saved filter view in the panel will display the applied filters in that view as an accordion. 
 
       ![saved-view-parameters](https://github.com/boldbi/samples/assets/92368448/32c5c20a-24b7-4ed3-8332-1d0eb0818d56)
   
-  4. To retrieve the filter values for the specific view, use the [getDashboardViewByViewId]() method as follows.
+  5. To retrieve the filter values for the specific view, use the [getDashboardViewByViewId]() method as follows.
 
       ![get-view-by-view-id-method](https://github.com/boldbi/samples/assets/92368448/2f51b702-8607-4fab-a86e-e9012eda712d)
 
@@ -201,7 +202,9 @@ In Javascript-based embedding, we have support to add, update, retrieve and dele
       ![loadView-using-viewId](https://github.com/boldbi/samples/assets/149655444/5d1143c3-33cd-483d-825c-0bf2bbfddae1)
      
   2. To initially render the dashboard with specific filter view,loadView method can be used in `Index.js` file along with the view's viewId in embedOptions or viewName in embedOptions(Refer the code below)
+     
      ![loadView-viewName](https://github.com/boldbi/samples/assets/149655444/ff8ee0b6-c959-4b0b-a578-72b667b40f32)
+     
      ![loadView-viewId](https://github.com/boldbi/samples/assets/149655444/62139301-9a0b-4c49-b3ba-91dcdb834d78)
 
 
