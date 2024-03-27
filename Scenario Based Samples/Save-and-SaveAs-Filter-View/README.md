@@ -64,7 +64,7 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
 ## How the sample works
 
-In Javascript-based embedding, we have support to add, update, retrieve and delete action on views. With the help of provided API's, we can design your dashboard and bind action to your UI.So, this section explains how to render your dashboard with filter views with the necessary steps to use in your dashboard embedding.
+In Javascript-based embedding, we have support to add, update, retrieve and delete action on views. With the help of provided API's, we can design your dashboard and bind action to your UI.In this sample you can render a Dashboard view,save a new view,delete views and modify existing views.So,this section explains how to render your dashboard with filter views with the necessary steps to use in your dashboard embedding.
 
 >**NOTE**: Please refer the [link](https://help.boldbi.com/managing-resources/manage-dashboards/manage-dashboard-views/) for know more about the Dashboard Views.
 
