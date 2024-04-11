@@ -69,7 +69,7 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
 ## How the sample works
 
-  * In javascript based embedding the member api `hideMultiDashboardHeader` can be used to enable or disable the tab area in the header of a Multitab dashboard.Please refer to this [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/angular-with-javascript/#how-to-run-the-sample) to know more about the member.
+  * In javascript based embedding the member api `hideMultiDashboardHeader` can be used to enable or disable the tab area in the header of a Multitab dashboard.Please refer to this [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/members/#hideMultiDashboardHeader) to know more about the member.
 
   > **NOTE:** In the sample this member's value will be set to `true`. However you can customize its value in `renderDashboard()` method inside `dashboard-listing.component.ts` file.
 
@@ -86,6 +86,7 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
   3. Click settings icon of the widget and enable `Enable link` option. Provide value in the `URL` field by referring to this [link](https://help.boldbi.com/visualizing-data/working-with-widgets/linking-urls-and-dashboards/#dashboard-parameter-support-in-url-linking)
 
   ![multitab-linking-url](https://github.com/boldbi/samples/assets/149655444/88c44549-95ea-4855-86d4-2943e5e952ab)
+
  
   4. In this way you can link many dashboards inside other widgets.
 
