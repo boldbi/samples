@@ -73,6 +73,8 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   > **NOTE:** In the sample this member's value will be set to `true`. However you can customize its value in `renderDashboard()` method inside `dashboard-listing.component.ts` file.
 
+![multitab-linking-renderDashboard](https://github.com/boldbi/samples/assets/149655444/b9b00460-ea45-4cc0-b185-498d78e43825)
+
   * In this sample,when you embed a Multitab dashboard the tab area for dashboard switching will be hidden.You can navigate from first dashboard to other dashboards only by linking their URL inside widgets.
 
 ### How to link URL in a Dashboard
@@ -83,6 +85,8 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   3. Click settings icon of the widget and enable `Enable link` option. Provide value in the `URL` field by referring to this [link](https://help.boldbi.com/visualizing-data/working-with-widgets/linking-urls-and-dashboards/#dashboard-parameter-support-in-url-linking)
 
+  ![multitab-linking-url](https://github.com/boldbi/samples/assets/149655444/88c44549-95ea-4855-86d4-2943e5e952ab)
+ 
   4. In this way you can link many dashboards inside other widgets.
 
   > **NOTE:** In a single widget we can able to link only one dashboard.
