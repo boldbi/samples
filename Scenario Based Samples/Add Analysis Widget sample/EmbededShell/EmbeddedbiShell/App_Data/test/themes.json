@@ -1,0 +1,18 @@
+{
+  "Header": {
+    "IsEnabled": true,
+    "IsFixed": false,
+    "Theme": "dark"
+  },
+  "SideBar": {
+    "isEnabled": true,
+    "isFixed": true,
+    "Theme": "dark"
+  },
+  "Footer": {
+    "isEnabled": false,
+    "isFixed": false
+  },
+  "BrandTitle": "Bold BI Embedded",
+  "AppLogo": "main_logo.svg"
+}

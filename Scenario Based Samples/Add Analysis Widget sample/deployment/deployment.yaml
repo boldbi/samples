@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: embedded-adhoc-deployment
+  namespace: adhoc-embed-app
+spec:
+  selector:
+    matchLabels:
+      app: embedded-adhoc-cloud
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: embedded-adhoc-cloud
+    spec:
+      containers:
+      - name: embedded-adhoc-cloud
+        image: us-docker.pkg.dev/boldbi-dev-296107/boldbik8s/boldbi-adhoc-embed:#ImageUrl#
+
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+            memory: 750Mi
+        envFrom:
+        - secretRef:
+              name: embedded-adhoc-cloud-secret1
+              optional: true
+        

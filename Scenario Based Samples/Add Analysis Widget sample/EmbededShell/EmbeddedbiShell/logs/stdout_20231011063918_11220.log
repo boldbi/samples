@@ -1,0 +1,137 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[63]
+      User profile is available. Using 'C:\Users\AnuAbarnaBalakrishna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+Hosting environment: Development
+Content root path: D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell
+Now listening on: http://localhost:56325/
+Now listening on: https://localhost:44390/
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/ - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String, System.String, Int32, System.String, Boolean, System.String) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 21401.0853ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.Index (SampleCoreApp) in 22835.4285ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/ - - - 200 - text/html;+charset=utf-8 23095.9370ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/Index.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 21.0550ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/Index.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/Index.js - - - 304 - application/javascript 59.4212ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/bootstrap/bootstrap.bundle.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\bootstrap\bootstrap.bundle.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - - - 200 410007 text/plain 62.7701ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.0225ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/application/adminlte.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\application\adminlte.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - - - 200 113276 text/plain 34.1603ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_vs/browserLink - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.2134ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.9083ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/GetDetails application/json 292
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "GetDetails", controller = "Home"}. Executing controller action with signature System.String GetDetails(System.Object) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'System.String'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.GetDetails (SampleCoreApp) in 381.9409ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:44390/GetDetails application/json 292 - 200 - text/plain;+charset=utf-8 398.5917ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/dashboard-designer?id=30eb13c3-a93d-43b3-bffe-5490a4c9e6ea&name=fdfd - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Index", controller = "Designer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String, System.String, System.String) on controller SampleCoreApp.Controllers.DesignerController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 244.6685ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.DesignerController.Index (SampleCoreApp) in 747.1755ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/dashboard-designer?id=30eb13c3-a93d-43b3-bffe-5490a4c9e6ea&name=fdfd - - - 200 - text/html;+charset=utf-8 772.5130ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 3.0280ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_vs/browserLink - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.1057ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/bootstrap/bootstrap.bundle.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\bootstrap\bootstrap.bundle.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - - - 200 410007 text/plain 14.9843ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.2583ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 2.9680ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/application/adminlte.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\application\adminlte.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - - - 200 113276 text/plain 13.3606ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/GetDetails application/json 339
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "GetDetails", controller = "Home"}. Executing controller action with signature System.String GetDetails(System.Object) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'System.String'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.GetDetails (SampleCoreApp) in 98.8661ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:44390/GetDetails application/json 339 - 200 - text/plain;+charset=utf-8 111.0925ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.0884ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/dashboard-designer?id=30eb13c3-a93d-43b3-bffe-5490a4c9e6ea&name=fdfd - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Index", controller = "Designer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String, System.String, System.String) on controller SampleCoreApp.Controllers.DesignerController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 6.6083ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.DesignerController.Index (SampleCoreApp) in 576.2194ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/dashboard-designer?id=30eb13c3-a93d-43b3-bffe-5490a4c9e6ea&name=fdfd - - - 200 - text/html;+charset=utf-8 592.9724ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 2.2776ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/bootstrap/bootstrap.bundle.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell

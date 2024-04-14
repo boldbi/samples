@@ -1,0 +1,31 @@
+{
+  "EmbedSecret": "nfb5TmsqjyCJANtkQ6eA0q2LGNbZFHJ",
+  "Serverurl": "https://demo-datasecurity.boldbi.com/bi/site/site1",
+  "UserDetails": [
+    {
+      "Email": "demouser@boldbi.com",
+      "DisplayName": "John Doe"
+    },
+    {
+      "Email": "demotest@boldbi.com",
+      "DisplayName": "Brito"
+    }
+  ],
+  "AdminEmail": "demo@boldbi.com",
+  "Environment": "onpremise",
+  "BaseUrl": "https://demo-datasecurity.boldbi.com/addanalysiswidget",
+  "SiteIdentifier": "site/site1",
+  "RootUrl": "https://demo-datasecurity.boldbi.com/bi",
+  "WidgetDetails": [
+    {
+      "name": "PivotGrid",
+      "id": "",
+      "bounds": {
+        "Column": 0,
+        "ColumnSpan": 48, //37,
+        "Row": 0,
+        "RowSpan": 24
+      }
+    }
+  ]
+}

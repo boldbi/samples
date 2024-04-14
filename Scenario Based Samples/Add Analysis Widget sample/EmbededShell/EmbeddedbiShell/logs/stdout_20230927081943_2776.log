@@ -1,0 +1,349 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[63]
+      User profile is available. Using 'C:\Users\AnuAbarnaBalakrishna\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+Hosting environment: Development
+Content root path: D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell
+Now listening on: http://localhost:56325/
+Now listening on: https://localhost:44390/
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/ - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String, System.String, Int32, System.String, Boolean, System.String) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 20949.9456ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.Index (SampleCoreApp) in 32648.2018ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/daterangepicker.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/adminlte.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/bootstrapcompatibility.min.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/OverlayScrollbars.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/summernote-bs4.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/icheck-bootstrap.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jquery/jquery.min.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/jqvmap.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/ - - - 200 - text/html;+charset=utf-8 32925.7253ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/icheck-bootstrap.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/summernote-bs4.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/bootstrapcompatibility.min.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jquery/jquery.min.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/daterangepicker.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/jqvmap.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/OverlayScrollbars.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/adminlte.css was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/summernote-bs4.css - - - 304 - text/css 55.0111ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/icheck-bootstrap.css - - - 304 - text/css 41.6199ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/bootstrapcompatibility.min.css - - - 304 - text/css 78.5886ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/adminlte.css - - - 304 - text/css 78.5927ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/daterangepicker.css - - - 304 - text/css 81.6768ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/OverlayScrollbars.css - - - 304 - text/css 69.5865ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/site.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/all.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/themes/tempusdominus-bootstrap-4.css - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jquery/jquery.min.js - - - 304 - application/javascript 54.9825ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/tempusdominus-bootstrap-4.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/themes/all.css was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/tempusdominus-bootstrap-4.css - - - 304 - text/css 12.5440ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/site.css - - - 304 - text/css 12.5421ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/all.css - - - 304 - text/css 13.4979ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/themes/jqvmap.css - - - 304 - text/css 75.9023ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jquery/Jsrender.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jquery/signalr.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jquery-knob/jquery.knob.min.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jqvmap/jquery.vmap.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jquery/jquery.easing.min.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jqvmap/maps/jquery.vmap.usa.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/application/jquery.overlayScrollbars.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/application/summernote-bs4.js - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jquery/Jsrender.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jquery-knob/jquery.knob.min.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jquery/jquery.easing.min.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jqvmap/maps/jquery.vmap.usa.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/application/summernote-bs4.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jqvmap/maps/jquery.vmap.usa.js - - - 304 - application/javascript 13.0460ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/application/summernote-bs4.js - - - 304 - application/javascript 16.8822ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jquery/jquery.easing.min.js - - - 304 - application/javascript 19.7936ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/application/adminlte.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/jquery-ui/jquery-ui.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/application/demo.js - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/application/adminlte.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jquery-ui/jquery-ui.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/application/jquery.overlayScrollbars.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/application/demo.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/application/adminlte.js - - - 304 - application/javascript 22.8569ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jquery-ui/jquery-ui.js - - - 304 - application/javascript 22.1359ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/application/demo.js - - - 304 - application/javascript 21.0497ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/EmbedBIWrapper.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/application/jquery.overlayScrollbars.js - - - 304 - application/javascript 57.2534ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/EmbedBIWrapper.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jquery-knob/jquery.knob.min.js - - - 304 - application/javascript 69.4598ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/EmbedBIWrapper.js - - - 304 - application/javascript 19.5325ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/bootstrap/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js - - - 304 - application/javascript 81.0443ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jqvmap/jquery.vmap.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/jquery/signalr.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jqvmap/jquery.vmap.js - - - 304 - application/javascript 92.1726ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jquery/signalr.js - - - 304 - application/javascript 95.2205ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/js/Index.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/jquery/Jsrender.js - - - 304 - application/javascript 101.9505ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/Index.js was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/js/Index.js - - - 304 - application/javascript 8.0952ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 8.9280ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/bootstrap/bootstrap.bundle.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\bootstrap\bootstrap.bundle.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - - - 200 410007 text/plain 55.2557ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.2493ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/application/adminlte.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\application\adminlte.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - - - 200 113276 text/plain 9.0578ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/images/application/user1-128x128.jpg - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/images/application/profile.png - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_vs/browserLink - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/images/application/user3-128x128.jpg - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/images/application/user8-128x128.jpg - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/application/user1-128x128.jpg was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/application/user8-128x128.jpg was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/application/profile.png was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/images/application/user1-128x128.jpg - - - 304 - image/jpeg 18.3787ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/images/application/user8-128x128.jpg - - - 304 - image/jpeg 18.0997ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/images/application/profile.png - - - 304 - image/png 20.8802ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 14.2452ms
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /images/application/user3-128x128.jpg was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/images/application/user3-128x128.jpg - - - 304 - image/jpeg 35.3263ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.0637ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/webfonts/fa-regular-400.woff2 - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/css/webfonts/fa-solid-900.woff2 - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/webfonts/fa-solid-900.woff2 was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/webfonts/fa-regular-400.woff2 was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/webfonts/fa-solid-900.woff2 - - - 304 - font/woff2 10.1085ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/css/webfonts/fa-regular-400.woff2 - - - 304 - font/woff2 13.4786ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/GetDetails application/json 285
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "GetDetails", controller = "Home"}. Executing controller action with signature System.String GetDetails(System.Object) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'System.String'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.GetDetails (SampleCoreApp) in 1134.8099ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:44390/GetDetails application/json 285 - 200 - text/plain;+charset=utf-8 1157.3658ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/userds-permission application/x-www-form-urlencoded;+charset=UTF-8 76
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "DSPermission", controller = "Home"}. Executing controller action with signature System.String DSPermission(Boolean, System.String, System.String) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'System.String'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.DSPermission (SampleCoreApp) in 3989.8503ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:44390/userds-permission application/x-www-form-urlencoded;+charset=UTF-8 76 - 200 - text/plain;+charset=utf-8 3999.7692ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/ - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String, System.String, Int32, System.String, Boolean, System.String) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 19.8993ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.Index (SampleCoreApp) in 7784.7935ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/ - - - 200 - text/html;+charset=utf-8 7800.6850ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 2.4716ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/bootstrap/bootstrap.bundle.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\bootstrap\bootstrap.bundle.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - - - 200 410007 text/plain 31.2387ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.4560ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 2.3270ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/application/adminlte.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\application\adminlte.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - - - 200 113276 text/plain 9.1902ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/GetDetails application/json 285
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "GetDetails", controller = "Home"}. Executing controller action with signature System.String GetDetails(System.Object) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'System.String'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.GetDetails (SampleCoreApp) in 1079.87ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:44390/GetDetails application/json 285 - 200 - text/plain;+charset=utf-8 1086.7444ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/userds-permission application/x-www-form-urlencoded;+charset=UTF-8 77
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "DSPermission", controller = "Home"}. Executing controller action with signature System.String DSPermission(Boolean, System.String, System.String) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'System.String'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.DSPermission (SampleCoreApp) in 3785.5722ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST https://localhost:44390/userds-permission application/x-www-form-urlencoded;+charset=UTF-8 77 - 200 - text/plain;+charset=utf-8 3794.2492ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/ - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String, System.String, Int32, System.String, Boolean, System.String) on controller SampleCoreApp.Controllers.HomeController (SampleCoreApp).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 11.4035ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action SampleCoreApp.Controllers.HomeController.Index (SampleCoreApp) in 7581.5777ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/ - - - 200 - text/html;+charset=utf-8 7596.8157ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/bootstrap/bootstrap.bundle.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\bootstrap\bootstrap.bundle.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/bootstrap/bootstrap.bundle.js.map - - - 200 410007 text/plain 25.4064ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 3.3980ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 2.8778ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/summernote-bs4.js.map - - - 404 - - 3.5807ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - -
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/application/adminlte.js.map'. Physical path: 'D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\wwwroot\js\application\adminlte.js.map'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:44390/js/application/adminlte.js.map - - - 200 113276 text/plain 8.7702ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST https://localhost:44390/GetDetails application/json 285
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "GetDetails", controller = "Home"}. Executing controller action with signature System.String GetDetails(System.Object) on controller SampleCoreApp.Control

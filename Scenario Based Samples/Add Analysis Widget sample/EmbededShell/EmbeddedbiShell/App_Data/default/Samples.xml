@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SamplesModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Samples>
+  </Samples>
+  <Categories>
+    <Category>
+      <Id>1</Id>
+      <Name>Dashboard</Name>
+      <Description>Embedding dashboards</Description>
+      <Badge>None</Badge>
+      <SpiteClass>fa-tachometer-alt</SpiteClass>
+      <Path></Path>
+      <DashboardPath></DashboardPath>
+      <Title>Bold BI | Dashboard</Title>
+    </Category>
+  </Categories>
+</SamplesModel>

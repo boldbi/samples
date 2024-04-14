@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\SprintTask(Adhoc)\330799(adhoc-poc-widget)\EmbededShell\EmbeddedbiShell\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-10-19T10:52:16.3926752Z;True|2023-10-19T16:21:53.1432793+05:30;True|2023-10-19T15:37:57.2650103+05:30;True|2023-10-19T15:23:12.0280418+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
