@@ -24,6 +24,8 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
  3. Create 2 users in your BoldBI Server. For example, I have created 2 users with the email IDs `testuser1@gmail.com` and `testuser2@gmail.com`.
 
+   > **NOTE:** Users are not required at the embedding level. However, for the server level, users are mandatory on your BoldBI Server.
+
     ![DCSUsers](https://github.com/boldbi/samples/assets/129487075/14723d13-a070-4008-8a62-76ffbe521445)
 
 ## Developer IDE
@@ -54,13 +56,15 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
     ![DCSsampleAPI](https://github.com/boldbi/samples/assets/129487075/54c6f23c-35cc-4dc4-8630-b2d4e1241e2f)
 
- 5. In BoldBI Server, create a SQL Server datasource with the first database (Eg: DCS_DB1). Enable Dynamic Connection String and click the `Configure` button. The image attached below for your reference will appear.
+ 5. In BoldBI Server, create a SQL Server datasource with the first database (Eg: DCS_DB1). Enable Dynamic Connection String and click the `Configure` button. The image attached below for your reference will appear. Enter the localhost URL in the designated URL field.
 
     ![DCSConfiguration](https://github.com/boldbi/samples/assets/129487075/c3a42be1-6aeb-47df-8701-d7c35c46d75d)
 
- 6. Put the localhost URL in the URL, select the `Both` radio button in the Configuration mode, and choose `Email` or `Full Name` in the User Identity. Then, connect it.​​​​​​​
+ 6. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the embedding level, choose `Embedding`. If at the server level, choose `Server`, or if both, choose the `Both` radio button. I have selected the `Both` radio button to test the sample at both server and embedding levels. In the User Identity choose `Email` or `Full Name` in the and connect it.​​​​​​​
 
-    > **NOTE:** For the embedding level, the identityType always holds the value as `Custom` in the Dynamic Connection String sample. For the server level, it is based on the selection made in User Identity.
+    > **NOTE:** At the embedding level, the identityType always holds the value as `Custom` in the Dynamic Connection String sample, even if you choose `Email` or `Full Name`. At the server level, it is based on the selection made in User Identity.
+
+   ![DCSConfiguration](https://github.com/boldbi/samples/assets/129487075/c3a42be1-6aeb-47df-8701-d7c35c46d75d)
 
  7. Create a dashboard with this same data source and publish it.
 
@@ -68,14 +72,14 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
  1. Please refer this [link](https://github.com/boldbi/aspnet-core-sample) to run the ASP.Net Core sample. You will need to render the sample with the created dashboard for Dynamic Connection String.
 
- 2. Enter the dynamicConnection API in the `Index.js` file by referring to the code below.
+ 2. Set the identity in the dynamicConnection member in the `Index.js` file by referring to the code below.
     ```js
         dynamicConnection: {
             isEnabled: true,
             identity: "1"
         }
     ```
-    > **NOTE:** Please refer to this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/members/#dynamicconnection) to learn more about the dynamicConnection API.
+    > **NOTE:** You can set any value to the identity. Please refer to this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/members/#dynamicconnection) to learn more about the dynamicConnection member API.
 
     ![DCSUser1dashboard](https://github.com/boldbi/samples/assets/129487075/1ada2978-1a0b-4d86-af26-93ac5beb08d4)
 
