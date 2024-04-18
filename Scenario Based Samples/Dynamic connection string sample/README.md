@@ -68,9 +68,9 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
  7. Create a dashboard with this same data source and publish it.
 
-## Steps to configure the Dynamic Connection String dashboard in the JS-based ASP.Net Core Embedding sample
+## Steps to configure the Dynamic Connection String dashboard in the JS-based ASP.NET Core Embedding sample
 
- 1. Please refer this [link](https://github.com/boldbi/aspnet-core-sample) to run the ASP.Net Core sample. You will need to render the sample with the created dashboard for Dynamic Connection String.
+ 1. Please refer this [link](https://github.com/boldbi/aspnet-core-sample) to run the ASP.NET Core sample. You will need to render the sample with the created dashboard for Dynamic Connection String.
 
  2. Set the identity in the dynamicConnection member in the `Index.js` file by referring to the code below.
     ```js
