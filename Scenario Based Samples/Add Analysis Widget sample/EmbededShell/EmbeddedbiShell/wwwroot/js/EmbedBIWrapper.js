@@ -76,23 +76,22 @@ class BoldBI {
 
         this.renderWidgets = this.Invoke(function (widgetlist) {
             if (this.embedOptions.mode != BoldBI.Mode.Design) {
-                throw new Error('renderWidgets method not supported in View Mode');
+                this._throwError('The renderWidgets method is supported only for Design Mode.');
             }
             const dbrdInstance = this._getDashboardInstance();
             if (dbrdInstance != undefined) {
                 var widgetValue = dbrdInstance.renderWidgets(widgetlist);
             }
             if (widgetValue != undefined) {
-                throw new Error(widgetValue);
+                this._throwError(widgetValue);
             }
         });
-
-         /**
+        /**
          * @param {string} clientFnc - It denotes the method name to be defined
          */
         this.getSupportedWidgets = this.Invoke(function (clientFnc) {
             if (this.embedOptions.mode != BoldBI.Mode.Design) {
-                throw new Error('getSupportedWidgets method not supported in View Mode');
+                this._throwError('The getSupportedWidgets method is only supported for Design Mode.');
             }
             const dbrdInstance = this._getDashboardInstance();
             if (dbrdInstance != undefined) {

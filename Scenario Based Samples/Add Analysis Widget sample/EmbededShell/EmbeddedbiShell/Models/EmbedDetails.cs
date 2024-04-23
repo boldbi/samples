@@ -96,6 +96,15 @@ namespace SampleCoreApp.Models
         }
 
         /// <summary>
+        /// Gets or sets datasourceName member.
+        /// </summary>
+        public string DatasourceName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or sets userDetails member.
         /// </summary>
         public List<User> UserDetails

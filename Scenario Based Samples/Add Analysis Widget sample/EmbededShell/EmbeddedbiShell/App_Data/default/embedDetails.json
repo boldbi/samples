@@ -1,21 +1,22 @@
 {
-  "EmbedSecret": "nfb5TmsqjyCJANtkQ6eA0q2LGNbZFHJ",
-  "Serverurl": "https://demo-datasecurity.boldbi.com/bi/site/site1",
+  "EmbedSecret": "nlQLcWuxWAH93NfDTJnwRhV8EIBjlXBK",
+  "Serverurl": "https://demo-adhoc.boldbi.com/bi",
+  "RootUrl": "https://demo-adhoc.boldbi.com/bi",
+  "SiteIdentifier": "",
   "UserDetails": [
     {
-      "Email": "demouser@boldbi.com",
+      "Email": "harini.ramesh@syncfusion.com",
       "DisplayName": "John Doe"
     },
     {
-      "Email": "demotest@boldbi.com",
+      "Email": "soundarya.manimeharan@syncfusion.com",
       "DisplayName": "Brito"
     }
   ],
-  "AdminEmail": "demo@boldbi.com",
-  "Environment": "onpremise",
-  "BaseUrl": "https://demo-datasecurity.boldbi.com/addanalysiswidget",
-  "SiteIdentifier": "site/site1",
-  "RootUrl": "https://demo-datasecurity.boldbi.com/bi",
+  "AdminEmail": "alagarsamyd@syncfusion.com",
+  "Environment": "cloud",
+  "BaseUrl": "https://localhost:44390",
+  "DatasourceName": "Patient Analysis Test data",
   "WidgetDetails": [
     {
       "name": "PivotGrid",
