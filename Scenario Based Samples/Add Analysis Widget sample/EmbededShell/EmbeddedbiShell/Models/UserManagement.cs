@@ -81,8 +81,16 @@ namespace SampleCoreApp.Models
                 client.BaseAddress = new Uri(this.globalAppSettings.EmbedDetails.RootUrl);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Add("Authorization", "bearer" + " " + token);
-                //var result = client.GetAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v1.0/users/" + email).Result;
-                var result = client.GetAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v1.0/users/" + email).Result;
+                var result = new HttpResponseMessage();
+                if (this.globalAppSettings.EmbedDetails.Environment == "cloud")
+                {
+                    result = client.GetAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v1.0/users/" + email).Result;
+                }
+                else
+                {
+                    result = client.GetAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v1.0/users/" + email).Result;
+                }
+
                 string resultContent = result.Content.ReadAsStringAsync().Result;
 
                 if (result.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -121,8 +129,16 @@ namespace SampleCoreApp.Models
                     new KeyValuePair<string, string>("Password", password),
                 });
                 client.DefaultRequestHeaders.Add("Authorization", "bearer" + " " + token);
-                //var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v1.0/users", content).Result;
-                var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v1.0/users", content).Result;
+                var result = new HttpResponseMessage();
+                if (this.globalAppSettings.EmbedDetails.Environment == "cloud")
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v1.0/users", content).Result;
+                }
+                else
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v1.0/users", content).Result;
+                }
+
                 string resultContent = result.Content.ReadAsStringAsync().Result;
                 var response = JsonConvert.DeserializeObject<ServerUser>(resultContent);
                 return response;
@@ -149,8 +165,16 @@ namespace SampleCoreApp.Models
                 });
 
                 client.DefaultRequestHeaders.Add("Authorization", "bearer" + " " + token);
-                //var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/permissions/users", content).Result;
-                var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/permissions/users", content).Result;
+                var result = new HttpResponseMessage();
+                if (this.globalAppSettings.EmbedDetails.Environment == "cloud")
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/permissions/users", content).Result;
+                }
+                else
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/permissions/users", content).Result;
+                }
+
                 string resultContent = result.Content.ReadAsStringAsync().Result;
             }
         }
@@ -171,8 +195,16 @@ namespace SampleCoreApp.Models
                 var content = new FormUrlEncodedContent(new[] { new KeyValuePair<string, string>("Name", userName) });
                 client.DefaultRequestHeaders.Add("Authorization", "bearer" + " " + userToken);
                 client.DefaultRequestHeaders.Add("ETag", DashboardModel.RandomString());
-                //var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/categories", content).Result;
-                var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/categories", content).Result;
+                var result = new HttpResponseMessage();
+                if (this.globalAppSettings.EmbedDetails.Environment == "cloud")
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/categories", content).Result;
+                }
+                else
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/categories", content).Result;
+                }
+
                 string resultContent = result.Content.ReadAsStringAsync().Result;
                 var response = JsonConvert.DeserializeObject<SampleApiResponse>(resultContent);
                 categoryId = response.Status ? response.Data.ToString() : string.Empty;
@@ -202,8 +234,16 @@ namespace SampleCoreApp.Models
                     new KeyValuePair<string, string>("ItemId", categoryId),
                 });
                 client.DefaultRequestHeaders.Add("Authorization", "bearer" + " " + token);
-                //var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/permissions/users", content).Result;
-                var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/permissions/users", content).Result;
+                var result = new HttpResponseMessage();
+                if (this.globalAppSettings.EmbedDetails.Environment == "cloud")
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/permissions/users", content).Result;
+                }
+                else
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/permissions/users", content).Result;
+                }
+
                 string resultContent = result.Content.ReadAsStringAsync().Result;
             }
         }
@@ -227,8 +267,16 @@ namespace SampleCoreApp.Models
                     new KeyValuePair<string, string>("PermissionEntity", "AllDataSources"),
                 });
                 client.DefaultRequestHeaders.Add("Authorization", "bearer" + " " + token);
-                //var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/permissions/users", content).Result;
-                var result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/permissions/users", content).Result;
+                var result = new HttpResponseMessage();
+                if (this.globalAppSettings.EmbedDetails.Environment == "cloud")
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/v2.0/permissions/users", content).Result;
+                }
+                else
+                {
+                    result = client.PostAsync(this.globalAppSettings.EmbedDetails.RootUrl + "/api/" + this.globalAppSettings.EmbedDetails.SiteIdentifier + "/v2.0/permissions/users", content).Result;
+                }
+
                 string resultContent = result.Content.ReadAsStringAsync().Result;
             }
         }

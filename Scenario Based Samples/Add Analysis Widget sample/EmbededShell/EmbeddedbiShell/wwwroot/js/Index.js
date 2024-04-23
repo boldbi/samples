@@ -225,11 +225,16 @@ $(document).on("click", "#create-dashboard", function () {
 });
 
 function openDesignerForCreate(dbrdName) {
+    if(environment == "cloud")
+    {
+        var createUrl = serverApiUrl + "/v4.0/dashboards/draft";
+    }
+    else {
+        var createUrl = serverApiUrl + "/" + siteIdentifier + "/v4.0/dashboards/draft";
+    }
     $.ajax({
         type: "POST",
-        //url: serverApiUrl + "/v4.0/dashboards/draft",
-        //url: serverApiUrl + "/site/site1/v4.0/dashboards/draft",
-        url: serverApiUrl + "/" + siteIdentifier + "/v4.0/dashboards/draft",
+        url: createUrl,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', "bearer " + accessToken);
         },

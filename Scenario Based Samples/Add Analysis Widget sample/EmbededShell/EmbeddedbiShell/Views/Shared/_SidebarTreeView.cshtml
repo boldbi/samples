@@ -9,6 +9,7 @@
     var userID = ViewBag.UserId;
     var updateSampleUrl = Url.Action("", "Home");
     var siteIdentifier = globalAppSettings.EmbedDetails.SiteIdentifier;
+    var environment = globalAppSettings.EmbedDetails.Environment;
 
     var dashboardName = ViewBag.DashboardName;
     List<SamplesSchemaViewModel> myDashboards = new List<SamplesSchemaViewModel>();
@@ -190,7 +191,8 @@
     var currentUserId = '@userID';
     var currentUserEmail = '@currentUserEmail';
     var siteIdentifier = '@siteIdentifier';
-    
+    var environment = '@environment';
+
     // Function to save checkbox state to session storage
    function saveCheckboxState() {
       const checkbox = document.getElementById('myCheckbox');
