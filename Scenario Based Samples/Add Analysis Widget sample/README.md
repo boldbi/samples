@@ -39,7 +39,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
         </tr>
         <tr>
             <td align="left">UserDetails</td>
-            <td align="left">Provide array of user email with your own names which will display in the user dropdown of the application.</td>
+            <td align="left">provide an array of user emails along with your own names, which will be displayed in the user dropdown of the application.</td>
         </tr>
         <tr>
             <td align="left">AdminEmail</td>
@@ -55,7 +55,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
         </tr> 
         <tr>
             <td align="left">BaseUrl</td>
-            <td align="left">Provide your application localhost Url will run.</td>
+            <td align="left">provide the localhost Url on which the application is run.</td>
         </tr>
         <tr>
             <td align="left">DatasourceName</td>
@@ -69,7 +69,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
     </tbody>
     </table>
 
-    > **NOTE:** To know more about how WidgetDetails parameter given, please refer [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). And to get the widget lists of name or Id supported of the widget panel from the server, please refer the getSupportedWidgets method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets). 
+    > **NOTE:** To learn more about the `WidgetDetails` parameter provided, please refer to [this](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). To retrieve the widget lists from the server's widget panel, please refer to the `getSupportedWidgets` method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets).
 
  ## Run a Sample Using Command Line Interface 
     
@@ -109,7 +109,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
     
     b. If you check or uncheck the checkbox for `Allow Datasource Editing`, the datasource in the dashboard will have Read, Write, Delete, or Read permissions, respectively.
     
-    c. By default, the `Add Analysis Widget` checkbox will be checked. When creating a new dashboard, the `widgetDetails` provided in the `embedDetails.json` file will automatically load in the designer. Additionally, the widget panel will be hidden in both the new and existing dashboard designer. If it is unchecked, both changes will be reverted.
+    c. By default, the `Add Analysis Widget` checkbox will be checked. When creating a new dashboard, the `WidgetDetails` provided in the `embedDetails.json` file, widgets will automatically load in the designer. Additionally, the widget panel will be hidden in both the new and existing dashboard designer. If it is unchecked, both changes will be reverted.
 
    ![adhoc-newdashboard1](https://github.com/boldbi/samples/assets/129487075/f5a7898b-b0e4-4a1a-abb3-f16e147676b7)
    ![adhoc-newdashboarduncheck](https://github.com/boldbi/samples/assets/129487075/7d49d520-15ad-46bf-85fa-e9429834af0f)

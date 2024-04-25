@@ -82,11 +82,7 @@ namespace SampleCoreApp.Controllers
                 this.ViewBag.UserId = userDetails.UserId;
             }
 
-            //this.ViewBag.DatasourceName = "Northwind Datasource";
-            //this.ViewBag.DatasourceName = "Sales_Data"; //onpremise
-            //this.ViewBag.DatasourceName = "Patient Analysis Test data"; //cloud
             this.ViewBag.DatasourceName = this.globalAppSettings.EmbedDetails.DatasourceName;
-
             var categories = new DashboardModel().GetCategories(email);
             this.ViewBag.Category = categories != null && categories.Count > 0 ? categories.FirstOrDefault() : null;
             this.ViewBag.GlobalAppSettings = updatedSettings;

@@ -3,6 +3,9 @@
 @using Microsoft.AspNetCore.Http;
 @inject IHttpContextAccessor HttpContextAccessor
 @{
+    ViewBag.Title = "Bold BI | Create";
+}
+@{
     var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
     var fixedSide = globalAppSettings.Sidebar.IsFixed ? "sidebar-mini layout-fixed" : globalAppSettings.Sidebar.IsEnabled ? "sidebar-mini sidebar-collapse" : "sidebar-collapse";
     var fixedHeader = globalAppSettings.Header.IsFixed ? "layout-navbar-fixed" : string.Empty;
@@ -57,7 +60,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @*<title>@Model.Title</title>*@
+    <title>@ViewBag.Title</title>
     
     <link rel="stylesheet" href="~/css/bootstrapcompatibility.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
