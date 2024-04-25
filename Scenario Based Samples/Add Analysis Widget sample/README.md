@@ -6,7 +6,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Dashboard view
 
-pic
+![adhoc-dashboard](https://github.com/boldbi/samples/assets/129487075/423eccd9-5500-40d8-96f1-005f820f87e8)
 
  ## Requirements/Prerequisites
 
@@ -19,8 +19,8 @@ pic
  ## Configuration
 
   * To configure the specified properties in the `embedDetails.json` file at the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Add%20Analysis%20Widget%20sample/EmbededShell/EmbeddedbiShell/App_Data/default), please follow to the provided instructions.
-    
-    pic embedDetails.json
+
+    ![adhoc-embeddetails](https://github.com/boldbi/samples/assets/129487075/a93b5ec8-70a2-4c47-8269-d259968e546f)
 
     <meta charset="utf-8"/>
     <table>
@@ -39,11 +39,11 @@ pic
         </tr>
         <tr>
             <td align="left">UserDetails</td>
-            <td align="left">Provide array of user email with your own display name.</td>
+            <td align="left">Provide array of user email with your own names which will display in the user dropdown of the application.</td>
         </tr>
         <tr>
             <td align="left">AdminEmail</td>
-            <td align="left">Email of the Admin in your Bold BI, which will be used to get the dashboard.</td>
+            <td align="left">Provide Admin email of your Bold BI, which will be used to get the dashboard.</td>
         </tr>
         <tr>
         <td align="left">EmbedSecret</td>
@@ -63,13 +63,13 @@ pic
         </tr>  
         <tr>
             <td align="left">WidgetDetails</td>
-            <td align="left">Provide the array of widget lists automatically added n draft dashboard on embedded designer while creating new dashboard. To know more, please refer [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). 
+            <td align="left">Provide the array of widget lists automatically added in draft dashboard on embedded designer while creating new dashboard.
             </td>
         </tr>  
     </tbody>
     </table>
 
-    > **NOTE:** To get the widget lists of name or Id, please refer the getSupportedWidgets method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets). 
+    > **NOTE:** To know more about WidgetDetails parameter, please refer [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). And to get the widget lists of name or Id supported in the widget panel from the server, please refer the getSupportedWidgets method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets). 
 
  ## Run a Sample Using Command Line Interface 
     
@@ -78,8 +78,6 @@ pic
   2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
   3. Finally, run the application using the command `dotnet run`. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., https://localhost:44390). Copy this URL and paste it into your default web browser.
-
-> **NOTE:** 
 
  ## Developer IDE
 
@@ -95,17 +93,17 @@ pic
  
   * To run the application, use the command `dotnet run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., https://localhost:44390). Copy this URL and paste it into your default web browser.
 
-    ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/6c03cba1-beeb-4be2-8a9e-f77f6a3ebf91)
+    ![adhoc-dashboard](https://github.com/boldbi/samples/assets/129487075/0117bcb1-3efe-4e00-aa2f-c629e952d81a)
 
 ### About the Sample
 
 1. You can switch the user in the user dropdown at top right of your application.
 
-pic 
+   ![adhoc-userlist](https://github.com/boldbi/samples/assets/129487075/1e93a36b-cd04-4686-a7b6-ad8e14f9b589)
 
 2. About the Settings list on the left side bar.
 
-   pic
+   ![adhoc-settings](https://github.com/boldbi/samples/assets/129487075/7b1bbb45-244e-41cc-a6fa-3d366687eda3)
 
     a. If you check or uncheck the checkbox for `Allow Dashboard Editing`, the dashboard in the dashboard listing will have Read, Write, Delete, or Read permissions, respectively.
     
@@ -113,8 +111,9 @@ pic
     
     c. By default, the `Add Analysis Widget` checkbox will be checked. When creating a new dashboard, the `widgetDetails` provided in the `embedDetails.json` file will automatically load in the designer. Additionally, the widget panel will be hidden in both the new and existing dashboard designer. If it is unchecked, both changes will be reverted.
 
-    pic
-
+   ![adhoc-newdashboard1](https://github.com/boldbi/samples/assets/129487075/f5a7898b-b0e4-4a1a-abb3-f16e147676b7)
+   ![adhoc-newdashboarduncheck](https://github.com/boldbi/samples/assets/129487075/7d49d520-15ad-46bf-85fa-e9429834af0f)
+   
 ## Important notes
 
 It is recommended not to store passwords and sensitive information in configuration files for security reasons in a real-world application. Instead, it would be best if you considered using a secure application, such as Key Vault, to safeguard your credentials.
