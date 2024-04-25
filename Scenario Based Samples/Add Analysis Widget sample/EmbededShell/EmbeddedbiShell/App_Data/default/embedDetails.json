@@ -1,6 +1,6 @@
 {
   "Serverurl": "http://localhost:12345/bi/site/site1",
-  "RootUrl": "http://localhost:62347/bi",
+  "RootUrl": "http://localhost:12345/bi",
   "SiteIdentifier": "site/site1",
   "UserDetails": [
     {

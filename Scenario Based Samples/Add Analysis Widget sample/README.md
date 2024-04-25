@@ -69,7 +69,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
     </tbody>
     </table>
 
-    > **NOTE:** To know more about WidgetDetails parameter, please refer [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). And to get the widget lists of name or Id supported in the widget panel from the server, please refer the getSupportedWidgets method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets). 
+    > **NOTE:** To know more about how WidgetDetails parameter given, please refer [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). And to get the widget lists of name or Id supported of the widget panel from the server, please refer the getSupportedWidgets method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets). 
 
  ## Run a Sample Using Command Line Interface 
     
