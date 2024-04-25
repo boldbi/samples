@@ -1,4 +1,4 @@
-# Bold BI embedded-bi-adhoc Sample in .NET Core
+# Bold BI Add Analysis Widget Sample in .NET Core
 
 This project was created using ASP.NET Core 6.0. This application aims to demonstrate the available dashboard embedding actions create, edit, delete and listing the dashboard based on user permissions.
 
