@@ -265,6 +265,8 @@ function CloseItem() {
 function deleteItem(args, dbrdName, itemId) {
     var dlgContent = 'Are you sure you want to delete the Dashboard - ' + dbrdName + '?';
     $("#dialog").html("");
+    document.body.style.pointerEvents = "none";
+    document.getElementById("dialog").style.pointerEvents = "auto";
     var dialogObj = new ejdashboard.popups.Dialog({
         header: "Delete Dashboard",
         content: dlgContent,
@@ -275,6 +277,7 @@ function deleteItem(args, dbrdName, itemId) {
             {
                 'click': () => {
                     dialogObj.hide();
+                    document.body.style.pointerEvents = "auto";
                     DeleteDashboard(args, dbrdName, itemId);
                 },
                 buttonModel: { content: 'Yes', isPrimary: true }
@@ -282,12 +285,14 @@ function deleteItem(args, dbrdName, itemId) {
             {
                 'click': () => {
                     dialogObj.hide();
+                    document.body.style.pointerEvents = "auto";
                 },
                 buttonModel: { content: 'No' }
             }
         ],
         close: function () {
             dialogObj.destroy();
+            document.body.style.pointerEvents = "auto";
         }
     });
     dialogObj.appendTo('#dialog');

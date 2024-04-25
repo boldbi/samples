@@ -182,13 +182,20 @@
 
 button.e-control.e-btn.e-lib.e-primary.e-flat {
     background-color: #3bacf6 !important;
-    width: 50px !important;
+    width: 78px !important;
+    height: 30px;
+    color: black;
+    font-size: 14px;
+    text-transform: none;
 }
 
 .e-control.e-dialog .e-footer-content .e-btn {
-    width: 50px !important;
+    width: 78px !important;
     margin-right: 5px;
     border-radius: 5px !important;
+    height: 30px;
+    font-size: 14px;
+    text-transform: none;
 }
 
 .e-footer-content {

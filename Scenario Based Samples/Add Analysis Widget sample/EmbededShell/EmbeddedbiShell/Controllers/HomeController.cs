@@ -200,7 +200,6 @@ namespace SampleCoreApp.Controllers
                 client.BaseAddress = new Uri(embedClass.DashboardServerApiUrl);
                 client.DefaultRequestHeaders.Accept.Clear();
                 var result = client.GetAsync(embedClass.DashboardServerApiUrl + embedDetailsUrl).Result;
-                //var result = client.GetAsync(embedClass.DashboardServerApiUrl + "/site/site1" + embedDetailsUrl).Result;
                 string resultContent = result.Content.ReadAsStringAsync().Result;
                 return resultContent;
             }
