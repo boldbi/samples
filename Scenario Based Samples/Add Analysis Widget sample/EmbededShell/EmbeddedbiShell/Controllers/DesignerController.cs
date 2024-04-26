@@ -43,7 +43,7 @@ namespace SampleCoreApp.Controllers
         }
 
         /// <summary>
-        /// TThe method will trigger Index View.
+        /// The method will trigger Index View.
         /// </summary>
         /// <param name="email">UserEmail.</param>
         /// <param name="id">DashboardId.</param>

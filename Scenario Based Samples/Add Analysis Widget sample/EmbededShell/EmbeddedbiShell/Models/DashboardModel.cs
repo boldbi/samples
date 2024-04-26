@@ -108,7 +108,7 @@ namespace SampleCoreApp.Models
         /// The method will trigger GetCategories API calls.
         /// </summary>
         /// <param name="email">UserEmail.</param>
-        /// <returns>Reutrn the string value of categories details.</returns>
+        /// <returns>Return the string value of categories details.</returns>
         public List<ApiItems> GetCategories(string email)
         {
             var result = new List<ApiItems>();

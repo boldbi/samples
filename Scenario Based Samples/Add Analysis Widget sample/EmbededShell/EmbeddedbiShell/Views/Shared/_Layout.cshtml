@@ -296,34 +296,6 @@
     <script type="text/javascript" src="~/js/Index.js">
         
     </script>
-    @* <script>
-        document.getElementById('myCheckbox').checked = true;
-    </script> *@
-   @* <script>
-        document.getElementById("Searchbox").addEventListener("search",
-            function (event) {
-                if (event.type === "search") {
-                    if (event.currentTarget.value !== "") {
-                        const referringDomain = document.location.href; // Replace with your actual domain or a list of allowed domains
-                        const referrer = document.referrer;
-                        if (referrer.startsWith(referringDomain)) {
-                            // Proceed with the search functionality
-                            document.getElementById('Searchbox').value = "";
-                        } else {
-                            // Handle the invalid referrer, potentially indicating a CSRF attack
-                            document.getElementById('Searchbox').value = "";
-                        };
-                    } else {
-
-                        document.getElementById('Searchbox').value = "";
-                    }
-                }
-            });
-        document.getElementById("search-form").addEventListener("submit",
-            function (event) {
-                event.preventDefault(); // this line stops the default behavior of the form submission here
-            });
-    </script>*@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
