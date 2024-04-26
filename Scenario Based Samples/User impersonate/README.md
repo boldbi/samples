@@ -66,8 +66,11 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
   * Configure user based filters in your Bold BI application by referring to this [help documentation](https://help.boldbi.com/working-with-data-sources/user-filter/).Kindly use datasource mode.
 
   * In the sample you can provide the user detail used in filter configuration inside the `AuthorizationServer` method present in `HomeController.cs` file. Append the details in embed Query with email ID as embed_impersonate_mail and user name as embed_impersonate_name.
+    ![impersonate_name](https://github.com/boldbi/samples/assets/149655444/c231db79-466a-44eb-8c49-01f7530308d6)
 
-  * In this way you can embed a Dashboard with the user filter applied.
+  * Run the sample to view the filtered data.
+    
+  * In this way you can embed a Dashboard with the user based filter data.
 
 ## Important notes
 
