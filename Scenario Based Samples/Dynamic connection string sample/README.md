@@ -13,7 +13,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
   
   * Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
-## Configuration
+### Configuration for both External API and Custom Attribute
 
  1. In order to configure the Dynamic Connection String, the datasource should be connected to the same database but with a different schema in order for the dashboard to reflect the changes made to the connection string.
 
@@ -31,6 +31,8 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 ## Developer IDE
 
  * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
+
+### How to configure the External API
 
 ## Steps to run the Dynamic Connection String sample using Visual Studio 2022 with SQL Server
 
@@ -116,6 +118,35 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
      * In `identityType` parameter holds the value of either `Email` or `Full Name` based on what is selected in the User Identity configuration.
 
      * Based on the conditions provided in the Dynamic Connection String sample, it will return the modified connection string details and render the dashboard accordingly.
+
+### How to configure the Custom Attribute
+
+### Steps to configure the Dynamic Connection String using Custom Attribute at the Server level
+
+1. This attribute can be set by the UMS admin for a site on the site details page.
+   
+   ![Add Attribute](https://github.com/boldbi/samples/assets/91586758/12b9b7ef-f410-4aec-89f1-e0fb8c372be7)
+
+   ![Attribute Image](https://github.com/boldbi/samples/assets/91586758/fa71a1b4-c333-4bc0-9a29-366952826b85)
+
+   > **NOTE:** Custom attributes can be defined at three levels: User level, Group level, and Site level. The first priority is at the `site level`, the second priority is at the `group level`, and the third priority is at the `user level`. I have explained the `site level`, and the same procedure applies to the `user` and `group` levels. For more about [custom Attribute](https://help.boldbi.com/working-with-data-sources/configuring-custom-attribute/#custom-attribute-hierarchy), please refer it. 
+
+2. In BoldBI Server, create a SQL Server datasource with the first database (Eg: DCS_DB1). Enable Dynamic Connection String and click the `Configure` button. The image attached below for your reference will appear. Enter the attribute name in Custom Attribute field.
+
+    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/59d98159-5549-41b5-869d-82c3e331ce28)
+
+3. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the server level, choose `Server` and connect it.
+
+    ![Configuration Mode](https://github.com/boldbi/samples/assets/91586758/9f3fb07d-840a-48e8-995d-319dffc15d71)
+
+4. Create a dashboard with this same data source and publish it.
+
+5. Custom attribute based dashboard rendering. The dashboard opens in designer mode, then click on preview options for custom attribute based dashboard rendering.
+
+   ![image](https://github.com/boldbi/samples/assets/91586758/38d066bd-cf3b-4ad9-b07c-cfb2c9ecfadf)
+   
+   ![image](https://github.com/boldbi/samples/assets/91586758/c7d3421b-d27c-4791-b59b-043347bb3890)
+   
 
  ## Important notes
 
