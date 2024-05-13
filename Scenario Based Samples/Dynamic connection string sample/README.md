@@ -60,7 +60,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
     ![dynamic-first](https://github.com/boldbi/samples/assets/129487075/53d12536-765d-49bf-83d9-ee724708eb74)
 
-    If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](https://github.com/boldbi/samples/blob/627d54181de42ec14209f242d7e41032c4345580/Scenario%20Based%20Samples/Dynamic%20connection%20string%20sample/README.md/#how-to-configure-the-custom-attribute-in-server-level-using-dynamic-connection-string), please refer to it.
+    If you are using a Custom Attribute, please refer to the following image. For more information about custom attributes, please refer to the bottom of the page.
 
     ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/7e01efe8-33ee-472a-9591-37582f767a50)
 
@@ -141,11 +141,19 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
 4. Create a dashboard with this same data source and publish it.
 
-5. Custom attribute based dashboard rendering. The dashboard opens in designer mode, then you can click on preview options to see the dashboard rendering based on custom attribute database values.
+5. Custom attribute based dashboard rendering. The dashboard rendering in designer mode, database (Eg: DCS_DB1) values based dashboard rendering. Then you can click on preview options to see the dashboard rendering based on custom attribute database (Eg: DCS_DB2) values.  I have attached a screenshot for your reference.
 
-   ![DashboardView](https://github.com/boldbi/samples/assets/91586758/38d066bd-cf3b-4ad9-b07c-cfb2c9ecfadf)
+   Dashboard rendering in View mode:
+
+   ![Dashboard View](https://github.com/boldbi/samples/assets/91586758/2eaf6dae-c76d-486b-a9a0-c5fa739a2090)
+
+   Dashboard rendering in Design mode:
    
-   ![DashboardDesign](https://github.com/boldbi/samples/assets/91586758/c7d3421b-d27c-4791-b59b-043347bb3890)
+   ![Dashboard Designer](https://github.com/boldbi/samples/assets/91586758/8ed1ac67-93a2-4080-b12b-5540ad7df15f)
+
+   Dashboard rendering in Design mode, then preview options click then see the render dashboard:
+
+   ![Dashboard Preview](https://github.com/boldbi/samples/assets/91586758/6fd15193-c2d1-41af-b27d-258937b75b90)
 
 
  ## Important notes
