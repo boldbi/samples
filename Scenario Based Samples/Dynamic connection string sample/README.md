@@ -148,10 +148,10 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
    ![Dashboard View](https://github.com/boldbi/samples/assets/91586758/2eaf6dae-c76d-486b-a9a0-c5fa739a2090)
 
    Dashboard rendering in Design mode:
-   
+
    ![Dashboard Designer](https://github.com/boldbi/samples/assets/91586758/8ed1ac67-93a2-4080-b12b-5540ad7df15f)
 
-   Dashboard rendering in Design mode, then preview options click then see the render dashboard:
+   Dashboard rendering in Design mode, click on the preview options, and then see the rendered dashboard:
 
    ![Dashboard Preview](https://github.com/boldbi/samples/assets/91586758/6fd15193-c2d1-41af-b27d-258937b75b90)
 
