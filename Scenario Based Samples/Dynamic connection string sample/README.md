@@ -62,7 +62,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
     If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](https://github.com/boldbi/samples/blob/627d54181de42ec14209f242d7e41032c4345580/Scenario%20Based%20Samples/Dynamic%20connection%20string%20sample/README.md#how-to-configure-the-custom-attribute-in-server-level-using-dynamic-connection-string), please refer to it.
 
-    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/59d98159-5549-41b5-869d-82c3e331ce28)
+    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/7e01efe8-33ee-472a-9591-37582f767a50)
 
  6. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the embedding level, choose `Embedding`. If at the server level, choose `Server`, or if both, choose the `Both` radio button. I have selected the `Both` radio button to test the sample at both server and embedding levels. In the User Identity choose `Email` or `Full Name` and connect it.​​​​​​​
 
@@ -133,11 +133,11 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
 2. In BoldBI Server, create a SQL Server datasource with the first database (Eg: DCS_DB1). Enable Dynamic Connection String and click the `Configure` button. The image attached below for your reference will appear. Enter the attribute name in Custom Attribute field.
 
-    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/59d98159-5549-41b5-869d-82c3e331ce28)
+    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/7e01efe8-33ee-472a-9591-37582f767a50)
 
 3. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the server level, choose `Server` and connect it.
 
-    ![Configuration Mode](https://github.com/boldbi/samples/assets/91586758/9f3fb07d-840a-48e8-995d-319dffc15d71)
+    ![Configuration Mode](https://github.com/boldbi/samples/assets/91586758/17b56900-0d32-42e8-84f2-a423ef1766f0)
 
 4. Create a dashboard with this same data source and publish it.
 
