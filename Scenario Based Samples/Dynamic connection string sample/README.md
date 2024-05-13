@@ -13,7 +13,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
   
   * Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
-### Configuration for both External API and Custom Attribute
+## Configuration for both the External API and Custom Attribute
 
  1. In order to configure the Dynamic Connection String, the datasource should be connected to the same database but with a different schema in order for the dashboard to reflect the changes made to the connection string.
 
@@ -32,7 +32,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
  * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 
-### How to configure the External API
+## How to configure the External API
 
 ## Steps to run the Dynamic Connection String sample using Visual Studio 2022 with SQL Server
 
@@ -141,12 +141,12 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
 4. Create a dashboard with this same data source and publish it.
 
-5. Custom attribute based dashboard rendering. The dashboard opens in designer mode, then click on preview options for custom attribute based dashboard rendering.
+5. Custom attribute based dashboard rendering. The dashboard opens in designer mode, then you can click on preview options to see the dashboard rendering based on custom attribute database values.
 
    ![image](https://github.com/boldbi/samples/assets/91586758/38d066bd-cf3b-4ad9-b07c-cfb2c9ecfadf)
    
    ![image](https://github.com/boldbi/samples/assets/91586758/c7d3421b-d27c-4791-b59b-043347bb3890)
-   
+
 
  ## Important notes
 
