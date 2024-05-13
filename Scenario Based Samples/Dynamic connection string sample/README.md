@@ -60,7 +60,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
     ![dynamic-first](https://github.com/boldbi/samples/assets/129487075/53d12536-765d-49bf-83d9-ee724708eb74)
 
-    If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](How to configure the Custom Attribute in Server level using Dynamic Connection String), please refer to it.
+    If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](https://github.com/boldbi/samples/blob/627d54181de42ec14209f242d7e41032c4345580/Scenario%20Based%20Samples/Dynamic%20connection%20string%20sample/README.md#how-to-configure-the-custom-attribute-in-server-level-using-dynamic-connection-string), please refer to it.
 
     ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/59d98159-5549-41b5-869d-82c3e331ce28)
 
