@@ -13,7 +13,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
   
   * Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
-## Configuration for both the External API and Custom Attribute
+## Configuration
 
  1. In order to configure the Dynamic Connection String, the datasource should be connected to the same database but with a different schema in order for the dashboard to reflect the changes made to the connection string.
 
@@ -31,8 +31,6 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 ## Developer IDE
 
  * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
-
-## How to configure the External API
 
 ## Steps to run the Dynamic Connection String sample using Visual Studio 2022 with SQL Server
 
@@ -61,6 +59,10 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
  5. In BoldBI Server, create a SQL Server datasource with the first database (Eg: DCS_DB1). Enable Dynamic Connection String and click the `Configure` button. The image attached below for your reference will appear. Enter the localhost URL in the designated URL field.
 
     ![dynamic-first](https://github.com/boldbi/samples/assets/129487075/53d12536-765d-49bf-83d9-ee724708eb74)
+
+    If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](How to configure the Custom Attribute in Server level using Dynamic Connection String), please refer to it.
+
+    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/59d98159-5549-41b5-869d-82c3e331ce28)
 
  6. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the embedding level, choose `Embedding`. If at the server level, choose `Server`, or if both, choose the `Both` radio button. I have selected the `Both` radio button to test the sample at both server and embedding levels. In the User Identity choose `Email` or `Full Name` and connect it.​​​​​​​
 
@@ -119,9 +121,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
      * Based on the conditions provided in the Dynamic Connection String sample, it will return the modified connection string details and render the dashboard accordingly.
 
-### How to configure the Custom Attribute
-
-### Steps to configure the Dynamic Connection String using Custom Attribute at the Server level
+## How to configure the Custom Attribute in Server level using Dynamic Connection String
 
 1. This attribute can be set by the UMS admin for a site on the site details page.
    
