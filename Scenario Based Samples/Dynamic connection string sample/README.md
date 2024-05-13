@@ -60,7 +60,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
     ![dynamic-first](https://github.com/boldbi/samples/assets/129487075/53d12536-765d-49bf-83d9-ee724708eb74)
 
-    If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](https://github.com/boldbi/samples/blob/627d54181de42ec14209f242d7e41032c4345580/Scenario%20Based%20Samples/Dynamic%20connection%20string%20sample/README.md#how-to-configure-the-custom-attribute-in-server-level-using-dynamic-connection-string), please refer to it.
+    If you are using a Custom Attribute, please refer to the following image. For more information about [custom attributes](https://github.com/boldbi/samples/blob/627d54181de42ec14209f242d7e41032c4345580/Scenario%20Based%20Samples/Dynamic%20connection%20string%20sample/README.md/#how-to-configure-the-custom-attribute-in-server-level-using-dynamic-connection-string), please refer to it.
 
     ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/7e01efe8-33ee-472a-9591-37582f767a50)
 
@@ -143,9 +143,9 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
 5. Custom attribute based dashboard rendering. The dashboard opens in designer mode, then you can click on preview options to see the dashboard rendering based on custom attribute database values.
 
-   ![image](https://github.com/boldbi/samples/assets/91586758/38d066bd-cf3b-4ad9-b07c-cfb2c9ecfadf)
+   ![DashboardView](https://github.com/boldbi/samples/assets/91586758/38d066bd-cf3b-4ad9-b07c-cfb2c9ecfadf)
    
-   ![image](https://github.com/boldbi/samples/assets/91586758/c7d3421b-d27c-4791-b59b-043347bb3890)
+   ![DashboardDesign](https://github.com/boldbi/samples/assets/91586758/c7d3421b-d27c-4791-b59b-043347bb3890)
 
 
  ## Important notes
