@@ -66,6 +66,8 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
   1. You can impersonate a active Bold BI user in your embedded application using their mail ID.
 
   2. In this sample set the mail ID of another user in embed Query as embed_impersonate_email inside the `AuthorizationServer` method present in `HomeController.cs` file.
+     
+     ![impersonate_email](https://github.com/boldbi/samples/assets/149655444/c4b491d5-f030-443d-9cfb-a6731d33c75c)
 
   3. This credential will impersonate the actual user to another user based on the provided mail ID.
 
@@ -75,7 +77,8 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
    
   * Configure user based filters in your Bold BI application by referring to this [help documentation](https://help.boldbi.com/working-with-data-sources/user-filter/).Kindly use datasource mode.
 
-  * In the sample you can provide the user detail used in filter configuration inside the `AuthorizationServer` method present in `HomeController.cs` file. Append the details in embed Query with user's full name  as embed_impersonate_name and user name as embed_impersonate_uname.
+  * In the sample you can provide the user detail used in filter configuration inside the `AuthorizationServer` method present in `HomeController.cs` file. Append the details in embed Query with user's full name  as embed_impersonate_name and user name as embed_impersonate_username.
+    
     ![impersonate_name](https://github.com/boldbi/samples/assets/149655444/c231db79-466a-44eb-8c49-01f7530308d6)
 
   * Run the sample to view the filtered data.
