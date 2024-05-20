@@ -94,11 +94,11 @@ namespace BoldBI.Embed.Sample.Controllers
             var embedQuery = embedClass.embedQuerString;
             // User your user-email as embed_user_email
             embedQuery += "&embed_user_email=" + GlobalAppSettings.EmbedDetails.UserEmail;
-            //embedQuery += "&embed_user_email=" + "demo@boldbi.com";
             //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
             double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             embedQuery += "&embed_server_timestamp=" + timeStamp;
-            embedQuery += "&embed_impersonate_mail=" + "demo@boldbi.com";
+            //Set another user mail as embed_ipersonate_email this will override the embed_user_email 
+            embedQuery += "&embed_impersonate_email=" + "demo@boldbi.com";
             var embedDetailsUrl = "/embed/authorize?" + embedQuery + "&embed_signature=" + GetSignatureUrl(embedQuery);
 
             using (var client = new HttpClient())
