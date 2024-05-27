@@ -4,7 +4,8 @@ This project was created using Angular and ASP.NET Core 6.0. This application ai
 
 ## Dashboard view
 
-![Dashboard View](https://github.com/boldbi/aspnet-core-sample/assets/91586758/af9a9d3f-3ebc-49dd-9bba-a061932cb9f6)
+![Dashboard View](https://github.com/boldbi/samples/assets/149655444/192b6b0a-445d-424c-969c-7585af0f684b)
+
 
  ## Requirements/Prerequisites
  
