@@ -1,6 +1,6 @@
 # Bold BI Embedded Sample in Angular with ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to render the dashboard available on your Bold BI server.
+This project was created using Angular and ASP.NET Core 6.0. This application aims to demonstrate how to render the dashboard available on your Bold BI server.
 
 ## Dashboard view
 
@@ -77,6 +77,9 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   * In this sample,when you embed a Multitab dashboard the tab area for dashboard switching will be hidden.You can navigate from first dashboard to other dashboards only by linking their URL inside widgets.
 
+  > **NOTE:**  This member will not hide header of a Multitab dashboard loaded using loadMultitabDashboard() method.
+
+
 ### How to link URL in a Dashboard
 
   1. In your Bold BI application,open the dashboard in edit mode.
@@ -87,10 +90,11 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   ![multitab-linking-url](https://github.com/boldbi/samples/assets/149655444/88c44549-95ea-4855-86d4-2943e5e952ab)
 
- 
+
   4. In this way you can link many dashboards inside other widgets.
 
   > **NOTE:** In a single widget we can able to link only one dashboard.
+  > **NOTE:** Link only a child dashboard of a multi tab dashboard to render dashboard within the application.
 
   5. To know more details about linking dashboards [here](https://help.boldbi.com/visualizing-data/working-with-widgets/linking-urls-and-dashboards/)
 
