@@ -78,8 +78,8 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   * In this sample,when you embed a Multitab dashboard the tab area for dashboard switching will be hidden.You can navigate from first dashboard to other dashboards only by linking their URL inside widgets.
 
-  * No need to hook any event in application for url linking like `beforeNavigateUrlLinking` for dashboard navigation.
-
+  > **NOTE:**  No need to hook any event in application for url linking like `beforeNavigateUrlLinking` for dashboard navigation.
+  
   > **NOTE:**  This member will not hide header of a Multitab dashboard loaded using loadMultitabDashboard() method.
 
 
@@ -91,12 +91,12 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   3. Click settings icon of the widget and enable `Enable link` option. Provide value in the `URL` field by referring to this [link](https://help.boldbi.com/visualizing-data/working-with-widgets/linking-urls-and-dashboards/#dashboard-parameter-support-in-url-linking)
 
-  ![multitab-linking-url](https://github.com/boldbi/samples/assets/149655444/88c44549-95ea-4855-86d4-2943e5e952ab)
+  > **NOTE:** Link only a child dashboard of a multi tab dashboard to render dashboard within the application.
 
+  ![multitab-linking-url](https://github.com/boldbi/samples/assets/149655444/ce7b1b5a-8c97-43be-8496-d2063c083ad5)
 
   4. In this way you can link many dashboards inside other widgets.
 
-  > **NOTE:** In a single widget we can able to link only one dashboard.
   > **NOTE:** Link only a child dashboard of a multi tab dashboard to render dashboard within the application.
 
   5. To know more details about linking dashboards [here](https://help.boldbi.com/visualizing-data/working-with-widgets/linking-urls-and-dashboards/)
