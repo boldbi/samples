@@ -78,7 +78,7 @@ Please refer to the [help documentation](https://help.boldbi.com/embedding-optio
 
   * In this sample,when you embed a Multitab dashboard the tab area for dashboard switching will be hidden.You can navigate from first dashboard to other dashboards only by linking their URL inside widgets.
 
-  * No need to hook any event of url linking like `beforeNavigateUrlLinking` for dashboard navigation.
+  * No need to hook any event in application for url linking like `beforeNavigateUrlLinking` for dashboard navigation.
 
   > **NOTE:**  This member will not hide header of a Multitab dashboard loaded using loadMultitabDashboard() method.
 
