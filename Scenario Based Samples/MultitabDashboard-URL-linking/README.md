@@ -65,14 +65,13 @@ This project was created using Angular and ASP.NET Core 6.0. This application ai
 
      ![dashboard view](https://github.com/boldbi/aspnet-core-sample/assets/91586758/af9a9d3f-3ebc-49dd-9bba-a061932cb9f6)
 
-
 Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/angular-with-javascript/#how-to-run-the-sample) to know how to run the sample.
 
 ## How the sample works
 
   * In javascript based embedding the member api `hideMultiDashboardHeader` can be used to enable or disable the tab area in the header of a Multitab dashboard.Please refer to this [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/members/#hideMultiDashboardHeader) to know more about the member.
 
-![multitab-linking-renderDashboard](https://github.com/boldbi/samples/assets/149655444/b9b00460-ea45-4cc0-b185-498d78e43825)
+![multitab-linking-renderDashboard](https://github.com/boldbi/samples/assets/149655444/2bd83601-2822-4cd9-a501-5e48fb37472a)
 
   * In this sample,when you embed a Multitab dashboard the tab area for dashboard switching will be hidden.You can navigate from first dashboard to other dashboards only by linking their URL inside widgets.
 
