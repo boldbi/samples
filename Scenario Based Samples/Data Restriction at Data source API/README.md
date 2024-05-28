@@ -2,6 +2,10 @@
 
 This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to use custom API to filter data and render dashboard through iFrame embedding.
 
+## Dashboard view
+
+![dashboard](https://github.com/boldbi/samples/assets/149655444/b27a9a51-5fd7-426f-bc0d-9d6edfe3425b)
+
  ## Requirements/Prerequisites
 
  * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
@@ -22,8 +26,12 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
       For Example : If you handle your API's request and response in a ASP.NET core sample then after running it may hosted in your local in the site "localhost:5000" which your site URL.
 
   * Add header with key as `x-api-key` and the value must be your dashboard parameter.
+    
+    ![api-config](https://github.com/boldbi/samples/assets/149655444/11de26e8-001d-4fbf-a205-ac650a203871)
 
   * Give the type of data your API will return. For example : JSON in this sample.
+    
+    ![api-data](https://github.com/boldbi/samples/assets/149655444/92172dbd-0d1e-4dd4-88df-bcc84b58a589)
 
   * The Mode should be selected as `Live`. Click `Preview & Connect` and ensure the data is returned from API.
  > **NOTE:** If you use an invalid dashboard parameter in the header,no data will be returned from API.
@@ -61,8 +69,6 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
   * Build your .NET project by executing the `dotnet build` command in the terminal.
  
   * To run the application, use the command `dotnet run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., http://localhost:5000). Copy this URL and paste it into your default web browser.
-
-    ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/6c03cba1-beeb-4be2-8a9e-f77f6a3ebf91)
 
 ## Important notes
 
