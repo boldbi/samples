@@ -1,0 +1,82 @@
+# Bold BI Server Login With JWT Token
+
+This project was created using Java Servlet sample. The application aims to demonstrate how to render Bold BI server with JWT Authentication in Server.
+
+## Java Servlet Sample View
+
+![image](https://github.com/boldbi/angular-with-aspnet-core-sample/assets/91586758/df09883d-4361-4a9a-879a-3dca5110753a)
+
+## Requirements/Prerequisites
+
+ * [Eclipse IDE](https://www.eclipse.org/downloads/)
+ * [Tomcat server](https://tomcat.apache.org/)
+
+#### Supported browsers
+  
+  * Google Chrome, Microsoft Edge, Mozilla Firefox.
+
+ ## Configuration
+ 
+ * Please configure the `JWT Authentication` in your `UMS Administration` page based on your Client Application's Login and Logout URL. (ex: http://localhost:50000/ums/administration)
+ * To do this, navigate to the `UMS Site Settings` page on the Bold BI Server.  From there, choose `Authentication` and click on the `JWT` tab.  Enable the `Enable JWT`.  If it's not, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) on how to enable it. 
+ 
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/91586758/3e7f7c9f-732b-4b6b-9b71-2794d6384717)
+
+ * Provide the following details in the `JWT`.  As the application base URL is localhost, we are setting the `Remote Login URL` and `Remote Logout URL` as below and `Save` the changes.
+ 
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/91586758/02952334-17eb-466f-9b24-ee6fca3f36f3)
+    
+ * Copy the `Signing Key` from the below JWT Authentication page and paste it into the `signingkey` value in the `config.properties` file.
+   
+    ![JWT Authentication](https://github.com/boldbi/samples/assets/91586758/329432e2-77b6-4351-a00e-1cd1be9306e7)
+ 
+    ![appsettings.json](https://github.com/boldbi/samples/assets/91586758/1d564a37-8809-4489-b7f2-9edfabe57ee6)
+    
+ * Open the `UMS Site Settings` page in Bold BI Server.  In `Authentication` section, select the `General` tab and enable `Enable Default Authentication` by selecting `JWT SSO` option in the `Default Authentication Provider` dropdown and `Save` the changes.
+ 
+    ![Default Authentication](https://github.com/boldbi/samples/assets/129487075/a81894ac-c147-41df-8c97-ed9928d16953)
+
+ * In the application, change the `ourserverurl` value in the `config.properties` file to the URL of our Bold BI server. Then include this field changes for `email, first name and last name` value in the `config.properties` file.
+  
+    ![appsettings.json](https://github.com/boldbi/samples/assets/91586758/5360c6b1-ac46-4571-bae0-826d6434d438)
+  
+### Run a Sample Using Eclipse
+ 
+  * Open the folder `ServerLoginWithJWTToken` in Eclipse.
+
+  * To run the servlet, we need a server. we can use Tomcat server. You can download the latest Tomcat version from https://tomcat.apache.org/. Once the Eclipse is installed and configured with the Tomcat server
+  
+  * To run the application, Open the `index.jsp` file. Write click the `index.jsp`file. Run as click, after Run as server click, then tomcat window opening.
+    
+    ![index.jsp](https://github.com/boldbi/samples/assets/91586758/a9727ee5-a5e4-4607-b9f5-20ced14e55a6)
+
+  * Tomcat start click then next button click. Project name choose and finish click. 
+
+    ![Tomcat](https://github.com/boldbi/samples/assets/91586758/005f1bb7-c6b8-4845-9b24-539d9078ca34)
+
+    ![Project Img](https://github.com/boldbi/samples/assets/91586758/bf862e53-f126-4050-96fe-92b931a56047)
+ 
+  * Now project is rendering. Refer the below screenshot.
+    
+    ![index.jsp](https://github.com/boldbi/angular-with-aspnet-core-sample/assets/91586758/df09883d-4361-4a9a-879a-3dca5110753a)
+
+  * Once project render, then go with Bold BI Server login page. Refer the below screenshot. We should must JWT token login tried user is need to available in server.  
+    
+    ![image](https://github.com/boldbi/samples/assets/91586758/193c414b-7e5c-4e5a-ad7a-245a68e7445f)
+
+  * Click the `Sign in with JWT` button, JWT token based dashboard listing page is showing.
+     
+   ![image](https://github.com/boldbi/samples/assets/91586758/75b43766-5cfe-4ef1-8b66-a6e544a7d067)
+
+
+## Important notes
+
+It is recommended not to store passwords and sensitive information in configuration files for security reasons in a real-world application. Instead, it would be best if you considered using a secure application, such as Key Vault, to safeguard your credentials.
+
+## Online demos
+
+Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed).
+
+## Documentation
+
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding/).
