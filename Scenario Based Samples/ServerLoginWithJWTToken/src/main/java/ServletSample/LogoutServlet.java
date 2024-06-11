@@ -14,10 +14,11 @@ public class LogoutServlet extends HttpServlet {
     public LogoutServlet() {
         super();
     }
-
+    
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-        String url1 = "http://localhost:53153/ums/accounts/login?ReturnUrl=%2Fums%2Fhomepage%3Fview%3Dall-sites";
-        response.sendRedirect(url1);
+        String serverUrl = ConfigReader.getProperty("ourserverurl").trim();                                     
+        String url = serverUrl.endsWith("/") ? serverUrl + "ums/accounts/login?ReturnUrl=%2Fums%2Fhomepage%3Fview%3Dall-sites" : serverUrl + "/ums/accounts/login?ReturnUrl=%2Fums%2Fhomepage%3Fview%3Dall-sites";
+        response.sendRedirect(url);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
