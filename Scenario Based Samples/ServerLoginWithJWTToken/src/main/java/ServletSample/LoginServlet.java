@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
         TokenHelper tokenHelper = new TokenHelper();
         String token = tokenHelper.generateJSONWebToken();
-        String serverUrl = ConfigReader.getProperty("ourserverurl").trim();                                     
+        String serverUrl = ConfigReader.getProperty("boldbiserverurl").trim();                                     
         String url = serverUrl.endsWith("/") ? serverUrl + "sso/jwt/callback?jwt=" + token
                 : serverUrl + "/sso/jwt/callback?jwt=" + token;
 

@@ -16,7 +16,7 @@ public class LogoutServlet extends HttpServlet {
     }
     
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-        String serverUrl = ConfigReader.getProperty("ourserverurl").trim();                                     
+        String serverUrl = ConfigReader.getProperty("boldbiserverurl").trim();                                     
         String url = serverUrl.endsWith("/") ? serverUrl + "ums/accounts/login?ReturnUrl=%2Fums%2Fhomepage%3Fview%3Dall-sites" : serverUrl + "/ums/accounts/login?ReturnUrl=%2Fums%2Fhomepage%3Fview%3Dall-sites";
         response.sendRedirect(url);
     }

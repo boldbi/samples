@@ -15,7 +15,7 @@ public class TokenHelper {
         SecretKey securityKey = Keys.hmacShaKeyFor(signingKey.getBytes());
 
         Map<String, Object> claims = new HashMap<>();
-        claims.put("sub", ConfigReader.getProperty("sub"));
+        claims.put("sub", ConfigReader.getProperty("userid"));
         claims.put("email", ConfigReader.getProperty("email"));
         claims.put("first_name", ConfigReader.getProperty("first_name"));
         claims.put("last_name", ConfigReader.getProperty("last_name"));
