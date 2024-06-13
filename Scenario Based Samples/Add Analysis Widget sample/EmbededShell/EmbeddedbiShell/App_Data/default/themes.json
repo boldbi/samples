@@ -1,0 +1,18 @@
+{
+  "Header": {
+    "IsEnabled": true,
+    "IsFixed": false,
+    "Theme": "dark"
+  },
+  "SideBar": {
+    "isEnabled": true,
+    "isFixed": true,
+    "Theme": "light"
+  },
+  "Footer": {
+    "isEnabled": false,
+    "isFixed": false
+  },
+  "BrandTitle": "",
+  "AppLogo": "main_logo.svg"
+}
