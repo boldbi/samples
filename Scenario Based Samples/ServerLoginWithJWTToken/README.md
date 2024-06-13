@@ -32,7 +32,7 @@ This project was created using a Java Servlet sample. The application aims to de
  
     ![Config.Properties](https://github.com/boldbi/samples/assets/91586758/9639e5ad-7ed0-44e1-a3f6-bdf3b936fb3f)
 
-**Note** In the application, update the `boldbiserverurl` value in the `config.properties` file to the URL of our Bold BI server. Additionally, modify the fields for ` user email`, `first name`, and `last name` values in the `config.properties` file accordingly. Use mock values for `userid` and `phone number` fields. For more information, get the server url instructions.
+> **NOTE:** In the application, update the `boldbiserverurl` value in the `config.properties` file to the URL of our Bold BI server. Additionally, modify the fields for ` user email`, `first name`, and `last name` values in the `config.properties` file accordingly. Use mock values for `userid` and `phone number` fields.
     
  *  Once JWT authentication is properly working, clicking the `Enable Default Authentication` button means there is no need to input any details again. To do so, open the `UMS Site Settings` page in Bold BI Server.  In `Authentication` section, select the `General` tab and enable `Enable Default Authentication` by selecting `JWT SSO` option in the `Default Authentication Provider` dropdown and `Save` the changes.
  
@@ -61,7 +61,7 @@ This project was created using a Java Servlet sample. The application aims to de
 
   * After the project is rendered, proceed to the Bold BI Server login page. Please refer to the screenshot below. A user logging in with a JWT token must exist on the Bold BI server. Once the `Enable Default Authentication` is enabled, you can directly access the `JWT authentication` and be able to see the dashboard listing page based on the JWT token.
     
-   ![image](https://github.com/boldbi/samples/assets/91586758/cc7418db-68bb-4563-b3f0-76399a3bc692)
+    ![image](https://github.com/boldbi/samples/assets/91586758/446864b6-0e95-4ce1-bd5e-777be6f6439b)
 
 
 ## Important notes
