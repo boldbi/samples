@@ -10,7 +10,7 @@
      },
      "private": true,
      "dependencies": {
-           "@boldbi/boldbi-embedded-sdk": "6.15.11",
+           "@boldbi/boldbi-embedded-sdk": "7.9.27",
            "@angular/animations": "^14.0.0",
            "@angular/common": "^14.0.0",
            "@angular/compiler": "^14.0.0",
