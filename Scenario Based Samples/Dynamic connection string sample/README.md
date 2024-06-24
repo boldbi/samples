@@ -60,6 +60,10 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
     ![dynamic-first](https://github.com/boldbi/samples/assets/129487075/53d12536-765d-49bf-83d9-ee724708eb74)
 
+    If you want to use a custom attribute, please select the custom attribute button. Please provide a custom attribute name. If you are configuring the custom attribute, please follow the [steps](https://github.com/boldbi/samples/blob/d4d9209d6b0ca43d7ca9ad43423d5106e91ec309/Scenario%20Based%20Samples/Dynamic%20connection%20string%20sample/README.md#how-to-configure-the-custom-attribute-in-server-level-using-dynamic-connection-string).
+
+    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/140aaee3-dd99-44ca-bc59-6aeef8e17ed4)
+
  6. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the embedding level, choose `Embedding`. If at the server level, choose `Server`, or if both, choose the `Both` radio button. I have selected the `Both` radio button to test the sample at both server and embedding levels. In the User Identity choose `Email` or `Full Name` and connect it.​​​​​​​
 
     > **NOTE:** At the embedding level, the identityType always holds the value as `Custom` in the Dynamic Connection String sample, even if you choose `Email` or `Full Name`. At the server level, it is based on the selection made in User Identity.
@@ -116,6 +120,36 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
      * In `identityType` parameter holds the value of either `Email` or `Full Name` based on what is selected in the User Identity configuration.
 
      * Based on the conditions provided in the Dynamic Connection String sample, it will return the modified connection string details and render the dashboard accordingly.
+
+## How to configure the Custom Attribute in Tenant level using Dynamic Connection String
+
+1. This attribute can be set by the UMS admin for a site on the site details page.
+   
+   ![Add Attribute](https://github.com/boldbi/samples/assets/91586758/12b9b7ef-f410-4aec-89f1-e0fb8c372be7)
+
+   ![Attribute Image](https://github.com/boldbi/samples/assets/91586758/ae9084f5-c20c-4ff4-bf49-cebdadd11d52)
+
+   > **NOTE:** Custom attributes can be defined at three levels: User level, Group level, and Site level. The first priority is at the `site level`, the second priority is at the `group level`, and the third priority is at the `user level`. I have explained the `site level`, and the same procedure applies to the `user` and `group` levels. For more about [custom Attribute](https://help.boldbi.com/working-with-data-sources/configuring-custom-attribute/#custom-attribute-hierarchy), please refer it. 
+
+2. In BoldBI Server, create a SQL Server datasource with the first database (Eg: DCS_DB1). Enable Dynamic Connection String and click the `Configure` button. The image attached below for your reference will appear. Enter the attribute name in Custom Attribute field.
+
+    ![DCS Configuration](https://github.com/boldbi/samples/assets/91586758/9ae44430-80c3-450a-b4bc-3b7ff4080880)
+
+3. ​​​​​​​In Configuration mode, if you are examining the dynamic connection string sample at the server level, choose `Server` and save the configuration mode.
+
+    ![Configuration Mode](https://github.com/boldbi/samples/assets/91586758/91dd9622-5e00-43f1-a75d-66807ebdf4ed)
+
+4. Create a dashboard with this same data source and publish it.
+
+5. The dashboard is rendered based on the custom attribute value (e.g. DCS_DB2). The dashboard is rendered in designer mode based on the database value (e.g. DCS_DB1). I have attached a screenshot for your reference.
+
+   Dashboard rendering in View mode:
+
+   ![Dashboard View](https://github.com/boldbi/samples/assets/91586758/2eaf6dae-c76d-486b-a9a0-c5fa739a2090)
+
+   Dashboard rendering in Design mode:
+
+   ![Dashboard Designer](https://github.com/boldbi/samples/assets/91586758/8ed1ac67-93a2-4080-b12b-5540ad7df15f)
 
  ## Important notes
 
