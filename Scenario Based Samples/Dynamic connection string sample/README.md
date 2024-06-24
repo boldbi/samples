@@ -141,7 +141,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
 
 4. Create a dashboard with this same data source and publish it.
 
-5. Custom attribute based dashboard rendering. The dashboard rendering in designer mode, database (Eg: DCS_DB1) values based dashboard rendering. Then you can click on preview options to see the dashboard rendering based on custom attribute database (Eg: DCS_DB2) values.  I have attached a screenshot for your reference.
+5. The dashboard is rendered based on the custom attribute value (e.g. DCS_DB2). The dashboard is rendered in designer mode based on the database value (e.g. DCS_DB1). I have attached a screenshot for your reference.
 
    Dashboard rendering in View mode:
 
@@ -150,11 +150,6 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
    Dashboard rendering in Design mode:
 
    ![Dashboard Designer](https://github.com/boldbi/samples/assets/91586758/8ed1ac67-93a2-4080-b12b-5540ad7df15f)
-
-   Dashboard rendering in Design mode, click on the preview options, and then see the rendered dashboard:
-
-   ![Dashboard Preview](https://github.com/boldbi/samples/assets/91586758/6fd15193-c2d1-41af-b27d-258937b75b90)
-
 
  ## Important notes
 
