@@ -10,7 +10,10 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
 * [Visual Studio Code](https://code.visualstudio.com/download)
- 
+* [Node.js](https://nodejs.org/en/)
+
+> **NOTE:** Node.js v14.16 to v20.14 are supported
+
 #### Supported browsers
   
 * Google Chrome, Microsoft Edge and Mozilla Firefox.
@@ -49,7 +52,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
     
     ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/129487075/e3faaef9-801f-47c6-97ab-9c2f39c60e09)
 
-## Steps to configuration and Run a Sample Using Command Line Interface 
+## Run a Sample Using Command Line Interface 
 
 1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) where the project is located.
 
