@@ -4,7 +4,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Widget view
 
-   ![Widget-view](https://github.com/boldbi/samples/assets/129487075/ea121ecf-c5ff-44ea-9277-2e8be3465c76)
+   ![Widget-view](https://github.com/boldbi/samples/assets/129487075/857fd291-9498-4155-a9cc-f040c7c9be53)
 
 ## Requirements/Prerequisites
 
@@ -78,8 +78,8 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
  
 * To run the application, use the command `dotnet run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., http://localhost:5292). Copy this URL and paste it into your default web browser.
 
-  ![Widget-view](https://github.com/boldbi/samples/assets/129487075/ea121ecf-c5ff-44ea-9277-2e8be3465c76)
-
+  ![Widget-view](https://github.com/boldbi/samples/assets/129487075/857fd291-9498-4155-a9cc-f040c7c9be53)
+  
 ## How the sample works
 
 1. In the initial rendering, the specified widget will render with all values using the **renderWidget()** method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for more details about widget embedding.
@@ -89,4 +89,4 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 2. For the on-demand case, you can select options from the multiselect dropdown list and click the `Apply filters` button. By clicking this button, the **widgetFilter()** method will be triggered to apply the filters. For example, if you select options such as Corporate and Online, then the selected filter values will apply in the `Sales by Channel` widget.
 
    ![updatefilter](https://github.com/boldbi/samples/assets/129487075/ce04cc33-1f2a-4242-9140-8a78225a8a76)
-   ![filter-apply](https://github.com/boldbi/samples/assets/129487075/6fecf3ee-64f6-4bf0-a38f-f380562c23ea)
+   ![filter-apply](https://github.com/boldbi/samples/assets/129487075/938a0ab1-49e9-490b-ad77-3e0dd717df1e)
