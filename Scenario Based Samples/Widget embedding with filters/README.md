@@ -70,7 +70,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
  
 * Open the [Widget embedding with filters](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20embedding%20with%20filters) sample in Visual Studio Code.
    
-* Open the terminal in Visual Studio Code and install all dependent packages using the following command npm install.
+* Open the terminal in Visual Studio Code and install all dependent packages using the following command `npm install`.
 
 * Execute the command `dotnet restore` to restore the required dependencies.
  
@@ -82,7 +82,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## How the sample works
 
-1. In the initial rendering, the specified widget will render with all values using the renderWidget() method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for more details about widget embedding.
+1. In the initial rendering, the specified widget will render with all values using the **renderWidget()** method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for more details about widget embedding.
 
    ![renderwidget](https://github.com/boldbi/samples/assets/129487075/c8f5b7ef-e1fe-43d2-ba7f-56d79d68cd57)
 
