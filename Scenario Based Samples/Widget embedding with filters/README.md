@@ -20,7 +20,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Configuration
 
-1. Please [get](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) the GitHub sample for applying widget-based filtering for Widget Embedding.
+1. Please [get](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20embedding%20with%20filters) the GitHub sample for applying widget-based filtering for Widget Embedding.
 
 2. In the BoldBI server, load the `Sales Analysis Dashboard` from the Sample Dashboards.
 
@@ -48,13 +48,13 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
     ![Embed-Config-JSON](https://github.com/boldbi/samples/assets/92368448/53c1eddb-1d55-47d7-8e12-502ad6d74dd9)
 
-    c. Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) within the application. Please ensure you have placed it in the application, as shown in the following image.
+    c. Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20embedding%20with%20filters) within the application. Please ensure you have placed it in the application, as shown in the following image.
     
     ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/129487075/e3faaef9-801f-47c6-97ab-9c2f39c60e09)
 
 ## Run a Sample Using Command Line Interface 
 
-1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) where the project is located.
+1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20embedding%20with%20filters) where the project is located.
 
 2. To install all dependent packages, use the following command `npm install`.
 
@@ -68,7 +68,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ### Run a Sample Using Visual Studio Code
  
-* Open the [Widget embedding with filters](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) sample in Visual Studio Code.
+* Open the [Widget embedding with filters](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20embedding%20with%20filters) sample in Visual Studio Code.
    
 * Open the terminal in Visual Studio Code and install all dependent packages using the following command npm install.
 
