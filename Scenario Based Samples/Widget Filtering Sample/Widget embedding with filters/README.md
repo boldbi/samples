@@ -4,7 +4,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Widget view
 
-   ![Widget-View](https://github.com/boldbi/samples/assets/92368448/a79b6660-10f9-4f9a-a4ee-e03832db57dd)
+   ![Widget-view](https://github.com/boldbi/samples/assets/129487075/ea121ecf-c5ff-44ea-9277-2e8be3465c76)
 
 ## Requirements/Prerequisites
 
@@ -17,17 +17,23 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Configuration
 
-1. Please [get](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Dashboard-Parameter-In-Widget-Embedding) the GitHub sample for applying widget-based filtering for Widget Embedding.
+1. Please [get](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) the GitHub sample for applying widget-based filtering for Widget Embedding.
 
 2. In the BoldBI server, load the `Sales Analysis Dashboard` from the Sample Dashboards.
 
+   ![image](https://github.com/boldbi/samples/assets/129487075/b7b0c2d8-8d51-444d-811a-feccf44659bc)
+
 3. In our sample, we are going to utilize `Sales by Channel` widget. By default, the same color is applied for all the columns. For demonstration purposes, we need to apply different colors for different columns by enabling `Advance Setting` to customize the color under the **Formatting** section in the Properties pane. Please check this [link](https://help.boldbi.com/visualizing-data/visualization-widgets/column-chart/#formatting) for more details. 
+
+   ![properties-pane](https://github.com/boldbi/samples/assets/129487075/37f6625e-efa3-42c8-939f-e34d9c8f7c2e)
 
     a. By doing so, the **Conditional Formatting** dialog will be opened.
 
     b. Choose the **Individual** mode in the color type and assign a specific color for each record. Then, click the save button to apply the changes.
 
-4. Publish the dashboard and download the `embedConfig.json` file for that dashboard by following the procedures below.
+      ![format-dialog](https://github.com/boldbi/samples/assets/129487075/87f32737-1abf-449d-9bea-f4d6857db9af)
+
+5. Publish the dashboard and download the `embedConfig.json` file for that dashboard by following the procedures below.
 
     a. Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code) to enable it.
 
@@ -45,7 +51,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Steps to configuration and Run a Sample Using Command Line Interface 
 
-1. Open the command line interface and navigate to the specified file [location]() where the project is located.
+1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) where the project is located.
 
 2. To install all dependent packages, use the following command `npm install`.
 
@@ -59,7 +65,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ### Run a Sample Using Visual Studio Code
  
-* Open the [Widget Embedding]() sample in Visual Studio Code.
+* Open the [Widget embedding with filters](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) sample in Visual Studio Code.
    
 * Open the terminal in Visual Studio Code and install all dependent packages using the following command npm install.
 
@@ -69,10 +75,15 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
  
 * To run the application, use the command `dotnet run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., http://localhost:5292). Copy this URL and paste it into your default web browser.
 
-    ![Rendered-Dashboard-View](https://github.com/boldbi/samples/assets/92368448/4b98b157-b674-429b-b346-4536cf420cb7)
+  ![Widget-view](https://github.com/boldbi/samples/assets/129487075/ea121ecf-c5ff-44ea-9277-2e8be3465c76)
 
 ## How the sample works
 
 1. In the initial rendering, the specified widget will render with all values using the renderWidget() method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for more details about widget embedding.
 
-2. For the on-demand case, you can select options from the multiselect dropdown list and click the `Apply Filters` button. By clicking this button, the widgetFilter() method will be triggered to apply the filters. For example, if you select options such as Corporate and Online, then the selected filter values will apply in the `Sales by Channel` widget.
+   ![renderwidget](https://github.com/boldbi/samples/assets/129487075/c8f5b7ef-e1fe-43d2-ba7f-56d79d68cd57)
+
+2. For the on-demand case, you can select options from the multiselect dropdown list and click the `Apply filters` button. By clicking this button, the **widgetFilter()** method will be triggered to apply the filters. For example, if you select options such as Corporate and Online, then the selected filter values will apply in the `Sales by Channel` widget.
+
+   ![updatefilter](https://github.com/boldbi/samples/assets/129487075/ce04cc33-1f2a-4242-9140-8a78225a8a76)
+   ![filter-apply](https://github.com/boldbi/samples/assets/129487075/6fecf3ee-64f6-4bf0-a38f-f380562c23ea)
