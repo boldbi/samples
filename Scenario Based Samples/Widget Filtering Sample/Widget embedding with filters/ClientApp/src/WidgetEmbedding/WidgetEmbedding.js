@@ -31,7 +31,7 @@ class WidgetEmbedding extends React.Component {
 
   widgetFilter() {
     var instance = BoldBI.getInstance("dashboard");
-    var multiselectContainer = document.getElementById("mtselement");
+    var multiselectContainer = document.getElementById("multi-select");
     var getlistObj = multiselectContainer.ej2_instances && multiselectContainer.ej2_instances[0];
     var selectedValuesList = getlistObj.tempValues;
     if (selectedValuesList && selectedValuesList.length !== 0) {
@@ -107,7 +107,7 @@ class WidgetEmbedding extends React.Component {
               </span>
               <br />
               <MultiSelectComponent
-                id="mtselement"
+                id="multi-select"
                 dataSource={this.channelsData}
                 placeholder="Select Channels"
               />
