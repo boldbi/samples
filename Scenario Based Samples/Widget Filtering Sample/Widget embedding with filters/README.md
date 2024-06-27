@@ -45,9 +45,9 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
     ![Embed-Config-JSON](https://github.com/boldbi/samples/assets/92368448/53c1eddb-1d55-47d7-8e12-502ad6d74dd9)
 
-    c. Copy the downloaded `embedConfig.json` file and paste it into the designated [location]() within the application. Please ensure you have placed it in the application, as shown in the following image.
+    c. Copy the downloaded `embedConfig.json` file and paste it into the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Widget%20Filtering%20Sample/Widget%20embedding%20with%20filters) within the application. Please ensure you have placed it in the application, as shown in the following image.
     
-    ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/92368448/e7fe5e57-9cdf-4ec3-8dda-91703a061873)
+    ![Embed-Config-JSON-Path](https://github.com/boldbi/samples/assets/129487075/e3faaef9-801f-47c6-97ab-9c2f39c60e09)
 
 ## Steps to configuration and Run a Sample Using Command Line Interface 
 
