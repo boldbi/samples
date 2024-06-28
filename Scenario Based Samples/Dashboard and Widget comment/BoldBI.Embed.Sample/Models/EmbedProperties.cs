@@ -20,9 +20,9 @@ namespace BoldBI.Embed.Sample.Models
         public static string dashboardId = "d64dc9ca-0f96-464d-a117-da3ba0bf161e";
 
         //Enter your BoldBI credentials here.
-        public static string UserEmail = "suryavijayakumar.sf4316@gmail.com";
+        public static string UserEmail = "abcd@gmail.com";
 
         // Get the embedSecret key from Bold BI, please check this link(https://help.syncfusion.com/bold-bi/on-premise/site-settings/embed-settings)
-        public static string EmbedSecret = "6eVa8kIe3TJilZZYEub9bY48zSN3qse7";
+        public static string EmbedSecret = "gds8hsgdfhsuhfhsdbY48zSN3qse7";
     }
 }
