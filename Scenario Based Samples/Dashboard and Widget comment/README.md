@@ -6,8 +6,7 @@ This application aims to demonstrate how to add, edit, and delete BoldBI dashboa
 
 Need to change the RootURL,siteIdentifier,dashboardID and EmbedScret.
 
-![embedProperties-img](https://github.com/boldbi/samples/assets/149993554/2dfe1c85-2838-4cff-9ab6-d151ced1edad)
-
+![embedproperties](https://github.com/boldbi/samples/assets/149993554/52b85eec-d877-4ddd-b9aa-61669751ec4a)
 
 ## Dashboard Actions
 
