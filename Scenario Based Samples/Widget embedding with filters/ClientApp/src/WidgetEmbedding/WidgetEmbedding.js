@@ -27,21 +27,32 @@ class WidgetEmbedding extends React.Component {
       "Online",
       "Dealer"
     ];
+    this.widgetFilter = this.widgetFilter.bind(this);
+    this.getSelectedValues = this.getSelectedValues.bind(this);
   }
 
   widgetFilter() {
     var instance = BoldBI.getInstance("dashboard");
+    var selectedValues = this.getSelectedValues();
+    if(selectedValues != "") {
+      var updatefiltersValue = "Channel=" + selectedValues;
+      instance.updateFilters(updatefiltersValue);
+    }
+  }
+
+  getSelectedValues() { 
     var multiselectContainer = document.getElementById("multi-select");
     var getlistObj = multiselectContainer.ej2_instances && multiselectContainer.ej2_instances[0];
     var selectedValuesList = getlistObj.tempValues;
+    var selectedValuesString = "";
     if (selectedValuesList && selectedValuesList.length !== 0) {
       document.getElementById("error-text").style.display = "none";
-      var selectedValuesString = selectedValuesList.join(",");
-      var updatefiltersValue = "Channel=" + selectedValuesString;
-      instance.updateFilters(updatefiltersValue);
+      selectedValuesString = selectedValuesList.join(",");
+      return selectedValuesString;
     }
     else {
       document.getElementById("error-text").style.display = "block";
+      return selectedValuesString;
     }
   }
 
@@ -50,15 +61,11 @@ class WidgetEmbedding extends React.Component {
       serverUrl: data.ServerUrl + "/" + data.SiteIdentifier,
       dashboardId: data.DashboardId,
       embedContainerId: "dashboard",
-      embedType: data.EmbedType,
-      environment: data.Environment,
-      mode: BoldBI.Mode.View,
       width: "100%",
       height: window.innerHeight + "px",
-      expirationTime: 100000,
       authorizationServer: {
-        url: apiHost + authorizationUrl,
-      },
+        url: apiHost + authorizationUrl
+      }
     });
     this.dashboard.loadDashboardWidget("Sales by Channel");
   }
