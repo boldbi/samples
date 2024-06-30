@@ -1,6 +1,6 @@
 # Applying Widget-based filter for Widget Embedding in React with ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to showcase the implementation of widget-based filtering in a BoldBI widget through JavaScript Embedding.
+This project was created using ASP.NET Core 6.0. The application aims to demonstrate how to render a specific widget from a dashboard of widget-based filtering through JavaScript Embedding.
 
 ## Widget view
 
@@ -84,9 +84,9 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 1. In the initial rendering, the specified widget will render with all values using the **renderWidget()** method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for more details about widget embedding.
 
-   ![renderwidget](https://github.com/boldbi/samples/assets/129487075/c8f5b7ef-e1fe-43d2-ba7f-56d79d68cd57)
+   ![renderwidget](https://github.com/boldbi/samples/assets/129487075/4694a6f0-47f1-48a0-848e-c97ea6874179)
 
-2. For the on-demand case, you can select options from the multiselect dropdown list and click the `Apply filters` button. By clicking this button, the **widgetFilter()** method will be triggered to apply the filters. For example, if you select options such as Corporate and Online, then the selected filter values will apply in the `Sales by Channel` widget.
+3. For the on-demand case, you can select options from the multiselect dropdown list and click the `Apply filters` button. By clicking this button, the **widgetFilter()** method will be triggered to apply the filters. For example, if you select options such as Corporate and Online, then the selected filter values will apply in the `Sales by Channel` widget.
 
-   ![updatefilter](https://github.com/boldbi/samples/assets/129487075/ce04cc33-1f2a-4242-9140-8a78225a8a76)
+   ![updatefilter](https://github.com/boldbi/samples/assets/129487075/898109e9-ba8a-4381-8c34-6a3cdd04d97c)
    ![filter-apply](https://github.com/boldbi/samples/assets/129487075/938a0ab1-49e9-490b-ad77-3e0dd717df1e)
