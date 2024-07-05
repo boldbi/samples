@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SamplesModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Samples>
+  <Sample>
+  <Id>1021</Id>
+  <Name>Summer Olympics</Name>
+  <Title>Rendering Event | Title </Title>
+  <Description>This demo sample illustrates event related to dashboard and widget rendering.</Description>
+      <Path>/Samples/Default/Dashboard/index.html</Path>
+  <DashboardPath>/Sports/2016 Summer Olympics Dashboard</DashboardPath>
+  <CategoryId>1</CategoryId>
+  <Badge>None</Badge>
+</Sample>
+<Sample>
+  <Id>1022</Id>
+  <Name>London Olympics</Name>
+  <Title>Rendering Event | Title 2</Title>
+  <Description>This demo sample illustrates event related to dashboard and widget rendering.</Description>
+      <Path>/Samples/Default/Dashboard/index.html</Path>
+  <DashboardPath>/Sports/London Olympics 2012 medals analysis</DashboardPath>
+  <CategoryId>1</CategoryId>
+  <Badge>None</Badge>
+</Sample>
+<Sample>
+  <Id>1023</Id>
+  <Name>FIFA World Cup</Name>
+  <Title>Rendering Event | Title 3</Title>
+  <Description>This demo sample illustrates event related to dashboard and widget rendering.</Description>
+      <Path>/Samples/Default/Dashboard/index.html</Path>
+  <DashboardPath>/Sports/FIFA World Cup 2014 - Brazil</DashboardPath>
+  <CategoryId>1</CategoryId>
+  <Badge>None</Badge>
+</Sample>
+
+  </Samples>
+  <Categories>
+    <Category>
+      <Id>1</Id>
+      <Name>Dashboard</Name>
+      <Description>Embedding dashboards</Description>
+      <Badge>None</Badge>
+      <SpiteClass>fa-tachometer-alt</SpiteClass>
+      <Path>/Samples/Default/Dashboard/index.html</Path>
+      <DashboardPath>/Sales/Tickets Sold Analysis Dashboard</DashboardPath>
+      <Title>Bold BI | Dashboard</Title>
+      <AsTab>false</AsTab>
+    </Category>
+    <Category>
+      <Id>2</Id>
+      <Name>Metric</Name>
+      <Description>Embedding dashboards</Description>
+      <Badge>None</Badge>
+      <SpiteClass>fa-chart-line</SpiteClass>
+      <Path>/Samples/Default/Metric/index.html</Path>
+      <DashboardPath>/Pharmaceutical/Pharma Sales Performance Dashboard</DashboardPath>
+      <Title>Bold BI | Metric</Title>
+    </Category>
+    <Category>
+      <Id>3</Id>
+      <Name>About</Name>
+      <Description>Embedding dashboards</Description>
+      <Badge>None</Badge>
+      <SpiteClass>fa-info-circle</SpiteClass>
+      <Path>/Samples/Default/About/index.html</Path>
+      <DashboardPath>/Pharmaceutical/Pharma Sales Performance Dashboard</DashboardPath>
+      <Title>Bold BI | About</Title>
+    </Category>
+  </Categories>
+</SamplesModel>
