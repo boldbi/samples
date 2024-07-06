@@ -1,6 +1,6 @@
 # Applying Widget-based filter for Widget Embedding in React with ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to showcase the implementation of widget-based filtering in a BoldBI widget through JavaScript Embedding.
+This project was created using ASP.NET Core 8.0. This application aims to demonstrate how to showcase the implementation of widget-based filtering in a BoldBI widget through JavaScript Embedding.
 
 ## Widget view
 
@@ -8,11 +8,11 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Requirements/Prerequisites
 
-* [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+* [.NET Core 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [Node.js](https://nodejs.org/en/)
 
-> **NOTE:** Node.js v14.16 to v20.14 are supported
+> **NOTE:** Node.js v18.17 to v20.15 are supported
 
 #### Supported browsers
   

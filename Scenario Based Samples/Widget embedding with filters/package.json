@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@boldbi/boldbi-embedded-sdk": "^7.9.27",
+        "@boldbi/boldbi-embedded-sdk": "^7.9.50",
         "@syncfusion/ej2-react-dropdowns": "^26.1.39",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.4.0",
