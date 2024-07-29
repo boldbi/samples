@@ -8,4 +8,4 @@ To get started with Bold BI, refer to this video - [Getting Started with Bold BI
 
 Sign up [Bold BI](https://www.boldbi.com) for free 15-day trial now. Unlimited Users. Unlimited dashboards.
 
-Subscribe to Syncfusion on YouTube: http://bit.ly/syncfusionyoutube
+Subscribe to Syncfusion on YouTube: <http://bit.ly/syncfusionyoutube>
