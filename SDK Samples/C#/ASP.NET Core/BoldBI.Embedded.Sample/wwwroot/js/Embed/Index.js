@@ -4,15 +4,13 @@
     http.responseType = 'json';
     http.setRequestHeader("Content-type", "application/json");
     http.onreadystatechange = function () {
-       if (http.readyState == 4 && http.status == 200) {
-           ListDashboards.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
-       }
-       else if (http.readyState == 4 && http.status == 404) {
-           console.log("Server not found");
-       }
-       else if (http.readyState == 4) {
-           console.log(http.statusText);
-       }
+        if (http.readyState == 4 && http.status == 200) {
+            ListDashboards.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
+        } else if (http.readyState == 4 && http.status == 404) {
+            console.log("Server not found");
+        } else if (http.readyState == 4) {
+            console.log(http.statusText);
+        }
     };
 
     http.send();

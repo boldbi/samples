@@ -16,11 +16,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js"></script>
     <script type="text/javascript" src="~/js/Embed/Index.js"></script>
     <script type="text/javascript">
-        var rootUrl = "@EmbedProperties.RootUrl";
-        var siteIdentifier = "@EmbedProperties.SiteIdentifier";
-        var environment = "@EmbedProperties.Environment";
-        var dashboardId = "@EmbedProperties.DashboardId";
-        var embedType = "@EmbedProperties.EmbedType";
+        var rootUrl = "@ViewBag.ServerUrl";
+        var dashboardId = "@ViewBag.DashboardId";
+        var siteIdentifier = "@ViewBag.SiteIdentifier";
+        var environment = "@ViewBag.Environment";
+        var embedType = "@ViewBag.EmbedType";
         var authorizationServerUrl = "@Url.Action("GetDetails", "Home")";
         var getDashboardsUrl = "@Url.Action("GetDashboards", "Home")";
     </script>
