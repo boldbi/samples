@@ -18,7 +18,7 @@ This project was created using a Java Servlet sample. The application aims to de
 ## Configuration
 
 * Please configure the `JWT Authentication` in your `UMS Administration` page based on your Client Application's Login and Logout URL. (ex: <http://localhost:50000/ums/administration>)
-* To do this, navigate to the `UMS Site Settings` page on the Bold BI Server. From there, choose `Authentication` and click on the `JWT` tab.  Enable the `Enable JWT`. Once enabled, you will need to update the required login URL. For more information, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi) on how to enable it.
+* To do this, navigate to the `UMS Site Settings` page on the Bold BI Server. From there, choose `Authentication` and click on the `JWT` tab.  Enable the `Enable JWT`. Once enabled, you will need to update the required login URL. For more information, please refer to the following image or detailed [instructions](https://help.boldbi.com/multi-tenancy/site-administration/authentication/json-web-token/#steps-to-configure-jwt-in-bold-bi?utm_source=github&utm_medium=backlinks) on how to enable it.
 
     ![JWT Authentication](https://github.com/boldbi/samples/assets/91586758/a266074c-880f-4e8f-9c26-bb80a8e8fa31)
 
@@ -68,8 +68,8 @@ It is recommended not to store passwords and sensitive information in configurat
 
 ## Online demos
 
-Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed).
+Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed?utm_source=github&utm_medium=backlinks).
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding/).
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding/?utm_source=github&utm_medium=backlinks).

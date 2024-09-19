@@ -14,7 +14,7 @@ Please change the following properties in AppData/default/embedDetails.json befo
 
 Take a look at the following to learn more about Bold BI Embedded:
 
-* [Bold BI Server - Getting started](https://help.boldbi.com/embedded-bi/setup/overview/)
-* [Embed Bold BI - Getting started](https://help.boldbi.com/embedded-bi/javascript-based/getting-started/)
-* [Embed Bold BI - Samples](https://help.boldbi.com/embedded-bi/javascript-based/samples/v3.3.40-or-later/)
-* [Embed SDK Sample browser](https://samples.boldbi.com/embed/javascript/default/dashboard)
+* [Bold BI Server - Getting started](https://help.boldbi.com/embedded-bi/setup/overview/?utm_source=github&utm_medium=backlinks)
+* [Embed Bold BI - Getting started](https://help.boldbi.com/embedded-bi/javascript-based/getting-started/?utm_source=github&utm_medium=backlinks)
+* [Embed Bold BI - Samples](https://help.boldbi.com/embedded-bi/javascript-based/samples/v3.3.40-or-later/?utm_source=github&utm_medium=backlinks)
+* [Embed SDK Sample browser](https://samples.boldbi.com/embed/javascript/default/dashboard?utm_source=github&utm_medium=backlinks)

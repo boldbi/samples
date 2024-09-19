@@ -2,7 +2,7 @@
 
 This project was created using ASP.NET MVC 4.8. This application aims to demonstrate how to render the Dynamic Connection String feature to modify the connection string of data sources in dashboard view mode using an External API.
 
-> **NOTE:** To know more about Dynamic Connection String, please refer [this](https://help.boldbi.com/embedding-options/iframe-embedding/dynamic-connection-string/).
+> **NOTE:** To know more about Dynamic Connection String, please refer [this](https://help.boldbi.com/embedding-options/iframe-embedding/dynamic-connection-string/?utm_source=github&utm_medium=backlinks).
 
 ## Prerequisites
 
@@ -85,7 +85,7 @@ This project was created using ASP.NET MVC 4.8. This application aims to demonst
         }
     ```
 
-    > **NOTE:** You can set any value to the identity. Please refer to this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/members/#dynamicconnection) to learn more about the dynamicConnection member API.
+    > **NOTE:** You can set any value to the identity. Please refer to this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/members/#dynamicconnection?utm_source=github&utm_medium=backlinks) to learn more about the dynamicConnection member API.
 
     ![DCSUser1dashboard](https://github.com/boldbi/samples/assets/129487075/1ada2978-1a0b-4d86-af26-93ac5beb08d4)
 
@@ -159,8 +159,8 @@ It is recommended not to store passwords and sensitive information in configurat
 
 ## Online demos
 
-Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed).
+Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed?utm_source=github&utm_medium=backlinks).
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based/).
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based/?utm_source=github&utm_medium=backlinks).
