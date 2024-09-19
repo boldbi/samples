@@ -17,11 +17,11 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Configuration
 
-* Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code) to enable it.
+* Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code?utm_source=github&utm_medium=backlinks) to enable it.
 
     ![EmbedSettingsPage](https://github.com/boldbi/samples/assets/92368448/972a932c-94b1-450a-96db-79dc496751f3)
 
-* To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file) for reference. Additionally, you can refer to the following image for visual guidance.
+* To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file?utm_source=github&utm_medium=backlinks) for reference. Additionally, you can refer to the following image for visual guidance.
 
     ![EmbedSettingsDownload](https://github.com/boldbi/samples/assets/92368448/cc4d65e1-392f-436c-ad27-6e2b636fc6b6)
 
@@ -61,7 +61,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 > **NOTE:** We represent the dashboard embedding by default without the dashboards listing sidebar. You must navigate to the `dashboardlisting` URL (such as <http://localhost:5000/dashboardlisting>) to enable the dashboards list.
 
-Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/asp-net-core/#how-to-run-the-sample) to know how to run the sample.
+Please refer to the [help documentation](https://help.boldbi.com/embedding-options/embedding-sdk/samples/asp-net-core/#how-to-run-the-sample?utm_source=github&utm_medium=backlinks) to know how to run the sample.
 
 ## How to apply dashboard parameters for widget in JavaScript Embedding
 
@@ -73,14 +73,14 @@ JavaScript embedding provides support for filtering widgets with dashboard param
 
     ![load-dashboard-from-server](https://github.com/boldbi/samples/assets/92368448/fa007d90-4b55-4d42-9562-9cb120876f4d)
 
-* By default, the `HR Recruitment Dashboard` does not have [Dashboard Parameters](https://help.boldbi.com/cloud-bi/working-with-data-source/configuring-dashboard-parameters/#configuring-dashboard-parameters) configured. For demonstration, follow these steps to configure the Dashboard Parameter with `Literal Mode` as shown in the screenshot below:
+* By default, the `HR Recruitment Dashboard` does not have [Dashboard Parameters](https://help.boldbi.com/cloud-bi/working-with-data-source/configuring-dashboard-parameters/#configuring-dashboard-parameters?utm_source=github&utm_medium=backlinks) configured. For demonstration, follow these steps to configure the Dashboard Parameter with `Literal Mode` as shown in the screenshot below:
 
   * Enter the Parameter Name: `Department`
   * Enter the Parameter Value: `IT`
 
     ![enter-parameter-name-value](https://github.com/boldbi/samples/assets/92368448/d4041b0a-517a-4c3d-abf7-c05e25615630)
 
-* After successfully publishing the dashboard with configured dashboard parameters, download the [embedConfig JSON](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file) file associated with that specific dashboard.
+* After successfully publishing the dashboard with configured dashboard parameters, download the [embedConfig JSON](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file?utm_source=github&utm_medium=backlinks) file associated with that specific dashboard.
 
 * Once configured the embedConfig.JSON file in the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Dashboard-Parameter-In-Widget-Embedding), then run your application.
 
@@ -88,13 +88,13 @@ JavaScript embedding provides support for filtering widgets with dashboard param
 
       ![initial-widget-rendering](https://github.com/boldbi/samples/assets/92368448/14b07a07-0f18-42e8-a130-f85a092ffffa)
 
->**Note:** For more information about the initial rendering of the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/).
+>**Note:** For more information about the initial rendering of the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/?utm_source=github&utm_medium=backlinks).
 
 * To modify the widget according to a particular dashboard parameter value, choose a different value from the list of `Departments`, then click on `Apply`. For example, select `Accounts` to demonstrate.
 
     ![select-department-values](https://github.com/boldbi/samples/assets/92368448/6003e0dc-216f-4654-9217-4ff76cac32d0)
 
->**Note:** For more information about updating the widget with dashboard parameter without re-render the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters).
+>**Note:** For more information about updating the widget with dashboard parameter without re-render the widget, please refer the [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#updatefilters?utm_source=github&utm_medium=backlinks).
 
 * Thus, the widget will be loaded with the applied dashboard parameter value in the viewer section.
 

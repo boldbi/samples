@@ -16,11 +16,11 @@
 
 ## How to run the sample
 
-* Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code) to enable it.
+* Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code?utm_source=github&utm_medium=backlinks) to enable it.
 
     ![EmbedSettingsPage](https://github.com/boldbi/samples/assets/92368448/972a932c-94b1-450a-96db-79dc496751f3)
 
-* To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file) for reference. Additionally, you can refer to the following image for visual guidance.
+* To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file?utm_source=github&utm_medium=backlinks) for reference. Additionally, you can refer to the following image for visual guidance.
 
     ![EmbedSettingsDownload](https://github.com/boldbi/samples/assets/92368448/cc4d65e1-392f-436c-ad27-6e2b636fc6b6)
 
@@ -40,7 +40,7 @@
     | siteidentifier | For Bold BI Enterprise edition, it should be like `site/site1`. For Bold BI Cloud, it should be empty string.                                |
     | environment    | Your Bold BI application environment. (If Cloud, you should use `cloud`, if Enterprise, you should use `enterprise`)                         |
     | useremail      | UserEmail of the Admin in your Bold BI, which would be used to get the dashboards list                                                        |
-    | embedsecret    | You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page <https://help.boldbi.com/embedded-bi/site-administration/embed-settings/> |
+    | embedsecret    | You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page <https://help.boldbi.com/embedded-bi/site-administration/embed-settings/?utm_source=github&utm_medium=backlinks> |
 
   * Run the boldbi.web.api.sln sample
 

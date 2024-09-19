@@ -26,7 +26,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
    ![image](https://github.com/boldbi/samples/assets/129487075/b7b0c2d8-8d51-444d-811a-feccf44659bc)
 
-3. In our sample, we are going to utilize `Sales by Channel` widget. By default, the same color is applied for all the columns. For demonstration purposes, we need to apply different colors for different columns by enabling `Advance Setting` to customize the color under the **Formatting** section in the Properties pane. Please check this [link](https://help.boldbi.com/visualizing-data/visualization-widgets/column-chart/#formatting) for more details.
+3. In our sample, we are going to utilize `Sales by Channel` widget. By default, the same color is applied for all the columns. For demonstration purposes, we need to apply different colors for different columns by enabling `Advance Setting` to customize the color under the **Formatting** section in the Properties pane. Please check this [link](https://help.boldbi.com/visualizing-data/visualization-widgets/column-chart/#formatting?utm_source=github&utm_medium=backlinks) for more details.
 
    ![properties-pane](https://github.com/boldbi/samples/assets/129487075/37f6625e-efa3-42c8-939f-e34d9c8f7c2e)
 
@@ -38,11 +38,11 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 4. Publish the dashboard and download the `embedConfig.json` file for that dashboard by following the procedures below.
 
-    a. Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code) to enable it.
+    a. Please ensure you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code?utm_source=github&utm_medium=backlinks) to enable it.
 
     ![EmbedSettingsPage](https://github.com/boldbi/samples/assets/92368448/972a932c-94b1-450a-96db-79dc496751f3)
 
-    b. To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file) for reference. Additionally, you can refer to the following image for visual guidance.
+    b. To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file?utm_source=github&utm_medium=backlinks) for reference. Additionally, you can refer to the following image for visual guidance.
 
     ![EmbedSettingsDownload](https://github.com/boldbi/samples/assets/92368448/cc4d65e1-392f-436c-ad27-6e2b636fc6b6)
 
@@ -82,7 +82,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
   
 ## How the sample works
 
-1. In the initial rendering, the specified widget will render with all values using the **renderWidget()** method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/) for more details about widget embedding.
+1. In the initial rendering, the specified widget will render with all values using the **renderWidget()** method. Please check this [link](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-a-widget/?utm_source=github&utm_medium=backlinks) for more details about widget embedding.
 
    ![renderwidget](https://github.com/boldbi/samples/assets/129487075/c8f5b7ef-e1fe-43d2-ba7f-56d79d68cd57)
 

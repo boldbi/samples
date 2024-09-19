@@ -23,7 +23,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 | Parameter           | Description                                                                                                                      |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------|
 | UserEmail       | UserEmail of the Admin in your Bold BI, which will be used to get the dashboard list.                                           |
-| EmbedSecret     | Get your EmbedSecret key from the embed tab by enabling `Enable embed authentication` in the [Administration page](https://help.boldbi.com/embedded-bi/site-administration/embed-settings/). |
+| EmbedSecret     | Get your EmbedSecret key from the embed tab by enabling `Enable embed authentication` in the [Administration page](https://help.boldbi.com/embedded-bi/site-administration/embed-settings/?utm_source=github&utm_medium=backlinks). |
 | RootURL         | Use your Bold BI root URL (<http://localhost:[portno]/bi>)                                                                           |
 | SiteIdentifier  | For Bold BI Enterprise edition, it should be like `site/site1`. For Bold BI Cloud, it should be an empty string.                |
 | Environment     | Your Bold BI application environment. (If it is cloud analytics server, use `cloud`; if it is your own server, use `onpremise`). |
@@ -61,8 +61,8 @@ It is recommended not to store passwords and sensitive information in configurat
 
 ## Online demos
 
-Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed).
+Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.com/embed?utm_source=github&utm_medium=backlinks).
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding/).
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding/?utm_source=github&utm_medium=backlinks).
