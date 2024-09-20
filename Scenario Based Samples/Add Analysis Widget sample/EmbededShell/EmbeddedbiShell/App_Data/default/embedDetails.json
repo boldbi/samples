@@ -13,7 +13,7 @@
     }
   ],
   "AdminEmail": "admin@gmail.com",
-  "EmbedSecret": "DTJnwRnlQLcWuhV8EIBjlXxWAH93NfBK",
+  "EmbedSecret": "",
   "Environment": "onpremise",
   "BaseUrl": "https://localhost:44390",
   "DatasourceName": "Test data",
