@@ -16,13 +16,7 @@ namespace BoldBI.Embedded.Sample.Controllers
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
             GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
-
-            // Pass specific properties to the view using ViewBag
-            ViewBag.DashboardId = GlobalAppSettings.EmbedDetails.DashboardId;
-            ViewBag.ServerUrl = GlobalAppSettings.EmbedDetails.ServerUrl;
-            ViewBag.EmbedType = GlobalAppSettings.EmbedDetails.EmbedType;
-            ViewBag.Environment = GlobalAppSettings.EmbedDetails.Environment;
-            ViewBag.SiteIdentifier = GlobalAppSettings.EmbedDetails.SiteIdentifier;
+            ViewBag.EmbedDetails = GlobalAppSettings.EmbedDetails;
             return View();
         }
 

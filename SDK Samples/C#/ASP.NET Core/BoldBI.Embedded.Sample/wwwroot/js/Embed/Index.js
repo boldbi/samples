@@ -38,17 +38,9 @@ function renderDashboard() {
         serverUrl: rootUrl + "/" + siteIdentifier,
         dashboardId: dashboardId,
         embedContainerId: "dashboard",
-        embedType: embedType,
-        environment: environment,
-        // mode: BoldBI.Mode.Design,
-        width: "100%",
-        height: "100%",
-        expirationTime: 100000,
         authorizationServer: {
             url: authorizationServerUrl
         },
     });
-    // this.dashboard.loadDesigner();
-    // this.dashboard.loadMultipleWidgets();
     this.dashboard.loadDashboard();
 };

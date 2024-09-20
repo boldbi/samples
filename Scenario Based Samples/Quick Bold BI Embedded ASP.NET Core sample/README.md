@@ -33,7 +33,7 @@
    </tr>
    <tr>
     <td align="left">EmbedSecret</td>
-    <td align="left">You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page https://help.boldbi.com/embedded-bi/site-administration/embed-settings/</td>
+    <td align="left">You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page https://help.boldbi.com/embedded-bi/site-administration/embed-settings?utm_source=github&utm_medium=backlinks</td>
    </tr>
    <tr>
     <td align="left">Serverurl</td>
