@@ -8,33 +8,23 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/latest/boldbi-embed.js"></script>
     <link rel="stylesheet" href="~/css/Site.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.5/jsrender.min.js"></script>
-    <script type="text/javascript" src="http://cdn.boldbi.com/embedded-sdk/v3.3.40/embed-js.js"></script>
     <script type="text/javascript" src="~/js/Embed/Index.js"></script>
     <script type="text/javascript">
-        var rootUrl = "@GlobalAppSettings.EmbedDetails.ServerUrl";
-        var siteIdentifier = "@GlobalAppSettings.EmbedDetails.SiteIdentifier";
-        var environment = "@GlobalAppSettings.EmbedDetails.Environment";
-        var dashboardId = "@GlobalAppSettings.EmbedDetails.DashboardId";
-        var embedType = "@GlobalAppSettings.EmbedDetails.EmbedType";
+        
+        var rootUrl = "@ViewBag.EmbedDetails.ServerUrl";
+        var dashboardId = "@ViewBag.EmbedDetails.DashboardId";
+        var siteIdentifier = "@ViewBag.EmbedDetails.SiteIdentifier";
+        var environment = "@ViewBag.EmbedDetails.Environment";
+        var embedType = "@ViewBag.EmbedDetails.EmbedType";
         var authorizationServerUrl = "@Url.Action("GetDetails", "Home")";
         var getDashboardsUrl = "@Url.Action("GetDashboards", "Home")";
+    
     </script>
 </head>
 
-<body onload="Init()">
-    @*<div id="container">
-        <div class="header-section">
-            <div id="grid-title">All Dashboard</div>
-        </div>
-        <div id="panel">
-
-        </div>
-    </div>*@
+<body onload="renderDashboard()">
     <div id="viewer-section">
         <div id="dashboard"></div>
     </div>

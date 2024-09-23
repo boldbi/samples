@@ -1,37 +1,19 @@
 ﻿function Init() {
-    //var http = new XMLHttpRequest();
-    //http.open("GET", getDashboardsUrl, true);
-    //http.responseType = 'json';
-    //http.setRequestHeader("Content-type", "application/json");
-    //http.onreadystatechange = function () {
-    //    if (http.readyState == 4 && http.status == 200) {
-    //        ListDashboards.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
-    //    }
-    //    else if (http.readyState == 4 && http.status == 404) {
-    //        console.log("Server not found");
-    //    }
-    //    else if (http.readyState == 4) {
-    //        console.log(http.statusText);
-    //    }
-    //};
-
-    //http.send();
-
-    this.dashboard = BoldBI.create({
-        serverUrl: rootUrl + "/" + siteIdentifier,
-        dashboardId: dashboardId,
-        embedContainerId: "dashboard",
-        embedType: embedType,
-        environment: environment,
-        width: "100%",
-        height: "100%",
-        expirationTime: 100000,
-        authorizationServer: {
-            url: authorizationServerUrl
+    var http = new XMLHttpRequest();
+    http.open("GET", getDashboardsUrl, true);
+    http.responseType = 'json';
+    http.setRequestHeader("Content-type", "application/json");
+    http.onreadystatechange = function () {
+        if (http.readyState == 4 && http.status == 200) {
+            ListDashboards.call(this, typeof http.response == "object" ? http.response : JSON.parse(http.response));
+        } else if (http.readyState == 4 && http.status == 404) {
+            console.log("Server not found");
+        } else if (http.readyState == 4) {
+            console.log(http.statusText);
         }
-    });
+    };
 
-    this.dashboard.loadDashboard();
+    http.send();
 };
 
 function ListDashboards(data) {
@@ -56,14 +38,11 @@ function renderDashboard() {
         serverUrl: rootUrl + "/" + siteIdentifier,
         dashboardId: dashboardId,
         embedContainerId: "dashboard",
-        embedType: embedType,
-        environment: environment,
-        width: "100%",
-        height: "100%",
-        expirationTime: 100000,
         authorizationServer: {
             url: authorizationServerUrl
-        }
+        },
+        height:"100%",
+        width:"100%",
     });
     this.dashboard.loadDashboard();
 };
