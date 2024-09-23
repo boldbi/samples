@@ -41,6 +41,8 @@ function renderDashboard() {
         authorizationServer: {
             url: authorizationServerUrl
         },
+        height:"100%",
+        width:"100%",
     });
     this.dashboard.loadDashboard();
 };
