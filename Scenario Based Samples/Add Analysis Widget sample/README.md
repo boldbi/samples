@@ -1,6 +1,6 @@
 # Bold BI Add Analysis Widget Sample in .NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate the available dashboard embedding actions create, edit, delete and listing the dashboard based on user permissions.
+This project was created using ASP.NET Core 8.0. This application aims to demonstrate the available dashboard embedding actions create, edit, delete and listing the dashboard based on user permissions.
 
  > **NOTE:** Users must have permission to create, edit, and delete all dashboards, datasources, and categories on your Bold BI Server.
 
@@ -10,7 +10,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
  ## Requirements/Prerequisites
 
- * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+ * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
  
  #### Supported browsers
   

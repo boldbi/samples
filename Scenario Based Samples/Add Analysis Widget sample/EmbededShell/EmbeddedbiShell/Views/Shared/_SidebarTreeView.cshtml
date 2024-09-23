@@ -17,7 +17,6 @@
     List<SamplesSchemaViewModel> dashboards = Model.SamplesSchemaCollection[0].Samples;
     List<SamplesSchemaViewModel> datasources = Model.SamplesSchemaCollection[0].DataSources;
     bool isDbCheck = true;
-    //bool isWidgetCheck = true;
 
     bool isDsCheck = (datasources != null && datasources.Count != 0) ? datasources[0].CanWrite : false;
     if (dashboards != null && dashboards.Count > 0)
@@ -62,7 +61,6 @@
                             <li class="nav-item nav-item-heading">
                                 <a id="create-new" onclick="CreateNew()" class="nav-link sample no-hover" style="color: #fff; font-size:15px; padding-left:50px; cursor:pointer">
                                     <p>
-                                        @*<i class="fas fa-plus nav-icon"></i>*@
                                         Create New
                                     </p>
                                 </a>
@@ -83,11 +81,6 @@
                             {
                                 if (myDashboards.Count > 0 || dashboardName != null)
                                 {
-                                    @*<li class="nav-item nav-item-heading">
-                                    <a class="nav-link sample no-hover" style="font-size:15px; color: #fff; padding-left:50px">
-                                        <p>Owned by Me</p>
-                                    </a>
-                                </li>*@
                                     if (dashboardName != null)
                                     {
                                         <li id="new-item" class="nav-item">
@@ -112,9 +105,7 @@
                                                         {
                                                             <i class="far"> </i>
                                                             <p data-src="@sampleUrl" data-itemId="@sample.ItemID" onclick="ViewDashboard(this)" class="dashboard-text" style="padding-top: 5px;">@sample.Name</p>
-                                                            @*<i id="share-item" onclick="ShareDashboard('@sample.IsPublic', '@sample.Name', '@sample.ItemID')" style="display:none; vertical-align: super;" class="nav-option fas fa-share-alt dbrd-icon"> </i>*@
-                                                            @*<i id="refresh-item" onclick="RefreshDashboard('@sample.ItemID')" style="display:none; vertical-align: super;" class="nav-option fas fa-sync-alt dbrd-icon"> </i>*@
-                                                           <i id="edit-item" onclick="EditDashboard(this)" data-ng-animate="@sample.Name" style="display:none;vertical-align: super;" class="nav-option dbrd-icon fas fa-pencil-alt"> </i>
+                                                            <i id="edit-item" onclick="EditDashboard(this)" data-ng-animate="@sample.Name" style="display:none;vertical-align: super;" class="nav-option dbrd-icon fas fa-pencil-alt"> </i>
                                                             <i id="delete-item" onclick="deleteItem(this, '@sample.Name','@sample.ItemID')" style="display:none; vertical-align: super;" class="nav-option fas fa-trash-alt dbrd-icon"> </i>
                                                         }
                                                         else
@@ -128,35 +119,12 @@
                                                     {
                                                         <i class="far"> </i>
                                                         <p data-src="@sampleUrl" onclick="ViewDashboard(this)" class="dashboard-text" style="padding-top: 5px;">@sample.Name</p>
-                                                        @*<i id="refresh-item" onclick="RefreshDashboard('@sample.ItemID')" style="display:none; vertical-align: super;" class="nav-option fas fa-sync-alt dbrd-icon"> </i>*@
                                                     }
                                                 </a>
                                             </li>
                                         }
                                     }
                                 }
-                                @*if (sharedDashboards.Count > 0)
-                            {
-                                <li class="nav-item nav-item-heading">
-                                    <a class="nav-link sample no-hover" style="font-size:15px; color: #fff; padding-left:50px">
-                                        <p>Shared with me</p>
-                                    </a>
-                                </li>
-                                @foreach (var sample in sharedDashboards)
-                                {
-                                    @if (sample.Id != 101)
-                                    {
-                                        var isChildActive = ViewBag.Name.ToLower() == sample.Name.ToLower() ? "active" : "";
-                                        var sampleUrl = @Url.Action("Index", "Home", new { categoryName = @category.Name.ToLower(), sampleName = @sample.Name.ToLower(), email = @email });
-                                        <li class="nav-item">
-                                            <a href="@sampleUrl" class="nav-link sample @isChildActive" style="font-size:14px;">
-                                                <i class="far"> </i>
-                                                <p>@sample.Name</p>
-                                            </a>
-                                        </li>
-                                     }
-                                 }
-                            }*@
                             }
                         }
                     </ul>
