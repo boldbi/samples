@@ -1,6 +1,6 @@
 # Bold BI Full Server Based Embedding in ASP.NET Core MVC using IFrame
 
-This project was created using ASP.NET Core 6.0. The application aims to demonstrate how to render Bold BI server with JWT Authentication in Iframe Embedding.
+This project was created using ASP.NET Core 8.0. The application aims to demonstrate how to render Bold BI server with JWT Authentication in Iframe Embedding.
 
 ## Bold BI Server Embedding view
 
@@ -8,7 +8,7 @@ This project was created using ASP.NET Core 6.0. The application aims to demonst
 
 ## Requirements/Prerequisites
 
- * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+ * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
 
 #### Supported browsers
   

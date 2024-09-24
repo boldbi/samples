@@ -1,6 +1,6 @@
 # Applying Dashboard Parameters for Widget Embedding using .NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to showcase the implementation of dashboard parameters in a BoldBI widget through JavaScript Embedding.
+This project was created using ASP.NET Core 8.0. This application aims to demonstrate how to showcase the implementation of dashboard parameters in a BoldBI widget through JavaScript Embedding.
 
 ## Dashboard view
 
@@ -8,7 +8,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
  ## Requirements/Prerequisites
 
- * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+ * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
  * [Visual Studio Code](https://code.visualstudio.com/download)
  
  #### Supported browsers

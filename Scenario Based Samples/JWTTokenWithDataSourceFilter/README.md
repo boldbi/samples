@@ -5,7 +5,7 @@
 
  ## Requirements/Prerequisites
 
- * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+ * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
  * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
  * [Visual Studio Code](https://code.visualstudio.com/download)
  
