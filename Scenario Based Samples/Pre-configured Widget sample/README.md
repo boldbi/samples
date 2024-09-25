@@ -18,7 +18,7 @@ This project was created using ASP.NET Core 8.0. This application aims to demons
 
  ## Configuration
 
-  * To configure the specified properties in the `embedDetails.json` file at the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Add%20Analysis%20Widget%20sample/EmbededShell/EmbeddedbiShell/App_Data/default), please follow to the provided instructions.
+  * To configure the specified properties in the `embedDetails.json` file at the designated [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Pre-configured%20Widget%20sample/EmbededShell/EmbeddedbiShell/App_Data/default), please follow to the provided instructions.
 
     ![adhoc-embeddetails](https://github.com/boldbi/samples/assets/129487075/a93b5ec8-70a2-4c47-8269-d259968e546f)
 
@@ -69,11 +69,9 @@ This project was created using ASP.NET Core 8.0. This application aims to demons
     </tbody>
     </table>
 
-    > **NOTE:** To learn more about the `WidgetDetails` parameter provided, please refer to [this](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#renderWidgets). To retrieve the widget lists from the server's widget panel, please refer to the `getSupportedWidgets` method [here](https://help.boldbi.com/embedding-options/embedding-sdk/embedding-api-reference/methods/#getSupportedWidgets).
-
  ## Run a Sample Using Command Line Interface 
     
-  1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Add%20Analysis%20Widget%20sample/EmbededShell/EmbeddedbiShell) where the project is located.
+  1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Pre-configured%20Widget%20sample/EmbededShell/EmbeddedbiShell) where the project is located.
 
   2. Execute the command `dotnet restore` to restore the necessary packages. Once the packages have been successfully restored, use the `dotnet build` command to build the project.
   
@@ -85,7 +83,7 @@ This project was created using ASP.NET Core 8.0. This application aims to demons
 
   ### Run a Sample Using Visual Studio Code
  
-  * Open the folder [EmbeddedbiShell](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Add%20Analysis%20Widget%20sample/EmbededShell/EmbeddedbiShell) in Visual Studio Code.
+  * Open the folder [EmbeddedbiShell](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/Pre-configured%20Widget%20sample/EmbededShell/EmbeddedbiShell) in Visual Studio Code.
    
   * Open the terminal in Visual Studio Code and execute the command `dotnet restore` to restore the required dependencies.
  
