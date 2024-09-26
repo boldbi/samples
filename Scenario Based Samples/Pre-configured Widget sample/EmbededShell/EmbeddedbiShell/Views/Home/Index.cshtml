@@ -1,0 +1,56 @@
+﻿@{
+    var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
+    var serverUrl = globalAppSettings.EmbedDetails.Serverurl;
+    var baseUrl = globalAppSettings.EmbedDetails.BaseUrl;
+    var environment = globalAppSettings.EmbedDetails.Environment;
+    var authorizeUrl = @Url.Action("GetDetails", "Home");
+    var deleteItemUrl = @Url.Action("DeleteItem", "Home");
+    var refreshItemUrl = @Url.Action("RefreshItem", "Home");
+    var shareItemUrl = @Url.Action("ShareItem", "Home");
+    var permissionDbUrl = @Url.Action("DBPermission", "Home");
+    var permissionDsUrl = @Url.Action("DSPermission", "Home");
+    var category = ViewBag.Category as ApiItems;
+    var isEdit = ViewBag.IsEdit != null && (bool)ViewBag.IsEdit;
+    var noResourceFound = ViewBag.NoResourceFound != null && (bool)ViewBag.NoResourceFound;
+    var token = ViewBag.Token;
+    var draftId = ViewBag.DraftId;
+    var title = string.IsNullOrWhiteSpace(Model?.Title) ? "" : Model.Title;
+    var dashboardPath = string.IsNullOrWhiteSpace(Model?.DashboardPath) ? "" : Model.DashboardPath;
+    var parentId = Model != null && Model.ParentId > 0 ? Model.ParentId : 0;
+    var userDetails = globalAppSettings.EmbedDetails.UserDetails; 
+}
+
+@model SampleCoreApp.Models.SamplesTreeViewModel
+@using Microsoft.AspNetCore.Http;
+@using SampleCoreApp.Controllers;
+@using SampleCoreApp;
+@using System.Web;
+@using Newtonsoft.Json;
+<div id="dashboardparent" class="tab-pane" style="height:100%;width:100%; overflow:hidden">
+    <div style="height:100%;width:100%;overflow: hidden !important;" id="sample_dashboard"></div>
+</div>
+<script type="text/javascript">
+    document.title = "@title";
+    var category = @Html.Raw(JsonConvert.SerializeObject(category));
+    var noResourceFound = "@(noResourceFound.ToString().ToLower())" === "true";
+    var designerUrl = "@Url.Action("Index", "Designer")";
+    var mode = "@(isEdit.ToString().ToLower())" === "true" ? BoldBI.Mode.Design : BoldBI.Mode.View;
+    var serverUrl = "@serverUrl";
+    var dashboardPath = "@dashboardPath";
+    var environment = "@environment" === "cloud" ? BoldBI.Environment.Cloud : BoldBI.Environment.Enterprise;
+    var authorizeUrl = "@authorizeUrl";
+    var deleteItemUrl = "@deleteItemUrl";
+    var refreshItemUrl = "@refreshItemUrl";
+    var shareItem = "@shareItemUrl";
+    var permissionDbUrl = "@permissionDbUrl";
+    var permissionDsUrl = "@permissionDsUrl";
+    var token = "@Html.Raw(@token)";
+    var baseUrl = "@baseUrl";
+    var id = "@draftId";
+    var catagoryId = "@parentId";
+    var datasourceName = "";
+
+    $(document).ready(function () {
+        embedSample();
+    });
+</script>

@@ -1,0 +1,194 @@
+﻿@using Newtonsoft.Json;
+@{
+    var globalAppSettings = ViewBag.GlobalAppSettings as GlobalAppSettings;
+    var index = 0;
+    var dashboardServerApiUrl = globalAppSettings.EmbedDetails.RootUrl + "/api";
+    var accessToken = globalAppSettings.UserToken != null ? globalAppSettings.UserToken.AccessToken : "";
+    var currentUserEmail = globalAppSettings.UserToken != null ? globalAppSettings.UserToken.Email : "";
+    var email = Model != null && Model.UserDetails != null && !string.IsNullOrWhiteSpace(Model.UserDetails.Email) ? Model.UserDetails.Email : null;
+    var userID = ViewBag.UserId;
+    var updateSampleUrl = Url.Action("", "Home");
+    var siteIdentifier = globalAppSettings.EmbedDetails.SiteIdentifier;
+    var environment = globalAppSettings.EmbedDetails.Environment;
+
+    var dashboardName = ViewBag.DashboardName;
+    List<SamplesSchemaViewModel> myDashboards = new List<SamplesSchemaViewModel>();
+    List<SamplesSchemaViewModel> sharedDashboards = new List<SamplesSchemaViewModel>();
+    List<SamplesSchemaViewModel> dashboards = Model.SamplesSchemaCollection[0].Samples;
+    List<SamplesSchemaViewModel> datasources = Model.SamplesSchemaCollection[0].DataSources;
+    bool isDbCheck = true;
+
+    bool isDsCheck = (datasources != null && datasources.Count != 0) ? datasources[0].CanWrite : false;
+    if (dashboards != null && dashboards.Count > 0)
+    {
+        myDashboards = dashboards.Where(x => (x.CreatedById == userID && x.Id != 101)).ToList();
+        sharedDashboards = dashboards.Where(x => (x.CreatedById != userID && x.Id != 101)).ToList();
+        isDbCheck = (myDashboards != null && myDashboards.Count != 0) ? myDashboards[0].CanWrite:false;
+    }
+    
+    }
+
+<div class="sidebar" style="padding:0px; background:#3bacf6">
+    <nav>
+        <ul id="sidebar-menu" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            @foreach (var category in Model.SamplesSchemaCollection)
+            {
+                var hasChild = category.IsCategory && category.HasChild && !category.AsTab;
+                var hasTreeview = hasChild ? "has-treeview" : string.Empty;
+                var isActive = hasChild ? ViewBag.ParentName?.ToLower() == category.Name.ToLower() ? "active" : ViewBag.Name.ToLower() == category.Name.ToLower() ? "active" : "" : "";
+                var hasMenuOpen = (hasChild) ? "menu-open" : "";
+                var url = hasChild ? "#" : @Url.Action("Index", "Home", new { categoryName = @category.Name.ToLower() });
+                index++;
+                <li class="nav-item  @hasTreeview @hasMenuOpen">
+                    <a href="@url" id="item_@category.Id" class="nav-link category @isActive" style="background-color:#3bacf6">
+                        <i class="nav-icon fas @category.SpiteClass" style="margin-right: 5px; color: #fff"></i>
+                        <p style="color: #fff; font-weight:bold;">
+
+
+                            @category.Name
+
+                        </p>
+                        @if (category.Samples != null && !category.AsTab)
+                        {
+                            <i class="left fas fa-angle-right" style="float: right; color: #fff; margin-top: 5px;"></i>
+                        }
+                    </a>
+
+                    <ul id="sidemenu-item" class="nav nav-treeview">
+                        @if (category.Id == 1)
+                        {
+
+                            <li class="nav-item nav-item-heading">
+                                <a id="create-new" onclick="CreateNew()" class="nav-link sample no-hover" style="color: #fff; font-size:15px; padding-left:50px; cursor:pointer">
+                                    <p>
+                                        Create New
+                                    </p>
+                                </a>
+                                <div id="dbrd-name" class="input-group input-group-sm" style="display:none">
+                                    <input id="dashboard-name" class="form-control form-control-navbar" style="border:none;" type="text" placeholder="Enter the dashboard name" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button id="create-dashboard" class="btn btn-navbar" style="color: #115e94" type="submit">
+                                            <i class="fas fa-save"></i>
+                                        </button>
+                                        <button class="btn btn-navbar" onclick="CloseItem()" style="color: #115e94" type="submit">
+                                            <i class="fas fa-ban"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            @if (category.Samples != null && !category.AsTab)
+                            {
+                                if (myDashboards.Count > 0 || dashboardName != null)
+                                {
+                                    if (dashboardName != null)
+                                    {
+                                        <li id="new-item" class="nav-item">
+                                            <a class="nav-link sample active" style="font-size:14px;">
+                                                <i class="far"> </i>
+                                                <p id="new-item-name" style="width: 200px; padding-top: 5px;">@dashboardName</p>
+                                                <i id="save-item" style="vertical-align: super; cursor:pointer" class="nav-option dbrd-icon fas fa-save"> </i>
+                                            </a>
+                                        </li>
+                                    }
+                                    @foreach (var sample in myDashboards)
+                                    {
+                                        @if (sample.Id != 101)
+                                        {
+                                            var isChildActive = ViewBag.Name.ToLower() == sample.Name.ToLower() ? "active" : "";
+                                            var sampleUrl = @Url.Action("Index", "Home", new { categoryName = @category.Name.ToLower(), sampleName = @sample.Name.ToLower()});
+                                            <li class="nav-item">
+                                                <a class="nav-link sample @isChildActive" style="font-size:14px; cursor:pointer;">
+                                                    @if (sample.CanWrite)
+                                                    {
+                                                        @if (!sample.IsEdit)
+                                                        {
+                                                            <i class="far"> </i>
+                                                            <p data-src="@sampleUrl" data-itemId="@sample.ItemID" onclick="ViewDashboard(this)" class="dashboard-text" style="padding-top: 5px;">@sample.Name</p>
+                                                            <i id="edit-item" onclick="EditDashboard(this)" data-ng-animate="@sample.Name" style="display:none;vertical-align: super;" class="nav-option dbrd-icon fas fa-pencil-alt"> </i>
+                                                            <i id="delete-item" onclick="deleteItem(this, '@sample.Name','@sample.ItemID')" style="display:none; vertical-align: super;" class="nav-option fas fa-trash-alt dbrd-icon"> </i>
+                                                        }
+                                                        else
+                                                        {
+                                                            <i class="far"> </i>
+                                                            <p class="dashboard-item" style="width: 200px;cursor:pointer; padding-top: 5px;">@sample.Name</p>
+                                                            <i id="save-item" style="vertical-align: super; cursor:pointer" class="nav-option dbrd-icon fas fa-save"> </i>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="far"> </i>
+                                                        <p data-src="@sampleUrl" onclick="ViewDashboard(this)" class="dashboard-text" style="padding-top: 5px;">@sample.Name</p>
+                                                    }
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </ul>
+                </li>
+              <li class="nav-item  has-treeview menu-open">
+                    <a href="@url" id="item_2" class="nav-link category active" style="background-color:#3bacf6">
+                        <span class="glyphicon glyphicon-cog" style="margin-right: 5px; color: #fff"></span>
+                        <p style="color: #fff; font-weight:bold;">Settings</p>
+                    </a>
+
+                    <div style="color: #fff; width: 300px;">
+                        <input id="dbrd_Edit" type="checkbox" checked=@isDbCheck onchange="dbrdChkChange(this)" aria-label="Allow Dashboard Editing" style="height: 20px;width: 25px;margin: 10px 0 0 20px;" />
+                        <span style="float: right; margin: 10px 80px 0 0">Allow Dashboard Editing</span>
+                    </div>
+                    <div style="color: #fff; width: 300px;">
+                        <input id="ds_Edit" type="checkbox"  checked=@isDsCheck onchange="dsChkChange(this)" aria-label="Allow Datasource Editing" style="height: 20px;width: 25px;margin: 10px 0 0 20px;" />
+                        <span style="float: right; margin: 10px 80px 0 0">Allow Datasource Editing</span>
+                    </div>
+                    <div style="color: #fff; width: 300px;">
+                        <input id="myCheckbox" type="checkbox" style="height: 20px;width: 25px;margin: 10px 0 0 20px;" />
+                        <span style="float: right; margin: 10px 110px 0 0">Add Analysis Widget</span>
+                    </div>
+                </li>
+
+            }
+            </ul>
+    </nav>
+</div>
+<script>
+    var serverApiUrl = '@dashboardServerApiUrl';
+    var accessToken = '@accessToken';
+    var currentUserId = '@userID';
+    var currentUserEmail = '@currentUserEmail';
+    var siteIdentifier = '@siteIdentifier';
+    var environment = '@environment';
+
+    // Function to save checkbox state to session storage
+   function saveCheckboxState() {
+      const checkbox = document.getElementById('myCheckbox');
+      sessionStorage.setItem('checkboxState', checkbox.checked);
+    } 
+
+    // Function to restore checkbox state from session storage
+   function restoreCheckboxState() {
+      const checkbox = document.getElementById('myCheckbox');
+      const savedState = sessionStorage.getItem('checkboxState');
+    
+      if (savedState === 'true') {
+        checkbox.checked = true;
+      } else {
+        checkbox.checked = false;
+      } 
+    } 
+   
+    // Attach event listeners to save and restore checkbox state
+    document.getElementById('myCheckbox').addEventListener('change', saveCheckboxState);
+    window.addEventListener('load', restoreCheckboxState);
+    document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.getElementById('myCheckbox');
+              const savedState = sessionStorage.getItem('checkboxState');
+              if(savedState == null && checkbox.checked == false){
+                    checkbox.checked = true;
+                    sessionStorage.setItem('checkboxState', checkbox.checked);
+              }
+    });
+
+</script>

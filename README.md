@@ -6,6 +6,6 @@ Bold BI also comes with a data integration platform to handle the toughest chall
 
 To get started with Bold BI, refer to this video - [Getting Started with Bold BI](https://www.youtube.com/watch?v=sMPe2knTIls&list=PLyPmz-byf1UHTEr1DggtRxRzSYOzNWohk&index=1&t=2s).
 
-Sign up [Bold BI](https://www.boldbi.com) for free 15-day trial now. Unlimited Users. Unlimited dashboards.
+Sign up [Bold BI](https://www.boldbi.com?utm_source=github&utm_medium=backlinks) for free 15-day trial now. Unlimited Users. Unlimited dashboards.
 
-Subscribe to Syncfusion on YouTube: http://bit.ly/syncfusionyoutube
+Subscribe to Syncfusion on YouTube: <http://bit.ly/syncfusionyoutube>

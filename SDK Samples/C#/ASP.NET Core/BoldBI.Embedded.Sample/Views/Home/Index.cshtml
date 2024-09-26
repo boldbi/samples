@@ -6,24 +6,28 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="~/css/Site.css" />
     <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/latest/boldbi-embed.js"></script>
+    <link rel="stylesheet" href="~/css/Site.css" />
     <script type="text/javascript" src="~/js/Embed/Index.js"></script>
     <script type="text/javascript">
-        var rootUrl = "@GlobalAppSettings.EmbedDetails.ServerUrl";
-        var siteIdentifier = "@GlobalAppSettings.EmbedDetails.SiteIdentifier";
-        var environment = "@GlobalAppSettings.EmbedDetails.Environment";
-        var dashboardId = "@GlobalAppSettings.EmbedDetails.DashboardId";
-        var embedType = "@GlobalAppSettings.EmbedDetails.EmbedType";
+        
+        var rootUrl = "@ViewBag.EmbedDetails.ServerUrl";
+        var dashboardId = "@ViewBag.EmbedDetails.DashboardId";
+        var siteIdentifier = "@ViewBag.EmbedDetails.SiteIdentifier";
+        var environment = "@ViewBag.EmbedDetails.Environment";
+        var embedType = "@ViewBag.EmbedDetails.EmbedType";
         var authorizationServerUrl = "@Url.Action("GetDetails", "Home")";
         var getDashboardsUrl = "@Url.Action("GetDashboards", "Home")";
+    
     </script>
 </head>
 
-<body onload="Init()">
+<body onload="renderDashboard()">
     <div id="viewer-section">
         <div id="dashboard"></div>
     </div>
 </body>
+
 </html>

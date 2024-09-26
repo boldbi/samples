@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using BoldBI.Embedded.Sample.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.Cryptography;
 
 namespace BoldBI.Embedded.Sample.Controllers
@@ -12,13 +13,13 @@ namespace BoldBI.Embedded.Sample.Controllers
     {
         public IActionResult Index()
         {
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
+            GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
+            ViewBag.EmbedDetails = GlobalAppSettings.EmbedDetails;
             return View();
         }
 
-        public IActionResult EmbedConfigErrorLog()
-        {
-            return View();
-        }
 
         [HttpGet]
         [Route("GetDashboards")]
@@ -50,11 +51,10 @@ namespace BoldBI.Embedded.Sample.Controllers
                     new KeyValuePair<string, string>("Username", GlobalAppSettings.EmbedDetails.UserEmail),
                     new KeyValuePair<string, string>("embed_secret", GlobalAppSettings.EmbedDetails.EmbedSecret)
                 });
-                var result = client.PostAsync(GlobalAppSettings.EmbedDetails.ServerUrl + "/api/" + GlobalAppSettings.EmbedDetails.SiteIdentifier + "/get-user-key", content).Result;
+                var result = client.PostAsync(GlobalAppSettings.EmbedDetails.ServerUrl + "/api/" + GlobalAppSettings.EmbedDetails.SiteIdentifier + "/token", content).Result;
                 string resultContent = result.Content.ReadAsStringAsync().Result;
-                var response = JsonConvert.DeserializeObject<TokenObject>(resultContent);//Token token = new Token();
-                var tokenObj = JsonConvert.DeserializeObject<Token>(response.Token);
-                return tokenObj;
+                var response = JsonConvert.DeserializeObject<Token>(resultContent);
+                return response;
             }
         }
 
@@ -67,7 +67,10 @@ namespace BoldBI.Embedded.Sample.Controllers
             var embedQuery = embedClass.embedQuerString;
             // User your user-email as embed_user_email
             embedQuery += "&embed_user_email=" + GlobalAppSettings.EmbedDetails.UserEmail;
-            var embedDetailsUrl = "/embed/authorize?" + embedQuery.ToLower() + "&embed_signature=" + GetSignatureUrl(embedQuery.ToLower());
+            //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
+            double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+            embedQuery += "&embed_server_timestamp=" + timeStamp;
+            var embedDetailsUrl = "/embed/authorize?" + embedQuery + "&embed_signature=" + GetSignatureUrl(embedQuery);
 
             using (var client = new HttpClient())
             {
