@@ -8,10 +8,10 @@ This project was created using ASP.NET Core 8.0. This application aims to demons
 
 ## Requirements/Prerequisites
 
- * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
- * [Visual Studio Code](https://code.visualstudio.com/download)
- 
- #### Supported browsers
+* [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
+* [Visual Studio Code](https://code.visualstudio.com/download)
+
+### Supported browsers
   
 * Google Chrome, Microsoft Edge and Mozilla Firefox.
 

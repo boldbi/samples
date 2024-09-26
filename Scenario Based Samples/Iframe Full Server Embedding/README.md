@@ -8,7 +8,7 @@ This project was created using ASP.NET Core 8.0. The application aims to demonst
 
 ## Requirements/Prerequisites
 
- * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
+* [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
 
 ### Supported browsers
   
@@ -79,4 +79,4 @@ Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding/?utm_source=github&utm_medium=backlinks).
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedding-options/iframe-embedding?utm_source=github&utm_medium=backlinks).
