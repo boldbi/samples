@@ -24,16 +24,18 @@ This project was created using ASP.NET Core 8.0. This application aims to demons
 
 * Inside the `renderDashboard` method in `dashboard-listing.component.ts` file,include nonce member in the embed Options and provide value as the same generic Id which was used inside the meta tag.
 
- ## Requirements/Prerequisites
- 
- * [.NET Core 8.0](https://dotnet.microsoft.com/en-us/download/dotnet-core)
- * [Node.js](https://nodejs.org/en/)
+* Refer this sample to know how the nonce value has been configured.
+
+## Requirements/Prerequisites
+
+* [.NET Core 8.0](https://dotnet.microsoft.com/en-us/download/dotnet-core)
+* [Node.js](https://nodejs.org/en/)
 
  > **NOTE:** Node.js v18.17 to v20.15 are supported
 
 ### Help link
 
-* <https://help.boldbi.com/embedded-bi/faq/where-can-i-find-the-product-version/?utm_source=github&utm_medium=backlinks>
+* <https://help.boldbi.com/embedded-bi/faq/where-can-i-find-the-product-version?utm_source=github&utm_medium=backlinks>
 
 #### Supported browsers
   
@@ -92,4 +94,4 @@ Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based/?utm_source=github&utm_medium=backlinks).
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based?utm_source=github&utm_medium=backlinks).
