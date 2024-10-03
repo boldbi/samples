@@ -1,6 +1,6 @@
 # Bold BI Dashboard Views Sample in ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to customize BoldBI dashboards with the Dashboard Views API in JavaScript embedding.
+This project was created using ASP.NET Core 8.0. This application aims to demonstrate how to customize BoldBI dashboards with the Dashboard Views API in JavaScript embedding.
 
 ## Dashboard views in JavaScript Embedding
 
@@ -8,7 +8,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Requirements/Prerequisites
 
-* [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+* [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 
 ### Supported browsers

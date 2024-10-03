@@ -1,6 +1,6 @@
 # Bold BI Embedded Sample in Angular with ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to render the dashboard by embedding if you have restricted external scripts in your application.
+This project was created using ASP.NET Core 8.0. This application aims to demonstrate how to render the dashboard by embedding if you have restricted external scripts in your application.
 
 ## Dashboard view
 
@@ -28,14 +28,14 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Requirements/Prerequisites
 
-* [.NET Core 6.0](https://dotnet.microsoft.com/en-us/download/dotnet-core)
+* [.NET Core 8.0](https://dotnet.microsoft.com/en-us/download/dotnet-core)
 * [Node.js](https://nodejs.org/en/)
 
- > **NOTE:** Node.js v14.20 to v18.18 are supported
+ > **NOTE:** Node.js v18.17 to v20.15 are supported
 
 ### Help link
 
-* <https://help.boldbi.com/embedded-bi/faq/where-can-i-find-the-product-version/?utm_source=github&utm_medium=backlinks>
+* <https://help.boldbi.com/embedded-bi/faq/where-can-i-find-the-product-version?utm_source=github&utm_medium=backlinks>
 
 #### Supported browsers
   
@@ -94,4 +94,4 @@ Look at the Bold BI Embedding sample to live demo [here](https://samples.boldbi.
 
 ## Documentation
 
-A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based/?utm_source=github&utm_medium=backlinks).
+A complete Bold BI Embedding documentation can be found on [Bold BI Embedding Help](https://help.boldbi.com/embedded-bi/javascript-based?utm_source=github&utm_medium=backlinks).
