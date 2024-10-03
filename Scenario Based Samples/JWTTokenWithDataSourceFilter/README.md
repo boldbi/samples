@@ -10,11 +10,7 @@
 * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 
- * [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
- * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
- * [Visual Studio Code](https://code.visualstudio.com/download)
- 
- #### Supported browsers
+### Supported browsers
   
 * Google Chrome, Microsoft Edge and Mozilla Firefox.
 
@@ -44,7 +40,7 @@
     | siteidentifier | For Bold BI Enterprise edition, it should be like `site/site1`. For Bold BI Cloud, it should be empty string.                                |
     | environment    | Your Bold BI application environment. (If Cloud, you should use `cloud`, if Enterprise, you should use `enterprise`)                         |
     | useremail      | UserEmail of the Admin in your Bold BI, which would be used to get the dashboards list                                                        |
-    | embedsecret    | You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page <https://help.boldbi.com/embedded-bi/site-administration/embed-settings/?utm_source=github&utm_medium=backlinks> |
+    | embedsecret    | You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page <https://help.boldbi.com/embedded-bi/site-administration/embed-settings?utm_source=github&utm_medium=backlinks> |
 
   * Run the boldbi.web.api.sln sample
 
