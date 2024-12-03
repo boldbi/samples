@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore;
 
 namespace boldbi.web.api.Controllers
 {
@@ -15,11 +16,13 @@ namespace boldbi.web.api.Controllers
     {
         private readonly ILogger<AccountController> _logger;
         private readonly EmbedDetails _boldbiIProperties;       
+        private readonly ApplicationDbContext _dbContext;
 
-        public DashboardController(ILogger<AccountController> logger, EmbedDetails boldbiProperties)
+        public DashboardController(ILogger<AccountController> logger, EmbedDetails boldbiProperties, ApplicationDbContext dbContext)
         {
             _logger = logger;
-            _boldbiIProperties = boldbiProperties;     
+            _boldbiIProperties = boldbiProperties;    
+            _dbContext = dbContext;
         }
 
         [Authorize]
@@ -37,31 +40,49 @@ namespace boldbi.web.api.Controllers
         }
         [Authorize]
         [HttpPost("authorize")]
-        public string AuthorizeDashboard([FromBody] object embedQuerString)
+        public async Task<string> AuthorizeDashboard([FromBody] object embedQuerString)
         {
             _logger.LogInformation($"User [{User.Identity?.Name}] logged in the system.");
             var userName = User.Identity?.Name;
-            var userEmail = (User.Identity as ClaimsIdentity)?.FindFirst(ClaimTypes.Email)?.Value;
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
             var embedClass = JsonConvert.DeserializeObject<EmbedClass>(embedQuerString.ToString());
             var embedQuery = embedClass.embedQuerString;
-
-            // User your user-email as embed_user_email
-            embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + "&embed_datasource_filter=[{&UserEmail=" + userEmail + "}]";
-
-            //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
-            double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
-            embedQuery += "&embed_server_timestamp=" + timeStamp;
-            var embedDetailsUrl = "/embed/authorize?" + embedQuery + "&embed_signature=" + GetSignatureUrl(embedQuery);
-
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri(embedClass.dashboardServerApiUrl);
-                client.DefaultRequestHeaders.Accept.Clear();
-                var result = client.GetAsync(embedClass.dashboardServerApiUrl + embedDetailsUrl).Result;
-                string resultContent = result.Content.ReadAsStringAsync().Result;
-                return resultContent;
-            }
+                var user = await _dbContext.usercustomattributes.FirstOrDefaultAsync(u => u.useremail == email);
+                if (user == null)
+                {
+                    throw new Exception($"User {userName} not found in the database.");
+                }
+                var customAttribute = user.customattribute;
+                if (!string.IsNullOrEmpty(role) && role == "Admin")
+                {
+                    embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}";
+                }
+                else
+                {
+                    embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}"+ "&embed_datasource_filter=[{&useremail=" + email + "}]";
+                }
 
+                //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
+                double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+                embedQuery += "&embed_server_timestamp=" + timeStamp;
+                var embedDetailsUrl = "/embed/authorize?" + embedQuery + "&embed_signature=" + GetSignatureUrl(embedQuery);
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(embedClass.dashboardServerApiUrl);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    var result = client.GetAsync(embedClass.dashboardServerApiUrl + embedDetailsUrl).Result;
+                    string resultContent = result.Content.ReadAsStringAsync().Result;
+                    return resultContent;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while retrieving the user from the database.", ex);
+            }
         }
 
         public string GetSignatureUrl(string queryString)

@@ -3,6 +3,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using boldbi.web.api.Services;
 using boldbi.web.api.Model;
+using boldbi.web.api;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +16,7 @@ builder.Configuration.AddJsonFile("appsettings.json");
 //Adding boldbi embedConfig json to service configuration
 builder.Configuration.AddJsonFile("embedConfig.json"); 
 
-
+builder.Services.AddScoped<IPasswordHasher<UserCustomAttribute>, PasswordHasher<UserCustomAttribute>>();
 var jwtTokenConfig = builder.Configuration.GetSection("jwtTokenConfig").Get<JwtTokenConfig>();
 builder.Services.AddSingleton(jwtTokenConfig);
 var boldBIProperties = builder.Configuration.Get<EmbedDetails>();
@@ -48,6 +51,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<IUser, UserService>();
 builder.Services.AddSingleton<IJWTServiceManager, JWTServiceManager>();
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var app = builder.Build();

@@ -6,8 +6,8 @@ namespace boldbi.web.api.Model
     public class LoginRequest
     {
         [Required]
-        [JsonPropertyName("username")]
-        public string UserName { get; set; }
+        [JsonPropertyName("useremail")]
+        public string UserEmail { get; set; }
 
         [Required]
         [JsonPropertyName("password")]

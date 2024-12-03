@@ -5,6 +5,6 @@
         bool IsAnExistingUser(string userName);
         bool IsValidUserCredentials(string userName, string password);
         string GetUserRole(string userName);
-        string GetUserEmail(string userName);
+        string GetUserName(string userName);
     }
 }

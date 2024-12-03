@@ -1,63 +1,77 @@
 ﻿using boldbi.web.api.Model;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace boldbi.web.api.Services
 {
     public class UserService:IUser
     {
         private readonly ILogger<UserService> _logger;
+        private readonly ApplicationDbContext _dbContext;
+        private readonly IPasswordHasher<UserCustomAttribute> _passwordHasher;
 
-        private readonly IDictionary<string, (string, string)> _users = new Dictionary<string, (string, string)>(StringComparer.OrdinalIgnoreCase)
-        {
-            { "John", ("John@123", "john.smith@example.com") },
-            { "Sarah", ("Sarah@123", "sarah.johnson@example.com") },
-            { "Michael",("Michael@123","michael.brown@example.com")},
-            { "Admin", ("Admin@123", "") }
-        };
-
-        // inject your database here for user validation
-        public UserService(ILogger<UserService> logger)
+        public UserService(ILogger<UserService> logger, ApplicationDbContext dbContext, IPasswordHasher<UserCustomAttribute> passwordHasher)
         {
             _logger = logger;
+            _dbContext = dbContext;
+            _passwordHasher = passwordHasher;
         }
 
-        public bool IsValidUserCredentials(string userName, string password)
+        public bool IsValidUserCredentials(string userEmail, string password)
         {
-            _logger.LogInformation($"Validating user [{userName}]");
-            if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(password))
+            _logger.LogInformation($"Validating user [{userEmail}]");
+
+            if (string.IsNullOrWhiteSpace(userEmail) || string.IsNullOrWhiteSpace(password))
             {
                 return false;
             }
-            return _users.TryGetValue(userName, out var p) && p.Item1 == password;
+
+            // Use EF.Functions.Like for case-insensitive comparison
+            var user = _dbContext.usercustomattributes
+                .FirstOrDefault(u => EF.Functions.Like(u.useremail, userEmail));
+
+            if (user == null)
+            {
+                return false;
+            }
+            return user.password == password;
         }
+
 
         public bool IsAnExistingUser(string userName)
         {
-            return _users.ContainsKey(userName);
+            return _dbContext.usercustomattributes
+                .Any(u => EF.Functions.Like(u.username, userName));
         }
 
-        public string GetUserRole(string userName)
+        public string GetUserRole(string userEmail)
         {
-            if (!IsAnExistingUser(userName))
+            var user = _dbContext.usercustomattributes
+                .FirstOrDefault(u => u.useremail == userEmail);
+
+            if (user == null)
             {
                 return string.Empty;
             }
 
-            if (userName == "admin")
-            {
-                return UserRoles.Admin;
-            }
-
-            return UserRoles.BasicUser;
+            return user.role;
         }
-        public string GetUserEmail(string userName)
+
+        public string GetUserName(string userEmail)
         {
-            if (_users.TryGetValue(userName, out var userTuple))
+            _logger.LogInformation($"Fetching name for user [{userEmail}]");
+
+            var user = _dbContext.usercustomattributes
+                .FirstOrDefault(u => EF.Functions.Like(u.useremail, userEmail)); // Case-insensitive comparison in SQL
+
+            if (user == null)
             {
-                return userTuple.Item2; 
+                return null;
             }
 
-            return null;
+            return user.username;
         }
+
     }
 
     public static class UserRoles
