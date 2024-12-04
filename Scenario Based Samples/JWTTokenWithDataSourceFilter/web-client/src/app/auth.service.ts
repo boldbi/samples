@@ -12,8 +12,8 @@ export class AuthService {
   user='';
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(username: string, password: string): Observable<any> {
-    const credentials = { username, password };
+  login(useremail: string, password: string): Observable<any> {
+    const credentials = { useremail, password };
     return this.http.post(this.apiUrl, credentials);
   }
 

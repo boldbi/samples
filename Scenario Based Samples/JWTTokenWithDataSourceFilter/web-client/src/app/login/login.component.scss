@@ -2,13 +2,17 @@
 
 /* Container for the login form */
 .login-container {
-    width: 400px;
+    // width: 1400px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    // position: relative;
+    display: flex; /* Enable flexbox */
+    justify-content: space-between; /* Add space between the child divs */
+    align-items: flex-start;
   }
   
   /* Form header (e.g., "Login") */
@@ -70,4 +74,58 @@
     margin: 0;
     background-color: #f4f4f4;
   }
-  
+  .credentials table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+.credentials th, .credentials td {
+  padding: 8px 12px; /* Reduce padding to avoid excess space */
+  border: 1px solid #ccc;
+  text-align: left;
+  white-space: nowrap; /* Prevents unnecessary wrapping inside cells */
+  user-select: text;
+}
+
+.credentials th {
+    background-color: #0078D7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.credentials tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Adds a subtle stripe effect */
+}
+
+.credentials tbody td:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.child-div, .credentials {
+  // border: 1px solid #ccc; /* Add border for clarity */
+  padding: 10px; /* Add padding for spacing */
+}
+
+/* Specific styles for the child divs */
+.child-div {
+  width: 200px; /* Set width */
+}
+
+.credentials {
+  flex: 1; /* Allow this div to take up remaining space */
+}
+
+.divider {
+  border: none;
+  border-left: 1px solid #ccc; /* Make it vertical */
+  height: 600px; /* Extend to the height of the container */
+  margin: 0 10px; /* Add some horizontal spacing */
+}
+.site-description {
+  margin-top: 20px; /* Space between the login button and the explanation */
+  font-size: 14px; /* Smaller font size for the explanation */
+  color: #555; /* Lighter text color for the explanation */
+  text-align: center; /* Center-align the text */
+}

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit{
-  username = '';
+  useremail = '';
   password = '';
   loginError='';
 
@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit{
     }
   }
   onSubmit(): void {
-    if (!this.username || !this.password) {
+    if (!this.useremail || !this.password) {
       this.loginError = 'Both UserName and Password are required.';
       return; // Don't submit the form if fields are empty
     }
-    this.authService.login(this.username, this.password).subscribe(
+    this.authService.login(this.useremail, this.password).subscribe(
       (response) => {
         // Assuming your backend returns a token upon successful login
         if (response.accessToken) {
