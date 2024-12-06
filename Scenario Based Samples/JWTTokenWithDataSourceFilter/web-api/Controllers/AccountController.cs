@@ -33,7 +33,6 @@ namespace boldbi.web.api.Controllers
 
             if (!_userService.IsValidUserCredentials(request.UserEmail, request.Password))
             {
-                Response.Headers.Remove("WWW-Authenticate");
                 return Unauthorized(new { Error = "Invalid username or password" });
             }
 

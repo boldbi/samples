@@ -64,5 +64,13 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+app.Use(async (context, next) =>
+{
+    await next();
+    if (context.Response.StatusCode == 401)
+    {
+        context.Response.Headers.Remove("WWW-Authenticate");
+    }
+});
 app.Run();
 
