@@ -38,11 +38,13 @@ namespace boldbi.web.api.Controllers
 
             var role = _userService.GetUserRole(request.UserEmail);
             var name = _userService.GetUserName(request.UserEmail);
+            var tenantId = _userService.GetUserTenant(request.UserEmail);
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name,name),
                 new Claim(ClaimTypes.Role, role),
-                new Claim(ClaimTypes.Email, request.UserEmail)
+                new Claim(ClaimTypes.Email, request.UserEmail),
+                new Claim("tenantId", tenantId)
             };
 
             var jwtResult = _jwtAuthManager.GenerateTokens(name, claims, DateTime.Now);
@@ -52,7 +54,8 @@ namespace boldbi.web.api.Controllers
                 UserName = name,
                 Role = role,
                 AccessToken = jwtResult.AccessToken,
-                Expires = jwtResult.Expires
+                Expires = jwtResult.Expires,
+                UserTenant = tenantId
             });
         }
 
@@ -67,7 +70,21 @@ namespace boldbi.web.api.Controllers
                 OriginalUserName = User.FindFirst("OriginalUserName")?.Value
             });
         }
-
+        [HttpGet("getAllUsers")]
+        [AllowAnonymous]
+        public IActionResult GetAllUsers()
+        {
+            try
+            {
+                var users = _userService.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                // Log the error and return a server error response
+                return StatusCode(500, "An error occurred while fetching users.");
+            }
+        }
       
     }
 }

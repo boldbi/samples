@@ -50,7 +50,7 @@ namespace boldbi.web.api.Controllers
             var embedQuery = embedClass.embedQuerString;
             try
             {
-                var user = await _dbContext.usercustomattributes.FirstOrDefaultAsync(u => u.useremail == email);
+                var user = await _dbContext.staging_usercustomattributes.FirstOrDefaultAsync(u => u.useremail == email);
                 if (user == null)
                 {
                     throw new Exception($"User {userName} not found in the database.");

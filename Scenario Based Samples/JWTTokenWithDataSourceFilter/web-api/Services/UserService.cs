@@ -27,7 +27,7 @@ namespace boldbi.web.api.Services
             }
 
             // Use EF.Functions.Like for case-insensitive comparison
-            var user = _dbContext.usercustomattributes
+            var user = _dbContext.staging_usercustomattributes
                 .FirstOrDefault(u => EF.Functions.Like(u.useremail, userEmail));
 
             if (user == null)
@@ -40,13 +40,13 @@ namespace boldbi.web.api.Services
 
         public bool IsAnExistingUser(string userName)
         {
-            return _dbContext.usercustomattributes
+            return _dbContext.staging_usercustomattributes
                 .Any(u => EF.Functions.Like(u.username, userName));
         }
 
         public string GetUserRole(string userEmail)
         {
-            var user = _dbContext.usercustomattributes
+            var user = _dbContext.staging_usercustomattributes
                 .FirstOrDefault(u => u.useremail == userEmail);
 
             if (user == null)
@@ -61,7 +61,7 @@ namespace boldbi.web.api.Services
         {
             _logger.LogInformation($"Fetching name for user [{userEmail}]");
 
-            var user = _dbContext.usercustomattributes
+            var user = _dbContext.staging_usercustomattributes
                 .FirstOrDefault(u => EF.Functions.Like(u.useremail, userEmail)); // Case-insensitive comparison in SQL
 
             if (user == null)
@@ -72,6 +72,27 @@ namespace boldbi.web.api.Services
             return user.username;
         }
 
+        public string GetUserTenant(string userEmail)
+        {
+            _logger.LogInformation($"Fetching tenant for user [{userEmail}]");
+
+            var user = _dbContext.staging_usercustomattributes
+                .FirstOrDefault(u => EF.Functions.Like(u.useremail, userEmail)); // Case-insensitive comparison in SQL
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return user.usertenant;
+        }
+        public IEnumerable<UserCustomAttribute> GetAllUsers()
+        {
+            _logger.LogInformation("Fetching all users with passwords.");
+    
+            // Fetch all users
+            return _dbContext.staging_usercustomattributes.ToList();
+        }
     }
 
     public static class UserRoles

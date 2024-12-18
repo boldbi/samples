@@ -1,18 +1,12 @@
 <!-- login.component.html -->
-
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/material.css" rel="stylesheet"/> 
 <div class="login-container">
   <div class="child-div" style="width: 325px;">
     <h2 class="login-header">Login</h2>
     <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="useremail">Useremail</label>
-        <input
-          type="text"
-          id="useremail"
-          name="useremail"
-          [(ngModel)]="useremail"
-          required
-        />
+      <label for="useremail" style="display: block; font-weight: bold;">User email</label>
+      <div>
+        <ejs-combobox id='games' #sample [dataSource]='userData' [fields]='fields'  [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User email address'" (change)="onUserChange($event)"></ejs-combobox>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
@@ -51,7 +45,7 @@
               <td>emily@alphaelectronics.com</td>
               <td>emily@123</td>
               <td>Admin</td>
-              <td rowspan="4">"Custom_Attribute" : "alpha_electronics_sales_analysis"</td>
+              <td rowspan="4">"sales_analysis_db" : "alpha_electronics_sales_analysis"</td>
               <td>nill</td>
             </tr>
             <tr>
@@ -67,10 +61,10 @@
               <td>useremail = "sarah@alphaelectronics.com"</td>
             </tr>
             <tr>
-              <td>michael@alphaelectronics.com</td>
+              <td>michel@alphaelectronics.com</td>
               <td>michael@123</td>
               <td>Support</td>
-              <td>useremail = "michael@alphaelectronics.com"</td>
+              <td>useremail = "michel@alphaelectronics.com"</td>
             </tr>
             <tbody>
               <tr>
@@ -78,79 +72,79 @@
                 <td>david.miller@betaenterprises.com</td>
                 <td>David@202</td>
                 <td>Admin</td>
-                <td rowspan="4">"Custom_Attribute" : "beta_enterprises_sales_analysis"</td>
+                <td rowspan="4">"sales_analysis_db" : "beta_enterprises_sales_analysis"</td>
                 <td>nill</td>
               </tr>
               <tr>
-                <td>lisa.johnson@betaenterprises.com</td>
+                <td>lisa@betaenterprises.com</td>
                 <td>Lisa@303</td>
                 <td>Manager</td>
-                <td>useremail = "lisa.johnson@betaenterprises.com"</td>
+                <td>useremail = "lisa@betaenterprises.com"</td>
               </tr>
               <tr>
-                <td>chris.white@betaenterprises.com</td>
+                <td>chris@betaenterprises.com</td>
                 <td>chris.white@123</td>
                 <td>Sales</td>
-                <td>useremail = "chris.white@betaenterprises.com"</td>
+                <td>useremail = "chris@betaenterprises.com"</td>
               </tr>
               <tr>
-                <td>sophia.lee@betaenterprises.com</td>
+                <td>sophia@betaenterprises.com</td>
                 <td>Sophia@1213</td>
                 <td>Support</td>
-                <td>useremail = "chris.white@betaenterprises.com"</td>
+                <td>useremail = "chris@betaenterprises.com"</td>
               </tr>
               <tbody>
                 <tr>
                   <td rowspan="4">Gamma Industries</td>
-                  <td>jessica.taylor@gammaindustries.com</td>
+                  <td>jessica@gammaindustries.com</td>
                   <td>jessica@505</td>
                   <td>Admin</td>
-                  <td rowspan="4">"Custom_Attribute" : "gamma_industries_sales_analysis"</td>
+                  <td rowspan="4">"sales_analysis_db" : "gamma_industries_sales_analysis"</td>
                   <td>nill</td>
                 </tr>
                 <tr>
-                  <td>matthew.lee@gammaindustries.com</td>
+                  <td>matthew@gammaindustries.com</td>
                   <td>matthew@606</td>
                   <td>Manager</td>
-                  <td>useremail = "matthew.lee@gammaindustries.com"</td>
+                  <td>useremail = "matthew@gammaindustries.com"</td>
                 </tr>
                 <tr>
-                  <td>amanda.green@gammaindustries.com</td>
+                  <td>amanda@gammaindustries.com</td>
                   <td>amanda@707</td>
                   <td>Support</td>
-                  <td>useremail = "amanda.green@gammaindustries.com"</td>
+                  <td>useremail = "amanda@gammaindustries.com"</td>
                 </tr>
                 <tr>
-                  <td>kevin.smith@gammaindustries.com</td>
+                  <td>kevin@gammaindustries.com</td>
                   <td>kevin@808</td>
                   <td>Sales</td>
-                  <td>useremail = "kevin.smith@gammaindustries.com"</td>
+                  <td>useremail = "kevin@gammaindustries.com"</td>
                 </tr>
                 <tr>
-                  <td rowspan="4">Delta Crops</td>
-                  <td>rachel.adams@deltacorps.com</td>
+                  <td rowspan="4">Delta Industries</td>
+                  <td>rachel.adams@deltaindustries.com</td>
                   <td>rachel@909</td>
                   <td>Admin</td>
-                  <td rowspan="4">"Custom_Attribute" : "delta_industries_sales_analysis"</td>
+                  <td rowspan="4">"sales_analysis_db" : "delta_industries_sales_analysis"</td>
                   <td>nill</td>
                 </tr>
                 <tr>
-                  <td>james.wilson@deltacorps.com</td>
+                  <td>james.wilson@deltaindustries.com</td>
                   <td>James@123</td>
                   <td>Manager</td>
-                  <td>useremail = "james.wilson@deltacorps.com"</td>
+                  <td>useremail = "james.wilson@deltaindustries.com"</td>
                 </tr>
                 <tr>
-                  <td>olivia.martin@deltacorps.com</td>
+                  <td>olivia.martin@deltaindustries.com</td>
                   <td>olivia@5678</td>
                   <td>Support</td>
-                  <td>useremail = "olivia.martin@deltacorps.com"</td>
+                  <td>useremail = "olivia.martin@deltaindustries.com"</td>
                 </tr>
                 <tr>
-                  <td>robert.jones@deltacorps.com</td>
+                  <td>robert.jones@deltaindustries.com</td>
                   <td>robert@1234</td>
                   <td>Sales</td>
-                  <td>useremail = "robert.jones@deltacorps.com"</td>
+                  <td>useremail = "robert.jones@deltaindustries.com"</td>
                 </tr>
           </tbody>
         </table>

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment';
 import { Router } from '@angular/router';
+import { BoldBI } from '@boldbi/boldbi-embedded-sdk';
+
 
 @Injectable({
   providedIn: 'root',
@@ -40,3 +42,5 @@ export class AuthService {
     }
   }
 }
+
+

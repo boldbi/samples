@@ -129,3 +129,65 @@
   color: #555; /* Lighter text color for the explanation */
   text-align: justify;
 }
+
+.e-input-group:not(.e-float-icon-left), 
+.e-input-group.e-success:not(.e-float-icon-left), 
+.e-input-group.e-warning:not(.e-float-icon-left), 
+.e-input-group.e-error:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
+    border: 1px solid #ccc !important;
+    border-width: 1px 1px 1px 1px !important;
+    border-radius: 4px;
+}
+
+input.e-input, .e-input-group input.e-input, .e-input-group.e-control-wrapper input.e-input, textarea.e-input, .e-input-group textarea.e-input, .e-input-group.e-control-wrapper textarea.e-input {
+  border: 0 solid;
+  border-width: 0 0 1px 0;
+  height: 26px !important;
+  line-height: inherit;
+  margin: 0;
+  margin-bottom: 0px !important;
+  outline: none;
+  padding: 10px !important;
+  border-radius: 3px !important;
+  text-indent: 0;
+  width: 100%;
+}
+
+.e-input-group input.e-input, .e-input-group textarea.e-input, .e-input-group input.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]):not(:focus), .e-input-group textarea.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]), .e-input-group.e-control-wrapper input.e-input, .e-input-group.e-control-wrapper textarea.e-input, .e-input-group.e-control-wrapper input.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]):not(:focus), .e-input-group.e-control-wrapper textarea.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]) {
+  border: 0 solid !important;
+  border-width: 0 !important;
+}
+
+input.e-input::selection, textarea.e-input::selection, 
+.e-input-group input.e-input::selection, .e-input-group.e-control-wrapper input.e-input::selection, 
+.e-float-input input::selection, .e-float-input.e-control-wrapper input::selection, 
+.e-input-group textarea.e-input::selection, .e-input-group.e-control-wrapper textarea.e-input::selection, 
+.e-float-input textarea::selection, .e-float-input.e-control-wrapper textarea::selection, 
+.e-float-input.e-small textarea::selection, .e-float-input textarea::selection {
+    background: transparent;  /* Removes the background color */
+    color: inherit;  /* Keeps the default text color */
+}
+
+.e-outline.e-input-group.e-input-focus:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),.e-outline.e-input-group.e-input-focus.e-control-wrapper:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),.e-outline.e-input-group.e-input-focus:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled),.e-outline.e-input-group.e-control-wrapper.e-input-focus:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) {
+  border-color: transparent !important;
+}
+
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::before,
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::after {
+    background-color: transparent !important; /* Color of the underline */
+    height: 0px; /* Thickness of the underline */
+}
+
+input.e-input,textarea.e-input,.e-input-group,.e-input-group.e-control-wrapper,.e-input-group.e-disabled,.e-input-group.e-control-wrapper.e-disabled {
+  font-family: "Roboto","Segoe UI","GeezaPro","DejaVu Serif","sans-serif","-apple-system","BlinkMacSystemFont";
+  font-size: 14px;
+  font-weight: normal
+}
+
+.e-input-group .e-input-group-icon:last-child, .e-input-group.e-control-wrapper .e-input-group-icon:last-child, .e-input-group.e-small .e-input-group-icon:last-child, .e-input-group.e-control-wrapper.e-small .e-input-group-icon:last-child {
+  margin: 6px !important;
+}
