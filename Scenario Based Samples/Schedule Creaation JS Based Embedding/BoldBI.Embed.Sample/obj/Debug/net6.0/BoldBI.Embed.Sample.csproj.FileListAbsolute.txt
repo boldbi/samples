@@ -1,0 +1,64 @@
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\appsettings.Development.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\appsettings.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.staticwebassets.runtime.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.exe
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.deps.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.runtimeconfig.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.dll
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.pdb
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.csproj.AssemblyReference.cache
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.AssemblyInfoInputs.cache
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.AssemblyInfo.cs
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.csproj.CoreCompileInputs.cache
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.MvcApplicationPartsAssemblyInfo.cache
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.RazorAssemblyInfo.cache
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.RazorAssemblyInfo.cs
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets.build.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets.development.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.BoldBI.Embed.Sample.Microsoft.AspNetCore.StaticWebAssets.props
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.build.BoldBI.Embed.Sample.props
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BoldBI.Embed.Sample.props
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BoldBI.Embed.Sample.props
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets.pack.json
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\scopedcss\bundle\BoldBI.Embed.Sample.styles.css
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.E.D8736843.Up2Date
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.dll
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\refint\BoldBI.Embed.Sample.dll
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.pdb
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.genruntimeconfig.cache
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\ref\BoldBI.Embed.Sample.dll
+D:\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\embedConfig.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\appsettings.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\embedConfig.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.staticwebassets.runtime.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.exe
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.deps.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.runtimeconfig.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.dll
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\BoldBI.Embed.Sample.pdb
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.csproj.AssemblyReference.cache
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.AssemblyInfoInputs.cache
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.AssemblyInfo.cs
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.csproj.CoreCompileInputs.cache
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.RazorAssemblyInfo.cache
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.RazorAssemblyInfo.cs
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.BoldBI.Embed.Sample.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.build.BoldBI.Embed.Sample.props
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BoldBI.Embed.Sample.props
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BoldBI.Embed.Sample.props
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\scopedcss\bundle\BoldBI.Embed.Sample.styles.css
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.E.D8736843.Up2Date
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.dll
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\refint\BoldBI.Embed.Sample.dll
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.pdb
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\BoldBI.Embed.Sample.genruntimeconfig.cache
+C:\Users\PonmalarKarunanithi\Downloads\aspnet-core-sample-master 4\aspnet-core-sample-master\aspnet-core-sample-master\BoldBI.Embed.Sample\obj\Debug\net6.0\ref\BoldBI.Embed.Sample.dll
