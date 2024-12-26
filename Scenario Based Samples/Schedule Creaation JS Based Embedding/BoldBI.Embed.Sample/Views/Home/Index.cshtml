@@ -124,8 +124,8 @@
 </head>
 
 <body onload="renderDashboard(dashboardId)">
-    <button onclick="onClik()">click me</button>
-    <button id="scheduleButton">Open Schedule</button>
+    <button onclick="onClik()">Click me</button>
+    <button id="scheduleButton">Create Schedule</button>
 
     <div id="dialogOverlay">
         <div id="dialogBox">
@@ -136,7 +136,7 @@
             <iframe id="iframeContainer" src="" width="100%" height="100%"></iframe>
         </div>
     </div>
-<div id="viewer-section" style="width: 100%";>
+<div id="viewer-section" style="width: 100%">
     <div id="dashboard"></div>
 </div>
     <!-- Loader Overlay -->
@@ -167,6 +167,7 @@
                     break;
             }
         });
+        
     function onClik() {
         var instance=bbdesigner$("#dashboard_embeddedbi").data("BoldBIDashboardDesigner");
         instance.clearAllFilters();
@@ -182,13 +183,8 @@
         loader.style.display = "flex";
         dialogOverlay.style.display = 'block';
         iframeContainer.src = ''; // Replace with your schedule page URL
-
-        // Wait for the iframe to load before attempting to hide elements
-        
     }
-
-
-
+        
     function closeDialogBox() {
         dialogOverlay.style.display = 'none';
         iframeContainer.src = ''; // Clear iframe source
