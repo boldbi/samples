@@ -1,4 +1,5 @@
 ﻿var token = "";
+var dashboardList = [];
 
 getToken();
 function Init() {
@@ -43,7 +44,8 @@ function getToken() {
 }
 function ListDashboards(data) {
     if (typeof (data) != "undefined" && data != null) {
-        renderDashboard(data[0].Id);
+        dashboardList = data;
+        renderDashboard(data[0].Id, data[0].CategoryId, data[0].CategoryName);
         data.forEach(function (element) {
             var divTag = document.createElement("div");
             divTag.innerHTML = element.Name;
@@ -58,7 +60,7 @@ function ListDashboards(data) {
     }
 }
 
-function renderDashboard(dashboardId) {
+function renderDashboard(dashboardId, categoryId, categoryName) {
     this.dashboard = BoldBI.create({
         serverUrl: rootUrl + "/" + siteIdentifier,
         dashboardId: dashboardId,
@@ -71,11 +73,15 @@ function renderDashboard(dashboardId) {
         expirationTime: 10000,
         authorizationServer: {
             url: authorizationServerUrl 
-        }
+        },
+        dashboardSettings:{
+            beforeIconRender:"createNewDashboardIcon",
+            onIconClick:"dashboardIconClick"
+}
     });
 
     this.dashboard.loadDashboard();
-};
+}
 
 var isInitialLoad = true;
 function renderDbrd(dashboardId) {
@@ -93,7 +99,7 @@ function renderDbrd(dashboardId) {
             url: authorizationServerUrl
         },
         dashboardSettings: {
-            showHeader: false,
+            showHeader: false
         }
     });
     var param = $("#dashboardParameters").val();
@@ -128,4 +134,39 @@ function embedConfigErrorDialog() {
 
 function Cancel() {
     $("#custom_dialog").html('');
+}
+
+function createNewDashboardIcon(args){
+    var icon=$("<div/>",{
+        "class":"su su-nav-schedule",
+        "data-tooltip":"NewCustomIcon",
+        "data-name":"schedule",
+        "data-event":true,
+        css:{"font-size":"15px", "padding":"4px 4px", "margin":"14px 8px", "float":"left",
+            "line-height":"20px"}
+    });
+    args.iconsinformation[0].items.push(icon);
+}
+
+function dashboardIconClick() {
+    // Display the dialog
+    var loader = document.getElementById("loader-overlay");
+    loader.style.display = "flex";
+    dialogOverlay.style.display = 'block';
+    var instance = bbdesigner$("#dashboard_embeddedbi").data("BoldBIDashboardDesigner");
+    var itemName = instance.model.dashboardName;
+    var itemID = instance.model.itemId;
+    var categoryId = ''
+    var categoryName = '';
+    $.each(dashboardList, function (index, item) {
+        if (item.Id === itemID) {
+            // If a match is found, set the details
+            categoryId = item.CategoryId
+            categoryName = item.CategoryName;
+            return false; // Break the loop
+        }
+    });
+    var serverURL = rootUrl + "/" + siteIdentifier;
+    var scheduleIframeURL = serverURL + "/schedules/schedule-dialog?itemName=" + itemName + "&itemId=" + itemID + "&categoryName=" + categoryName + "&categoryId=" + categoryId + "&canDisableDashboardChange=true&CanDisableCategoryChange=true&CanDisableViewChange=true&canShowViewDropDown=true&disableWidgetScheduleExport=true&actionType=Create&isembed=true";
+    iframeContainer.src = scheduleIframeURL; // Replace with your schedule page URL
 }
