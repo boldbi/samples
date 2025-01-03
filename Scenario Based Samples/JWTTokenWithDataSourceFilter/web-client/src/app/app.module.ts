@@ -11,6 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
     FormsModule,
     HttpClientModule,
     ComboBoxModule,
+    RadioButtonModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

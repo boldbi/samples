@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@boldbi/boldbi-embedded-sdk": "^6.17.13",
+    "@syncfusion/ej2-angular-buttons": "^28.1.37",
     "@syncfusion/ej2-angular-dropdowns": "^28.1.33",
     "bootstrap": "^5.3.2",
     "jwt-decode": "^4.0.0",

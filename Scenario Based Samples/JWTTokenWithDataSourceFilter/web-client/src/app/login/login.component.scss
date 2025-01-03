@@ -146,7 +146,7 @@
 input.e-input, .e-input-group input.e-input, .e-input-group.e-control-wrapper input.e-input, textarea.e-input, .e-input-group textarea.e-input, .e-input-group.e-control-wrapper textarea.e-input {
   border: 0 solid;
   border-width: 0 0 1px 0;
-  height: 26px !important;
+  height: 46px !important;
   line-height: inherit;
   margin: 0;
   margin-bottom: 0px !important;
@@ -190,4 +190,131 @@ input.e-input,textarea.e-input,.e-input-group,.e-input-group.e-control-wrapper,.
 
 .e-input-group .e-input-group-icon:last-child, .e-input-group.e-control-wrapper .e-input-group-icon:last-child, .e-input-group.e-small .e-input-group-icon:last-child, .e-input-group.e-control-wrapper.e-small .e-input-group-icon:last-child {
   margin: 6px !important;
+}
+
+.user-id-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the label and options */
+  margin-bottom: 4px; /* Space below the component */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.user-id-label {
+  font-weight: bold;
+}
+
+.user-id-options {
+  display: flex;
+  gap: 12px; /* Space between radio buttons */
+}
+
+ejs-radiobutton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+ejs-radiobutton:hover {
+  color: #007BFF !important;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #F2F2F2;
+  width: 80%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.popup-header {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.show-popup-btn {
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin-top: 40px; /* Adds some spacing above the button */
+}
+
+input[type="password"]:focus {
+  outline: none;
+}
+
+.advanced-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.advanced-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Util } from '../services/util.service';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { RadioButtonService } from '../radiobutton.service';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +13,12 @@ import { Util } from '../services/util.service';
 })
 export class LoginComponent implements OnInit{
 
-  constructor(private authService: AuthService, private router: Router, private userService: UserService, private util: Util) {}
+  constructor(private authService: AuthService, private router: Router, private userService: UserService, private util: Util, private radioButtonService: RadioButtonService) {}
 
   public userData : any[] = [];
   public useremail = '';
   public loginError='';
+  public userID = 'guid';
   // maps the appropriate column to fields property
   fields: object = { text: 'useremail', value: 'password' };
   selectedUser: any;
@@ -37,7 +40,46 @@ export class LoginComponent implements OnInit{
     }
   }
 
+  onRadioChange(event: any): void {
+    this.userID = event.value;
+    const filterParams = document.querySelectorAll(".filter-param");
+    const filterValues = {
+      email: [
+        'user_email = "john@alphaelectronics.com"',
+        'user_email = "sarah@alphaelectronics.com"',
+        'user_email = "michel@alphaelectronics.com"',
+        'user_email = "lisa@betaenterprises.com"',
+        'user_email = "chris@betaenterprises.com"',
+        'user_email = "sophia@betaenterprises.com"',
+        'user_email = "matthew@gammaindustries.com"',
+        'user_email = "amanda@gammaindustries.com"',
+        'user_email = "kevin@gammaindustries.com"',
+        'user_email = "james.wilson@deltaindustries.com"',
+        'user_email = "olivia.martin@deltaindustries.com"',
+        'user_email = "robert.jones@deltaindustries.com"'
+      ],
+      guid: [
+        'user_guid = "5a216f53-416c-46ba-805c-2724dd8c738c"',
+        'user_guid = "24265a26-320f-426a-9d30-f9db439e1363"',
+        'user_guid = "864f0a43-2235-4418-984e-7c1b0fea0a1a"',
+        'user_guid = "526384c4-2b16-4fef-9a7a-e7203481c513"',
+        'user_guid = "98accd79-8f09-4456-a2b8-ba981c4a99d4"',
+        'user_guid = "b946e1ad-c611-40f0-bc66-13ca4689d7e2"',
+        'user_guid = "aa116681-5c8c-4f8e-a87e-fb938ce9d743"',
+        'user_guid = "e39ab2a3-eccf-4141-a7ed-e175ede04440"',
+        'user_guid = "dd2de469-ad77-4f52-8d2a-41881152369c"',
+        'user_guid = "6a9ec9a3-7fee-411b-85a9-f2e9e8d2e055"',
+        'user_guid = "7ea9d145-cda4-43a5-8c6f-6f68fc53aeb8"',
+        'user_guid = "1c43d130-077e-46c2-b50f-78c80bc747fa"'
+      ],
+    };
 
+
+    filterParams.forEach((cell, index) => {
+      cell.textContent = filterValues[event.value as keyof typeof filterValues][index] || "nill";
+    });
+    event.value
+  }
   ngOnInit(): void {
     this.util.disableCssFiles();
     // Check if the user's token is valid
@@ -64,6 +106,7 @@ export class LoginComponent implements OnInit{
       this.loginError = 'Both UserName and Password are required.';
       return; // Don't submit the form if fields are empty
     }
+    this.radioButtonService.setRadioValue(this.userID);
     this.authService.login(this.useremail, this.password).subscribe(
       (response) => {
         if (response.accessToken) {
@@ -103,5 +146,15 @@ export class LoginComponent implements OnInit{
       return decodedToken?.tenantId || null; // Adjust the key to match your token's structure
     }
     return null;
+  }
+  
+  showPopup = false;
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
   }
 }

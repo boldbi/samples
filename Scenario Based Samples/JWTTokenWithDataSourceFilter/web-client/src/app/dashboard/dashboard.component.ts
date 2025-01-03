@@ -3,6 +3,8 @@ import { BoldBI } from '@boldbi/boldbi-embedded-sdk';
 import { environment } from 'src/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth.service';
+import { RadioButtonService } from '../radiobutton.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +14,14 @@ import { AuthService } from '../auth.service';
 export class DashboardComponent implements OnInit {
   private readonly authorizationApi = `${environment.apiUrl}api/dashboard/authorize`;
   private readonly boldbisettingsApi = `${environment.apiUrl}api/dashboard/getboldbisettings`;
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private radioButtonService: RadioButtonService) { }
   private dashboard: BoldBI | null = null;
+  private radioValue:string = "guid";
   private boldbisettings: BoldBISettings | null = null;
   ngOnInit(): void {
+    this.radioButtonService.radioValue$.subscribe((value) => {
+      this.radioValue = value;
+    });
     const expirationTime: string | null = localStorage.getItem('expirationTime');
     let embedURLExpiryTime: boolean;
     if (expirationTime !== null) {
@@ -66,7 +72,8 @@ export class DashboardComponent implements OnInit {
       authorizationServer: {
           url:this.authorizationApi,
           headers: {
-            "Authorization": "Bearer " + localStorage.getItem('token')
+            "Authorization": "Bearer " + localStorage.getItem('token'),
+            "Custom-Attribute-UserID": this.radioValue,
        }
       },
       dashboardSettings: {

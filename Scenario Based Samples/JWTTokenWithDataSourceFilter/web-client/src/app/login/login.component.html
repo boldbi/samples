@@ -1,5 +1,5 @@
 <!-- login.component.html -->
-<link href="https://cdn.syncfusion.com/ej2/28.1.33/material.css" rel="stylesheet"/> 
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet"/> 
 <div class="login-container">
   <div class="child-div" style="width: 325px;">
     <h2 class="login-header">Login</h2>
@@ -24,10 +24,34 @@
     <div class="site-description">
       <p>By leveraging the custom attribute in the embedding application, we have 4 set of database for each tenant and passing the filter access department-specific data. The Admin of each tenant gains insights of all data and other can access their specific data. Please refer the table for custom attributes and filter values.</p>
     </div>
+    <div *ngIf="showPopup" class="popup-overlay">
+      <div class="popup-content">
+        <button type="button" class="close-btn" (click)="closePopup()">✖</button>
+        <h3 class="popup-header">Flow Diagram - Custom Attribute</h3>
+        <img src="../../assets/custom-attribute-workflow.jpg" alt="Workflow Diagram" class="popup-image" />
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button type="button" class="btn btn-primary show-popup-btn advanced-btn" (click)="openPopup()">
+    <span class="icon-container">
+      <i class="fas fa-project-diagram"></i>
+    </span>
+    Show Workflow Diagram
+  </button>
+    </div>
   </div>
   <hr class="divider">
     <div class="small text-secondary mt-3 d-none d-sm-flex">
       <div class="credentials" style="width: 100%;">
+        <div class="user-id-selection">
+          <label class="user-id-label">User ID :</label>
+          <div class="user-id-options">
+            <ejs-radiobutton label="GUID" name="UserID" value="guid" cssClass="e-info" (change)="onRadioChange($event)" checked="true"></ejs-radiobutton>
+            <ejs-radiobutton label="Email" name="UserID" value="email" cssClass="e-info" (change)="onRadioChange($event)"></ejs-radiobutton>
+          </div>
+        </div>
+        
         <table>
           <thead>
             <tr>
@@ -36,7 +60,7 @@
               <th>Password</th>
               <th>Role</th>
               <th>Custom Attribute</th>
-              <th>Filter Parameter</th>
+              <th style="min-width: 300px;">Filter Parameter</th>
             </tr>
           </thead>
           <tbody>
@@ -52,19 +76,19 @@
               <td>john@alphaelectronics.com</td>
               <td>john@123</td>
               <td>Manager</td>
-              <td>useremail = "john@alphaelectronics.com"</td>
+              <td class="filter-param">user_guid = "5a216f53-416c-46ba-805c-2724dd8c738c"</td>
             </tr>
             <tr>
               <td>sarah@alphaelectronics.com</td>
               <td>sarah@123</td>
               <td>Sales</td>
-              <td>useremail = "sarah@alphaelectronics.com"</td>
+              <td class="filter-param">user_guid = "24265a26-320f-426a-9d30-f9db439e1363"</td>
             </tr>
             <tr>
               <td>michel@alphaelectronics.com</td>
               <td>michael@123</td>
               <td>Support</td>
-              <td>useremail = "michel@alphaelectronics.com"</td>
+              <td class="filter-param">user_guid = "864f0a43-2235-4418-984e-7c1b0fea0a1a"</td>
             </tr>
             <tbody>
               <tr>
@@ -79,19 +103,19 @@
                 <td>lisa@betaenterprises.com</td>
                 <td>Lisa@303</td>
                 <td>Manager</td>
-                <td>useremail = "lisa@betaenterprises.com"</td>
+                <td class="filter-param">user_guid = "526384c4-2b16-4fef-9a7a-e7203481c513"</td>
               </tr>
               <tr>
                 <td>chris@betaenterprises.com</td>
                 <td>chris.white@123</td>
                 <td>Sales</td>
-                <td>useremail = "chris@betaenterprises.com"</td>
+                <td class="filter-param">user_guid = "98accd79-8f09-4456-a2b8-ba981c4a99d4"</td>
               </tr>
               <tr>
                 <td>sophia@betaenterprises.com</td>
                 <td>Sophia@1213</td>
                 <td>Support</td>
-                <td>useremail = "chris@betaenterprises.com"</td>
+                <td class="filter-param">user_guid = "b946e1ad-c611-40f0-bc66-13ca4689d7e2"</td>
               </tr>
               <tbody>
                 <tr>
@@ -106,19 +130,19 @@
                   <td>matthew@gammaindustries.com</td>
                   <td>matthew@606</td>
                   <td>Manager</td>
-                  <td>useremail = "matthew@gammaindustries.com"</td>
+                  <td class="filter-param">user_guid = "aa116681-5c8c-4f8e-a87e-fb938ce9d743"</td>
                 </tr>
                 <tr>
                   <td>amanda@gammaindustries.com</td>
                   <td>amanda@707</td>
                   <td>Support</td>
-                  <td>useremail = "amanda@gammaindustries.com"</td>
+                  <td class="filter-param">user_guid = "e39ab2a3-eccf-4141-a7ed-e175ede04440"</td>
                 </tr>
                 <tr>
                   <td>kevin@gammaindustries.com</td>
                   <td>kevin@808</td>
                   <td>Sales</td>
-                  <td>useremail = "kevin@gammaindustries.com"</td>
+                  <td class="filter-param">user_guid = "dd2de469-ad77-4f52-8d2a-41881152369c"</td>
                 </tr>
                 <tr>
                   <td rowspan="4">Delta Industries</td>
@@ -132,19 +156,19 @@
                   <td>james.wilson@deltaindustries.com</td>
                   <td>James@123</td>
                   <td>Manager</td>
-                  <td>useremail = "james.wilson@deltaindustries.com"</td>
+                  <td class="filter-param">user_guid = "6a9ec9a3-7fee-411b-85a9-f2e9e8d2e055"</td>
                 </tr>
                 <tr>
                   <td>olivia.martin@deltaindustries.com</td>
                   <td>olivia@5678</td>
                   <td>Support</td>
-                  <td>useremail = "olivia.martin@deltaindustries.com"</td>
+                  <td class="filter-param">user_guid = "7ea9d145-cda4-43a5-8c6f-6f68fc53aeb8"</td>
                 </tr>
                 <tr>
                   <td>robert.jones@deltaindustries.com</td>
                   <td>robert@1234</td>
                   <td>Sales</td>
-                  <td>useremail = "robert.jones@deltaindustries.com"</td>
+                  <td class="filter-param">user_guid = "1c43d130-077e-46c2-b50f-78c80bc747fa"</td>
                 </tr>
           </tbody>
         </table>
