@@ -169,27 +169,19 @@
         });
         
     function onClik() {
-        var instance=bbdesigner$("#dashboard_embeddedbi").data("BoldBIDashboardDesigner");
+        var instance = bbdesigner$("#dashboard_embeddedbi").data("BoldBIDashboardDesigner");
         instance.clearAllFilters();
     }
     const scheduleButton = document.getElementById('scheduleButton');
     const dialogOverlay = document.getElementById('dialogOverlay');
     const iframeContainer = document.getElementById('iframeContainer');
     const closeDialog = document.getElementById('closeDialog');
-
-    function openDialog() {
-        // Display the dialog
-        var loader = document.getElementById("loader-overlay");
-        loader.style.display = "flex";
-        dialogOverlay.style.display = 'block';
-        iframeContainer.src = 'http://localhost:63316/bi/site/site1/schedules/schedule-dialog?itemName=Sales%20Analysis%20Dashboard&&itemId=a304d87c-ec0d-4bff-b7b3-4b24002e1124&&categoryName=Getting%20Started%20Tutorial&&categoryId=b62b3897-6202-49f2-86d0-530c43a3512b&&viewId=&&canDisableDashboardChange=true&&CanDisableCategoryChange=true&&CanDisableViewChange=true&&canShowViewDropDown=false&&disableWidgetScheduleExport=true&&actionType=Create&isembed=true'; // Replace with your schedule page URL
-    }
         
     function closeDialogBox() {
         dialogOverlay.style.display = 'none';
         iframeContainer.src = ''; // Clear iframe source
     }
-    scheduleButton.addEventListener('click', openDialog);
+
     closeDialog.addEventListener('click', closeDialogBox);
 </script>
 </body>
