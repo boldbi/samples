@@ -1,0 +1,154 @@
+<!-- login.component.html -->
+
+<!-- <div class="login-container">
+    <h2 class="login-header">Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+    <div class="small text-secondary mt-3 d-none d-sm-flex">
+      <strong>User logins</strong>
+      <ul>
+        <li>Admin: Admin@123</li>
+        <li>John: John@123</li>
+        <li>Sarah: Sarah@123</li>
+        <li>Michael: Michael@123</li>
+      </ul>
+    </div>
+  </div> -->
+
+
+  <!-- login.component.html -->
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet"/> 
+<div class="login-container">
+  <div class="child-div" style="width: 325px;">
+    <h2 class="login-header">Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="useremail" style="display: block; font-weight: bold;">User email</label>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            required
+          />
+      </div>
+      <!-- <div>
+        <ejs-combobox id='games' #sample [dataSource]='userData' [fields]='fields'  [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User email address'" (change)="onUserChange($event)"></ejs-combobox>
+      </div> -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+    <div class="site-description">
+      <p>By leveraging the anonymous user in the embedding application, we have 4 set of anonymous user for each group and accessing the dashbord. Please refer the table for anonymous user with group details.</p>
+    </div>
+    <!-- <div *ngIf="showPopup" class="popup-overlay">
+      <div class="popup-content">
+        <button type="button" class="close-btn" (click)="closePopup()">✖</button>
+        <h3 class="popup-header">Flow Diagram - Custom Attribute</h3>
+        <img src="../../assets/custom-attribute-workflow.jpg" alt="Workflow Diagram" class="popup-image" />
+      </div>
+    </div> -->
+    
+    <!-- <div class="button-container">
+      <button type="button" class="btn btn-primary show-popup-btn advanced-btn" (click)="openPopup()">
+    <span class="icon-container">
+      <i class="fas fa-project-diagram"></i>
+    </span>
+    Show Workflow Diagram
+  </button>
+    </div> -->
+  </div>
+  <hr class="divider">
+    <div class="small text-secondary mt-3 d-none d-sm-flex">
+      <div class="credentials" style="width: 100%;">
+        <!-- <div class="user-id-selection">
+          <label class="user-id-label">User ID :</label>
+          <div class="user-id-options">
+            <ejs-radiobutton label="GUID" name="UserID" value="guid" cssClass="e-info" (change)="onRadioChange($event)" checked="true"></ejs-radiobutton>
+            <ejs-radiobutton label="Email" name="UserID" value="email" cssClass="e-info" (change)="onRadioChange($event)"></ejs-radiobutton>
+          </div>
+        </div> -->
+        
+        <table>
+          <thead>
+            <tr>
+              <th>User Email</th>
+              <th>Password</th>
+              <th>Group Id</th>
+              <th>Group Name</th>
+              <th>Dashboard Id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>emily@alphaelectronics.com</td>
+              <td>Emily@123</td>
+              <td>3</td>
+              <td>Alpha</td>
+              <td>76d28df5-c3c3-4abe-b415-28b89d5dd94d</td>
+            </tr>
+            <tr>
+              <td>john@betaelectronics.com</td>
+              <td>John@123</td>
+              <td>4</td>
+              <td>Beta</td>
+              <td>d0486b92-d279-492a-94bc-a2c4b643c1cd</td>
+            </tr>
+            <tr>
+              <td>john@betaindustry.com</td>
+              <td>John@1234</td>
+              <td>4</td>
+              <td>Beta</td>
+              <td>28d7cecb-fdc4-4665-9336-8dbfc0866101</td>
+            </tr>
+            <tr>
+              <td>sarah@gammaelectronics.com</td>
+              <td>Sarah@123</td>
+              <td>5</td>
+              <td>Gamma</td>
+              <td>28d7cecb-fdc4-4665-9336-8dbfc0866101</td>
+            </tr>
+            <tr>
+              <td>michel@deltaelectronics.com</td>
+              <td>Micael@123</td>
+              <td>6</td>
+              <td>Delta</td>
+              <td>bd4107e2-78a4-451e-89f8-730317cbfefb</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
