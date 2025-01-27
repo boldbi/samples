@@ -35,7 +35,7 @@ export class HeaderComponent {
     return JSON.parse(decodedPayload);
   }
   getUserDetails(): { tenantId: string | null, username: string | null } {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('custom-attribute-token');
     if (token) {
       const decodedToken: any = jwtDecode(token);
       return {

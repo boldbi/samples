@@ -20,14 +20,14 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem('custom-attribute-token');
     localStorage.removeItem('expirationTime');
     this.router.navigate(["/login"]);
   }
 
   getToken(): string | null {
     // Implement a method to retrieve the token from a secure location (e.g., local storage)
-    return localStorage.getItem('token');
+    return localStorage.getItem('custom-attribute-token');
 
   }
 

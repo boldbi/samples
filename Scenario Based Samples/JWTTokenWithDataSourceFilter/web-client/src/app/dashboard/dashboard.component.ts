@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 }
   fetchBoldBISettings() {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('custom-attribute-token')}`
     });
     this.http.get<BoldBISettings>(this.boldbisettingsApi,{headers}).subscribe(
       (result) => {
@@ -72,7 +72,7 @@ export class DashboardComponent implements OnInit {
       authorizationServer: {
           url:this.authorizationApi,
           headers: {
-            "Authorization": "Bearer " + localStorage.getItem('token'),
+            "Authorization": "Bearer " + localStorage.getItem('custom-attribute-token'),
             "Custom-Attribute-UserID": this.radioValue,
        }
       },

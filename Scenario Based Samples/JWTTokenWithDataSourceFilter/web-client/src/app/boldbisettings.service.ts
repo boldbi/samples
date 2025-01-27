@@ -17,12 +17,12 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem('custom-attribute-token');
   }
 
   getToken(): string | null {
     // Implement a method to retrieve the token from a secure location (e.g., local storage)
-    return localStorage.getItem('token');
+    return localStorage.getItem('custom-attribute-token');
   }
 
   isAuthenticated(): boolean {
