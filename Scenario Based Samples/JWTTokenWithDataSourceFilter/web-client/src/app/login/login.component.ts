@@ -72,6 +72,20 @@ export class LoginComponent implements OnInit{
         'user_guid = "7ea9d145-cda4-43a5-8c6f-6f68fc53aeb8"',
         'user_guid = "1c43d130-077e-46c2-b50f-78c80bc747fa"'
       ],
+      region: [
+        'region = "East"',
+        'region = "West"',
+        'region = "South"',
+        'region = "East"',
+        'region = "West"',
+        'region = "North"',
+        'region = "East"',
+        'region = "North"',
+        'region = "South"',
+        'region = "North"',
+        'region = "West"',
+        'region = "South'
+      ]
     };
 
 
@@ -111,7 +125,7 @@ export class LoginComponent implements OnInit{
       (response) => {
         if (response.accessToken) {
           // Store the token securely (e.g., in local storage)
-          localStorage.setItem('token', response.accessToken);
+          localStorage.setItem('custom-attribute-token', response.accessToken);
           localStorage.setItem('expirationTime', response.expires);
           this.util.enableCssFiles();
           // const tenantDashboardUrl = `/${response.usertenant}/dashboard`;
