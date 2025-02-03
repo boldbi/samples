@@ -1,8 +1,8 @@
 ﻿{
-  "DashboardId": "e7bc262a-215b-4841-a0ae-98629d166a52",
-  "ServerUrl": "http://localhost:60080/bi",
+  "DashboardId": "c980a71f-8b2b-4982-a806-cb37b05d4438",
+  "ServerUrl": "http://localhost:49493/bi",
   "UserEmail": "anuabarna.b@syncfusion.com",
-  "EmbedSecret": "yomfko51A3EJ2X2YmyNs5i9u10CyPQMb",
+  "EmbedSecret": "Y3MCNKRDyQxk1h4bJ3KUZvB1YpJZceiL",
   "EmbedType": "component",
   "Environment": "onpremise",
   "ExpirationTime": "10000",

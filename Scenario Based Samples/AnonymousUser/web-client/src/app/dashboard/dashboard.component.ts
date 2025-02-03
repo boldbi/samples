@@ -14,32 +14,30 @@ export class DashboardComponent implements OnInit {
   private readonly authorizationApi = `${environment.apiUrl}api/dashboard/authorize`;
   private readonly boldbisettingsApi = `${environment.apiUrl}api/dashboard/getboldbisettings`;
   mail: string = '';
-  groupId: string = '';
+  groupName: string = '';
   dashboardId: string = '';
+
   constructor(private http: HttpClient, private authService: AuthService, private route: ActivatedRoute) { }
   private dashboard: BoldBI | null = null;
   private boldbisettings: BoldBISettings | null = null;
   ngOnInit(): void {
+    
     this.mail = this.route.snapshot.paramMap.get('usermail') || '';
     console.log("maill ", this.mail);
     if(this.mail == "emily@alphaelectronics.com") {
-      this.groupId = "3";
-      this.dashboardId = "76d28df5-c3c3-4abe-b415-28b89d5dd94d";
+      this.groupName = "Alpha";
+      this.dashboardId = "c980a71f-8b2b-4982-a806-cb37b05d4438";
     }
     else if(this.mail == "john@betaelectronics.com") {
-      this.groupId = "4";
-      this.dashboardId = "d0486b92-d279-492a-94bc-a2c4b643c1cd";
-    }
-    else if(this.mail == "john@betaindustry.com") {
-      this.groupId = "4";
-      this.dashboardId = "28d7cecb-fdc4-4665-9336-8dbfc0866101";
+      this.groupName = "Beta";
+      this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
     }
     else if(this.mail == "sarah@gammaelectronics.com") {
-      this.groupId = "5";
-      this.dashboardId = "28d7cecb-fdc4-4665-9336-8dbfc0866101";
+      this.groupName = "Gamma";
+      this.dashboardId = "ab057099-643c-4c27-bde2-60ca615af7e6";
     }
     else if(this.mail == "michel@deltaelectronics.com") {
-      this.groupId = "6";
+      this.groupName = "Delta";
       this.dashboardId = "bd4107e2-78a4-451e-89f8-730317cbfefb";
     }
     const expirationTime: string | null = localStorage.getItem('expirationTime');
@@ -84,10 +82,12 @@ export class DashboardComponent implements OnInit {
       serverUrl: `${this.boldbisettings?.ServerUrl ?? ''}/${this.boldbisettings?.SiteIdentifier ?? ''}`,
       //dashboardId: this.boldbisettings?.DashboardId,
       dashboardId: this.dashboardId,
+      //dashboardId: "cf71e712-8223-4618-841b-96395b0e002c",
       embedContainerId: "dashboard",
       embedType: BoldBI.EmbedType.Component,
       environment: this.boldbisettings?.Environment,
       mode: BoldBI.Mode.View,
+      //mode: BoldBI.Mode.Design,
       width: "100%",
       height: "100%",
       authorizationServer: {
@@ -101,14 +101,15 @@ export class DashboardComponent implements OnInit {
       },
       anonymousToken: {
         isEnabled: true,
-        //groupId: "2",
-        groupId: this.groupId,
-        //groupName: "test",
-        //userEmail: "testuser@gmail.com",
-        userEmail: this.mail
-        }        
+        groupName: this.groupName,
+        userEmail: this.mail,
+
+        //groupName: "",
+        //userEmail: ""
+      }        
     });
       this.dashboard?.loadDashboard();
+      //this.dashboard?.loadDesigner();
     // You can perform additional actions here
   }
  

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,9 @@ export class LoginComponent implements OnInit{
   password = '';
   loginError='';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {
+  }
+
   ngOnInit(): void {
     // Check if the user's token is valid
     if (this.authService.isAuthenticated()) {
@@ -19,6 +22,7 @@ export class LoginComponent implements OnInit{
       this.router.navigate(['/dashboard']); // '/home' is the route to your home page
     }
   }
+
   onSubmit(): void {
     if (!this.username || !this.password) {
       this.loginError = 'Both UserName and Password are required.';

@@ -44,10 +44,13 @@ namespace boldbi.web.api.Controllers
             var userEmail = (User.Identity as ClaimsIdentity)?.FindFirst(ClaimTypes.Email)?.Value;
             var embedClass = JsonConvert.DeserializeObject<EmbedClass>(embedQuerString.ToString());
             var embedQuery = embedClass.embedQuerString;
-            embedClass.dashboardServerApiUrl = "http://localhost:51778/bi/api/site/site1";
+            //embedClass.dashboardServerApiUrl = "http://localhost:51778/bi/api/site/site1";
+
+            //embedQuery += "&embed_custom_attribute=[{\"Channel\"=\"IN('Corporate')\"}]";
+            //embedQuery += "&embed_custom_attribute=[{\"sales_analysis_db\"=\"gamma_industries_sales_analysis\"}]";
 
             // User your user-email as embed_user_email
-            //embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + "&embed_datasource_filter=[{&UserEmail=" + userEmail + "}]";
+            //embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail;// + "&embed_datasource_filter=[{&UserEmail=" + userEmail + "}]";
 
             //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
             double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
