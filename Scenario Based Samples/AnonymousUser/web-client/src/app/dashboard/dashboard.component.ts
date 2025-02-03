@@ -4,6 +4,7 @@ import { environment } from 'src/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { SwitchStateService } from '../switch-state.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,30 +17,47 @@ export class DashboardComponent implements OnInit {
   mail: string = '';
   groupName: string = '';
   dashboardId: string = '';
+  //groupNameSwitch = true;
+  mode = BoldBI.Mode.View;
+  groupNameSwitch!: boolean;
 
-  constructor(private http: HttpClient, private authService: AuthService, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private authService: AuthService, private route: ActivatedRoute, private switchStateService: SwitchStateService) { }
   private dashboard: BoldBI | null = null;
   private boldbisettings: BoldBISettings | null = null;
   ngOnInit(): void {
-    
+    // this.switchStateService.switchState$.subscribe(state => {
+    //   this.groupNameSwitch = state;
+    //   console.log("Received Switch State:", state);
+    // });
+    this.groupNameSwitch = this.switchStateService.getSwitchState(); // Get initial value
+    this.switchStateService.switchState$.subscribe(state => {
+      this.groupNameSwitch = state;
+    });
     this.mail = this.route.snapshot.paramMap.get('usermail') || '';
     console.log("maill ", this.mail);
     if(this.mail == "emily@alphaelectronics.com") {
       this.groupName = "Alpha";
-      this.dashboardId = "c980a71f-8b2b-4982-a806-cb37b05d4438";
+      //this.dashboardId = "c980a71f-8b2b-4982-a806-cb37b05d4438";
+      this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
     }
     else if(this.mail == "john@betaelectronics.com") {
       this.groupName = "Beta";
+      this.mode = BoldBI.Mode.Design,
       this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
     }
     else if(this.mail == "sarah@gammaelectronics.com") {
       this.groupName = "Gamma";
-      this.dashboardId = "ab057099-643c-4c27-bde2-60ca615af7e6";
+      this.dashboardId = "cf71e712-8223-4618-841b-96395b0e002c";
     }
     else if(this.mail == "michel@deltaelectronics.com") {
       this.groupName = "Delta";
-      this.dashboardId = "bd4107e2-78a4-451e-89f8-730317cbfefb";
+      this.dashboardId = "b75a6134-ee28-49e1-9707-043e7f7e483a";
     }
+    if(this.groupNameSwitch) {
+      this.groupName = "Alph";
+      //this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
+    }
+
     const expirationTime: string | null = localStorage.getItem('expirationTime');
     let embedURLExpiryTime: boolean;
     if (expirationTime !== null) {
@@ -83,17 +101,21 @@ export class DashboardComponent implements OnInit {
       //dashboardId: this.boldbisettings?.DashboardId,
       dashboardId: this.dashboardId,
       //dashboardId: "cf71e712-8223-4618-841b-96395b0e002c",
+      //datasourceId: "0e9fe1f9-c8db-466d-80be-3ea72e974435", // <-- Update this line            
       embedContainerId: "dashboard",
       embedType: BoldBI.EmbedType.Component,
       environment: this.boldbisettings?.Environment,
-      mode: BoldBI.Mode.View,
+      mode: this.mode,
+      //mode: BoldBI.Mode.View,
       //mode: BoldBI.Mode.Design,
+      //mode: BoldBI.Mode.DataSource,
       width: "100%",
       height: "100%",
       authorizationServer: {
           url:this.authorizationApi,
           headers: {
-            "Authorization": "Bearer " + localStorage.getItem('token')
+            "Authorization": "Bearer " + localStorage.getItem('token'),
+            //"customattribute": "edfd"
        }
       },
       dashboardSettings: {
@@ -108,9 +130,12 @@ export class DashboardComponent implements OnInit {
         //userEmail: ""
       }        
     });
-      this.dashboard?.loadDashboard();
-      //this.dashboard?.loadDesigner();
-    // You can perform additional actions here
+    if(this.mode == BoldBI.Mode.View) {
+     this.dashboard?.loadDashboard();
+    }
+    else {
+      this.dashboard?.loadDesigner();
+    }
   }
  
 
