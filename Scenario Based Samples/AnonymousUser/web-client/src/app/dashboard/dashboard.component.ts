@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { AuthService } from '../auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { SwitchStateService } from '../switch-state.service';
+import userDatas from '../../assets/anonymoususer.json';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,25 +18,17 @@ export class DashboardComponent implements OnInit {
   mail: string = '';
   groupName: string = '';
   dashboardId: string = '';
-  //groupNameSwitch = true;
-  mode = BoldBI.Mode.View;
-  //groupNameSwitch!: boolean;
-  
+  mode = BoldBI.Mode.View;  
   groupNameSwitch1!: boolean;
   groupNameSwitch2!: boolean;
   groupNameSwitch3!: boolean;
-
+  userData: any[] = []; // Store user emails
 
   constructor(private http: HttpClient, private authService: AuthService, private route: ActivatedRoute, private switchStateService: SwitchStateService) { }
+  
   private dashboard: BoldBI | null = null;
   private boldbisettings: BoldBISettings | null = null;
   ngOnInit(): void {
-    // this.groupNameSwitch = this.switchStateService.getSwitchState(); // Get initial value
-    // this.switchStateService.switchState$.subscribe(state => {
-    //   this.groupNameSwitch = state;
-    // });
-
-
     this.groupNameSwitch1 = this.switchStateService.getSwitchState(1);
     this.switchStateService.switchState1$.subscribe(state => {
       this.groupNameSwitch1 = state;
@@ -52,45 +45,69 @@ export class DashboardComponent implements OnInit {
     });
 
     this.mail = this.route.snapshot.paramMap.get('usermail') || '';
-    console.log("maill ", this.mail);
-    if(this.mail == "anuabarna.b@syncfusion.com") {
-      this.groupName = "Alpha";
-      this.dashboardId = "c980a71f-8b2b-4982-a806-cb37b05d4438";
+    console.log("usredfd ",userDatas);
+    for (let i = 0; i < userDatas.length; i++) {
+      if(userDatas[i].email == this.mail) {
+        this.groupName = userDatas[i].groupName;
+        this.dashboardId = userDatas[i].dashboardId;
+      }
+      if(this.mail == "john@betaelectronics.com") {
+        this.mode = BoldBI.Mode.Design;
+      }
     }
-    else if(this.mail == "emily@alphaelectronics.com") {
-      this.groupName = "Alpha";
-      this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
-    }
-    else if(this.mail == "john@betaelectronics.com") {
-      this.groupName = "Beta";
-      this.mode = BoldBI.Mode.Design,
-      this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
-    }
-    else if(this.mail == "sarah@gammaelectronics.com") {
-      this.groupName = "Gamma";
-      this.dashboardId = "cf71e712-8223-4618-841b-96395b0e002c";
-    }
-    else if(this.mail == "michel@deltaelectronics.com") {
-      this.groupName = "Delta";
-      this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569";
-    }
+      console.log("maill ", this.mail);
+    
+    //   //if(this.mail == "anuabarna.b@syncfusion.com") {
+    // if(this.mail == "demo@boldbi.com") {
+    //   this.groupName = "Alpha";
+    //   //this.dashboardId = "c980a71f-8b2b-4982-a806-cb37b05d4438"; //local
+    //   this.dashboardId = "f30920ce-b5e0-4f20-b1d4-2d3894604f55"
+    // }
+    // else if(this.mail == "emily@alphaelectronics.com") {
+    //   this.groupName = "Alpha";
+    //   //this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569"; //local
+    //   this.dashboardId = "147aa772-1d61-43ee-80e9-d807f0056722"
+    // }
+    // else if(this.mail == "john@betaelectronics.com") {
+    //   this.groupName = "Beta";
+    //   this.mode = BoldBI.Mode.Design,
+    //   //this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569"; //local
+    //   this.dashboardId = "147aa772-1d61-43ee-80e9-d807f0056722"
+
+    // }
+    // else if(this.mail == "sarah@gammaelectronics.com") {
+    //   this.groupName = "Gamma";
+    //   //this.dashboardId = "cf71e712-8223-4618-841b-96395b0e002c"; //local
+    //   this.dashboardId = "b35586cb-320c-4dd4-8865-9466464a8451"
+    // }
+    // else if(this.mail == "michel@deltaelectronics.com") {
+    //   this.groupName = "Delta";
+    //   this.dashboardId = "2ee1f202-6f3b-4d92-b31a-a37e969a6569"; //local
+    // }
    
-    if(this.groupNameSwitch1 && this.groupNameSwitch2) {
-      this.groupName = "";
-      this.mail = "";
-    }
+    // if(this.groupNameSwitch1 && this.groupNameSwitch2) {
+    //   this.groupName = "";
+    //   this.mail = "";
+    // }
 
-    else if(this.groupNameSwitch1) {
-      this.groupName = "";
-    }
+    // else if(this.groupNameSwitch1) {
+    //   this.groupName = "";
+    // }
 
-    else if(this.groupNameSwitch2) {
-      this.mail = "";
-    }
+    // else if(this.groupNameSwitch2) {
+    //   this.mail = "";
+    // }
 
-    else if(this.groupNameSwitch3) {
+    // else if(this.groupNameSwitch3) {
+    //   this.groupName = "Alph";
+    // }
+
+    if (this.groupNameSwitch1 || this.groupNameSwitch2) {
+      this.groupName = this.groupNameSwitch1 ? "" : this.groupName;
+      this.mail = this.groupNameSwitch2 ? "" : this.mail;
+    } else if (this.groupNameSwitch3) {
       this.groupName = "Alph";
-    }
+    }    
 
     const expirationTime: string | null = localStorage.getItem('expirationTime');
     let embedURLExpiryTime: boolean;
@@ -133,17 +150,11 @@ export class DashboardComponent implements OnInit {
     this.dashboard= BoldBI.create({
       serverUrl: `${this.boldbisettings?.ServerUrl ?? ''}/${this.boldbisettings?.SiteIdentifier ?? ''}`,
       //dashboardId: this.boldbisettings?.DashboardId,
-      dashboardId: this.dashboardId,
-      //dashboardId: "",
-      //dashboardId: "cf71e712-8223-4618-841b-96395b0e002c",
-      //datasourceId: "0e9fe1f9-c8db-466d-80be-3ea72e974435", // <-- Update this line            
+      dashboardId: this.dashboardId,          
       embedContainerId: "dashboard",
       embedType: BoldBI.EmbedType.Component,
       environment: this.boldbisettings?.Environment,
       mode: this.mode,
-      //mode: BoldBI.Mode.View,
-      //mode: BoldBI.Mode.Design,
-      //mode: BoldBI.Mode.DataSource,
       width: "100%",
       height: "100%",
       authorizationServer: {
@@ -156,7 +167,7 @@ export class DashboardComponent implements OnInit {
         showHeader: false,
       },
       anonymousToken: {
-        //isEnabled: true,
+        isEnabled: true,
         groupName: this.groupName,
         userEmail: this.mail
       }        
@@ -167,17 +178,13 @@ export class DashboardComponent implements OnInit {
     else {
       this.dashboard?.loadDesigner();
     }
-    //this.dashboard?.loadDatasource();
   }
- 
-
 }
-interface BoldBISettings {
- 
+
+interface BoldBISettings { 
   ServerUrl: string;
   SiteIdentifier: string;
   Environment: string;
   DashboardId: string;
   ExpirationTime: string;
-
 }

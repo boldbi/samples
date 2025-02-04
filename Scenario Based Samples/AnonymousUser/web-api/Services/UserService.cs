@@ -11,8 +11,10 @@ namespace boldbi.web.api.Services
             //{ "John", ("John@123", "john.smith@example.com") },
             //{ "Sarah", ("Sarah@123", "sarah.johnson@example.com") },
             //{ "Michael",("Michael@123","michael.brown@example.com")},
+            //{ "anuabarna.b@syncfusion.com", ("Anu@123", "") },
+
             { "Admin", ("Admin@123", "") },
-            { "anuabarna.b@syncfusion.com", ("Anu@123", "") },
+            { "demo@boldbi.com", ("Demo@123", "") },
             { "emily@alphaelectronics.com", ("Emily@123", "") },
             { "john@betaelectronics.com", ("John@123", "") },
             { "john@betaindustry.com", ("John@1234", "") },

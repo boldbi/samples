@@ -27,8 +27,9 @@
 // }
 
 
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,7 @@ export class SwitchStateService {
   private switchState1 = new BehaviorSubject<boolean>(this.getStoredState(this.storageKeys.switch1));
   private switchState2 = new BehaviorSubject<boolean>(this.getStoredState(this.storageKeys.switch2));
   private switchState3 = new BehaviorSubject<boolean>(this.getStoredState(this.storageKeys.switch3));
+  private jsonUrl = 'assets/anonymoususer.json'; // Adjust path if necessary
 
   switchState1$ = this.switchState1.asObservable();
   switchState2$ = this.switchState2.asObservable();
@@ -66,5 +68,6 @@ export class SwitchStateService {
     const key = this.storageKeys[`switch${switchNumber}` as keyof typeof this.storageKeys];
     return this.getStoredState(key);
   }
+  
 }
 

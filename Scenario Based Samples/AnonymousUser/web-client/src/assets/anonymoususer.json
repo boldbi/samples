@@ -1,0 +1,33 @@
+[
+    {
+      "email": "demo@boldbi.com",
+      "password": "Demo@123",
+      "dashboardId": "f30920ce-b5e0-4f20-b1d4-2d3894604f55",
+      "groupName": "Alpha"
+    },
+    {
+      "email": "emily@alphaelectronics.com",
+      "password": "Emily@123",
+      "dashboardId": "147aa772-1d61-43ee-80e9-d807f0056722",
+      "groupName": "Alpha"
+    },
+    {
+      "email": "john@betaelectronics.com",
+      "password": "John@123",
+      "dashboardId": "147aa772-1d61-43ee-80e9-d807f0056722",
+      "groupName": "Beta"
+    },
+    {
+      "email": "sarah@gammaelectronics.com",
+      "password": "Sarah@123",
+      "dashboardId": "b35586cb-320c-4dd4-8865-9466464a8451",
+      "groupName": "Gamma"
+    },
+    {
+      "email": "michel@deltaelectronics.com",
+      "password": "Micael@123",
+      "dashboardId": "2ee1f202-6f3b-4d92-b31a-a37e969a6569",
+      "groupName": "Delta"
+    }
+  ]
+  

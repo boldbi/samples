@@ -3,6 +3,9 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { Switch } from '@syncfusion/ej2-buttons';
 import { SwitchStateService } from '../switch-state.service';
+import userData from '../../assets/anonymoususer.json';
+import { HttpClient } from '@angular/common/http';
+import { FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +16,11 @@ export class LoginComponent implements OnInit{
   username = '';
   password = '';
   loginError='';
-  // switchObj!: Switch;
-  // switchState!: boolean;
+  userData: any[] = []; // Store user emails
+  filteredData: any[] = []; // Filtered data for dropdown
+  selectedUser!: string;
+  fields: Object = { text: 'email', value: 'email' };
+  height: string = '250px';
 
   switchObj1!: Switch;
   switchObj2!: Switch;
@@ -27,31 +33,16 @@ export class LoginComponent implements OnInit{
   isgroupNameColumnVisible!: boolean;
   isuserEmailColumnVisible!: boolean;
   isInvalidGroupNameColumn!: boolean;
-  constructor(private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
+  constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
 
   ngOnInit(): void {
-    // Get the stored value from the service
-    // this.switchStateService.switchState$.subscribe(state => {
-    //   this.switchState = state;
-    //   if (this.switchObj) {
-    //     this.switchObj.checked = state; // Update the switch if it exists
-    //   }
-    // });
-
-    // this.switchObj = new Switch({ 
-    //   // onLabel: 'ON', 
-    //   // offLabel: 'OFF', 
-    //   checked: this.switchState, // Initialize from localStorage
-    //   //checked: true, // Initial state
-    //   change: (args: any) => { // Capture value on change
-    //     this.switchStateService.setSwitchState(args.checked);
-    //     console.log("Switch State Updated:", args.checked);
-    //   }
-    // });
-    // this.switchObj.appendTo('#element');
-    // console.log("switch ",this.switchObj);
-
+    //this.userData = userData;
+    this.http.get<any[]>('assets/anonymoususer.json').subscribe(data => {
+      this.userData = data;
+      this.filteredData = data; // Initialize filtered data
+    });
+    
     // Subscribe to switch states
     this.switchStateService.switchState1$.subscribe(state => {
       this.switchState1 = state;
@@ -96,8 +87,28 @@ export class LoginComponent implements OnInit{
       this.router.navigate(['/dashboard']); // '/home' is the route to your home page
     }
   }
+  onUserChange(event: any) {
+    console.log('Selected User:', event.value);
+    this.selectedUser = event.value;
+    this.username = event.value;
+    
+    // Find the selected user's password and set it
+    const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
+    this.password = selectedUserObj ? selectedUserObj.password : ''
+  }
 
+  onFiltering(event: FilteringEventArgs) {
+    let query = event.text.toLowerCase();
+    
+    // Filter email addresses based on the typed input
+    event.updateData(
+      this.userData.filter(user => user.email.toLowerCase().includes(query))
+    );
+  }
+  
   onSubmit(): void {
+    console.log('Selected Email:', this.selectedUser);
+    console.log('Password:', this.password);
     if (!this.username || !this.password) {
       this.loginError = 'Both UserName and Password are required.';
       return; // Don't submit the form if fields are empty

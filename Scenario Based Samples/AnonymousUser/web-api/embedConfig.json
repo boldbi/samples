@@ -1,10 +1,10 @@
 ﻿{
-  "DashboardId": "c980a71f-8b2b-4982-a806-cb37b05d4438",
-  "ServerUrl": "http://localhost:49493/bi",
-  "UserEmail": "anuabarna.b@syncfusion.com",
-  "EmbedSecret": "Y3MCNKRDyQxk1h4bJ3KUZvB1YpJZceiL",
+  "DashboardId": "ed5a44b5-e8c3-4c74-aab7-a0059ca78b5e",
+  "ServerUrl": "https://demo-analytics.boldbidemo.com/bi",
+  "UserEmail": "demo@boldbi.com",
+  "EmbedSecret": "NC67emnXaNaiO1sYA8u3JKipzrQKH4ir",
   "EmbedType": "component",
   "Environment": "onpremise",
   "ExpirationTime": "10000",
-  "SiteIdentifier": "site/site1"
+  "SiteIdentifier": "site/anonymous"
 }
