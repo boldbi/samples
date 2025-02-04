@@ -1,45 +1,6 @@
 <!-- login.component.html -->
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet"/>
 
-<!-- <div class="login-container">
-    <h2 class="login-header">Login</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          [(ngModel)]="username"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          [(ngModel)]="password"
-          required
-        />
-      </div>
-      <button type="submit" class="login-button">Login</button>
-    </form>
-    <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
-    <div class="small text-secondary mt-3 d-none d-sm-flex">
-      <strong>User logins</strong>
-      <ul>
-        <li>Admin: Admin@123</li>
-        <li>John: John@123</li>
-        <li>Sarah: Sarah@123</li>
-        <li>Michael: Michael@123</li>
-      </ul>
-    </div>
-  </div> -->
-
-
-  <!-- login.component.html -->
-<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet"/> 
 <div class="login-container">
   <div class="child-div" style="width: 325px;">
     <h2 class="login-header">Login</h2>
@@ -54,9 +15,6 @@
             required
           />
       </div>
-      <!-- <div>
-        <ejs-combobox id='games' #sample [dataSource]='userData' [fields]='fields'  [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User email address'" (change)="onUserChange($event)"></ejs-combobox>
-      </div> -->
       <div class="form-group">
         <label for="password">Password</label>
         <input
@@ -100,55 +58,116 @@
             <ejs-radiobutton label="Email" name="UserID" value="email" cssClass="e-info" (change)="onRadioChange($event)"></ejs-radiobutton>
           </div>
         </div> -->
-        
+        <!-- <div>
+          <input id="element" type="checkbox"/> Invalid Group name
+      </div> -->
+      <div class="toggle">
+        <input id="switch1" type="checkbox"/> No Group name  
+      </div> &nbsp;
+      <div class="toggle">
+        <input id="switch2" type="checkbox"/> No User email  
+      </div> &nbsp;
+      <div class="toggle">
+        <input id="switch3" type="checkbox"/> Invalid Group name 
+      </div>
+      
+
         <table>
           <thead>
             <tr>
               <th>User Email</th>
               <th>Password</th>
-              <th>Group Id</th>
+              <!-- <th>Group Id</th> -->
+              <th>Role</th>
               <th>Group Name</th>
-              <th>Dashboard Id</th>
+              <!-- <th>Dashboard Id</th> -->
+              <!-- <th>Custom attribute</th> -->
+               <th>Access</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
+              <td>anuabarna.b@syncfusion.com (BoldBI User)</td>
+              <!-- <td>{{ !isuserEmailColumnVisible ? 'anuabarna.b@syncfusion.com (BoldBI User)' : '' }}</td> -->
+              <td>Anu@123</td>
+              <!-- <td>3</td> -->
+              <td>Admin</td>
+              <!-- <td *ngIf="isgroupNameColumnVisible">Alpha</td> -->
+              <td>{{ !isgroupNameColumnVisible ? 'Alpha' : '' }}</td>
+              <!-- <td>{{ (!isgroupNameColumnVisible && !isInvalidGroupNameColumn) ? 'Alpha' : (!isInvalidGroupNameColumn ? '' : 'dfdfdfd') }}</td> -->
+
+              <!-- <td>76d28df5-c3c3-4abe-b415-28b89d5dd94d</td> -->
+              <!-- <td>Region = All</td> -->
+               <td>Dashboard Viewer - Sales Analysis Dashboard</td>
+            </tr>
+            <tr>
               <td>emily@alphaelectronics.com</td>
+              <!-- <td>{{ !isuserEmailColumnVisible ? 'emily@alphaelectronics.com' : '' }}</td> -->
               <td>Emily@123</td>
-              <td>3</td>
-              <td>Alpha</td>
-              <td>76d28df5-c3c3-4abe-b415-28b89d5dd94d</td>
+              <!-- <td>3</td> -->
+              <td>Admin</td>
+              <!-- <td>Alpha</td> -->
+              <td>{{ !isgroupNameColumnVisible ? 'Alpha' : '' }}</td> <!-- Show empty if switch is OFF -->
+              <!-- <td>76d28df5-c3c3-4abe-b415-28b89d5dd94d</td> -->
+              <!-- <td>Region = All</td> -->
+               <td>Dashboard Viewer - Supply Chain Performance Dashboard</td>
             </tr>
             <tr>
               <td>john@betaelectronics.com</td>
+              <!-- <td>{{ !isuserEmailColumnVisible ? 'john@betaelectronics.com' : '' }}</td> -->
               <td>John@123</td>
-              <td>4</td>
-              <td>Beta</td>
-              <td>d0486b92-d279-492a-94bc-a2c4b643c1cd</td>
+              <!-- <td>4</td> -->
+              <td>General Manager 1</td>
+              <!-- <td>Beta</td> -->
+              <td>{{ !isgroupNameColumnVisible ? 'Beta' : '' }}</td> <!-- Show empty if switch is OFF -->
+              <!-- <td>d0486b92-d279-492a-94bc-a2c4b643c1cd</td> -->
+              <!-- <td>Region = East and West</td> -->
+              <td>Dashboard Designer(Item will not log in table) - Supply Chain Performance Dashboard</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td>john@betaindustry.com</td>
               <td>John@1234</td>
               <td>4</td>
               <td>Beta</td>
               <td>28d7cecb-fdc4-4665-9336-8dbfc0866101</td>
-            </tr>
+            </tr> -->
             <tr>
               <td>sarah@gammaelectronics.com</td>
+              <!-- <td>{{ !isuserEmailColumnVisible ? 'sarah@gammaelectronics.com' : '' }}</td>  -->
               <td>Sarah@123</td>
-              <td>5</td>
-              <td>Gamma</td>
-              <td>28d7cecb-fdc4-4665-9336-8dbfc0866101</td>
+              <!-- <td>5</td> -->
+              <td>General Manager 2</td>
+              <!-- <td>Gamma</td> -->
+              <td>{{ !isgroupNameColumnVisible ? 'Gamma' : '' }}</td> <!-- Show empty if switch is OFF -->
+              <!-- <td>28d7cecb-fdc4-4665-9336-8dbfc0866101</td> -->
+              <!-- <td>Region = North and South</td> -->
+              <td>Custom Attribute => "sales_analysis_db":"gamma_industries_sales_analysis"</td>
             </tr>
             <tr>
               <td>michel@deltaelectronics.com</td>
+              <!-- <td>{{ !isuserEmailColumnVisible ? 'michel@deltaelectronics.com' : '' }}</td> -->
               <td>Micael@123</td>
+              <td>Sales 1</td>
+              <!-- <td>Delta</td> -->
+              <td>{{ !isgroupNameColumnVisible ? 'Delta' : '' }}</td> <!-- Show empty if switch is OFF -->
+              <td>No permission for Dashboard</td>
+            </tr>
+             <!--<tr>
+              <td>richard@dellelectronics.com</td>
+              <td>Richard@123</td>
               <td>6</td>
+              <td>Sales 2</td>
               <td>Delta</td>
               <td>bd4107e2-78a4-451e-89f8-730317cbfefb</td>
-            </tr>
+              <td>Region = South</td>
+              <td>w</td>
+            </tr> -->
           </tbody>
         </table>
+
+       
+        
       </div>
     </div>
 </div>

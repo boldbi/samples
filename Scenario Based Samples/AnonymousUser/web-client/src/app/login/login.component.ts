@@ -13,36 +13,83 @@ export class LoginComponent implements OnInit{
   username = '';
   password = '';
   loginError='';
-  switchObj!: Switch;
-  switchState!: boolean;
+  // switchObj!: Switch;
+  // switchState!: boolean;
 
+  switchObj1!: Switch;
+  switchObj2!: Switch;
+  switchObj3!: Switch;
+  
+  switchState1!: boolean;
+  switchState2!: boolean;
+  switchState3!: boolean;
+
+  isgroupNameColumnVisible!: boolean;
+  isuserEmailColumnVisible!: boolean;
+  isInvalidGroupNameColumn!: boolean;
   constructor(private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
 
   ngOnInit(): void {
-    //let switchObj: Switch = new Switch({ onLabel: 'ON', offLabel: 'OFF', checked: true });
-    //switchObj.appendTo('#element');
-
     // Get the stored value from the service
-    this.switchStateService.switchState$.subscribe(state => {
-      this.switchState = state;
-      if (this.switchObj) {
-        this.switchObj.checked = state; // Update the switch if it exists
-      }
+    // this.switchStateService.switchState$.subscribe(state => {
+    //   this.switchState = state;
+    //   if (this.switchObj) {
+    //     this.switchObj.checked = state; // Update the switch if it exists
+    //   }
+    // });
+
+    // this.switchObj = new Switch({ 
+    //   // onLabel: 'ON', 
+    //   // offLabel: 'OFF', 
+    //   checked: this.switchState, // Initialize from localStorage
+    //   //checked: true, // Initial state
+    //   change: (args: any) => { // Capture value on change
+    //     this.switchStateService.setSwitchState(args.checked);
+    //     console.log("Switch State Updated:", args.checked);
+    //   }
+    // });
+    // this.switchObj.appendTo('#element');
+    // console.log("switch ",this.switchObj);
+
+    // Subscribe to switch states
+    this.switchStateService.switchState1$.subscribe(state => {
+      this.switchState1 = state;
+      this.isgroupNameColumnVisible = state;
+      if (this.switchObj1) this.switchObj1.checked = state;
     });
 
-    this.switchObj = new Switch({ 
-      onLabel: 'ON', 
-      offLabel: 'OFF', 
-      checked: this.switchState, // Initialize from localStorage
-      //checked: true, // Initial state
-      change: (args: any) => { // Capture value on change
-        this.switchStateService.setSwitchState(args.checked);
-        console.log("Switch State Updated:", args.checked);
-      }
+    this.switchStateService.switchState2$.subscribe(state => {
+      this.switchState2 = state;
+      this.isuserEmailColumnVisible = state;
+      if (this.switchObj2) this.switchObj2.checked = state;
     });
-    this.switchObj.appendTo('#element');
-    console.log("switch ",this.switchObj);
+
+    this.switchStateService.switchState3$.subscribe(state => {
+      this.switchState3 = state;
+      this.isInvalidGroupNameColumn = state;
+      if (this.switchObj3) this.switchObj3.checked = state;
+    });
+
+    // Create Syncfusion Switches
+    this.switchObj1 = new Switch({ 
+      checked: this.switchState1,
+      change: (args: any) => this.switchStateService.setSwitchState(1, args.checked)
+    });
+    this.switchObj1.appendTo('#switch1');
+
+    this.switchObj2 = new Switch({ 
+      checked: this.switchState2,
+      change: (args: any) => this.switchStateService.setSwitchState(2, args.checked)
+    });
+    this.switchObj2.appendTo('#switch2');
+
+    this.switchObj3 = new Switch({ 
+      checked: this.switchState3,
+      change: (args: any) => this.switchStateService.setSwitchState(3, args.checked)
+    });
+    this.switchObj3.appendTo('#switch3');
+
     // Check if the user's token is valid
     if (this.authService.isAuthenticated()) {
       // Token is valid, navigate to the home page
