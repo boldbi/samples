@@ -3,31 +3,41 @@
       "email": "demo@boldbi.com",
       "password": "Demo@123",
       "dashboardId": "f30920ce-b5e0-4f20-b1d4-2d3894604f55",
-      "groupName": "Alpha"
+      "groupName": "Alpha",
+      "role": "Admin",
+      "access": "Dashboard Viewer - Sales Analysis Dashboard"
     },
     {
       "email": "emily@alphaelectronics.com",
       "password": "Emily@123",
       "dashboardId": "147aa772-1d61-43ee-80e9-d807f0056722",
-      "groupName": "Alpha"
+      "groupName": "Alpha",
+      "role": "Admin",
+      "access": "Dashboard Viewer - Supply Chain Performance Dashboard"
     },
     {
       "email": "john@betaelectronics.com",
       "password": "John@123",
       "dashboardId": "147aa772-1d61-43ee-80e9-d807f0056722",
-      "groupName": "Beta"
+      "groupName": "Beta",
+      "role": "General Manager 1",
+      "access": "Dashboard Designer - Supply Chain Performance Dashboard"
     },
     {
       "email": "sarah@gammaelectronics.com",
       "password": "Sarah@123",
       "dashboardId": "b35586cb-320c-4dd4-8865-9466464a8451",
-      "groupName": "Gamma"
+      "groupName": "Gamma",
+      "role": "General Manager 2",
+      "access": "Custom Attribute => 'sales_analysis_db':'gamma_industries_sales_analysis'"
     },
     {
       "email": "michel@deltaelectronics.com",
       "password": "Micael@123",
       "dashboardId": "2ee1f202-6f3b-4d92-b31a-a37e969a6569",
-      "groupName": "Delta"
+      "groupName": "Delta",
+      "role": "Sales 1",
+      "access": "No permission for Dashboard"
     }
   ]
   
