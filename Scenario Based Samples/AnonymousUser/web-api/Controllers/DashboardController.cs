@@ -39,6 +39,7 @@ namespace boldbi.web.api.Controllers
         [HttpPost("authorize")]
         public string AuthorizeDashboard([FromBody] object embedQuerString)
         {
+            var customAttribute = HttpContext.Request.Headers["customAttribute"];// await GetHeadersAsync();
             _logger.LogInformation($"User [{User.Identity?.Name}] logged in the system.");
             var userName = User.Identity?.Name;
             var userEmail = (User.Identity as ClaimsIdentity)?.FindFirst(ClaimTypes.Email)?.Value;
@@ -47,8 +48,10 @@ namespace boldbi.web.api.Controllers
             //embedClass.dashboardServerApiUrl = "http://localhost:51778/bi/api/site/site1";
 
             //embedQuery += "&embed_custom_attribute=[{\"Channel\"=\"IN('Corporate')\"}]";
-            embedQuery += "&embed_custom_attribute=[{\"sales_analysis_db\":\"gamma_industries_sales_analysis\"}]";
-
+            //embedQuery += "&embed_custom_attribute=[{\"sales_analysis_db\":\"gamma_industries_sales_analysis\"}]";
+            embedQuery += "&embed_custom_attribute=[{" + customAttribute + "}]";
+            
+            //embedQuery += "&embed_custom_attribute=[{\"db_name\":\"builder.InitialCatalog\"&&\"ds_name\":\"builder.DataSource\"}]";
             // User your user-email as embed_user_email
             //embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail;// + "&embed_datasource_filter=[{&UserEmail=" + userEmail + "}]";
 

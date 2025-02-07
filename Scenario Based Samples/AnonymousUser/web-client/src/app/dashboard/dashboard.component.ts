@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   mail: string = '';
   groupName: string = '';
   dashboardId: string = '';
+  customattributevalue: any = '';
   mode = BoldBI.Mode.View;  
   groupNameSwitch1!: boolean;
   groupNameSwitch2!: boolean;
@@ -50,6 +51,9 @@ export class DashboardComponent implements OnInit {
       if(userDatas[i].email == this.mail) {
         this.groupName = userDatas[i].groupName;
         this.dashboardId = userDatas[i].dashboardId;
+        if(userDatas[i].customattribute) {
+          this.customattributevalue = userDatas[i].customattribute
+        }
       }
       if(this.mail == "john@betaelectronics.com") {
         this.mode = BoldBI.Mode.Design;
@@ -107,7 +111,7 @@ export class DashboardComponent implements OnInit {
       this.mail = this.groupNameSwitch2 ? "" : this.mail;
     } else if (this.groupNameSwitch3) {
       this.groupName = "Alph";
-    }    
+    } 
 
     const expirationTime: string | null = localStorage.getItem('expirationTime');
     let embedURLExpiryTime: boolean;
@@ -160,12 +164,42 @@ export class DashboardComponent implements OnInit {
       authorizationServer: {
           url:this.authorizationApi,
           headers: {
-            "Authorization": "Bearer " + localStorage.getItem('token')
-       }
+            "Authorization": "Bearer " + localStorage.getItem('token'),
+            //"test": "\"sales_analysis_db\":\"beta_enterprises_sales_analysis\""
+            //"test": "\"sales_analysis_db\":\"delta_industries_sales_analysis\"",
+            "customAttribute": this.customattributevalue
+          }
       },
       dashboardSettings: {
-        showHeader: false,
+        //showHeader: false,
+        // enableFullScreen: true,
+        // filterOverviewSettings: {
+        //   showSaveIcon: true,// To enable save option in filter overview
+        //   showSaveAsIcon: true
+        // }
+        //dashboardName: "name",
+        //enableFilterOverview: false,
+        showDashboardParameter: false,
+        //showExport: false,
+        //showMetrics: false
+        showRefresh: false,
+        //showMoreOption: false,
+        viewDataSettings :{
+          enableColumnSelection: false,//Select column button will be hidden in the dashboard designer.
+          showAllColumns: true,//Column options are all checked in the dashboard viewer.
+
+        }
       },
+      //enableAiAssistant: true, //The AI Assistant option will be show in the dashboard viewer.   
+      //filterParameters: "Product_Name=Aniseed Syrup",
+      //filterParameters: "Parameter1=Teatime Chocolate Biscuits",
+      //restrictMobileView: true,  
+      // autoRefreshSettings:{
+      //   enabled: true,
+      //   hourlySchedule: {
+      //        seconds: 5,
+      //   }
+      // },
       anonymousToken: {
         isEnabled: true,
         groupName: this.groupName,

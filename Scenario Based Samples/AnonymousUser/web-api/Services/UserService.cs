@@ -14,12 +14,15 @@ namespace boldbi.web.api.Services
             //{ "anuabarna.b@syncfusion.com", ("Anu@123", "") },
 
             { "Admin", ("Admin@123", "") },
+            { "anuabarna.b@syncfusion.com", ("Anu@123", "") },
             { "demo@boldbi.com", ("Demo@123", "") },
             { "emily@alphaelectronics.com", ("Emily@123", "") },
             { "john@betaelectronics.com", ("John@123", "") },
             { "john@betaindustry.com", ("John@1234", "") },
             { "sarah@gammaelectronics.com", ("Sarah@123", "") },
+            { "david@gammaelectronics.com", ("David@123", "") },
             { "michel@deltaelectronics.com", ("Micael@123", "") },
+            { "jose@betaelectronics.com", ("Jose@123", "") },
         };
 
         // inject your database here for user validation

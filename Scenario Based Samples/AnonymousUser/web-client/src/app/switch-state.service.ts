@@ -52,7 +52,8 @@ export class SwitchStateService {
   switchState3$ = this.switchState3.asObservable();
 
   private getStoredState(key: string): boolean {
-    return localStorage.getItem(key) === 'false' ? false : true;
+    //return localStorage.getItem(key) === 'false' ? false : true;
+    return localStorage.getItem(key) === 'true'; // Defaults to false if key is not found
   }
 
   setSwitchState(switchNumber: number, state: boolean) {

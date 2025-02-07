@@ -53,8 +53,9 @@
             </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let user of userData;">
-            <td>{{ user.email }}</td>
+          <tr *ngFor="let user of userData; let i = index">
+            <td>{{ user.email }}<span *ngIf="i === 0"> (BoldBI user)</span></td>
+            <!-- <td>{{ user.email }}</td> -->
             <td>{{ user.password }}</td>
             <td>{{ user.role }}</td>
             <td>{{ user.groupName }}</td>
