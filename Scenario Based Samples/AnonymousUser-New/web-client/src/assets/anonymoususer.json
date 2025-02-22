@@ -1,0 +1,46 @@
+[
+  {
+    "dashboardId": "55e40d88-ccd1-4bb6-9b38-0ac9118710eb",
+    "dashboardName": "Sales Analysis Dashboard",
+    "groupName": "Alpha",
+    "access": "Datasource Filter => Corporate channel",
+    "customattribute": "&Channel=Corporate"
+  },
+  {
+    "dashboardId": "55e40d88-ccd1-4bb6-9b38-0ac9118710eb",
+    "dashboardName": "Sales Analysis Dashboard",
+    "groupName": "Alpha",
+    "access": "Datasource Filter => Retail channel",
+    "customattribute": "&Channel=Retail"
+  },
+  {
+    "dashboardId": "76ce0f73-7f35-4107-b466-b0297408a9bb",
+    "dashboardName": "Supply Chain Performance Dashboard",
+    "groupName": "Alpha",
+    "access": "Dashboard Viewer - Supply Chain Performance Dashboard"
+  },
+  {
+    "dashboardId": "d84da92c-11f5-4e96-8bc5-40d4e669df2e",
+    "dashboardName": "Sales Analysis",
+    "groupName": "Gamma",
+    "access": "Custom Attribute => 'sales_analysis_db':'gamma_industries_sales_analysis'",
+    "customattribute": "\"sales_analysis_db\":\"gamma_industries_sales_analysis\""
+  },
+  {
+    "dashboardId": "d84da92c-11f5-4e96-8bc5-40d4e669df2e",
+    "dashboardName": "Sales Analysis",
+    "groupName": "Gamma",
+    "access": "Custom Attribute => 'sales_analysis_db':'delta_industries_sales_analysis'",
+    "customattribute": "\"sales_analysis_db\":\"delta_industries_sales_analysis\""
+  },
+  {
+    "dashboardId": "11c429b7-5a87-4134-84e5-36b1271ff3dd",
+    "dashboardName": "School Performance Dashboard",
+    "groupName": "Delta"
+  },
+  {
+    "dashboardId": "ed171f54-2f0a-46bf-978f-10046d4b36ea",
+    "dashboardName": "Policy claims Analysis Dashboard",
+    "groupName": "Beta"
+  }
+]

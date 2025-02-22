@@ -1,0 +1,10 @@
+﻿{
+  "DashboardId": "e60e216a-cf7c-4688-8f25-6a07e7fad0c2",
+  "ServerUrl": "http://localhost:64675/bi",
+  "UserEmail": "anuabarna.b@syncfusion.com",
+  "EmbedSecret": "PV7UtQDLOTjXTTGK51p4RGQNAOASnx8t",
+  "EmbedType": "component",
+  "Environment": "onpremise",
+  "ExpirationTime": "10000",
+  "SiteIdentifier": "site/site1"
+}

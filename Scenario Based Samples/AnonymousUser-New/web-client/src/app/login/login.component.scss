@@ -1,0 +1,326 @@
+/* login.component.css */
+
+/* Container for the login form */
+.login-container {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Enable flexbox */
+  justify-content: space-between; /* Add space between the child divs */
+  align-items: flex-start;
+  border-radius: 15px;
+}
+
+/* Form header (e.g., "Login") */
+.login-header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Form fields and labels */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Login button */
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #7f56d9;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #9571e5;
+}
+
+/* Error message (if needed) */
+.error-message {
+  color: #ff0000;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Optional: Center the form vertically and horizontally on the page */
+/* You can adjust the styles based on your layout needs */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+.credentials table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+.credentials th, .credentials td {
+padding: 8px 12px; /* Reduce padding to avoid excess space */
+border: 1px solid #ccc;
+text-align: left;
+white-space: nowrap; /* Prevents unnecessary wrapping inside cells */
+user-select: text;
+}
+
+.credentials th {
+  background-color: #0078D7;
+  color: #fff;
+  font-weight: bold;
+}
+
+.credentials tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Adds a subtle stripe effect */
+}
+
+.credentials tbody td:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.child-div, .credentials {
+padding: 10px; /* Add padding for spacing */
+}
+
+/* Specific styles for the child divs */
+.child-div {
+width: 200px; /* Set width */
+}
+
+.credentials {
+flex: 1; /* Allow this div to take up remaining space */
+}
+
+.divider {
+border: none;
+border-left: 1px solid #ccc; /* Make it vertical */
+height: 600px; /* Extend to the height of the container */
+margin: 0 10px; /* Add some horizontal spacing */
+}
+.site-description {
+margin-top: 20px; /* Space between the login button and the explanation */
+font-size: 14px; /* Smaller font size for the explanation */
+color: #555; /* Lighter text color for the explanation */
+text-align: justify;
+}
+
+.e-input-group:not(.e-float-icon-left), 
+.e-input-group.e-success:not(.e-float-icon-left), 
+.e-input-group.e-warning:not(.e-float-icon-left), 
+.e-input-group.e-error:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
+  border: 1px solid #ccc !important;
+  border-width: 1px 1px 1px 1px !important;
+  border-radius: 4px;
+}
+
+input.e-input, .e-input-group input.e-input, .e-input-group.e-control-wrapper input.e-input, textarea.e-input, .e-input-group textarea.e-input, .e-input-group.e-control-wrapper textarea.e-input {
+border: 0 solid;
+border-width: 0 0 1px 0;
+height: 46px !important;
+line-height: inherit;
+margin: 0;
+margin-bottom: 0px !important;
+outline: none;
+padding: 10px !important;
+border-radius: 3px !important;
+text-indent: 0;
+width: 100%;
+}
+
+.e-input-group input.e-input, .e-input-group textarea.e-input, .e-input-group input.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]):not(:focus), .e-input-group textarea.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]), .e-input-group.e-control-wrapper input.e-input, .e-input-group.e-control-wrapper textarea.e-input, .e-input-group.e-control-wrapper input.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]):not(:focus), .e-input-group.e-control-wrapper textarea.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]) {
+border: 0 solid !important;
+border-width: 0 !important;
+}
+
+input.e-input::selection, textarea.e-input::selection, 
+.e-input-group input.e-input::selection, .e-input-group.e-control-wrapper input.e-input::selection, 
+.e-float-input input::selection, .e-float-input.e-control-wrapper input::selection, 
+.e-input-group textarea.e-input::selection, .e-input-group.e-control-wrapper textarea.e-input::selection, 
+.e-float-input textarea::selection, .e-float-input.e-control-wrapper textarea::selection, 
+.e-float-input.e-small textarea::selection, .e-float-input textarea::selection {
+  background: transparent;  /* Removes the background color */
+  color: inherit;  /* Keeps the default text color */
+}
+
+.e-outline.e-input-group.e-input-focus:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),.e-outline.e-input-group.e-input-focus.e-control-wrapper:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),.e-outline.e-input-group.e-input-focus:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled),.e-outline.e-input-group.e-control-wrapper.e-input-focus:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) {
+border-color: transparent !important;
+}
+
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::before,
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::after {
+  background-color: transparent !important; /* Color of the underline */
+  height: 0px; /* Thickness of the underline */
+}
+
+input.e-input,textarea.e-input,.e-input-group,.e-input-group.e-control-wrapper,.e-input-group.e-disabled,.e-input-group.e-control-wrapper.e-disabled {
+font-family: "Roboto","Segoe UI","GeezaPro","DejaVu Serif","sans-serif","-apple-system","BlinkMacSystemFont";
+font-size: 14px;
+font-weight: normal
+}
+
+.e-input-group .e-input-group-icon:last-child, .e-input-group.e-control-wrapper .e-input-group-icon:last-child, .e-input-group.e-small .e-input-group-icon:last-child, .e-input-group.e-control-wrapper.e-small .e-input-group-icon:last-child {
+margin: 6px !important;
+}
+
+.user-id-selection {
+display: flex;
+align-items: center;
+gap: 10px; /* Space between the label and options */
+margin-bottom: 4px; /* Space below the component */
+font-family: Arial, sans-serif;
+font-size: 14px;
+}
+
+.user-id-label {
+font-weight: bold;
+}
+
+.user-id-options {
+display: flex;
+gap: 12px; /* Space between radio buttons */
+}
+
+ejs-radiobutton {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+
+ejs-radiobutton:hover {
+color: #007BFF !important;
+}
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+
+.popup-content {
+background-color: #F2F2F2;
+width: 80%;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+position: relative;
+}
+
+.close-btn {
+position: absolute;
+top: 12px;
+right: 10px;
+background: none;
+border: none;
+font-size: 18px;
+cursor: pointer;
+}
+
+.popup-header {
+text-align: center;
+margin-bottom: 15px;
+margin-top: 15px;
+}
+
+.popup-image {
+width: 100%;
+height: auto;
+display: block;
+margin: 0 auto;
+}
+
+.show-popup-btn {
+margin: 10px;
+}
+
+.button-container {
+display: flex;
+justify-content: center; /* Centers the button horizontally */
+margin-top: 40px; /* Adds some spacing above the button */
+}
+
+input[type="password"]:focus {
+outline: none;
+}
+
+.advanced-btn {
+position: relative;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 12px 20px;
+font-size: 16px;
+font-weight: bold;
+color: white;
+background: linear-gradient(135deg, #6a11cb, #2575fc);
+border: none;
+border-radius: 50px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+cursor: pointer;
+overflow: hidden;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.advanced-btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+margin-right: 10px;
+font-size: 20px;
+animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+.toggle {
+  display: inline-flex;
+}
+
+.e-control.e-combobox {
+  padding-left: 0px !important;
+}

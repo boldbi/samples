@@ -1,10 +1,10 @@
 ﻿{
-  "DashboardId": "ed5a44b5-e8c3-4c74-aab7-a0059ca78b5e",
+  "DashboardId": "026b79db-047f-405e-b5f7-0ce37f3e6978",
   "ServerUrl": "https://demo-analytics.boldbidemo.com/bi",
   "UserEmail": "demo@boldbi.com",
-  "EmbedSecret": "NC67emnXaNaiO1sYA8u3JKipzrQKH4ir",
+  "EmbedSecret": "K5obKQ60S58fCyu3TPvPjQDJSr4ApC5N",
   "EmbedType": "component",
   "Environment": "onpremise",
   "ExpirationTime": "10000",
-  "SiteIdentifier": "site/anonymous"
+  "SiteIdentifier": "site/site1"
 }

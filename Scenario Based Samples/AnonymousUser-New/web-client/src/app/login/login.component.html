@@ -1,0 +1,45 @@
+<!-- login.component.html -->
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet" />
+
+<div class="login-container">
+  <div class="child-div" style="width: 500px;">
+    <h2 class="login-header">Anonymous User Login</h2>
+    <div class="small text-secondary mt-3 d-none d-sm-flex">
+      <div class="credentials" style="width: 100%;">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="mail">Useremail<span style="color: red;">&nbsp;*</span></label>
+            <input type="text" id="useremail" name="useremail" required (input)="onUserChange($event)" />
+          </div>
+          <label for="group" style="display: block; font-weight: bold;">Group<span
+              style="color: red;">&nbsp;*</span></label>
+          <div>
+            <ejs-combobox id='grouplist' #sample [dataSource]='groupfilteredData' name="grouplist" [fields]='groupfield'
+              [(ngModel)]="selectedGroup" [popupHeight]='height' [placeholder]="'Select group'"
+              (change)="onGroupChange($event)" allowFiltering="true" (filtering)="onFiltering($event)"></ejs-combobox>
+          </div>
+          <br>
+          <label for="dashboard" style="display: block; font-weight: bold;">Dashboard<span
+              style="color: red;">&nbsp;*</span></label>
+          <div>
+            <ejs-combobox id='dashboardlist' #sample [dataSource]='dashboardfilteredData' name="dashboardlist"
+              [fields]='dashboardfield' [(ngModel)]="selectedDashboard" [popupHeight]='height'
+              [placeholder]="'Select dashboard'" [disabled]="!isDashboardEnabled" (change)="onDashboardChange($event)"
+              allowFiltering="true" (filtering)="onDashboardFiltering($event)"></ejs-combobox>
+          </div>
+          <br>
+          <label for="access" style="display: block; font-weight: bold;">Filter</label>
+          <div>
+            <ejs-combobox id='accesslist' #sample [dataSource]='parameterfilteredData' name="acesslist"
+              [fields]='parameterfield' [(ngModel)]="selectedAccess" [popupHeight]='height'
+              [placeholder]="'Select filter'" [disabled]="!isAccessEnabled" allowFiltering="true"
+              (filtering)="onFiltering($event)"></ejs-combobox>
+          </div>
+          <br>
+          <button type="submit" class="login-button">Login</button>
+        </form>
+        <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+      </div>
+    </div>
+  </div>
+</div>

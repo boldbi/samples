@@ -39,7 +39,7 @@ namespace boldbi.web.api.Controllers
         [HttpPost("authorize")]
         public string AuthorizeDashboard([FromBody] object embedQuerString)
         {
-            var customAttribute = HttpContext.Request.Headers["customAttribute"];// await GetHeadersAsync();
+            var attributeValue = HttpContext.Request.Headers["Attribute"];
             var anonymousUserEmail = HttpContext.Request.Headers["AnonymousUserEmail"];
             var anonymousGroupName = HttpContext.Request.Headers["AnonymousGroupName"];
             _logger.LogInformation($"User [{User.Identity?.Name}] logged in the system.");
@@ -47,17 +47,15 @@ namespace boldbi.web.api.Controllers
             var userEmail = (User.Identity as ClaimsIdentity)?.FindFirst(ClaimTypes.Email)?.Value;
             var embedClass = JsonConvert.DeserializeObject<EmbedClass>(embedQuerString.ToString());
             var embedQuery = embedClass.embedQuerString;
-            //embedClass.dashboardServerApiUrl = "http://localhost:51778/bi/api/site/site1";
-
-            //embedQuery += "&embed_custom_attribute=[{\"Channel\"=\"IN('Corporate')\"}]";
-            //embedQuery += "&embed_custom_attribute=[{\"sales_analysis_db\":\"gamma_industries_sales_analysis\"}]";
-            embedQuery += "&embed_user_email=" + anonymousUserEmail + "&embed_anonymous_token=true&embed_authorize_group=" + anonymousGroupName;
-            embedQuery += "&embed_custom_attribute=[{" + customAttribute + "}]";
-            
-            //embedQuery += "&embed_custom_attribute=[{\"db_name\":\"builder.InitialCatalog\"&&\"ds_name\":\"builder.DataSource\"}]";
-            // User your user-email as embed_user_email
-            //embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail;// + "&embed_datasource_filter=[{&UserEmail=" + userEmail + "}]";
-
+            embedQuery += "&embed_user_email="+ anonymousUserEmail + "&embed_anonymous_token=true&embed_authorize_group=" + anonymousGroupName;
+            if (attributeValue.ToString().Trim().Contains(":"))
+            {
+                embedQuery += "&embed_custom_attribute=[{" + attributeValue + "}]";
+            }
+            if (attributeValue.ToString().Trim().Contains("&"))
+            {
+                embedQuery += "&embed_datasource_filter=[{" + attributeValue + "}]";
+            }
             //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
             double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             embedQuery += "&embed_server_timestamp=" + timeStamp;

@@ -167,6 +167,8 @@ export class DashboardComponent implements OnInit {
             "Authorization": "Bearer " + localStorage.getItem('token'),
             //"test": "\"sales_analysis_db\":\"beta_enterprises_sales_analysis\""
             //"test": "\"sales_analysis_db\":\"delta_industries_sales_analysis\"",
+            "AnonymousGroupName": this.groupName,
+            "AnonymousUserEmail": this.mail,
             "customAttribute": this.customattributevalue
           }
       },
@@ -200,11 +202,11 @@ export class DashboardComponent implements OnInit {
       //        seconds: 5,
       //   }
       // },
-      anonymousToken: {
-        isEnabled: true,
-        groupName: this.groupName,
-        userEmail: this.mail
-      }        
+      // anonymousToken: {
+      //   isEnabled: true,
+      //   groupName: this.groupName,
+      //   userEmail: this.mail
+      // }        
     });
     if(this.mode == BoldBI.Mode.View) {
      this.dashboard?.loadDashboard();

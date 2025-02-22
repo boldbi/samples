@@ -1,0 +1,14 @@
+.navbar-nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .left-nav {
+    flex: 1; /* Takes the left side of the navbar */
+  }
+  
+  .right-nav {
+    margin-right: 16px;
+  }
+  
