@@ -19,4 +19,6 @@ public class UserCustomAttribute
     public string customattribute { get; set; }
     public string role { get; set; }
     public string usertenant { get; set; }
+    public string userguid { get; set; }
+    public string? region { get; set; }
 }

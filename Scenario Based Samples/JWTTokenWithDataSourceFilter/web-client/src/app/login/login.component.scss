@@ -1,37 +1,78 @@
 /* login.component.css */
 
-/* Container for the login form */
+/* Make login-component full screen */
+.login-component {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQ1IiBoZWlnaHQ9IjMzNyIgdmlld0JveD0iMCAwIDM0NSAzMzciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAwLjc0OCAwSDIwMS40OTZDMjI5LjMxMSAwIDI1MS44ODMgMjIuNTcxMSAyNTEuODgzIDUwLjM4NjJWMTAwLjc5N0MyNTEuODgzIDEyOC42MTIgMjI5LjMxMSAxNTEuMTgzIDIwMS40OTYgMTUxLjE4M0gwVjEwMC43OTdDMCA0NS4wOTM4IDQ1LjA5MzggMCAxMDAuNzQ4IDBaIiBmaWxsPSIjRkZFRkVBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzAxLjg4MyAwQzM1Ny40ODkgMCA0MDIuNjMxIDQ1LjE2NjMgNDAyLjYzMSAxMDAuNzk3VjE1MS4xODNIMzUyLjI2OUMzMjQuNDU0IDE1MS4xODMgMzAxLjg4MyAxMjguNjEyIDMwMS44ODMgMTAwLjc5N1YwWiIgZmlsbD0iI0ZGRUZFQSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMjAxLjE4M0gyMDEuNDk2QzIyOS4zMTEgMjAxLjE4MyAyNTEuODgzIDIyMy43NTQgMjUxLjg4MyAyNTEuNTY5VjM1Mi4zNjVDMjUxLjg4MyAzODAuMTggMjI5LjMxMSA0MDIuNzUyIDIwMS40OTYgNDAyLjc1MkgxMDAuNzQ4QzQ1LjE0MjIgNDAyLjc1MiAwIDM1Ny42MDkgMCAzMDEuOTc5VjIwMS4xODNaIiBmaWxsPSIjRkZFRkVBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzUyLjI2OSAyMDEuMTgzSDQwMi42MzFWMzAxLjk3OUM0MDIuNjMxIDM1Ny42MDkgMzU3LjQ4OSA0MDIuNzUyIDMwMS44ODMgNDAyLjc1MlYyNTEuNTY5QzMwMS44ODMgMjIzLjcwNSAzMjQuNDA1IDIwMS4xODMgMzUyLjI2OSAyMDEuMTgzWiIgZmlsbD0iI0ZGRUZFQSIvPgo8L3N2Zz4K');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 40vh auto;
+}
+
+.left-container {
+  background: transparent;
+  margin: 10px 20px;
+  width: 69%;
+}
+
+/* Centered Login Container */
 .login-container {
-    // width: 1400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    // position: relative;
-    display: flex; /* Enable flexbox */
-    justify-content: space-between; /* Add space between the child divs */
-    align-items: flex-start;
-  }
-  
-  /* Form header (e.g., "Login") */
-  .login-header {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
+  height: 90%;
+    width: 80%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.parent-div {
+  width: 374px;;
+}
+
+/* Form header (e.g., "Login") */
+.login-header {
+  text-align: left;
+  font-size: 24px;
+}
+
+.login-subtext {
+  font-size: 16px;
+  color: #555; /* Slightly muted text color */
+  text-align: left;
+}
+
+.user-label {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  display: block;
+}
+
+.child-div::before {
+  content: "";
+  position: absolute;
+  top: 57%;
+  left: 77%;
+  width: 380px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  z-index: -1;
+}
+
   /* Form fields and labels */
   .form-group {
     margin-bottom: 15px;
   }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-  }
-  
+
   .form-group input[type="text"],
   .form-group input[type="password"] {
     width: 100%;
@@ -39,31 +80,31 @@
     border: 1px solid #ccc;
     border-radius: 3px;
   }
-  
+
   /* Login button */
   .login-button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: var(--Component-colors-Components-Buttons-Primary-button-primary-bg, #7F56D9);
     color: #fff;
     border: none;
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
   }
-  
-  .login-button:hover {
-    background-color: #0056b3;
-  }
-  
+
+  // .login-button:hover {
+  //   background-color: #0056b3;
+  // }
+
   /* Error message (if needed) */
   .error-message {
     color: #ff0000;
     margin-top: 10px;
     text-align: center;
   }
-  
+
   /* Optional: Center the form vertically and horizontally on the page */
   /* You can adjust the styles based on your layout needs */
   body {
@@ -74,47 +115,112 @@
     margin: 0;
     background-color: #f4f4f4;
   }
-  .credentials table {
+
+  .scrollable-table table {
+    font-size: 14px;
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 11px;
+  }
+
+  .scrollable-table th, .scrollable-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .scrollable-table th {
+    background: #f4f4f4;
+  }
+
+  .maximize-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  /* Scrollable Table */
+.scrollable-table {
+    max-height: 100%;
+    overflow: auto;
+    background: white;
 }
 
-.credentials th, .credentials td {
-  padding: 8px 12px; /* Reduce padding to avoid excess space */
-  border: 1px solid #ccc;
-  text-align: left;
-  white-space: nowrap; /* Prevents unnecessary wrapping inside cells */
-  user-select: text;
+.modal {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  position: fixed;         /* Fixes the position relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;             /* Full viewport width */
+  height: 100vh;            /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background */
+  z-index: 1000;
 }
 
-.credentials th {
-    background-color: #0078D7;
-    color: #fff;
-    font-weight: bold;
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 1340px;
+  overflow-x: auto;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  border-radius: 8px;
 }
 
-.credentials tbody tr:nth-child(even) {
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.scrollable-table tbody tr:nth-child(even) {
     background-color: #f9f9f9; /* Adds a subtle stripe effect */
 }
 
-.credentials tbody td:hover {
+.scrollable-table tbody td:hover {
     background-color: #f1f1f1; /* Highlight row on hover */
 }
 
-.child-div, .credentials {
+.child-div, .scrollable-table {
   // border: 1px solid #ccc; /* Add border for clarity */
   padding: 10px; /* Add padding for spacing */
 }
 
-/* Specific styles for the child divs */
 .child-div {
-  width: 200px; /* Set width */
+  border: 1px solid #d5d0d0;
+  border-radius: 24px;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .credentials {
-  flex: 1; /* Allow this div to take up remaining space */
+  width: 100%;
+  max-height: 86vh;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  position: relative;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .divider {
@@ -130,13 +236,13 @@
   text-align: justify;
 }
 
-.e-input-group:not(.e-float-icon-left), 
-.e-input-group.e-success:not(.e-float-icon-left), 
-.e-input-group.e-warning:not(.e-float-icon-left), 
-.e-input-group.e-error:not(.e-float-icon-left), 
-.e-input-group.e-control-wrapper:not(.e-float-icon-left), 
-.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), 
-.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), 
+.e-input-group:not(.e-float-icon-left),
+.e-input-group.e-success:not(.e-float-icon-left),
+.e-input-group.e-warning:not(.e-float-icon-left),
+.e-input-group.e-error:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
 .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
     border: 1px solid #ccc !important;
     border-width: 1px 1px 1px 1px !important;
@@ -162,11 +268,11 @@ input.e-input, .e-input-group input.e-input, .e-input-group.e-control-wrapper in
   border-width: 0 !important;
 }
 
-input.e-input::selection, textarea.e-input::selection, 
-.e-input-group input.e-input::selection, .e-input-group.e-control-wrapper input.e-input::selection, 
-.e-float-input input::selection, .e-float-input.e-control-wrapper input::selection, 
-.e-input-group textarea.e-input::selection, .e-input-group.e-control-wrapper textarea.e-input::selection, 
-.e-float-input textarea::selection, .e-float-input.e-control-wrapper textarea::selection, 
+input.e-input::selection, textarea.e-input::selection,
+.e-input-group input.e-input::selection, .e-input-group.e-control-wrapper input.e-input::selection,
+.e-float-input input::selection, .e-float-input.e-control-wrapper input::selection,
+.e-input-group textarea.e-input::selection, .e-input-group.e-control-wrapper textarea.e-input::selection,
+.e-float-input textarea::selection, .e-float-input.e-control-wrapper textarea::selection,
 .e-float-input.e-small textarea::selection, .e-float-input textarea::selection {
     background: transparent;  /* Removes the background color */
     color: inherit;  /* Keeps the default text color */
@@ -195,14 +301,22 @@ input.e-input,textarea.e-input,.e-input-group,.e-input-group.e-control-wrapper,.
 .user-id-selection {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between the label and options */
-  margin-bottom: 4px; /* Space below the component */
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 24px;
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
 
 .user-id-label {
   font-weight: bold;
+}
+
+.boldbi-logo {
+  margin-bottom: 16px;
+  width: 100px; /* Set the desired size */
+  height: auto; /* Maintain the aspect ratio */
 }
 
 .user-id-options {
@@ -271,7 +385,6 @@ ejs-radiobutton:hover {
 .button-container {
   display: flex;
   justify-content: center; /* Centers the button horizontally */
-  margin-top: 40px; /* Adds some spacing above the button */
 }
 
 input[type="password"]:focus {
@@ -279,42 +392,110 @@ input[type="password"]:focus {
 }
 
 .advanced-btn {
+  border: none;
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
   font-size: 16px;
   font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: transparent;
+  color: var(--Component-colors-Components-Buttons-Primary-button-primary-bg, #7F56D9);
 }
 
-.advanced-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+.welcome-text {
+  font-size: 32px; /* Larger text size */
+  font-weight: bold; /* Make the text bold */
 }
 
-.icon-container {
-  display: inline-flex;
+.boldbi-text {
+  color: #7F56D9;
+}
+
+.hidden {
+  display: none;
+}
+.group-header {
+  font-weight: bold;
+  font-size: 14px; /* Reduced font size */
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Slightly reduced letter-spacing */
+}
+
+/* Item Container Styling */
+.item-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  font-size: 20px;
-  animation: spin 2s linear infinite;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  // background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+// .item-container:hover {
+//   background-color: #e7e7e7;
+// }
+
+.empImage {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  margin-right: 12px;
+}
+
+.empImage-placeholder {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  margin-right: 12px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.role {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .item-container {
+    padding: 8px 12px;
   }
-  100% {
-    transform: rotate(360deg);
+
+  .empImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+
+  .role {
+    font-size: 11px;
   }
 }
+
+.tenant-name {
+  font-size: 0.5 em;
+  font-weight: bold;
+  color: #333; /* Dark gray text */
+  text-transform: uppercase;
+}
+

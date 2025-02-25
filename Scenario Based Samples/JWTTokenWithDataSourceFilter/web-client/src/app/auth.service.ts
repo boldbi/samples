@@ -4,12 +4,14 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environment';
 import { Router } from '@angular/router';
 import { BoldBI } from '@boldbi/boldbi-embedded-sdk';
+import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+
   private apiUrl = `${environment.apiUrl}api/account/login`; // Replace with your backend URL
   user='';
   constructor(private http: HttpClient, private router: Router) {}
@@ -20,6 +22,7 @@ export class AuthService {
   }
 
   logout(): void {
+
     localStorage.removeItem('custom-attribute-token');
     localStorage.removeItem('expirationTime');
     this.router.navigate(["/login"]);

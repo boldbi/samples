@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Util } from '../services/util.service';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { RadioButtonService } from '../radiobutton.service';
+import { ComboBoxComponent } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +14,17 @@ import { RadioButtonService } from '../radiobutton.service';
 })
 export class LoginComponent implements OnInit{
 
+  @ViewChild('sample') comboBoxInstance!: ComboBoxComponent;
+
   constructor(private authService: AuthService, private router: Router, private userService: UserService, private util: Util, private radioButtonService: RadioButtonService) {}
 
   public userData : any[] = [];
   public useremail = '';
   public loginError='';
-  public userID = 'guid';
+  public userID = 'region';
   // maps the appropriate column to fields property
-  fields: object = { text: 'useremail', value: 'password' };
-  selectedUser: any;
+  fields: object = { groupBy: 'usertenant', text: 'useremail', value: 'password' };
+  public selectedUser: string | null = null;
   password: string = '';
   height: string = '250px';
   // set the height of the popup element
@@ -33,10 +36,25 @@ export class LoginComponent implements OnInit{
       if (user) {
         this.password = user.password;
       }
+      else
+      {
+        this.password = "";
+        this.clearComboBoxSelection();
+      }
     }
     else
     {
       this.password = "";
+    }
+  }
+
+  isUserInData(username: string): boolean {
+    var isUserPresent = this.userData.some(user => user.username === username)
+    return isUserPresent;
+  }
+  clearComboBoxSelection(): void {
+    if (this.comboBoxInstance) {
+      this.comboBoxInstance.clear();
     }
   }
 
@@ -73,21 +91,20 @@ export class LoginComponent implements OnInit{
         'user_guid = "1c43d130-077e-46c2-b50f-78c80bc747fa"'
       ],
       region: [
+        'region = "North,East"',
+        'region = "South,West"',
         'region = "East"',
-        'region = "West"',
-        'region = "South"',
-        'region = "East"',
-        'region = "West"',
-        'region = "North"',
-        'region = "East"',
+        'region = "South,West"',
+        'region = "Central,East"',
         'region = "North"',
         'region = "South"',
+        'region = "Central,East"',
+        'region = "North,West"',
+        'region = "Central,East"',
         'region = "North"',
-        'region = "West"',
-        'region = "South'
+        'region = "South,West"'
       ]
     };
-
 
     filterParams.forEach((cell, index) => {
       cell.textContent = filterValues[event.value as keyof typeof filterValues][index] || "nill";
@@ -95,8 +112,11 @@ export class LoginComponent implements OnInit{
     event.value
   }
   ngOnInit(): void {
+    
+    this.onRadioChange({ value: this.userID });
     this.util.disableCssFiles();
-    // Check if the user's token is valid
+    const img = new Image();
+    img.src = 'assets/custom-attribute-workflow.jpg';
     if (this.authService.isAuthenticated()) {
       const userTenant = this.getUserTenant();
       this.util.enableCssFiles();
@@ -115,6 +135,10 @@ export class LoginComponent implements OnInit{
       }
     );
   }
+
+  // ngAfterViewInit() {
+  //   this.comboBoxInstance.value = null;
+  // }
   onSubmit(): void {
     if (!this.useremail || !this.password) {
       this.loginError = 'Both UserName and Password are required.';
@@ -154,14 +178,14 @@ export class LoginComponent implements OnInit{
     return JSON.parse(decodedPayload);
   }
   getUserTenant(): string | null {
-    const token = localStorage.getItem('token'); // Retrieve the JWT token
+    const token = localStorage.getItem('custom-attribute-token'); // Retrieve the JWT token
     if (token) {
       const decodedToken = this.decodeToken(token);
       return decodedToken?.tenantId || null; // Adjust the key to match your token's structure
     }
     return null;
   }
-  
+
   showPopup = false;
 
   openPopup() {
@@ -171,4 +195,40 @@ export class LoginComponent implements OnInit{
   closePopup() {
     this.showPopup = false;
   }
+  
+  public formatTenantName(usertenant: string): string {
+    return usertenant
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  }
+  isModalOpen = false;
+  tableHTML: string = ''; // Store the table's HTML content
+
+  // Function to toggle the table view in modal
+  toggleTableView() {
+    const tableContainer = document.getElementById('tableContainer') as HTMLElement;
+    if (tableContainer) {
+      this.tableHTML = tableContainer.outerHTML;
+
+      // Open the modal
+      this.isModalOpen = true;
+    }
+  }
+
+  // Function to close the modal
+  closeTableView() {
+    this.isModalOpen = false;
+  }
+}
+
+interface User {
+  id: number;
+  username: string;
+  useremail: string;
+  role: string;
+  userguid: string;
+  usertenant: string;
+  password: string;
+  customattribute: string; // Assuming it's a JSON string
 }

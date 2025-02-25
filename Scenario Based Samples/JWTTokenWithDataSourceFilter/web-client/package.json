@@ -17,7 +17,7 @@
     "@angular/forms": "^16.2.0",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
-    "@angular/router": "^16.2.0",
+    "@angular/router": "^16.2.12",
     "@boldbi/boldbi-embedded-sdk": "^6.17.13",
     "@syncfusion/ej2-angular-buttons": "^28.1.37",
     "@syncfusion/ej2-angular-dropdowns": "^28.1.33",

@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class RadioButtonService {
-  private radioValue = new BehaviorSubject<string>('guid'); // Keeps the current value
+  private radioValue = new BehaviorSubject<string>('region'); // Keeps the current value
   radioValue$ = this.radioValue.asObservable(); // Allows components to listen for changes
 
   setRadioValue(value: string) {

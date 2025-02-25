@@ -42,6 +42,7 @@ namespace boldbi.web.api.Controllers
         [HttpPost("authorize")]
         public async Task<string> AuthorizeDashboard([FromBody] object embedQuerString)
         {
+            var userId = Request.Headers["Custom-Attribute-UserID"];
             _logger.LogInformation($"User [{User.Identity?.Name}] logged in the system.");
             var userName = User.Identity?.Name;
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
@@ -56,13 +57,27 @@ namespace boldbi.web.api.Controllers
                     throw new Exception($"User {userName} not found in the database.");
                 }
                 var customAttribute = user.customattribute;
+                var userGuid = user.userguid;
                 if (!string.IsNullOrEmpty(role) && role == "Admin")
                 {
                     embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}";
                 }
                 else
                 {
-                    embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}"+ "&embed_datasource_filter=[{&useremail=" + email + "}]";
+                    if (userId == "guid")
+                    {
+                        embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}"+ "&embed_datasource_filter=[{&user_guid=" + userGuid + "}]";
+                    }
+                    else if (userId == "email")
+                    {
+                        embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}"+ "&embed_datasource_filter=[{&useremail=" + email + "}]";
+                    }
+                    else if (userId == "region")
+                    {
+                        var region = user.region;
+                        embedQuery += "&embed_user_email=" + _boldbiIProperties.UserEmail + $"&embed_custom_attribute={customAttribute}"+ "&embed_datasource_filter=[{&region=" + region + "}]";
+                    }
+                    
                 }
 
                 //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
