@@ -1,0 +1,63 @@
+<!-- login.component.html -->
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet" />
+
+<div class="login-container">
+  <div class="child-div" style="width: 325px;">
+    <h2 class="login-header">Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label for="useremail" style="display: block; font-weight: bold;">User email</label>
+      <div>
+        <ejs-combobox id='useremail' #sample [dataSource]='filteredData' name="useremail" [fields]='fields'
+          [(ngModel)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User email address'"
+          (change)="onUserChange($event)" allowFiltering="true" (filtering)="onFiltering($event)"></ejs-combobox>
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required />
+      </div>
+
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+  </div>
+  <hr class="divider">
+  <div class="small text-secondary mt-3 d-none d-sm-flex">
+    <div class="credentials" style="width: 100%;">
+      <div class="site-description">
+        <p>By leveraging the anonymous user in the embedding application, we have 4 set of anonymous user for each group
+          and accessing the dashbord. Please refer the table for anonymous user with group details.</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Tenant</th>
+            <th>Username</th>
+            <th>User Email</th>
+            <th>Custom Attribute</th>
+            <th>Filter Parameter</th>
+            <th>Group Name</th>
+            <th>Access Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userData; let i = index">
+            <td *ngIf="shouldShowRowspan(userData, i)" [attr.rowspan]="4">
+              {{ user.tenant }}
+            </td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td *ngIf="shouldShowRowspan(userData, i)" [attr.rowspan]="4">
+              {{ user.customattribute }}
+            </td>
+            <td>{{ user.filterparameter }}</td>
+            <td>
+              {{ user.groupName }}
+            </td>
+            <td>{{ user.access }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

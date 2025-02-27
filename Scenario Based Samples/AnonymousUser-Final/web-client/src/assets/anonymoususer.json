@@ -1,0 +1,178 @@
+[
+  {
+    "email": "jack@alphaelectronics.com",
+    "password": "Jack@123",
+    "username": "Jack",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'alpha_electronics_sales_analysis'",
+    "filterparameter": "nil",
+    "filterparametervalue": "",
+    "access": "Bold BI User",
+    "tenant": "Alpha Electronics"
+  },
+  {
+    "email": "grace@alphaelectronics.com",
+    "password": "Grace@123",
+    "username": "Grace",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'alpha_electronics_sales_analysis'",
+    "filterparameter": "region=North, East",
+    "filterparametervalue": "region=IN(North,East)",
+    "access": "Bold BI User",
+    "tenant": "Alpha Electronics"
+  },
+  {
+    "email": "henry@alphaelectronics.com",
+    "password": "Henry@123",
+    "username": "Henry",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'alpha_electronics_sales_analysis'",
+    "filterparameter": "region=South, West",
+    "filterparametervalue": "region=IN(South,West)",
+    "access": "Bold BI User",
+    "tenant": "Alpha Electronics"
+  },
+  {
+    "email": "leo@alphaelectronics.com",
+    "password": "Leo@123",
+    "username": "Leo",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'alpha_electronics_sales_analysis'",
+    "filterparameter": "region=Central",
+    "filterparametervalue": "region=IN(Central)",
+    "access": "Bold BI User",
+    "tenant": "Alpha Electronics"
+  },
+  {
+    "email": "ella@betaenterprise.com",
+    "password": "Ella@123",
+    "username": "Ella",
+    "groupName": "Marketing_Team",
+    "customattribute": "'sales_analysis_db':'beta_enterprises_sales_analysis'",
+    "filterparameter": "nil",
+    "filterparametervalue": "",
+    "access": "Anonymous",
+    "tenant": "Beta Enterprise"
+  },
+  {
+    "email": "sam@betaenterprise.com",
+    "password": "Sam@123",
+    "username": "Sam",
+    "groupName": "Marketing_Team",
+    "customattribute": "'sales_analysis_db':'beta_enterprises_sales_analysis'",
+    "filterparameter": "region=South, West",
+    "filterparametervalue": "region=IN(South,West)",
+    "access": "Anonymous",
+    "tenant": "Beta Enterprise"
+  },
+  {
+    "email": "lily@betaenterprise.com",
+    "password": "Lily@123",
+    "username": "Lily",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'beta_enterprises_sales_analysis'",
+    "filterparameter": "region=Central, East",
+    "filterparametervalue": "region=IN(Central,East)",
+    "access": "Bold BI User",
+    "tenant": "Beta Enterprise"
+  },
+  {
+    "email": "alex@betaenterprise.com",
+    "password": "Alex@123",
+    "username": "Alex",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'beta_enterprises_sales_analysis'",
+    "filterparameter": "region=North",
+    "filterparametervalue": "region=IN(North)",
+    "access": "Bold BI User",
+    "tenant": "Beta Enterprise"
+  },
+  {
+    "email": "ryan@gammaindustries.com",
+    "password": "Ryan@123",
+    "username": "Ryan",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'gamma_industries_sales_analysis'",
+    "filterparameter": "nil",
+    "filterparametervalue": "",
+    "access": "Bold BI User",
+    "tenant": "Gamma Industries"
+  },
+  {
+    "email": "kate@gammaindustries.com",
+    "password": "Kate@123",
+    "username": "Kate",
+    "groupName": "N/A",
+    "customattribute": "'sales_analysis_db':'gamma_industries_sales_analysis'",
+    "filterparameter": "region=South",
+    "filterparametervalue": "region=IN(South)",
+    "access": "Bold BI User",
+    "tenant": "Gamma Industries"
+  },
+  {
+    "email": "eric@gammaindustries.com",
+    "password": "Eric@123",
+    "username": "Eric",
+    "groupName": "Accounts_Team",
+    "customattribute": "'sales_analysis_db':'gamma_industries_sales_analysis'",
+    "filterparameter": "region=Central, East",
+    "filterparametervalue": "region=IN(Central,East)",
+    "access": "Anonymous",
+    "tenant": "Gamma Industries"
+  },
+  {
+    "email": "jake@gammaindustries.com",
+    "password": "Jake@123",
+    "username": "Jake",
+    "groupName": "Accounts_Team",
+    "customattribute": "'sales_analysis_db':'gamma_industries_sales_analysis'",
+    "filterparameter": "region=North, West",
+    "filterparametervalue": "region=IN(North,West)",
+    "access": "Anonymous",
+    "tenant": "Gamma Industries"
+  },
+  {
+    "email": "paul@deltaindustries.com",
+    "password": "Paul@123",
+    "username": "Paul",
+    "groupName": "Sales_Team",
+    "customattribute": "'sales_analysis_db':'delta_industries_sales_analysis'",
+    "filterparameter": "nil",
+    "filterparametervalue": "",
+    "access": "Anonymous",
+    "tenant": "Delta Industries"
+  },
+  {
+    "email": "nora@deltaindustries.com",
+    "password": "Nora@123",
+    "username": "Nora",
+    "groupName": "Sales_Team",
+    "customattribute": "'sales_analysis_db':'delta_industries_sales_analysis'",
+    "filterparameter": "region=Central, East",
+    "filterparametervalue": "region=IN(Central,East)",
+    "access": "Anonymous",
+    "tenant": "Delta Industries"
+  },
+  {
+    "email": "luke@deltaindustries.com",
+    "password": "Luke@123",
+    "username": "Luke",
+    "groupName": "Sales_Team",
+    "customattribute": "'sales_analysis_db':'delta_industries_sales_analysis'",
+    "filterparameter": "region=North",
+    "filterparametervalue": "region=IN(North)",
+    "access": "Anonymous",
+    "tenant": "Delta Industries"
+  },
+  {
+    "email": "amy@deltaindustries.com",
+    "password": "Amy@123",
+    "username": "Amy",
+    "groupName": "Sales_Team",
+    "customattribute": "'sales_analysis_db':'delta_industries_sales_analysis'",
+    "filterparameter": "region=South, West",
+    "filterparametervalue": "region=IN(South,West)",
+    "access": "Anonymous",
+    "tenant": "Delta Industries"
+  }
+]
