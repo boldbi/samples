@@ -10,7 +10,7 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   // position: relative;
-  display: flex; /* Enable flexbox */
+  //display: flex; /* Enable flexbox */
   justify-content: space-between; /* Add space between the child divs */
   align-items: flex-start;
 }
@@ -120,7 +120,7 @@ flex: 1; /* Allow this div to take up remaining space */
 .divider {
 border: none;
 border-left: 1px solid #ccc; /* Make it vertical */
-height: 600px; /* Extend to the height of the container */
+height: 350px; /* Extend to the height of the container */
 margin: 0 10px; /* Add some horizontal spacing */
 }
 .site-description {
