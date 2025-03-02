@@ -13,13 +13,14 @@ import { FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit{
+  
   username = '';
   password = '';
   loginError='';
   userData: any[] = []; // Store user emails
   filteredData: any[] = []; // Filtered data for dropdown
   selectedUser!: string;
-  fields: Object = { text: 'email', value: 'email' };
+  fields: Object = { text: 'displayText', value: 'email' };
   height: string = '250px';
 
   constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
@@ -30,8 +31,14 @@ export class LoginComponent implements OnInit{
     this.http.get<any[]>('assets/anonymoususer.json').subscribe(data => {
       this.userData = data;
       this.filteredData = data; // Initialize filtered data
-    });
 
+      // Modify the data to include a new 'displayText' field
+      this.filteredData = this.filteredData.map(user => ({
+        ...user,
+        displayText: `${user.email} (${user.access})`
+      }));
+    });
+    
     // Check if the user's token is valid
     if (this.authService.isAuthenticated()) {
       // Token is valid, navigate to the home page
@@ -53,7 +60,7 @@ export class LoginComponent implements OnInit{
     
     // Filter email addresses based on the typed input
     event.updateData(
-      this.userData.filter(user => user.email.toLowerCase().includes(query))
+      this.filteredData.filter(user => user.email.toLowerCase().includes(query))
     );
   }
   shouldShowRowspan(data: any[], index: number): boolean {
