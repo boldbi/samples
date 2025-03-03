@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit{
   selectedUser!: string;
   fields: Object = { text: 'displayText', value: 'email' };
   height: string = '250px';
+  showPopup = false;
 
   constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
@@ -45,6 +46,15 @@ export class LoginComponent implements OnInit{
       this.router.navigate(['/dashboard']); // '/home' is the route to your home page
     }
   }
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
+  }
+
   onUserChange(event: any) {
     console.log('Selected User:', event.value);
     this.selectedUser = event.value;

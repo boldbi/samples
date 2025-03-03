@@ -35,6 +35,22 @@
       </div>
       <button class="btn btn-primary mt-3 w-100">Login</button> -->
       <!-- <a href="" style="padding: 100px;">Show workflow diagram</a> -->
+
+      <div *ngIf="showPopup" class="popup-overlay">
+        <div class="popup-content">
+          <button type="button" class="close-btn" (click)="closePopup()">✖</button>
+          <h3 class="popup-header">Flow Diagram - Anonymous User</h3>
+          <img src="assets/anonymousFlowchart.jpg" alt="Workflow Diagram" class="popup-image" />
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <button type="button" class="btn btn-primary show-popup-btn advanced-btn" (click)="openPopup()">
+      Show Workflow Diagram
+    </button>
+    </div>
+
+
     </div>
     <hr class="divider">
 
@@ -70,7 +86,7 @@
 
   <!-- Table Below -->
   <!-- <div class="table-container mt-4"> -->
-    <div class="table-container mt-4" style="max-height: 200px; overflow-y: auto; border: 1px solid #ddd; font-size:small; margin-top: 20px !important">
+    <div class="table-container mt-4" style="overflow-y: auto; border: 1px solid #ddd; font-size:small; margin-top: 5px !important">
     <table class="table table-bordered">
       <!-- <thead class="bg-primary text-white"> -->
         <thead style="position: sticky; top: 0; background: #007bff; z-index: 10;">
