@@ -1,15 +1,9 @@
 /* login.component.css */
 /* Container for the login form */
 .login-container {
-  // width: 1400px;
-  //margin: auto;
   padding: 20px;
-  //border: 1px solid #ddd;
-  //border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  // position: relative;
-  //display: flex; /* Enable flexbox */
   justify-content: space-between;
   /* Add space between the child divs */
   align-items: flex-start;
@@ -262,7 +256,6 @@ textarea.e-input,
 .user-id-options {
   display: flex;
   gap: 12px;
-  /* Space between radio buttons */
 }
 
 ejs-radiobutton {
@@ -291,6 +284,14 @@ ejs-radiobutton:hover {
 .popup-content {
   background-color: #F2F2F2;
   width: 80%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.popup-content1 {
+  background-color: #F2F2F2;
+  width: 35%;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -369,14 +370,29 @@ input[type="password"]:focus {
   padding-left: 0px !important;
 }
 
+.server-table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.server-table td {
+  border: 1px solid black;
+}
+
 @media (max-width: 1950px) {
   .table-container {
     max-height: 440px;
+  }
+  .server-table {
+    margin-left: 17%;
   }
 }
 
 @media (max-width: 1600px) {
   .table-container {
     max-height: 230px;
+  }
+  .server-table {
+    margin-left: 9%;
   }
 }

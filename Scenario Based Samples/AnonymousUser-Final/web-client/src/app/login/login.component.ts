@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit{
   fields: Object = { text: 'displayText', value: 'email' };
   height: string = '250px';
   showPopup = false;
-
+  showPopup1 = false;
+  
   constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
 
@@ -53,6 +54,14 @@ export class LoginComponent implements OnInit{
 
   closePopup() {
     this.showPopup = false;
+  }
+
+  openPopup1() {
+    this.showPopup1 = true;
+  }
+
+  closePopup1() {
+    this.showPopup1 = false;
   }
 
   onUserChange(event: any) {

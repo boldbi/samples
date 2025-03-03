@@ -1,8 +1,8 @@
 <link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet"/>
 
 <div class="login-container container">
-  <h3><b>Multi tenant Row-Level security in Bold BI Demo</b></h3>
-  <p>This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI</b>. It provides two distinct access approaches:</p>
+  <h3><b>Multi tenant Row-Level security in Bold BI® Demo</b></h3>
+  <p>This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>. It provides two distinct access approaches:</p>
   <div class="d-flex justify-content-between align-items-start">
     <!-- Left Side: Login Form -->
     <div class="login-box" style="width: 30%;">
@@ -23,23 +23,11 @@
         <button type="submit" class="login-button">Login</button>
       </form>
       <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
-      <!-- <div>
-        <label for="email" class="font-weight-bold">User email</label>
-        <select class="form-control">
-          <option>Select the User email address</option>
-        </select>
-      </div>
-      <div class="mt-3">
-        <label for="password" class="font-weight-bold">Password</label>
-        <input type="password" class="form-control">
-      </div>
-      <button class="btn btn-primary mt-3 w-100">Login</button> -->
-      <!-- <a href="" style="padding: 100px;">Show workflow diagram</a> -->
 
       <div *ngIf="showPopup" class="popup-overlay">
         <div class="popup-content">
           <button type="button" class="close-btn" (click)="closePopup()">✖</button>
-          <h3 class="popup-header">Flow Diagram - Anonymous User</h3>
+          <h3 class="popup-header">Flow Diagram - Multi Tenant - Row-Level security</h3>
           <img src="assets/anonymousFlowchart.jpg" alt="Workflow Diagram" class="popup-image" />
         </div>
       </div>
@@ -56,10 +44,15 @@
 
     <!-- Right Side: Paragraph Text -->
     <div class="info-text" style="width: 65%; font-size:small;">
+      <div class="button-container" style="padding-left: 70%;">
+        <button type="button" class="btn btn-primary advanced-btn" (click)="openPopup1()">
+      View Bold BI® Server Details here!
+    </button>
+    </div>
     <ol>
-      <li>Authenticated Users (Bold BI Users):</li>
+      <li>Authenticated Users (Bold BI® Users):</li>
       <ul>
-        <li>Users must be present in Bold BI, and their username must be passed via the authorization server.</li>
+        <li>Users must be present in Bold BI®, and their username must be passed via the authorization server.</li>
         <li>The system applies built-in <b>row-level security (RLS)</b> based on user filters defined in Bold BI.</li>
         <li>Alternatively, external filter parameters can be used to refine user-specific data access.</li>
       </ul>
@@ -84,11 +77,38 @@
     
   </div>
 
+  <div *ngIf="showPopup1" class="popup-overlay">
+    <div class="popup-content1">
+      <button type="button" class="close-btn" (click)="closePopup1()">✖</button>
+      <h3 class="popup-header">Bold BI® Server</h3>
+       <p>The Bold BI® Server below is being used for this Multi tenant Row-Level Security sample. You can log in to the server using the credentials provided below to verify the user and group details in the Bold BI® Server.</p>
+      <div>
+        <table class="server-table" border="1" cellspacing="0" cellpadding="8">
+                <tr>
+                  <td>Server URL</td>
+                  <td><a href="https://demo-analytics.boldbidemo.com/" target="_blank" style="text-decoration: none;">https://demo-analytics.boldbidemo.com</a></td>
+                </tr>
+                <tr>
+                  <td>Username</td>
+                  <td>testuser</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>testuser@boldbi.com</td>
+                </tr>
+                <tr>
+                  <td>Password</td>
+                  <td>@Testuser492</td>
+                </tr>
+        </table>
+      </div>   
+    </div>
+  </div>
+  
+  
   <!-- Table Below -->
-  <!-- <div class="table-container mt-4"> -->
     <div class="table-container mt-4" style="overflow-y: auto; border: 1px solid #ddd; font-size:small; margin-top: 5px !important">
     <table class="table table-bordered">
-      <!-- <thead class="bg-primary text-white"> -->
         <thead style="position: sticky; top: 0; background: #007bff; z-index: 10;">
           <tr>
             <th>Tenant</th>
