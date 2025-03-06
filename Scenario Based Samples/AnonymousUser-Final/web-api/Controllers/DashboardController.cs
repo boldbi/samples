@@ -50,7 +50,7 @@ namespace boldbi.web.api.Controllers
             var embedClass = JsonConvert.DeserializeObject<EmbedClass>(embedQuerString.ToString());
             var embedQuery = embedClass.embedQuerString;
             embedQuery += "&embed_user_email=" + anonymousUserEmail;
-            if (accessType.ToString() == "Anonymous")
+            if (accessType.ToString() == "Anonymous User")
             {
                 embedQuery += "&embed_anonymous_token=true&embed_authorize_group=" + anonymousGroupName;
             }

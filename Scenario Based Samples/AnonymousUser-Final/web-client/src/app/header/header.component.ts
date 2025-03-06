@@ -11,13 +11,26 @@ export class HeaderComponent {
    
   }
   displayUser: any = '';
+  getCustomAttribute: any = '';
+  getFilterParameter: any = '';
+  getUserEmail: any = '';
+  getAccessType: any = '';
+
   constructor(private http: HttpClient) {}
   
   ngOnInit(): void {
     const useremail = localStorage.getItem('AnonymousUsername');
     this.http.get<any[]>('assets/anonymoususer.json').subscribe(data => {
-      const getUseremail = data.find(item => item.email === useremail);
-      this.displayUser = getUseremail.username;
+      const getDetails = data.find(item => item.email === useremail);
+      this.displayUser = getDetails.username;
+      
+      const splitDatabaseName = getDetails.customattribute.replace(/'/g, ""); // Removes all single quotes
+      const [key, value] = splitDatabaseName.split(":").map((str: string) => str.trim());
+      this.getCustomAttribute = value;
+
+      this.getFilterParameter = getDetails.filterparameter;
+      this.getUserEmail = useremail;
+      this.getAccessType = getDetails.access;
     });
   }
 }

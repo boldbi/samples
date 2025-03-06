@@ -1,7 +1,7 @@
 <link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet"/>
 
 <div class="login-container container">
-  <h3><b>Multi tenant Row-Level security in Bold BI® Demo</b></h3>
+  <h3><b>Multi tenant Row-Level Security in Bold BI® Demo</b></h3>
   <p>This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>. It provides two distinct access approaches:</p>
   <div class="d-flex justify-content-between align-items-start">
     <!-- Left Side: Login Form -->
@@ -46,13 +46,13 @@
     <div class="info-text" style="width: 65%; font-size:small;">
       <div class="button-container" style="padding-left: 70%;">
         <button type="button" class="btn btn-primary advanced-btn" (click)="openPopup1()">
-      View Bold BI® Server Details here!
+      View Bold BI Server Details here!
     </button>
     </div>
     <ol>
-      <li>Authenticated Users (Bold BI® Users):</li>
+      <li>Authenticated Users (Bold BI Users):</li>
       <ul>
-        <li>Users must be present in Bold BI®, and their username must be passed via the authorization server.</li>
+        <li>Users must be present in Bold BI, and their username must be passed via the authorization server.</li>
         <li>The system applies built-in <b>row-level security (RLS)</b> based on user filters defined in Bold BI.</li>
         <li>Alternatively, external filter parameters can be used to refine user-specific data access.</li>
       </ul>
@@ -80,8 +80,8 @@
   <div *ngIf="showPopup1" class="popup-overlay">
     <div class="popup-content1">
       <button type="button" class="close-btn" (click)="closePopup1()">✖</button>
-      <h3 class="popup-header">Bold BI® Server</h3>
-       <p>The Bold BI® Server below is being used for this Multi tenant Row-Level Security sample. You can log in to the server using the credentials provided below to verify the user and group details in the Bold BI® Server.</p>
+      <h3 class="popup-header">Bold BI Server</h3>
+       <p>The Bold BI Server below is being used for this Multi tenant Row-Level Security sample. You can log in to the server using the credentials provided below to verify the user and group details in the Bold BI® Server.</p>
       <div>
         <table class="server-table" border="1" cellspacing="0" cellpadding="8">
                 <tr>

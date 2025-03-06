@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: embedded-anonymousbackend-service
+  namespace: anonymoususer-rls-backend
+  labels:
+    app: embedded-anonymous-backend
+spec:
+  type: NodePort
+  ports:
+  - name: embedded-anonymousbackend-port
+    port: 6000
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: embedded-anonymous-backend

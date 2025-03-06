@@ -10,8 +10,14 @@
   
         <!-- Right Part -->
         <ul class="navbar-nav right-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="font-weight: 600;">Welcome {{ displayUser }}</a>
+          <li class="nav-item" >
+            <a class="nav-link" href="#" style="font-weight: 600; display: inline-block;">Welcome {{ displayUser }}</a>
+            <span class="info-icon ion-information-circled"></span>
+            <div class="description-content">
+              <li><b>Custom Attribute &rarr;</b> {{getCustomAttribute}}</li>
+              <li><b>Filter Parameter &rarr;</b> {{getFilterParameter}} </li>
+              <li><b>{{getAccessType}}email &rarr;</b> {{getUserEmail}}</li>
+            </div>
           </li>
         </ul>
       </div>

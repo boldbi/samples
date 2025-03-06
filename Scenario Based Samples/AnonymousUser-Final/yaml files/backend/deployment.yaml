@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anonymoususer-backend-deployment
+  namespace: anonymoususer-rls-backend
+spec:
+  selector:
+    matchLabels:
+      app: embedded-anonymous-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: embedded-anonymous-backend
+    spec:
+      containers:
+      - name: embedded-anonymousbackend
+        image: us-docker.pkg.dev/boldbi-294612/embed-application/boldbi-anonymous-backend:test-backend
+
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+            memory: 750Mi

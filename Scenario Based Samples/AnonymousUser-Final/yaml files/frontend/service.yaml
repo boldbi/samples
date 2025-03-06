@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: embedded-anonymousfrontend-service
+  namespace: anonymoususer-rls-frontend
+  labels:
+    app: embedded-anonymous-frontend
+spec:
+  type: NodePort
+  ports:
+  - name: embedded-anonymousfrontend-port
+    port: 6000
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: embedded-anonymous-frontend
