@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: anonymousbackend-samples
-  namespace: anonymoususer-rls-backend
+  namespace: anonymoususer-rls
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -37,6 +37,6 @@ spec:
             name: embedded-anonymousbackend-service
             port:
               number: 6000
-        path: /anonymous-webapi
+        path: /row-level-security/anonymous-webapi
         pathType: ImplementationSpecific
   

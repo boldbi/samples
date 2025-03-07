@@ -55,6 +55,7 @@ app.UseRouting();
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
+app.UsePathBase("/row-level-security/anonymous-webapi");
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();

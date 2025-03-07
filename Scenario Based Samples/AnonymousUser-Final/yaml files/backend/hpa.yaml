@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: embedded-anonymousbackend-hpa
-  namespace: anonymoususer-rls-backend
+  namespace: anonymoususer-rls
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

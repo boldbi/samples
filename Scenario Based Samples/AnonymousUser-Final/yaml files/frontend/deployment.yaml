@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: anonymoususer-frontend-deployment
-  namespace: anonymoususer-rls-frontend
+  namespace: anonymoususer-rls
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: embedded-anonymousfrontend
-        image: us-docker.pkg.dev/boldbi-294612/embed-application/boldbi-anonymous-frontend:test-frontend
+        image: us-docker.pkg.dev/boldbi-294612/embed-application/boldbi-anonymous-frontend:testfrontend
 
         ports:
         - containerPort: 80
