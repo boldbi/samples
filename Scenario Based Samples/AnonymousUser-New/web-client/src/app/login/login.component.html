@@ -9,7 +9,9 @@
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="mail">Useremail<span style="color: red;">&nbsp;*</span></label>
-            <input type="text" id="useremail" name="useremail" required (input)="onUserChange($event)" />
+            <input type="text" id="useremail" name="useremail" required (input)="onUserChange($event)"  style="height: 40px !important; min-height: 40px;
+    padding: 5px;
+    box-sizing: border-box;"/>
           </div>
           <label for="group" style="display: block; font-weight: bold;">Group<span
               style="color: red;">&nbsp;*</span></label>

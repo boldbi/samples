@@ -1,46 +1,86 @@
 [
   {
-    "dashboardId": "55e40d88-ccd1-4bb6-9b38-0ac9118710eb",
+    "dashboardId": "f5da5023-5716-411f-a225-fdb039db7d89",
     "dashboardName": "Sales Analysis Dashboard",
     "groupName": "Alpha",
     "access": "Datasource Filter => Corporate channel",
     "customattribute": "&Channel=Corporate"
   },
   {
-    "dashboardId": "55e40d88-ccd1-4bb6-9b38-0ac9118710eb",
+    "dashboardId": "f5da5023-5716-411f-a225-fdb039db7d89",
     "dashboardName": "Sales Analysis Dashboard",
     "groupName": "Alpha",
     "access": "Datasource Filter => Retail channel",
     "customattribute": "&Channel=Retail"
   },
   {
-    "dashboardId": "76ce0f73-7f35-4107-b466-b0297408a9bb",
+    "dashboardId": "f5da5023-5716-411f-a225-fdb039db7d89",
+    "dashboardName": "Sales Analysis Dashboard",
+    "groupName": "Alpha",
+    "access": "Datasource Filter => Online channel",
+    "customattribute": "&Channel=Online"
+  },
+  {
+    "dashboardId": "901c18c9-5271-431f-8626-de7b61862acd",
     "dashboardName": "Supply Chain Performance Dashboard",
     "groupName": "Alpha",
     "access": "Dashboard Viewer - Supply Chain Performance Dashboard"
   },
   {
-    "dashboardId": "d84da92c-11f5-4e96-8bc5-40d4e669df2e",
+    "dashboardId": "3a687d00-3921-4508-bdd9-880de28bbac3",
     "dashboardName": "Sales Analysis",
     "groupName": "Gamma",
-    "access": "Custom Attribute => 'sales_analysis_db':'gamma_industries_sales_analysis'",
+    "access": "Custom Attribute => database - gamma_industries_sales_analysis",
     "customattribute": "\"sales_analysis_db\":\"gamma_industries_sales_analysis\""
   },
   {
-    "dashboardId": "d84da92c-11f5-4e96-8bc5-40d4e669df2e",
+    "dashboardId": "3a687d00-3921-4508-bdd9-880de28bbac3",
     "dashboardName": "Sales Analysis",
     "groupName": "Gamma",
-    "access": "Custom Attribute => 'sales_analysis_db':'delta_industries_sales_analysis'",
+    "access": "Custom Attribute => database - delta_industries_sales_analysis",
     "customattribute": "\"sales_analysis_db\":\"delta_industries_sales_analysis\""
   },
   {
-    "dashboardId": "11c429b7-5a87-4134-84e5-36b1271ff3dd",
-    "dashboardName": "School Performance Dashboard",
+    "dashboardId": "026b79db-047f-405e-b5f7-0ce37f3e6978",
+    "dashboardName": "Google Ads Performance Dashboard",
+    "groupName": "Gamma"
+  },
+  {
+    "dashboardId": "85d250e1-d6e5-4736-a310-3cf8dbcee098",
+    "dashboardName": "K-12 Enrollment Dashboard",
     "groupName": "Delta"
   },
   {
-    "dashboardId": "ed171f54-2f0a-46bf-978f-10046d4b36ea",
+    "dashboardId": "e99c0942-dcbc-4378-b3bb-b0cfe00226ea",
+    "dashboardName": "Steps Tracking Dashboard",
+    "groupName": "Delta",
+    "access": "Datasource Filter => Sarah Davis athelete",
+    "customattribute": "&Athelete_Name=Sarah Davis"
+  },
+  {
+    "dashboardId": "e99c0942-dcbc-4378-b3bb-b0cfe00226ea",
+    "dashboardName": "Steps Tracking Dashboard",
+    "groupName": "Delta",
+    "access": "Datasource Filter => James Anderson athelete",
+    "customattribute": "&Athelete_Name=James Anderson"
+  },
+  {
+    "dashboardId": "bd92af21-8f70-4929-9d06-2cdd90aa58ec",
     "dashboardName": "Policy claims Analysis Dashboard",
+    "groupName": "Beta",
+    "access": "Datasource Filter => Property Insurance policy",
+    "customattribute": "&PolicyType=Property Insurance"
+  },
+  {
+    "dashboardId": "bd92af21-8f70-4929-9d06-2cdd90aa58ec",
+    "dashboardName": "Policy claims Analysis Dashboard",
+    "groupName": "Beta",
+    "access": "Datasource Filter => Health Insurance policy",
+    "customattribute": "&PolicyType=Health Insurance"
+  },
+  {
+    "dashboardId": "9ba9e2f7-ccfd-4caf-962e-855dd3924c13",
+    "dashboardName": "Chargebee Subscription ashboard",
     "groupName": "Beta"
   }
 ]
