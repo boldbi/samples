@@ -14,6 +14,7 @@
 }
 
 .left-container {
+  max-width: 1023px;
   background: transparent;
   margin: 10px 20px;
   width: 69%;
@@ -21,16 +22,16 @@
 
 /* Centered Login Container */
 .login-container {
-  height: 90%;
-    width: 80%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .parent-div {
-  width: 374px;;
+  font-size: 90%;
+  margin-top: -32px;
+  max-width: 429px;
 }
 
 /* Form header (e.g., "Login") */
@@ -230,9 +231,10 @@
   margin: 0 10px; /* Add some horizontal spacing */
 }
 .site-description {
-  margin-top: 20px; /* Space between the login button and the explanation */
-  font-size: 14px; /* Smaller font size for the explanation */
-  color: #555; /* Lighter text color for the explanation */
+  padding: 0px 16px;
+  margin-top: 16px;
+  font-size: 90%;
+  color: #555;
   text-align: justify;
 }
 
@@ -302,7 +304,7 @@ input.e-input,textarea.e-input,.e-input-group,.e-input-group.e-control-wrapper,.
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   margin-left: 20px;
   margin-top: 24px;
   font-family: Arial, sans-serif;
@@ -384,14 +386,14 @@ ejs-radiobutton:hover {
 
 .button-container {
   display: flex;
-  justify-content: center; /* Centers the button horizontally */
-}
+  justify-content: center;
 
 input[type="password"]:focus {
   outline: none;
 }
 
 .advanced-btn {
+  margin: auto;
   border: none;
   position: relative;
   font-size: 16px;
@@ -437,20 +439,44 @@ input[type="password"]:focus {
 //   background-color: #e7e7e7;
 // }
 
-.empImage {
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  margin: 5px;
-  margin-right: 12px;
+// .empImage {
+//   border-radius: 50%;
+//   width: 35px;
+//   height: 35px;
+//   margin: 5px;
+//   margin-right: 12px;
+// }
+
+// .empImage-placeholder {
+//   border-radius: 50%;
+//   width: 35px;
+//   height: 35px;
+//   margin: 5px;
+//   margin-right: 12px;
+// }
+
+.empImage-frame {
+  width: 40px;  /* Frame width */
+  height: 40px; /* Frame height */
+  border-radius: 50%; /* Makes it circular */
+  overflow: hidden; /* Ensures the image stays inside the circular frame */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd; /* Background color for empty spaces */
+  margin: 5px 12px 5px 5px;
 }
 
-.empImage-placeholder {
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  margin: 5px;
-  margin-right: 12px;
+/* Image (Stretched Inside the Frame) */
+.empImage {
+  width: 60px;  /* Stretched width */
+  height: 40px; /* Stretched height */
+  object-fit: cover; /* Ensures the image covers the defined area */
+}
+
+.value-container{
+  display: flex;
+  align-items: center;
 }
 
 .user-details {
@@ -495,7 +521,7 @@ input[type="password"]:focus {
 .tenant-name {
   font-size: 0.5 em;
   font-weight: bold;
-  color: #333; /* Dark gray text */
+  color: #333;
   text-transform: uppercase;
 }
 

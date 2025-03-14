@@ -17,8 +17,8 @@
                 <th rowspan="2">Tenants</th>
                 <th style="min-width: 95px;">User Name</th>
                 <th>Password</th>
-                <th style="min-width: 306px;">Custom Attribute</th>
-                <th style="min-width: 300px;">Filter Parameter</th>
+                <th style="min-width: 306px;">Database Mapping (Custom Attribute)</th>
+                <th style="min-width: 300px;">Row-Level Security (Filter Parameters)</th>
               </tr>
             </thead>
             <tbody>
@@ -121,7 +121,7 @@
   
     <div class="parent-div">
       <div class="user-id-selection">
-        <label class="user-id-label">User ID :</label>
+        <label class="user-id-label">Row-Level Filter:</label>
         <div class="user-id-options">
           <ejs-radiobutton label="Region" name="UserID" value="region" cssClass="e-info" (change)="onRadioChange($event)" checked="true"></ejs-radiobutton>
           <ejs-radiobutton label="GUID" name="UserID" value="guid" cssClass="e-info" (change)="onRadioChange($event)"></ejs-radiobutton>
@@ -132,12 +132,14 @@
         <h2 class="login-header">Login</h2>
         <p class="login-subtext">Please select a user to log in</p>
         <form (ngSubmit)="onSubmit()">
-          <label for="useremail" class="user-label">User email</label>
+          <label for="useremail" class="user-label">User Name</label>
           <div style="margin-bottom: 8px;">
-            <ejs-combobox id='games' #sample [dataSource]='userData' [fields]='fields'  [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User email address'" (change)="onUserChange($event)" [itemTemplate]='itemTemplate' [groupTemplate]="groupTemplate" [valueTemplate]='valueTemplate'></ejs-combobox>
+            <ejs-combobox id='games' #sample [dataSource]='userData' [fields]='fields'  [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User'" (change)="onUserChange($event)" [itemTemplate]='itemTemplate' [groupTemplate]="groupTemplate" [valueTemplate]='valueTemplate'></ejs-combobox>
             <ng-template #itemTemplate let-data>
               <div class="item-container">
-                <img class="empImage empImage-placeholder" src="./assets/{{data.username}}-min.jpg" alt="employee" />
+                <div class="empImage-frame">
+                  <img src="./assets/{{data.username}}-min.png" alt="employee" class="empImage">
+              </div>
                 <div class="username">{{ data.username }}</div>
               </div>
             </ng-template>
@@ -147,9 +149,11 @@
               </div>
             </ng-template>
             <ng-template #valueTemplate let-data>
-              <div class="value">
-                <img class="empImage" [src]="'./assets/' + data.username + '-min.jpg'" alt="employee" />
-                <span class="username">{{ data.username }}</span>
+              <div class="value-container">
+                <div class="empImage-frame">
+                  <img [src]="'./assets/' + data.username + '-min.png'" alt="employee" class="empImage">
+              </div>
+                <div class="username">{{ data.username }}</div>
               </div>
             </ng-template>
           </div>
@@ -167,7 +171,12 @@
         </form>
         <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
         <div class="site-description">
-          <p>By leveraging the custom attribute in the embedding application, we have 4 set of database for each tenant and passing the filter access department-specific data. The Admin of each tenant gains insights of all data and other can access their specific data. Please refer the table for custom attributes and filter values.</p>
+          <p>In this sample, we demonstrate embedding a single dashboard in a multi-tenant environment, where each tenant has different users with distinct row-level security. We achieve this by:</p>
+          <ul>
+            <li>Implementing row-level security for anonymous users using filter parameters.</li>
+            <li>Passing custom attributes for database values, enabling seamless database switching for different tenants-Alpha Electronics, Beta Enterprises, Gamma Industries, and Delta Industries-while using the same dashboard.</li>
+          </ul>
+          <p>This approach ensures secure and dynamic data access tailored to each tenant.</p>
         </div>
         <div [class.hidden]="!showPopup" class="popup-overlay">
           <div class="popup-content">
