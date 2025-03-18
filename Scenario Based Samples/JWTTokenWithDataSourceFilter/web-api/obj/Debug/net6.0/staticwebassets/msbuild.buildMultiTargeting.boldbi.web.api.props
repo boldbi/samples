@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\boldbi.web.api.props" />
+</Project>

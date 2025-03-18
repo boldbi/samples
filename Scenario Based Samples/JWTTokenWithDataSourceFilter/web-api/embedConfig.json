@@ -1,1 +1,10 @@
-{"DashboardId":"1c0e97ed-da43-450a-9460-a4506c25d572","ServerUrl":"https://onpremise-demo.boldbi.com/bi","UserEmail":"customattributedemo@boldbi.com","EmbedSecret":"pUu8DKaujKIyXdYAPWgvj1jW2OsCXuq","EmbedType":"component","Environment":"onpremise","ExpirationTime":"10000","SiteIdentifier":"site/site2"}
+{
+  "DashboardId":"",
+  "ServerUrl":"",
+  "UserEmail":"",
+  "EmbedSecret":"",
+  "EmbedType":"",
+  "Environment":"",
+  "ExpirationTime":"",
+  "SiteIdentifier":""
+}

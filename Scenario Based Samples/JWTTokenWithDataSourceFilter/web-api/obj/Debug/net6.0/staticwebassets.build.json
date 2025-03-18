@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0lBOfTXicQOTENzo+Zot7ERQIk1YWGpsQV/57zWcpPI=",
+  "Source": "boldbi.web.api",
+  "BasePath": "_content/boldbi.web.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
