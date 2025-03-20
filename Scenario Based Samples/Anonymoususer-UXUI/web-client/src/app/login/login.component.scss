@@ -1,0 +1,507 @@
+/* login.component.css */
+/* Container for the login form */
+.login-container {
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  /* Add space between the child divs */
+  align-items: flex-start;
+  width: 100% !important;
+  max-width: 100%;
+}
+
+/* Form fields and labels */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Login button */
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #7F56D9;
+  color: #fff;
+  border: 1px solid #d5d0d0;
+  border-radius: 10px;
+  // font-size: 16px;
+  cursor: pointer;
+}
+
+.access-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  color: #7F56D9;
+  border: 1px solid #d5d0d0;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #9e76f8;
+}
+
+/* Error message (if needed) */
+.error-message {
+  color: #ff0000;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Optional: Center the form vertically and horizontally on the page */
+/* You can adjust the styles based on your layout needs */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.credentials table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+.credentials th,
+.credentials td {
+  padding: 8px 12px;
+  /* Reduce padding to avoid excess space */
+  border: 1px solid #ccc;
+  text-align: left;
+  white-space: nowrap;
+  /* Prevents unnecessary wrapping inside cells */
+  user-select: text;
+}
+
+.credentials th {
+  background-color: #0078D7;
+  color: #fff;
+  font-weight: bold;
+}
+
+.credentials tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+  /* Adds a subtle stripe effect */
+}
+
+.credentials tbody td:hover {
+  background-color: #f1f1f1;
+  /* Highlight row on hover */
+}
+
+.child-div,
+.credentials {
+  // border: 1px solid #ccc; /* Add border for clarity */
+  padding: 10px;
+  /* Add padding for spacing */
+}
+
+/* Specific styles for the child divs */
+.child-div {
+  width: 200px;
+  /* Set width */
+}
+
+.credentials {
+  flex: 1;
+  /* Allow this div to take up remaining space */
+}
+
+.divider {
+  border: none;
+  border-left: 1px solid #ccc;
+  /* Make it vertical */
+  height: 350px;
+  /* Extend to the height of the container */
+  margin: 0 10px;
+  /* Add some horizontal spacing */
+}
+
+.site-description {
+  margin-top: 20px;
+  /* Space between the login button and the explanation */
+  font-size: 14px;
+  /* Smaller font size for the explanation */
+  color: #555;
+  /* Lighter text color for the explanation */
+  text-align: justify;
+}
+
+.e-input-group:not(.e-float-icon-left),
+.e-input-group.e-success:not(.e-float-icon-left),
+.e-input-group.e-warning:not(.e-float-icon-left),
+.e-input-group.e-error:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
+  border: 1px solid #ccc !important;
+  border-width: 1px 1px 1px 1px !important;
+  border-radius: 4px;
+}
+
+input.e-input,
+.e-input-group input.e-input,
+.e-input-group.e-control-wrapper input.e-input,
+textarea.e-input,
+.e-input-group textarea.e-input,
+.e-input-group.e-control-wrapper textarea.e-input {
+  border: 0 solid;
+  border-width: 0 0 1px 0;
+  height: 46px !important;
+  line-height: inherit;
+  margin: 0;
+  margin-bottom: 0px !important;
+  outline: none;
+  padding: 10px !important;
+  border-radius: 3px !important;
+  text-indent: 0;
+  width: 100%;
+}
+
+.e-input-group input.e-input,
+.e-input-group textarea.e-input,
+.e-input-group input.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]):not(:focus),
+.e-input-group textarea.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]),
+.e-input-group.e-control-wrapper input.e-input,
+.e-input-group.e-control-wrapper textarea.e-input,
+.e-input-group.e-control-wrapper input.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]):not(:focus),
+.e-input-group.e-control-wrapper textarea.e-input:hover:not(.e-success):not(.e-warning):not(.e-error):not([disabled]) {
+  border: 0 solid !important;
+  border-width: 0 !important;
+}
+
+input.e-input::selection,
+textarea.e-input::selection,
+.e-input-group input.e-input::selection,
+.e-input-group.e-control-wrapper input.e-input::selection,
+.e-float-input input::selection,
+.e-float-input.e-control-wrapper input::selection,
+.e-input-group textarea.e-input::selection,
+.e-input-group.e-control-wrapper textarea.e-input::selection,
+.e-float-input textarea::selection,
+.e-float-input.e-control-wrapper textarea::selection,
+.e-float-input.e-small textarea::selection,
+.e-float-input textarea::selection {
+  background: transparent;
+  /* Removes the background color */
+  color: inherit;
+  /* Keeps the default text color */
+}
+
+.e-outline.e-input-group.e-input-focus:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),
+.e-outline.e-input-group.e-input-focus.e-control-wrapper:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),
+.e-outline.e-input-group.e-input-focus:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled),
+.e-outline.e-input-group.e-control-wrapper.e-input-focus:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) {
+  border-color: transparent !important;
+}
+
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::before,
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::after {
+  background-color: transparent !important;
+  /* Color of the underline */
+  height: 0px;
+  /* Thickness of the underline */
+}
+
+input.e-input,
+textarea.e-input,
+.e-input-group,
+.e-input-group.e-control-wrapper,
+.e-input-group.e-disabled,
+.e-input-group.e-control-wrapper.e-disabled {
+  font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+  font-size: 14px;
+  font-weight: normal
+}
+
+.e-input-group .e-input-group-icon:last-child,
+.e-input-group.e-control-wrapper .e-input-group-icon:last-child,
+.e-input-group.e-small .e-input-group-icon:last-child,
+.e-input-group.e-control-wrapper.e-small .e-input-group-icon:last-child {
+  margin: 6px !important;
+}
+
+.user-id-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Space between the label and options */
+  margin-bottom: 4px;
+  /* Space below the component */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.user-id-label {
+  font-weight: bold;
+}
+
+.user-id-options {
+  display: flex;
+  gap: 12px;
+}
+
+ejs-radiobutton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+ejs-radiobutton:hover {
+  color: #007BFF !important;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  width: 80%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.popup-content1 {
+  background-color: #F2F2F2;
+  width: 35%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.popup-header {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.popup-image {
+  width: 100%;
+  height: 510px;
+  display: block;
+  margin: 0 auto;
+  position: sticky;
+  border: 1px solid #d5d0d0;
+  border-radius: 8px;
+  background-color: cornsilk;
+}
+
+.show-popup-btn {
+  margin: 10px;
+}
+
+// .button-container {
+//   display: flex;
+//   justify-content: center;
+// }
+
+input[type="password"]:focus {
+  outline: none;
+}
+
+.advanced-btn {
+  border: none;
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: var(--Component-colors-Components-Buttons-Primary-button-primary-bg, #7F56D9);
+}
+
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.toggle {
+  display: inline-flex;
+}
+
+.e-control.e-combobox {
+  padding-left: 0px !important;
+}
+
+.server-table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.server-table td {
+  border: 1px solid black;
+}
+
+@media (max-width: 1950px) {
+  .table-container {
+    max-height: 440px;
+  }
+  .server-table {
+    margin-left: 17%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .table-container {
+    max-height: 508px;
+  }
+  .server-table {
+    margin-left: 9%;
+  }
+}
+
+/*new css */
+child-div, .scrollable-table {
+  // border: 1px solid #ccc; /* Add border for clarity */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.child-div {
+  border: 1px solid #d5d0d0;
+  border-radius: 8px;
+  padding: 0px;
+  background-color: #e1e1e1;
+  width: 100%;
+  height: 500px;
+}
+
+.child-div::before {
+  content: "";
+  position: absolute;
+  top: 57%;
+  left: 77%;
+  width: 380px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  z-index: -1;
+}
+
+.login-header {
+  text-align: left;
+  font-size: 24px;
+}
+
+.login-subtext {
+  font-size: 16px;
+  color: #555; /* Slightly muted text color */
+  text-align: left;
+}
+
+.user-label {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  display: block;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  // background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.empImage-frame {
+  width: 40px;  /* Frame width */
+  height: 40px; /* Frame height */
+  border-radius: 50%; /* Makes it circular */
+  overflow: hidden; /* Ensures the image stays inside the circular frame */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd; /* Background color for empty spaces */
+  margin: 5px 12px 5px 5px;
+}
+
+.empImage {
+  width: 60px;  /* Stretched width */
+  height: 40px; /* Stretched height */
+  object-fit: cover; /* Ensures the image covers the defined area */
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.popup-text {
+  flex: 1; /* Takes remaining space */
+  min-width: 200px; /* Ensures text doesn't shrink too much */
+}
+
+.e-btn-group {
+  display: contents;
+  gap: 10px; /* Space between buttons */
+  white-space: nowrap; /* Prevents buttons from wrapping */
+}
+
+.e-btn {
+  height: fit-content;
+    border-radius: 20px;
+}
