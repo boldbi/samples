@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit{
   userData: any[] = []; // Store user emails
   filteredData: any[] = []; // Filtered data for dropdown
   selectedUser!: string;
-  fields: Object = { text: 'displayText', value: 'email' };
-  height: string = '250px';
+  fields: Object = { groupBy:'tenant', text: 'displayText', value: 'email' };
+  height: string = '180px';
   showPopup = false;
   showPopup1 = false;
   popupselectedOption: string = 'structure'; // Default selection
@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit{
 
   openPopup() {
     this.showPopup = true;
+    this.popupselectedOption = "structure";
     // let buttons: NodeListOf<Element> = document.querySelectorAll('label.e-btn');
     // let button: HTMLElement;
     // for (let i: number = 0; i < buttons.length; i++) {
@@ -75,10 +76,10 @@ export class LoginComponent implements OnInit{
     this.showPopup1 = false;
   }
 
-  // userpopup() {
-  //   this.showPopup1 = true;
-  //   this.popupselectedOption = "userdetails";
-  // }
+  userdetailpopup() {
+    this.showPopup = true;
+    this.popupselectedOption = "userdetails";
+  }
 
   onUserChange(event: any) {
     console.log('Selected User:', event.value);

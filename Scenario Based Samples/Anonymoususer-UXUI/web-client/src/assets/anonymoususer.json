@@ -8,7 +8,8 @@
     "filterparameter": "All region (Preconfigured RLS)",
     "filterparametervalue": "",
     "access": "Bold BI User",
-    "tenant": "Alpha Electronics"
+    "tenant": "Alpha Electronics",
+    "role": "Admin"
   },
   {
     "email": "grace@alphaelectronics.com",
@@ -19,7 +20,8 @@
     "filterparameter": "region=North, East (Preconfigured RLS)",
     "filterparametervalue": "region=IN(North,East)",
     "access": "Bold BI User",
-    "tenant": "Alpha Electronics"
+    "tenant": "Alpha Electronics",
+    "role": "Business Lead"
   },
   {
     "email": "henry@alphaelectronics.com",
@@ -30,7 +32,8 @@
     "filterparameter": "region=South, West (Preconfigured RLS)",
     "filterparametervalue": "region=IN(South,West)",
     "access": "Bold BI User",
-    "tenant": "Alpha Electronics"
+    "tenant": "Alpha Electronics",
+    "role": "User1"
   },
   {
     "email": "leo@alphaelectronics.com",
@@ -41,7 +44,8 @@
     "filterparameter": "region=Central (Preconfigured RLS)",
     "filterparametervalue": "region=IN(Central)",
     "access": "Bold BI User",
-    "tenant": "Alpha Electronics"
+    "tenant": "Alpha Electronics",
+    "role": "User2"
   },
   {
     "email": "ella@betaenterprise.com",
@@ -52,7 +56,8 @@
     "filterparameter": "All region (Client-configured RLS)",
     "filterparametervalue": "",
     "access": "Anonymous User",
-    "tenant": "Beta Enterprise"
+    "tenant": "Beta Enterprise",
+    "role": "Admin"
   },
   {
     "email": "sam@betaenterprise.com",
@@ -63,7 +68,8 @@
     "filterparameter": "region=South, West (Client-configured RLS)",
     "filterparametervalue": "region=IN(South,West)",
     "access": "Anonymous User",
-    "tenant": "Beta Enterprise"
+    "tenant": "Beta Enterprise",
+    "role": "Business Lead"
   },
   {
     "email": "lily@betaenterprise.com",
@@ -74,7 +80,8 @@
     "filterparameter": "region=Central, East (Preconfigured RLS)",
     "filterparametervalue": "region=IN(Central,East)",
     "access": "Bold BI User",
-    "tenant": "Beta Enterprise"
+    "tenant": "Beta Enterprise",
+    "role": "User1"
   },
   {
     "email": "alex@betaenterprise.com",
@@ -85,7 +92,8 @@
     "filterparameter": "region=North (Preconfigured RLS)",
     "filterparametervalue": "region=IN(North)",
     "access": "Bold BI User",
-    "tenant": "Beta Enterprise"
+    "tenant": "Beta Enterprise",
+    "role": "User2"
   },
   {
     "email": "ryan@gammaindustries.com",
@@ -96,7 +104,8 @@
     "filterparameter": "All region (Preconfigured RLS)",
     "filterparametervalue": "",
     "access": "Bold BI User",
-    "tenant": "Gamma Industries"
+    "tenant": "Gamma Industries",
+    "role": "Admin"
   },
   {
     "email": "kate@gammaindustries.com",
@@ -107,7 +116,8 @@
     "filterparameter": "region=South (Preconfigured RLS)",
     "filterparametervalue": "region=IN(South)",
     "access": "Bold BI User",
-    "tenant": "Gamma Industries"
+    "tenant": "Gamma Industries",
+    "role": "Business Lead"
   },
   {
     "email": "eric@gammaindustries.com",
@@ -118,7 +128,8 @@
     "filterparameter": "region=Central, East (Client-configured RLS)",
     "filterparametervalue": "region=IN(Central,East)",
     "access": "Anonymous User",
-    "tenant": "Gamma Industries"
+    "tenant": "Gamma Industries",
+    "role": "User1"
   },
   {
     "email": "jake@gammaindustries.com",
@@ -129,7 +140,8 @@
     "filterparameter": "region=North, West (Client-configured RLS)",
     "filterparametervalue": "region=IN(North,West)",
     "access": "Anonymous User",
-    "tenant": "Gamma Industries"
+    "tenant": "Gamma Industries",
+    "role": "User2"
   },
   {
     "email": "paul@deltaindustries.com",
@@ -140,7 +152,8 @@
     "filterparameter": "All region (Client-configured RLS)",
     "filterparametervalue": "",
     "access": "Anonymous User",
-    "tenant": "Delta Industries"
+    "tenant": "Delta Industries",
+    "role": "Admin"
   },
   {
     "email": "nora@deltaindustries.com",
@@ -151,7 +164,8 @@
     "filterparameter": "region=Central, East (Client-configured RLS)",
     "filterparametervalue": "region=IN(Central,East)",
     "access": "Anonymous User",
-    "tenant": "Delta Industries"
+    "tenant": "Delta Industries",
+    "role": "Business Lead"
   },
   {
     "email": "luke@deltaindustries.com",
@@ -162,7 +176,8 @@
     "filterparameter": "region=North (Client-configured RLS)",
     "filterparametervalue": "region=IN(North)",
     "access": "Anonymous User",
-    "tenant": "Delta Industries"
+    "tenant": "Delta Industries",
+    "role": "User1"
   },
   {
     "email": "amy@deltaindustries.com",
@@ -173,6 +188,7 @@
     "filterparameter": "region=South, West (Client-configured RLS)",
     "filterparametervalue": "region=IN(South,West)",
     "access": "Anonymous User",
-    "tenant": "Delta Industries"
+    "tenant": "Delta Industries",
+    "role": "User2"
   }
 ]
