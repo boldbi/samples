@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { Switch } from '@syncfusion/ej2-buttons';
@@ -16,7 +16,8 @@ import { FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 
 })
 export class LoginComponent implements OnInit{
-  
+ // @ViewChild('sample', { static: false }) comboBox!: ElementRef;
+
   username = '';
   password = '';
   loginError='';
@@ -33,6 +34,17 @@ export class LoginComponent implements OnInit{
   constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
 
+  // ngAfterViewInit() {
+  //   setTimeout(() => {
+  //     const comboBoxElement = this.comboBox.nativeElement.closest('.e-input-group');
+  //     if (comboBoxElement) {
+  //       const infoIcon = document.createElement('span');
+  //       infoIcon.className = 'info-icon ion-information-circled';
+  //       comboBoxElement.appendChild(infoIcon);
+  //     }
+  //   });
+  // }
+  
   ngOnInit(): void {
     //this.userData = userData;
     this.http.get<any[]>('assets/anonymoususer.json').subscribe(data => {
@@ -88,7 +100,41 @@ export class LoginComponent implements OnInit{
     
     // Find the selected user's password and set it
     const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
-    this.password = selectedUserObj ? selectedUserObj.password : ''
+    this.password = selectedUserObj ? selectedUserObj.password : '';
+
+
+   // let dropdownDiv = document.querySelector(".e-input-group.e-control-wrapper.e-ddl.e-input-focus.e-valid-input");
+      
+      // if (dropdownDiv) {
+      //   // Check if the span is already added
+      //   let existingSpan = dropdownDiv.querySelector('.info-icon');
+      //   if (!existingSpan) {
+      //     // Create the span element
+      //     let infoIcon = document.createElement('span');
+      //     infoIcon.className = 'info-icon ion-information-circled';
+          
+      //     // Append the span inside the div
+      //     dropdownDiv.appendChild(infoIcon);
+      //   }
+      // }
+      
+      // if (dropdownDiv) {
+      //   // Select the .e-clear-icon span
+      //   let clearIcon = dropdownDiv.querySelector('.e-clear-icon');
+        
+      //   if (clearIcon) {
+      //     // Check if the span is already added
+      //     let existingSpan = dropdownDiv.querySelector('.info-icon');
+      //     if (!existingSpan) {
+      //       // Create the span element
+      //       let infoIcon = document.createElement('span');
+      //       infoIcon.className = 'info-icon ion-information-circled';
+            
+      //       // Insert the new span **right after** the .e-clear-icon
+      //       clearIcon.insertAdjacentElement('afterend', infoIcon);
+      //     }
+      //   }
+      // }
   }
 
   onFiltering(event: FilteringEventArgs) {
@@ -107,7 +153,7 @@ export class LoginComponent implements OnInit{
     console.log('Selected Email:', this.selectedUser);
     console.log('Password:', this.password);
     if (!this.username || !this.password) {
-      this.loginError = 'Both UserName and Password are required.';
+      this.loginError = 'Both Useremail and Password are required.';
       return; // Don't submit the form if fields are empty
     }
     this.authService.login(this.username, this.password).subscribe(

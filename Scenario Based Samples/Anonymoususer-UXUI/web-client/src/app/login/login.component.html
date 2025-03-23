@@ -2,30 +2,30 @@
 
 <div class="login-container container">
   <div class="title" style="width: 900px; display: ruby;">
-  <h3 style="font-size: 30px;"><b>Multi Tenant Row-Level Security in Bold BI® Demo</b></h3>
-  <img src="../../assets/BoldBI-Logo.png" alt="employee" style="height: 40px; margin-left: 42%;">
+  <h3 class="heading" ><b>Multi Tenant Row-Level Security in Bold BI® Demo</b></h3>
+  <img src="../../assets/BoldBI-Logo.png" alt="employee" class="bolbilogo">
 
-  <p>This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>.</p>
+  <p class="paragraph">This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>.</p>
 </div>
   <div class="d-flex justify-content-between align-items-start">
     <!-- Left Side -->
-    <div class="info-text" style="width: 63%; font-size:small; border: 1px solid #ccc; border-radius: 8px; height: 500px;">
-      <img src="../../assets/Illustration.jpg" alt="employee" style="margin: 5% 5% 5% 20%;">
+    <div class="info-text" style="width: 63%; font-size:small; border: 1px solid #ccc;">
+      <img src="../../assets/Illustration.jpg" alt="employee" class="illustration-img">
     </div>
     
     <!-- Right Side -->
-    <div class="login-box" style="width: 34%; height: 500px; margin-left: 40px;">
+    <div class="login-box" style="width: 34%; margin-left: 40px;">
       <div class="child-div" >
-        <div class="divide2" style="padding: 20px; border-radius: 8px 8px 0px 0px; background-color: white; height: 88.6%;">
+        <div class="divide2" style="padding: 20px; border-radius: 8px 8px 0px 0px; background-color: white;">
         <h2 class="login-header">Login</h2>
         <p class="login-subtext">Please select a user to log in</p>
         <form (ngSubmit)="onSubmit()">
           <label for="useremail" class="user-label">User email</label>
-          <div style="margin-bottom: 8px;">
+          <div class="email-div">
             <ejs-combobox id='games' #sample [dataSource]='filteredData' name="useremail" [fields]='fields' [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User'" [(ngModel)]="selectedUser" 
             (change)="onUserChange($event)" [itemTemplate]='itemTemplate' [groupTemplate]="groupTemplate" [valueTemplate]='valueTemplate' allowFiltering="true" (filtering)="onFiltering($event)"></ejs-combobox>
             <ng-template #itemTemplate let-data>
-              <div class="item-container" style="height: 30px;">
+              <div class="item-container">
                 <div class="empImage-frame">
                   <img src="../../assets/{{data.username}}.jpg" alt="employee" class="empImage">
                 </div>
@@ -42,7 +42,7 @@
                 <div class="empImage-frame">
                   <img [src]="'./assets/' + data.username + '.jpg'" alt="employee" class="empImage">
               </div>
-                <div class="username" style="padding-left: 1%;"> {{ data.username }}</div>
+                <div class="username" style="padding-left: 2%;"> {{ data.username }}<span style="font-size: 16px; color: #475467; font-weight: 300;"> {{ data.role }} </span></div>
               </div>
             </ng-template>
           </div>
@@ -56,18 +56,18 @@
               required
             />
           </div>
+          <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+<br><br>
           <button type="submit" class="login-button">Login</button><br>
         </form>
         <button type="submit" class="access-button" (click)="openPopup()">Access Approaches</button>
 
-      <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
     </div>
       <div *ngIf="showPopup" class="popup-overlay">
         <div class="popup-content">
           
-          <button type="button" class="close-btn" (click)="closePopup()"> <!--✖ -->
+          <button type="button" class="close-btn" (click)="closePopup()">
             <span class="icon">&times;</span>
-
           </button>
 
           <div class="control-section button-group-container">
@@ -75,8 +75,8 @@
                 <div id="button-group-control" style="width: 69%;">
                     <div class="row">
                        <div class="popup-text">
-                      <h3><b>Embedding Sample</b></h3>
-                        <p>This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>.</p>
+                      <h3 class="popup-heading"><b>Embedding Sample</b></h3>
+                        <p class="popup-paragraph">This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>.</p>
                       </div>                    
                         <div id="text" class="e-btn-group">
                           <input type="radio" id="left" name="align" value="structure" [(ngModel)]="popupselectedOption" />
@@ -91,7 +91,7 @@
             </div>
           </div>
         <div *ngIf="popupselectedOption === 'structure'" class="popup-image" style="padding: 20px;">
-          
+          <p style="padding-left: 0px;">It provides two distinct access approaches:</p>
          <li class="structure-heading">Step 1: Authenticated Users (Bold BI Users):</li>
             <ul>
               <li>Users must be present in Bold BI, and their username must be passed via the authorization server.</li>
@@ -119,11 +119,9 @@
           <img src="assets/anonymousFlowchart.jpg" alt="Workflow Diagram" style="width: 100%;" />
         </div>
         <div *ngIf="popupselectedOption === 'userdetails'" class="popup-image">
-          <div class="table-container mt-4" style=" border-radius: 8px; font-size:small; margin-top: 0px !important">
-            <!-- <div class="table-container mt-4"> -->
+          <div class="table-container mt-4" style=" border-radius: 8px; font-size:small; margin-top: 0px !important; text-align: center;">
             <table class="table table-bordered" style="margin-bottom: 0px">
-                <thead style="position: sticky; top: 0; background: #007bff; z-index: 10;">
-                  <!-- <thead> -->
+                <thead style="position: sticky; top: 0; z-index: 10; vertical-align:middle;">
                   <tr>
                     <th>Tenant</th>
                     <th>Username</th>
@@ -152,41 +150,18 @@
                   </tr>
                 </tbody>
             </table>
-
-            <!-- <div class="table-body">
-              <table class="table table-bordered">
-                <tbody>
-                  <tr *ngFor="let user of userData; let i = index">
-                    <td *ngIf="shouldShowRowspan(userData, i)" [attr.rowspan]="4">
-                      {{ user.tenant }}
-                    </td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
-                    <td *ngIf="shouldShowRowspan(userData, i)" [attr.rowspan]="4">
-                      {{ user.customattribute }}
-                    </td>
-                    <td>{{ user.filterparameter }}</td>
-                    <td>
-                      {{ user.groupName }}
-                    </td>
-                    <td>{{ user.access }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div> -->
-
           </div>
         </div>
         </div>
       </div>
       
-      <div class="button-container" style="background-color: #f9f9f9; border-radius: 0px 0px 8px 8px; padding-left: 3%;">
-        <button type="button" class="btn btn-primary show-popup-btn advanced-btn" style="margin: 0px;
+      <div class="button-container">
+        <button type="button" class="btn show-popup-btn advanced-btn login-bottombuttons" style="margin: 0px;
     padding: 0px;" (click)="openPopup1()">
       Enter BoldBI Server
     </button>
     
-    <button type="button" class="btn btn-primary show-popup-btn advanced-btn" style="padding-left: 41%;"
+    <button type="button" class="btn show-popup-btn advanced-btn login-bottombuttons" style="padding-left: 41%;"
      (click)="userdetailpopup()">
       User's Details
     </button>
