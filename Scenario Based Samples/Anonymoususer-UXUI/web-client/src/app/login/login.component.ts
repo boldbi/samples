@@ -21,8 +21,17 @@ export class LoginComponent implements OnInit{
   username = '';
   password = '';
   loginError='';
+
+  dropdownDataTenant = '';
+  dropdownDataUsername = '';
+  dropdownDataUseremail = '';
+  dropdownDataCustAttr = '';
+  dropdownDataRole = '';
+  dropdownDataFilterParameter = '';
+
   userData: any[] = []; // Store user emails
   filteredData: any[] = []; // Filtered data for dropdown
+  dropdownData: any[] = [];
   selectedUser!: string;
   fields: Object = { groupBy:'tenant', text: 'displayText', value: 'email' };
   height: string = '180px';
@@ -34,16 +43,44 @@ export class LoginComponent implements OnInit{
   constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
 
-  // ngAfterViewInit() {
-  //   setTimeout(() => {
-  //     const comboBoxElement = this.comboBox.nativeElement.closest('.e-input-group');
-  //     if (comboBoxElement) {
-  //       const infoIcon = document.createElement('span');
-  //       infoIcon.className = 'info-icon ion-information-circled';
-  //       comboBoxElement.appendChild(infoIcon);
-  //     }
-  //   });
-  // }
+  ngAfterViewInit() {
+    const container = document.getElementById("games"); // Parent container
+
+    if (container) {
+      const observer = new MutationObserver(() => {
+
+  //  const interval = setInterval(() => {
+
+  let infoIcon = document.getElementById("email-infoicon");
+  let infoTooltip = document.getElementById("dropdown-infoTooltip");
+
+//   console.log("infoIcon:", infoIcon);
+// console.log("infoTooltip:", infoTooltip);
+
+    if (infoIcon && infoTooltip) {
+      infoIcon.addEventListener("mouseenter", () => {
+        infoTooltip?.classList.add("show");
+      });
+
+      infoIcon.addEventListener("mouseleave", () => {
+        infoTooltip?.classList.remove("show");
+      });
+    
+      observer.disconnect(); // Stop observing once the icon is found
+
+ // clearInterval(interval); // Stop checking once the icon is found
+// }
+// }, 500); // Check every 500ms
+//   }
+
+}
+});
+
+observer.observe(container, { childList: true, subtree: true });
+} else {
+console.error("Container not found!");
+}
+  }
   
   ngOnInit(): void {
     //this.userData = userData;
@@ -97,44 +134,62 @@ export class LoginComponent implements OnInit{
     console.log('Selected User:', event.value);
     this.selectedUser = event.value;
     this.username = event.value;
-    
+    let dropdownDiv = document.querySelector(".email-div");
+
+    if(event.item != null) {
     // Find the selected user's password and set it
     const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
+    //this.dropdownData = selectedUserObj;
+    this.dropdownDataTenant = selectedUserObj.tenant;
+    this.dropdownDataUsername = selectedUserObj.username;
+    this.dropdownDataUseremail = selectedUserObj.email;
+    this.dropdownDataCustAttr = selectedUserObj.customattribute;
+    this.dropdownDataRole = selectedUserObj.role;
+    this.dropdownDataFilterParameter = selectedUserObj.filterparameter;
+
+    console.log("dfederf ",this.dropdownData);
     this.password = selectedUserObj ? selectedUserObj.password : '';
 
+    //let dropdownDiv = document.querySelector(".email-div");
+      
+    if (dropdownDiv) {
+      // Select the .e-clear-icon span
+      let clearIcon = dropdownDiv.querySelector('.e-clear-icon');
+      
+      if (clearIcon) {
+        // Check if the span is already added
+        let existingSpan = dropdownDiv.querySelector('.dropdown-info-icon');
+        if (!existingSpan) {
+          // Create the span element
+          let infoIcon = document.createElement('span');
+          infoIcon.className = 'dropdown-info-icon ion-information-circled';
+          infoIcon.id = 'email-infoicon';
 
-   // let dropdownDiv = document.querySelector(".e-input-group.e-control-wrapper.e-ddl.e-input-focus.e-valid-input");
-      
-      // if (dropdownDiv) {
-      //   // Check if the span is already added
-      //   let existingSpan = dropdownDiv.querySelector('.info-icon');
-      //   if (!existingSpan) {
-      //     // Create the span element
-      //     let infoIcon = document.createElement('span');
-      //     infoIcon.className = 'info-icon ion-information-circled';
+          infoIcon.style.paddingLeft = "6px";
+          infoIcon.style.paddingTop = "2.5%";// "10px";
+          infoIcon.style.cursor = "pointer";
+          infoIcon.style.display = "block";
           
-      //     // Append the span inside the div
-      //     dropdownDiv.appendChild(infoIcon);
-      //   }
-      // }
-      
-      // if (dropdownDiv) {
-      //   // Select the .e-clear-icon span
-      //   let clearIcon = dropdownDiv.querySelector('.e-clear-icon');
-        
-      //   if (clearIcon) {
-      //     // Check if the span is already added
-      //     let existingSpan = dropdownDiv.querySelector('.info-icon');
-      //     if (!existingSpan) {
-      //       // Create the span element
-      //       let infoIcon = document.createElement('span');
-      //       infoIcon.className = 'info-icon ion-information-circled';
-            
-      //       // Insert the new span **right after** the .e-clear-icon
-      //       clearIcon.insertAdjacentElement('afterend', infoIcon);
-      //     }
-      //   }
-      // }
+          // Insert the new span **right after** the .e-clear-icon
+          clearIcon.insertAdjacentElement('afterend', infoIcon);
+        }
+        else {
+          let existingSpan = dropdownDiv?.querySelector('.dropdown-info-icon')  as HTMLSpanElement;
+          if (existingSpan) {
+            // Show the tooltip
+          existingSpan.style.display = "block";
+          }
+        }
+      }
+    }
+  }
+  else {
+    let existingSpan = dropdownDiv?.querySelector('.dropdown-info-icon')  as HTMLSpanElement;
+    if (existingSpan) {
+      // Show the tooltip
+     existingSpan.style.display = "none";
+    }
+  }
   }
 
   onFiltering(event: FilteringEventArgs) {

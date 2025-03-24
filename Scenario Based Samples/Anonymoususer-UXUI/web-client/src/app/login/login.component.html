@@ -45,7 +45,9 @@
                 <div class="username" style="padding-left: 2%;"> {{ data.username }}<span style="font-size: 16px; color: #475467; font-weight: 300;"> {{ data.role }} </span></div>
               </div>
             </ng-template>
+            
           </div>
+         
           <div class="form-group">
             <label for="password" class="user-label">Password</label>
             <input
@@ -116,13 +118,13 @@
             </ul>
         </div>
         <div *ngIf="popupselectedOption === 'workflowdiagram'" class="popup-image">
-          <img src="assets/anonymousFlowchart.jpg" alt="Workflow Diagram" style="width: 100%;" />
+          <img src="assets/anonymousFlowchart.jpg" alt="Workflow Diagram" style="width: 100%; height: 100%;" />
         </div>
         <div *ngIf="popupselectedOption === 'userdetails'" class="popup-image">
           <div class="table-container mt-4" style=" border-radius: 8px; font-size:small; margin-top: 0px !important; text-align: center;">
             <table class="table table-bordered" style="margin-bottom: 0px">
                 <thead style="position: sticky; top: 0; z-index: 10; vertical-align:middle;">
-                  <tr>
+                  <tr style="border-width: inherit;">
                     <th>Tenant</th>
                     <th>Username</th>
                     <th>User Email</th>
@@ -200,4 +202,75 @@
       </div>   
     </div>
   </div>
+
+
+  <!-- <span class="dropdown-info-icon ion-information-circled"></span> -->
+            <div id="dropdown-infoTooltip" class="dropdown-info-content">
+              <!-- <li><b>Custom Attribute &rarr;</b> </li> -->
+              <!-- <table class="server-table" border="1" cellspacing="0" cellpadding="8">
+                <tr>
+                  <td>Username</td>
+                  <td>testuser</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>testuser@boldbi.com</td>
+                </tr>
+                <tr>
+                  <td>Password</td>
+                  <td>@Testuser492</td>
+                </tr>
+        </table> -->
+        <table class="table table-bordered" style="margin-bottom: 0px">
+          <!-- <thead style="position: sticky; top: 0; z-index: 10; vertical-align:middle;">
+            <tr>
+              <th>Tenant</th>
+              <th>Username</th>
+              <th>User Email</th>
+              <th>Custom Attribute</th>
+              <th>Role</th>
+              <th>Filter Parameter</th>
+            </tr>
+          </thead> -->
+          <tbody>
+            <tr>
+              <td class="info-column1">Tenant</td>
+              <td>
+                {{ this.dropdownDataTenant }}
+              </td>
+            </tr>
+            <tr>
+              <td class="info-column1">Username</td>
+              <td>
+                {{ this.dropdownDataUsername }}
+              </td>
+            </tr>
+            <tr>
+              <td class="info-column1">User Email</td>
+              <td>
+                {{ this.dropdownDataUseremail }}
+              </td>
+            </tr>
+            <tr>
+              <td class="info-column1">Custom Attribute</td>
+              <td>
+                {{ this.dropdownDataCustAttr }}
+              </td>
+            </tr>
+            <tr>
+              <td class="info-column1">Role</td>
+              <td>
+                {{ this.dropdownDataRole }}
+              </td>
+            </tr>
+            <tr>
+              <td class="info-column1">Filter Parameter</td>
+              <td>
+                {{ this.dropdownDataFilterParameter }}
+              </td>
+            </tr>
+          </tbody>
+      </table>
+            </div>
+
 </div>
