@@ -115,8 +115,31 @@ export class LoginComponent implements OnInit{
     
     this.onRadioChange({ value: this.userID });
     this.util.disableCssFiles();
-    const img = new Image();
-    img.src = 'assets/custom-attribute-workflow.jpg';
+    const imagePaths = [
+      'assets/Amanda-min.png',
+      'assets/Chris-min.png',
+      'assets/custom-attribute-workflow.jpg',
+      'assets/David-min.png',
+      'assets/Emily-min.png',
+      'assets/James Wilson-min.png',
+      'assets/Jessica-min.png',
+      'assets/John-min.png',
+      'assets/Kevin-min.png',
+      'assets/Lisa-min.png',
+      'assets/Matthew-min.png',
+      'assets/Maximize.svg',
+      'assets/Michel-min.png',
+      'assets/Minimize.svg',
+      'assets/Olivia Martin-min.png',
+      'assets/Rachel Adams-min.png',
+      'assets/Robert Jones-min.png',
+      'assets/Sarah-min.png',
+      'assets/Sophia-min.png'
+    ];
+    imagePaths.forEach((path) => {
+      const img = new Image();
+      img.src = path;
+    });
     if (this.authService.isAuthenticated()) {
       const userTenant = this.getUserTenant();
       this.util.enableCssFiles();
