@@ -52,10 +52,10 @@ namespace boldbi.web.api.Controllers
             embedQuery += "&embed_user_email=" + anonymousUserEmail;
             if (accessType.ToString() == "Anonymous User")
             {
-                embedQuery += "&embed_anonymous_token=true&embed_authorize_group=" + anonymousGroupName;
+                embedQuery += "&embed_anonymous_token=true&embed_authorize_group=" + anonymousGroupName + "&embed_datasource_filter=[{" + filterParameter + "}]";
             }
-            
-            embedQuery += "&embed_custom_attribute=[{" + customAttribute + "}]" + "&embed_datasource_filter=[{" + filterParameter + "}]";
+
+            embedQuery += "&embed_custom_attribute=[{" + customAttribute + "}]";
 
             //To set embed_server_timestamp to overcome the EmbedCodeValidation failing while different timezone using at client application.
             double timeStamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;

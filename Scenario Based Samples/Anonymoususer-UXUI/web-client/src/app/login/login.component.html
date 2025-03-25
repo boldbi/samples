@@ -3,14 +3,14 @@
 <div class="login-container container">
   <div class="title" style="width: 900px; display: ruby;">
   <h3 class="heading" ><b>Multi Tenant Row-Level Security in Bold BI® Demo</b></h3>
-  <img src="../../assets/BoldBI-Logo.png" alt="employee" class="bolbilogo">
+  <img src="./assets/BoldBI-Logo.png" alt="boldbi-logo" class="bolbilogo">
 
   <p class="paragraph">This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant environment using <b>Bold BI®</b>.</p>
 </div>
   <div class="d-flex justify-content-between align-items-start">
     <!-- Left Side -->
     <div class="info-text" style="width: 63%; font-size:small; border: 1px solid #ccc;">
-      <img src="../../assets/Illustration.jpg" alt="employee" class="illustration-img">
+      <img src="./assets/Illustration.jpg" alt="illustration-image" class="illustration-img">
     </div>
     
     <!-- Right Side -->
@@ -27,7 +27,7 @@
             <ng-template #itemTemplate let-data>
               <div class="item-container">
                 <div class="empImage-frame">
-                  <img src="../../assets/{{data.username}}.jpg" alt="employee" class="empImage">
+                  <img src="./assets/{{data.username}}.png" alt="user-image" class="empImage">
                 </div>
                 <div class="username">{{ data.username }} <span style="font-size: 16px; color: #475467; font-weight: 300;"> {{ data.role }} </span></div>
               </div>
@@ -40,7 +40,7 @@
             <ng-template #valueTemplate let-data>
               <div class="value-container" style="height: 30px; padding: 5% 0% 5% 2%;">
                 <div class="empImage-frame">
-                  <img [src]="'./assets/' + data.username + '.jpg'" alt="employee" class="empImage">
+                  <img [src]="'./assets/' + data.username + '.png'" alt="employee" class="empImage">
               </div>
                 <div class="username" style="padding-left: 2%;"> {{ data.username }}<span style="font-size: 16px; color: #475467; font-weight: 300;"> {{ data.role }} </span></div>
               </div>
@@ -86,7 +86,7 @@
                           <input type="radio" id="center" name="align" value="workflowdiagram" [(ngModel)]="popupselectedOption" />
                           <label class="e-btn" for="center">Workflow Diagram</label>
                           <input type="radio" id="right" name="align" value="userdetails" [(ngModel)]="popupselectedOption" />
-                          <label class="e-btn" style="margin-right: 2%;" for="right">User's Details</label>                                    
+                          <label class="e-btn" for="right">User's Details</label>                                    
                       </div>
                     </div>
                 </div>

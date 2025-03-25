@@ -5,7 +5,7 @@ import { Switch } from '@syncfusion/ej2-buttons';
 import { SwitchStateService } from '../switch-state.service';
 import userData from '../../assets/anonymoususer.json';
 import { HttpClient } from '@angular/common/http';
-import { FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
+import { ComboBoxComponent, FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 //import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 //import { rippleEffect } from '@syncfusion/ej2-base';
 
@@ -16,7 +16,7 @@ import { FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 
 })
 export class LoginComponent implements OnInit{
- // @ViewChild('sample', { static: false }) comboBox!: ElementRef;
+ //@ViewChild('sample', { static: false }) comboBox!: ElementRef;
 
   username = '';
   password = '';
@@ -39,13 +39,18 @@ export class LoginComponent implements OnInit{
   showPopup1 = false;
   popupselectedOption: string = 'structure'; // Default selection
 
-  
+  @ViewChild('sample') comboBoxInstance!: ComboBoxComponent;
+
   constructor(private http: HttpClient, private authService: AuthService, private router: Router, private switchStateService: SwitchStateService) {
   }
 
   ngAfterViewInit() {
-    const container = document.getElementById("games"); // Parent container
+   // console.log("username password init ", this.username, this.password);
 
+    const container = document.getElementById("games"); // Parent container
+    // this.clearComboBoxSelection();
+    // this.username = "";
+    // this.password = "";
     if (container) {
       const observer = new MutationObserver(() => {
 
@@ -83,6 +88,7 @@ console.error("Container not found!");
   }
   
   ngOnInit(): void {
+   // console.log("username password ", this.username, this.password);
     //this.userData = userData;
     this.http.get<any[]>('assets/anonymoususer.json').subscribe(data => {
       this.userData = data;
@@ -94,7 +100,11 @@ console.error("Container not found!");
         displayText: `${user.email} (${user.access})`
       }));
     });
-    
+
+   // const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
+    // this.username = "";
+    // this.password = "";
+
     // Check if the user's token is valid
     if (this.authService.isAuthenticated()) {
       // Token is valid, navigate to the home page
@@ -131,12 +141,30 @@ console.error("Container not found!");
   }
 
   onUserChange(event: any) {
-    console.log('Selected User:', event.value);
+   // console.log('Selected User:', event.value);
     this.selectedUser = event.value;
     this.username = event.value;
     let dropdownDiv = document.querySelector(".email-div");
 
-    if(event.item != null) {
+    // if(event.itemData)
+    // {
+    //   const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
+    //   if (selectedUserObj) {
+    //     this.password = selectedUserObj.password;
+    //   }
+    //   else
+    //   {
+    //     this.password = "";
+    //     this.clearComboBoxSelection();
+    //   }
+    // }
+    // else
+    // {
+    //   this.password = "";
+    // }
+    
+
+    if( event.item != null && event.itemData != null) {
     // Find the selected user's password and set it
     const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
     //this.dropdownData = selectedUserObj;
@@ -147,7 +175,7 @@ console.error("Container not found!");
     this.dropdownDataRole = selectedUserObj.role;
     this.dropdownDataFilterParameter = selectedUserObj.filterparameter;
 
-    console.log("dfederf ",this.dropdownData);
+    //console.log("dfederf ",this.dropdownData);
     this.password = selectedUserObj ? selectedUserObj.password : '';
 
     //let dropdownDiv = document.querySelector(".email-div");
@@ -184,12 +212,21 @@ console.error("Container not found!");
     }
   }
   else {
+    // this.username = "";
+    // this.password = "";
+    // this.clearComboBoxSelection();
     let existingSpan = dropdownDiv?.querySelector('.dropdown-info-icon')  as HTMLSpanElement;
     if (existingSpan) {
       // Show the tooltip
      existingSpan.style.display = "none";
     }
   }
+  }
+
+  clearComboBoxSelection(): void {
+    if (this.comboBoxInstance) {
+      this.comboBoxInstance.clear();
+    }
   }
 
   onFiltering(event: FilteringEventArgs) {
@@ -205,8 +242,8 @@ console.error("Container not found!");
   }
   
   onSubmit(): void {
-    console.log('Selected Email:', this.selectedUser);
-    console.log('Password:', this.password);
+  //  console.log('Selected Email:', this.selectedUser);
+//console.log('Password:', this.password);
     if (!this.username || !this.password) {
       this.loginError = 'Both Useremail and Password are required.';
       return; // Don't submit the form if fields are empty
@@ -218,7 +255,7 @@ console.error("Container not found!");
           // Store the token securely (e.g., in local storage)
           localStorage.setItem('token', response.accessToken);
           localStorage.setItem('expirationTime', response.expires);
-          console.log("response ",response.username);
+       //   console.log("response ",response.username);
           localStorage.setItem('AnonymousUsername', this.username);
           this.router.navigate(['/dashboard', this.username]);
           // Redirect to a protected route or perform necessary actions upon successful login
