@@ -29,7 +29,6 @@ export class DashboardComponent implements OnInit {
   private boldbisettings: BoldBISettings | null = null;
   ngOnInit(): void {
     this.mail = this.route.snapshot.paramMap.get('usermail') || '';
-    console.log("usredfd ",userDatas);
     for (let i = 0; i < userDatas.length; i++) {
       if(userDatas[i].email == this.mail) {
         this.groupName = userDatas[i].groupName;

@@ -1,33 +1,3 @@
-// import { Injectable } from '@angular/core';
-// import { BehaviorSubject } from 'rxjs';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class SwitchStateService {
-//   private readonly storageKey = 'switchState';
-
-//   // Use BehaviorSubject to store the state
-//   private switchStateSubject = new BehaviorSubject<boolean>(this.getStoredState());
-//   switchState$ = this.switchStateSubject.asObservable();
-
-//   private getStoredState(): boolean {
-//     return localStorage.getItem(this.storageKey) === 'false' ? false : true;
-//   }
-
-//   setSwitchState(state: boolean) {
-//     localStorage.setItem(this.storageKey, String(state)); // Save to localStorage
-//     this.switchStateSubject.next(state);
-//   }
-
-//   // ✅ Expose getValue() from BehaviorSubject
-//   getSwitchState(): boolean {
-//     return this.switchStateSubject.getValue();
-//   }
-// }
-
-
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -52,7 +22,6 @@ export class SwitchStateService {
   switchState3$ = this.switchState3.asObservable();
 
   private getStoredState(key: string): boolean {
-    //return localStorage.getItem(key) === 'false' ? false : true;
     return localStorage.getItem(key) === 'true'; // Defaults to false if key is not found
   }
 

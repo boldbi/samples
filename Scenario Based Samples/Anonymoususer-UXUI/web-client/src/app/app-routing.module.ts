@@ -5,13 +5,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-{path:'login', component: LoginComponent},
-{path:'dashboard', component: DashboardComponent,canActivate:[AuthGuard]},
-{path:'dashboard/:usermail', component: DashboardComponent,canActivate:[AuthGuard]},
-  // Add more routes for other components
-  // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  // { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  // ...
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/:usermail', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
@@ -19,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

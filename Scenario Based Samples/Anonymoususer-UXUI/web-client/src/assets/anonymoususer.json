@@ -21,7 +21,7 @@
     "filterparametervalue": "region=IN(North,East)",
     "access": "Bold BI User",
     "tenant": "Alpha Electronics",
-    "role": "Business Lead"
+    "role": "General Manager"
   },
   {
     "email": "henry@alphaelectronics.com",
@@ -33,7 +33,7 @@
     "filterparametervalue": "region=IN(South,West)",
     "access": "Bold BI User",
     "tenant": "Alpha Electronics",
-    "role": "User1"
+    "role": "General Manager"
   },
   {
     "email": "leo@alphaelectronics.com",
@@ -45,7 +45,7 @@
     "filterparametervalue": "region=IN(Central)",
     "access": "Bold BI User",
     "tenant": "Alpha Electronics",
-    "role": "User2"
+    "role": "Sales Executive"
   },
   {
     "email": "ella@betaenterprise.com",
@@ -69,7 +69,7 @@
     "filterparametervalue": "region=IN(South,West)",
     "access": "Anonymous User",
     "tenant": "Beta Enterprise",
-    "role": "Business Lead"
+    "role": "General Manager"
   },
   {
     "email": "lily@betaenterprise.com",
@@ -81,7 +81,7 @@
     "filterparametervalue": "region=IN(Central,East)",
     "access": "Bold BI User",
     "tenant": "Beta Enterprise",
-    "role": "User1"
+    "role": "General Manager"
   },
   {
     "email": "alex@betaenterprise.com",
@@ -93,7 +93,7 @@
     "filterparametervalue": "region=IN(North)",
     "access": "Bold BI User",
     "tenant": "Beta Enterprise",
-    "role": "User2"
+    "role": "Sales Executive"
   },
   {
     "email": "ryan@gammaindustries.com",
@@ -117,7 +117,7 @@
     "filterparametervalue": "region=IN(South)",
     "access": "Bold BI User",
     "tenant": "Gamma Industries",
-    "role": "Business Lead"
+    "role": "Sales Executive"
   },
   {
     "email": "eric@gammaindustries.com",
@@ -129,7 +129,7 @@
     "filterparametervalue": "region=IN(Central,East)",
     "access": "Anonymous User",
     "tenant": "Gamma Industries",
-    "role": "User1"
+    "role": "General Manager"
   },
   {
     "email": "jake@gammaindustries.com",
@@ -141,7 +141,7 @@
     "filterparametervalue": "region=IN(North,West)",
     "access": "Anonymous User",
     "tenant": "Gamma Industries",
-    "role": "User2"
+    "role": "General Manager"
   },
   {
     "email": "paul@deltaindustries.com",
@@ -165,7 +165,7 @@
     "filterparametervalue": "region=IN(Central,East)",
     "access": "Anonymous User",
     "tenant": "Delta Industries",
-    "role": "Business Lead"
+    "role": "General Manager"
   },
   {
     "email": "luke@deltaindustries.com",
@@ -177,7 +177,7 @@
     "filterparametervalue": "region=IN(North)",
     "access": "Anonymous User",
     "tenant": "Delta Industries",
-    "role": "User1"
+    "role": "Sales Executive"
   },
   {
     "email": "amy@deltaindustries.com",
@@ -189,6 +189,6 @@
     "filterparametervalue": "region=IN(South,West)",
     "access": "Anonymous User",
     "tenant": "Delta Industries",
-    "role": "User2"
+    "role": "General Manager"
   }
 ]
