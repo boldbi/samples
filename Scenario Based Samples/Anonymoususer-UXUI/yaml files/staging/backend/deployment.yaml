@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staging-anonymoususer-backend-deployment
+  namespace: staging-anonymoususer-rls
+spec:
+  selector:
+    matchLabels:
+      app: staging-embedded-anonymous-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: staging-embedded-anonymous-backend
+    spec:
+      containers:
+      - name: staging-embedded-anonymousbackend
+        image: us-docker.pkg.dev/boldbi-294612/embed-application/boldbi-anonymous-backend:testbackend
+
+
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+            memory: 750Mi

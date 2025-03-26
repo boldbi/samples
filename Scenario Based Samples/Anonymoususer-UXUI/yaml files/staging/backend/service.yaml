@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: staging-embedded-anonymousbackend-service
+  namespace: staging-anonymoususer-rls
+  labels:
+    app: staging-embedded-anonymous-backend
+spec:
+  type: NodePort
+  ports:
+  - name: staging-embedded-anonymousbackend-port
+    port: 6000
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: staging-embedded-anonymous-backend

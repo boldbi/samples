@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staging-anonymoususer-frontend-deployment
+  namespace: staging-anonymoususer-rls
+spec:
+  selector:
+    matchLabels:
+      app: staging-embedded-anonymous-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: staging-embedded-anonymous-frontend
+    spec:
+      containers:
+      - name: staging-embedded-anonymousfrontend
+        image: us-docker.pkg.dev/boldbi-294612/embed-application/boldbi-anonymous-frontend:test2603
+
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+            memory: 750Mi
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+      volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: nginx-config
