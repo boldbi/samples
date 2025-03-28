@@ -11,7 +11,15 @@
   <div class="d-flex justify-content-between align-items-start">
     <!-- Left Side -->
     <div class="info-text" style="width: 63%; font-size:small; border: 1px solid #ccc;">
-      <img src="./assets/Illustration.jpg" alt="illustration-image" class="illustration-img">
+      <!-- <img src="./assets/Illustration.jpg" alt="illustration-image" class="illustration-img"> -->
+      <!-- <picture>
+        <source srcset="./assets/webp/RLS.webp" type="image/webp" media="(min-width: 1401px)">
+        <source srcset="path/to/small-image.webp" type="image/webp" media="(max-width: 1023px)">
+        <source srcset="./assets/png/RLSDemo.png" type="image/png" media="(min-width: 1401px)">
+        <source srcset="path/to/small-image.png" type="image/png" media="(max-width: 1023px)">
+      </picture> -->
+      <img src="./assets/png/RLSDemo.png" alt="Description of the image" class="illustration-img" >
+      <!-- style="height: 100%; padding-left: 10%;"> -->
     </div>
 
     <!-- Right Side -->
@@ -25,7 +33,7 @@
             <div class="email-div">
               <ejs-combobox id='games' #sample [dataSource]='filteredData' name="useremail" [fields]='fields'
                 [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User'"
-                [(ngModel)]="selectedUser" (change)="onUserChange($event)" [itemTemplate]='itemTemplate'
+                 (change)="onUserChange($event)" [itemTemplate]='itemTemplate'
                 [groupTemplate]="groupTemplate" [valueTemplate]='valueTemplate' allowFiltering="true"
                 (filtering)="onFiltering($event)"></ejs-combobox>
               <ng-template #itemTemplate let-data>
@@ -71,7 +79,6 @@
             <button type="button" class="close-btn" (click)="closePopup()">
               <span class="icon">&times;</span>
             </button>
-
             <div class="control-section button-group-container">
               <div class="button-group-section">
                 <div id="button-group-control" style="width: 69%;">
@@ -177,8 +184,7 @@
             Enter BoldBI Server
           </button>
 
-          <button type="button" class="btn show-popup-btn advanced-btn login-bottombuttons" style="padding-left: 41%;"
-            (click)="userdetailpopup()">
+          <button type="button" class="btn show-popup-btn advanced-btn login-bottombuttons login-userdetail" (click)="userdetailpopup()">
             User's Details
           </button>
         </div>

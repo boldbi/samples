@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   filteredData: any[] = []; // Filtered data for dropdown
   dropdownData: any[] = [];
   selectedUser!: string;
+  //selectedUser: string | null = null;
   fields: Object = { groupBy: 'tenant', text: 'displayText', value: 'email' };
   height: string = '180px';
   showPopup = false;
@@ -113,18 +114,23 @@ export class LoginComponent implements OnInit {
     this.username = event.value;
     let dropdownDiv = document.querySelector(".email-div");
 
-    if (event.item != null && event.itemData != null) {
+    if (event.itemData != null) {
       // Find the selected user's password and set it
       const selectedUserObj = this.userData.find(user => user.email === this.selectedUser);
-      this.dropdownDataTenant = selectedUserObj.tenant;
-      this.dropdownDataUsername = selectedUserObj.username;
-      this.dropdownDataUseremail = selectedUserObj.email;
-      this.dropdownDataCustAttr = selectedUserObj.customattribute;
-      this.dropdownDataRole = selectedUserObj.role;
-      this.dropdownDataFilterParameter = selectedUserObj.filterparameter;
-      this.dropdownDataAccess = selectedUserObj.access;
 
-      this.password = selectedUserObj ? selectedUserObj.password : '';
+      //this.password = selectedUserObj ? selectedUserObj.password : '';
+      if (selectedUserObj) {
+        this.password = selectedUserObj.password;
+
+        this.dropdownDataTenant = selectedUserObj.tenant;
+        this.dropdownDataUsername = selectedUserObj.username;
+        this.dropdownDataUseremail = selectedUserObj.email;
+        this.dropdownDataCustAttr = selectedUserObj.customattribute;
+        this.dropdownDataRole = selectedUserObj.role;
+        this.dropdownDataFilterParameter = selectedUserObj.filterparameter;
+        this.dropdownDataAccess = selectedUserObj.access;
+      
+
       if (dropdownDiv) {
         // Select the .e-clear-icon span
         let clearIcon = dropdownDiv.querySelector('.e-clear-icon');
@@ -139,7 +145,7 @@ export class LoginComponent implements OnInit {
             infoIcon.id = 'email-infoicon';
 
             infoIcon.style.paddingLeft = "6px";
-            infoIcon.style.paddingTop = "2.5%";
+            infoIcon.style.paddingTop = "2.3%";
             infoIcon.style.cursor = "pointer";
             infoIcon.style.display = "block";
 
@@ -155,10 +161,17 @@ export class LoginComponent implements OnInit {
           }
         }
       }
+
+    }
+    else
+    {
+      this.password = '';
+      this.clearComboBoxSelection();
+    }
     }
     else {
       // this.username = "";
-      // this.password = "";
+      this.password = "";
       // this.clearComboBoxSelection();
       let existingSpan = dropdownDiv?.querySelector('.dropdown-info-icon') as HTMLSpanElement;
       if (existingSpan) {
@@ -168,7 +181,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  clearComboBoxSelection(): void {
+  clearComboBoxSelection() {
     if (this.comboBoxInstance) {
       this.comboBoxInstance.clear();
     }

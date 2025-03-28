@@ -1,8 +1,7 @@
 /* login.component.css */
 /* Container for the login form */
 .login-container {
-  padding: 40px;
-  background-color: #fff;
+  background-color: #F9FAFB;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   /* Add space between the child divs */
@@ -424,9 +423,180 @@ th {
   background-color: #f9f9f9;
 }
 
+.info-text {
+  background-color: white;
+}
+
+@media (min-width: 3700px) and (max-width: 4300px) {
+  input.e-input,
+.e-input-group input.e-input,
+.e-input-group.e-control-wrapper input.e-input,
+textarea.e-input,
+.e-input-group textarea.e-input,
+.e-input-group.e-control-wrapper textarea.e-input {
+  height: 66px !important;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+height: 66px;
+}
+
+  .server-table {
+    margin-left: 13%;
+  }
+
+  .login-container {
+    padding: 8rem; //40px;
+  }
+
+  .table-container {
+    max-height: 100%;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    /* Ensure border visibility */
+  }
+
+  .heading {
+    font-size: 65px;
+  }
+
+  .paragraph,
+  .error-message {
+    font-size: 40px;
+  }
+
+  .error-message {
+    margin-top: 7%;
+  }
+
+  .bolbilogo {
+    height: 50px;
+    margin-left: 96%;
+  }
+
+  .login-box {
+    height: 700px;
+  }
+
+  .login-userdetail {
+    padding-left: 41%;
+  }
+
+  .info-text,
+  .child-div {
+    border-radius: 16px;
+    height: calc(100vh - 500px);
+  }
+
+  .illustration-img {
+    margin: 4% 0% 0% 3%;
+    height: 90%;
+  }
+
+  .divide2 {
+    height: 95%;
+  }
+
+  .value-container {
+    padding: 3% 0% 3% 2% !important;
+  }
+
+  .login-bottombuttons,
+  .login-subtext,
+  .login-button,
+  .access-button,
+  .popup-paragraph {
+    font-size: 40px;
+  }
+
+  .login-button {
+    margin-top: 10%;
+  }
+
+  .login-header {
+    font-size: 48px;
+  }
+
+  .user-label {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .email-div {
+    margin-bottom: 58px;
+  }
+
+  .popup-content {
+    height: 70%;
+  }
+
+  .popup-content1 {
+    font-size: 40px;
+  }
+
+  .popup-header {
+    font-size: 60px;
+  }
+
+  .popup-image {
+    height: 85%;
+    font-size: 40px;
+  }
+
+  .popup-heading {
+    font-size: 52px !important;
+  }
+
+  .table {
+    font-size: 40px;
+  }
+
+  .dropdown-info-icon {
+    padding-top: 2% !important;
+  }
+
+  .e-btn-group {
+    margin-left: 16%;
+    height: 80px;
+    top: 10px;
+    border-radius: 40px !important;
+  }
+
+  .e-btn,
+  .e-btn-group label {
+    padding: 15px;
+    font-size: 26px;
+    border-radius: 40px !important;
+  }
+
+  .e-btn-group input:checked+label {
+    border-radius: 40px !important;
+  }
+
+  .dropdown-info-content {
+    top: 28%;
+    right: 5%;
+  }
+
+  .close-btn {
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .close-btn span {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 1950px) {
   .server-table {
     margin-left: 17%;
+  }
+
+  .login-container {
+    padding: 3rem; //40px;
   }
 
   .table-container {
@@ -458,6 +628,10 @@ th {
     height: 700px;
   }
 
+  .login-userdetail {
+    padding-left: 41%;
+  }
+
   .info-text,
   .child-div {
     border-radius: 16px;
@@ -465,8 +639,8 @@ th {
   }
 
   .illustration-img {
-    margin: 3% 5% 2% 15%;
-    height: 650px;
+    margin: 0% 0% 0% 7%;
+    height: 700px;
   }
 
   .divide2 {
@@ -491,6 +665,7 @@ th {
 
   .user-label {
     font-size: 18px;
+    margin-bottom: 4px;
   }
 
   .email-div {
@@ -532,9 +707,13 @@ th {
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1600px) { //(min-width: 1536px) and (
   .server-table {
     margin-left: 9%;
+  }
+
+  .login-container {
+    padding: 3rem; //40px;
   }
 
   .table-container {
@@ -558,6 +737,10 @@ th {
     height: 500px;
   }
 
+  .login-userdetail {
+    padding-left: 41%;
+  }
+
   .info-text,
   .child-div {
     border-radius: 8px;
@@ -565,8 +748,8 @@ th {
   }
 
   .illustration-img {
-    margin: 5% 5% 5% 20%;
-    height: 450px;
+    margin: 0% 5% 0% 12%;
+    height: 500px;
   }
 
   .divide2 {
@@ -590,6 +773,7 @@ th {
 
   .user-label {
     font-size: 14px;
+    margin-bottom: 4px;
   }
 
   .error-message {
@@ -631,6 +815,122 @@ th {
 
   .dropdown-info-content {
     top: 40%;
+    right: 7%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .server-table {
+    margin-left: 9%;
+  }
+
+  .login-container {
+    padding: 2rem; //40px;
+  }
+
+  .table-container {
+    max-height: 100%;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .bolbilogo {
+    height: 40px;
+    margin-left: 36%;
+  }
+
+  .login-box {
+    height: 500px;
+  }
+
+  .login-userdetail {
+    padding-left: 34%;
+  }
+
+  .info-text,
+  .child-div {
+    border-radius: 8px;
+    height: 500px;
+  }
+
+  .illustration-img {
+    margin: 0% 0% 0% 6%;
+    height: 500px;
+  }
+
+  .divide2 {
+    height: 88.6%;
+  }
+
+  .login-bottombuttons,
+  .login-subtext,
+  .login-button,
+  .access-button {
+    font-size: 16px;
+  }
+
+  .login-button {
+    margin-top: 0%;
+  }
+
+  .login-header {
+    font-size: 24px;
+  }
+
+  .user-label {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .error-message {
+    font-size: 16px;
+    margin-top: 1%;
+  }
+
+  .email-div {
+    margin-bottom: 8px;
+  }
+
+  .popup-content {
+    height: 90%;
+  }
+
+  .popup-image {
+    height: 80%;
+    font-size: 14px;
+  }
+
+  .popup-heading {
+    font-size: 28px;
+  }
+
+  .popup-paragraph {
+    font-size: 14px;
+  }
+
+  .table {
+    font-size: 13px;
+  }
+
+  .e-btn-group {
+    margin-left: 0px;
+    height: 46px;
+  }
+
+  .e-btn,
+  .e-btn-group label {
+    padding: 6px 11px;
+    font-size: 14px;
+  }
+
+  .dropdown-info-content {
+    top: 43%;
     right: 7%;
   }
 }
@@ -704,7 +1004,6 @@ child-div,
   line-height: 20px;
   letter-spacing: 0%;
   display: block;
-  margin-bottom: 4px;
 }
 
 .item-container {
@@ -794,11 +1093,8 @@ child-div,
   display: flex;
   padding-top: 1%;
   background: #E5E5E5;
-  /* Light gray background */
   border-radius: 30px;
-  /* Ensures full pill shape */
   padding: 4px;
-  /* Adds internal spacing */
   width: fit-content;
 }
 
@@ -838,3 +1134,6 @@ child-div,
 #games_popup {
   margin-top: 0.6%;
 }
+
+
+/*final responsive styles*/
