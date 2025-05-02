@@ -65,7 +65,7 @@ export class DashboardComponent implements OnInit {
       dashboardId: this.boldbisettings?.DashboardId,
       embedContainerId: "dashboard",
       embedType: BoldBI.EmbedType.Component,
-      environment: this.boldbisettings?.Environment,
+      environment: BoldBI.Environment.Enterprise,
       mode: BoldBI.Mode.View,
       width: "100%",
       height: "100%",
