@@ -1,0 +1,10 @@
+﻿{
+  "DashboardId": "3a687d11-3921-4508-bdd9-880de28bbac3",
+  "ServerUrl": "http://localhost:5000/bi",
+  "UserEmail": "admin@boldbi.com",
+  "EmbedSecret": "",
+  "EmbedType": "component",
+  "Environment": "onpremise",
+  "ExpirationTime": "10000",
+  "SiteIdentifier": "site/site1"
+}

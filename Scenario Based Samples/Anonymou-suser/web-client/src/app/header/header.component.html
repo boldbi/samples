@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 55px;">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav-container">
+      <!-- Left Part -->
+      <ul class="navbar-nav left-nav">
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight: 600;">Sales Analysis Dashboard</a>
+        </li>
+      </ul>
+
+      <!-- Right Part -->
+      <ul class="navbar-nav right-nav">
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight: 600; display: inline-block;">Welcome {{ displayUser }}</a>
+          <span class="info-icon ion-information-circled"></span>
+          <div class="description-content">
+        <li><b>Custom Attribute &rarr;</b> {{getCustomAttribute}}</li>
+        <li><b>Filter Parameter &rarr;</b> {{getFilterParameter}} </li>
+        <li><b>{{getAccessType}}email &rarr;</b> {{getUserEmail}}</li>
+    </div>
+    </li>
+    </ul>
+  </div>
+  </div>
+</nav>

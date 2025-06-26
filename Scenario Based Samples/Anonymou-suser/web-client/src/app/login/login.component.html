@@ -1,0 +1,278 @@
+<link href="https://cdn.syncfusion.com/ej2/28.1.33/fluent.css" rel="stylesheet" />
+
+<div class="login-container container">
+  <div class="title" style="width: 900px; display: ruby;">
+    <h3 class="heading"><b>Multi Tenant Row-Level Security in Bold BI® Demo</b></h3>
+    <img src="./assets/BoldBI-Logo.png" alt="boldbi-logo" class="bolbilogo">
+
+    <p class="paragraph">This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a multi-tenant
+      environment using <b>Bold BI®</b>.</p>
+  </div>
+  <div class="d-flex justify-content-between align-items-start">
+    <!-- Left Side -->
+    <div class="info-text" style="width: 63%; font-size:small; border: 1px solid #ccc;">
+      <!-- <img src="./assets/Illustration.jpg" alt="illustration-image" class="illustration-img"> -->
+      <!-- <picture>
+        <source srcset="./assets/webp/RLS.webp" type="image/webp" media="(min-width: 1401px)">
+        <source srcset="path/to/small-image.webp" type="image/webp" media="(max-width: 1023px)">
+        <source srcset="./assets/png/RLSDemo.png" type="image/png" media="(min-width: 1401px)">
+        <source srcset="path/to/small-image.png" type="image/png" media="(max-width: 1023px)">
+      </picture> -->
+      <img src="./assets/png/RLSDemo.png" alt="Description of the image" class="illustration-img" >
+      <!-- style="height: 100%; padding-left: 10%;"> -->
+    </div>
+
+    <!-- Right Side -->
+    <div class="login-box" style="width: 34%; margin-left: 40px;">
+      <div class="child-div">
+        <div class="divide2" style="padding: 20px; border-radius: 8px 8px 0px 0px; background-color: white;">
+          <h2 class="login-header">Login</h2>
+          <p class="login-subtext">Please select a user to log in</p>
+          <form (ngSubmit)="onSubmit()">
+            <label for="useremail" class="user-label">User email</label>
+            <div class="email-div">
+              <ejs-combobox id='games' #sample [dataSource]='filteredData' name="useremail" [fields]='fields'
+                [(value)]="selectedUser" [popupHeight]='height' [placeholder]="'Select the User'"
+                 (change)="onUserChange($event)" [itemTemplate]='itemTemplate'
+                [groupTemplate]="groupTemplate" [valueTemplate]='valueTemplate' allowFiltering="true"
+                (filtering)="onFiltering($event)"></ejs-combobox>
+              <ng-template #itemTemplate let-data>
+                <div class="item-container">
+                  <div class="empImage-frame">
+                    <img src="./assets/{{data.username}}.png" alt="user-image" class="empImage">
+                  </div>
+                  <div class="username">{{ data.username }} <span
+                      style="font-size: 16px; color: #475467; font-weight: 300;"> {{ data.role }} </span></div>
+                </div>
+              </ng-template>
+              <ng-template #groupTemplate let-data>
+                <div class="group-header">
+                  <strong class="tenant-name"> {{ data.tenant }}</strong>
+                </div>
+              </ng-template>
+              <ng-template #valueTemplate let-data>
+                <div class="value-container" style="height: 30px; padding: 5% 0% 5% 2%;">
+                  <div class="empImage-frame">
+                    <img [src]="'./assets/' + data.username + '.png'" alt="employee" class="empImage">
+                  </div>
+                  <div class="username" style="padding-left: 2%;"> {{ data.username }}<span
+                      style="font-size: 16px; color: #475467; font-weight: 300;"> {{ data.role }} </span></div>
+                </div>
+              </ng-template>
+
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="user-label">Password</label>
+              <input type="password" id="password" name="password" [(ngModel)]="password" required />
+            </div>
+            <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+            <br><br>
+            <button type="submit" class="login-button">Login</button><br>
+          </form>
+          <button type="submit" class="access-button" (click)="openPopup()">Access Approaches</button>
+
+        </div>
+        <div *ngIf="showPopup" class="popup-overlay">
+          <div class="popup-content">
+
+            <button type="button" class="close-btn" (click)="closePopup()">
+              <span class="icon">&times;</span>
+            </button>
+            <div class="control-section button-group-container">
+              <div class="button-group-section">
+                <div id="button-group-control" style="width: 69%;">
+                  <div class="row">
+                    <div class="popup-text">
+                      <h3 class="popup-heading"><b>Embedding Sample</b></h3>
+                      <p class="popup-paragraph">This sample demonstrates how <b>Row-Level Security (RLS)</b> works in a
+                        multi-tenant environment using <b>Bold BI®</b>.</p>
+                    </div>
+                    <div id="text" class="e-btn-group">
+                      <input type="radio" id="left" name="align" value="structure" [(ngModel)]="popupselectedOption" />
+                      <label class="e-btn" for="left">Structure</label>
+                      <input type="radio" id="center" name="align" value="workflowdiagram"
+                        [(ngModel)]="popupselectedOption" />
+                      <label class="e-btn" for="center">Workflow Diagram</label>
+                      <input type="radio" id="right" name="align" value="userdetails"
+                        [(ngModel)]="popupselectedOption" />
+                      <label class="e-btn" for="right">User's Details</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="popupselectedOption === 'structure'" class="popup-image" style="padding: 20px;">
+              <p style="padding-left: 0px;">It provides two distinct access approaches:</p>
+              <li class="structure-heading">Step 1: Authenticated Users (Bold BI Users):</li>
+              <ul>
+                <li>Users must be present in Bold BI, and their username must be passed via the authorization server.
+                </li>
+                <li>The system applies built-in <b>row-level security (RLS)</b> based on user filters defined in Bold
+                  BI.</li>
+                <li>Alternatively, external filter parameters can be used to refine user-specific data access.</li>
+              </ul>
+
+              <li class="structure-heading">Step 2: Anonymous Users (Guest Access with Group-Based Permissions):</li>
+              <ul>
+                <li>Users do not need to be present in Bold BI when the <b>anonymous feature</b> is enabled. However a
+                  <b>group present in Bold BI</b> must be passed as parameter.</li>
+                <li>Row-level security is applied based on externally passed filter parameters.</li>
+                <li>Alternatively, RLS can be configured in <b>Bold BI's user filter feature for groups</b>.</li>
+                <ul>
+                  <li>Example: A <b>Sales</b> group may see only sales-related data, while a Finance group may have
+                    access to financial reports only.</li>
+                </ul>
+              </ul>
+
+              <li class="structure-heading">How this works:</li>
+              <ul>
+                <li>When a user logs in, the system applies the appropriate row-level security settings.</li>
+                <li>If a user accesses the dashboard anonymously, the embedding layer ensures data visibility based on
+                  <b>group-level filters</b>.</li>
+                <li>The system dynamically switches data sources (databases) based on <b>custom attributes and
+                    filters</b> to ensure secure and personalized access.</li>
+                <li>The <b>embed secret</b> code used in the authorization server, in combination with the user or
+                  group, acts as an authentication layer for embedding. Ensure the embed secret is securely handled in
+                  the code.</li>
+              </ul>
+            </div>
+            <div *ngIf="popupselectedOption === 'workflowdiagram'" class="popup-image">
+              <img src="assets/anonymousFlowchart.jpg" alt="Workflow Diagram" style="width: 100%; height: 100%;" />
+            </div>
+            <div *ngIf="popupselectedOption === 'userdetails'" class="popup-image">
+              <div class="table-container mt-4"
+                style=" border-radius: 8px; font-size:small; margin-top: 0px !important; text-align: center;">
+                <table class="table table-bordered" style="margin-bottom: 0px">
+                  <thead style="position: sticky; top: 0; z-index: 10; vertical-align:middle;">
+                    <tr style="border-width: inherit;">
+                      <th>Tenant</th>
+                      <th>Username</th>
+                      <th>User Email</th>
+                      <th>Database Mapping(Custom Attribute)</th>
+                      <th>Row-Level Security(Filter Parameter)</th>
+                      <th>Group Name</th>
+                      <th>Access Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of userData; let i = index">
+                      <td *ngIf="shouldShowRowspan(userData, i)" [attr.rowspan]="4">
+                        {{ user.tenant }}
+                      </td>
+                      <td>{{ user.username }}</td>
+                      <td>{{ user.email }}</td>
+                      <td *ngIf="shouldShowRowspan(userData, i)" [attr.rowspan]="4">
+                        {{ user.customattribute }}
+                      </td>
+                      <td>{{ user.filterparameter }}</td>
+                      <td>
+                        {{ user.groupName }}
+                      </td>
+                      <td>{{ user.access }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="button" class="btn show-popup-btn advanced-btn login-bottombuttons" style="margin: 0px;
+    padding: 0px;" (click)="openPopup1()">
+            Enter BoldBI Server
+          </button>
+
+          <button type="button" class="btn show-popup-btn advanced-btn login-bottombuttons login-userdetail" (click)="userdetailpopup()">
+            User's Details
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div *ngIf="showPopup1" class="popup-overlay">
+      <div class="popup-content1">
+        <button type="button" class="close-btn" (click)="closePopup1()">
+          <span class="icon">&times;</span>
+        </button>
+        <h3 class="popup-header">Bold BI Server</h3>
+        <p>The Bold BI Server below is being used for this Multi tenant Row-Level Security sample. You can log in to the
+          server using the credentials provided below to verify the user and group details in the Bold BI® Server.</p>
+        <div>
+          <table class="server-table" border="1" cellspacing="0" cellpadding="8">
+            <tr>
+              <td>Server URL</td>
+              <td><a href="https://demo-analytics.boldbidemo.com/" target="_blank"
+                  style="text-decoration: none;">https://demo-analytics.boldbidemo.com</a></td>
+            </tr>
+            <tr>
+              <td>Username</td>
+              <td>testuser</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>testuser@boldbi.com</td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td>@Testuser492</td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <p>Please refer to the <a href="./assets/Userfilter-server.mp4" target="_blank"
+            style="text-decoration: none;">video</a> on how RLS is preconfigured for Bold BI users at the Bold BI server
+          level.</p>
+        <!-- <video width="100%" controls>
+        <source src="./assets/Userfilter-server.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> -->
+      </div>
+    </div>
+
+    <div id="dropdown-infoTooltip" class="dropdown-info-content">
+      <table class="table table-bordered" style="margin-bottom: 0px">
+        <tbody>
+          <tr>
+            <td class="info-column1">Tenant</td>
+            <td>
+              {{ this.dropdownDataTenant }}
+            </td>
+          </tr>
+          <tr>
+            <td class="info-column1">Username</td>
+            <td>
+              {{ this.dropdownDataUsername }}
+            </td>
+          </tr>
+          <tr>
+            <td class="info-column1">User Email</td>
+            <td>
+              {{ this.dropdownDataUseremail }}
+            </td>
+          </tr>
+          <tr>
+            <td class="info-column1">Custom Attribute</td>
+            <td>
+              {{ this.dropdownDataCustAttr }}
+            </td>
+          </tr>
+          <tr>
+            <td class="info-column1">User</td>
+            <td>
+              {{ this.dropdownDataAccess }}
+            </td>
+          </tr>
+          <tr>
+            <td class="info-column1">Filter Parameter</td>
+            <td>
+              {{ this.dropdownDataFilterParameter }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
