@@ -60,8 +60,19 @@ public class HomeController : Controller
         {
             var email = HttpContext.User.Identity.Name;
             var token = new TokenHelper().GenerateJSONWebToken(new User { Email = email });
-            var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback?jwt=" + token;
-            return Redirect(url);
+
+            var externalPostUrl = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback";
+            var siteIdentifier = _configuration["jwt:siteidentifier"];
+            var redirectTo = _configuration["jwt:redirectto"];
+            var model = new JwtPostModel
+            {
+                Url = externalPostUrl,
+                Jwt = token,
+                SiteIdentifier = siteIdentifier,
+                RedirectTo = redirectTo
+            };
+
+            return View("PostToExternalApp", model);
         }
         else
         {
