@@ -54,21 +54,6 @@ public class HomeController : Controller
             return RedirectToAction("Embed");
     }
 
-    // public ActionResult JWTLogin()
-    // {
-    //     if (HttpContext.User.Identity.IsAuthenticated)
-    //     {
-    //         var email = HttpContext.User.Identity.Name;
-    //         var token = new TokenHelper().GenerateJSONWebToken(new User { Email = email });
-    //         var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback?jwt=" + token + "&site_identifier=site1&redirect_to=http://localhost:51507/bi/site/site1/dashboards?view=all";
-    //         return Redirect(url);
-    //     }
-    //     else
-    //     {
-    //         return RedirectToAction("Loginpage");
-    //     }
-    // }
-
     public ActionResult JWTLogin()
     {
         if (HttpContext.User.Identity.IsAuthenticated)
@@ -77,13 +62,14 @@ public class HomeController : Controller
             var token = new TokenHelper().GenerateJSONWebToken(new User { Email = email });
 
             var externalPostUrl = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback";
-
+            var siteIdentifier = _configuration["jwt:siteidentifier"];
+            var redirectTo = _configuration["jwt:redirectto"];
             var model = new JwtPostModel
             {
                 Url = externalPostUrl,
                 Jwt = token,
-                SiteIdentifier = "site1",
-                RedirectTo = "http://localhost:61452/bi/site/site1/dashboards?view=all"
+                SiteIdentifier = siteIdentifier,
+                RedirectTo = redirectTo
             };
 
             return View("PostToExternalApp", model);
@@ -93,7 +79,6 @@ public class HomeController : Controller
             return RedirectToAction("Loginpage");
         }
     }
-
 
     public ActionResult Loginpage()
     {
