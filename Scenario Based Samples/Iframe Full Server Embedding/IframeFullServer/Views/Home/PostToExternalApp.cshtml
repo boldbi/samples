@@ -1,0 +1,23 @@
+@using IframeFullServer.Models;
+@model JwtPostModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to External App...</title>
+</head>
+<body onload="document.forms[0].submit();">
+    <form action="@Model.Url" method="post">
+        <input type="hidden" name="jwt" value="@Model.Jwt" />
+        <input type="hidden" name="site_identifier" value="@Model.SiteIdentifier" />
+        <input type="hidden" name="redirect_to" value="@Model.RedirectTo" />
+        <noscript>
+            <p>JavaScript is disabled. Please click the button below to continue.</p>
+            <button type="submit">Continue</button>
+        </noscript>
+    </form>
+</body>
+</html>
