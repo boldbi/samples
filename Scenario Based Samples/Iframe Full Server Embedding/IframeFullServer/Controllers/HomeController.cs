@@ -61,6 +61,11 @@ public class HomeController : Controller
             var email = HttpContext.User.Identity.Name;
             var token = new TokenHelper().GenerateJSONWebToken(new User { Email = email });
 
+            /* GET request works till Release v12*/
+            // var url = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback?jwt=" + token;
+            // return Redirect(url);
+
+            /* POST request works from Release v13*/
             var externalPostUrl = _configuration["jwt:boldbiserverurl"].TrimEnd('/') + "/sso/jwt/callback";
             var siteIdentifier = _configuration["jwt:siteidentifier"];
             var redirectTo = _configuration["jwt:redirectto"];
@@ -79,7 +84,7 @@ public class HomeController : Controller
             return RedirectToAction("Loginpage");
         }
     }
-
+    
     public ActionResult Loginpage()
     {
         ViewBag.IsAuthenticated = HttpContext.User.Identity.IsAuthenticated;

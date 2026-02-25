@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "boldbi.web.client:build:production"
+              "buildTarget": "boldbi.web.client:build:production"
             },
             "development": {
-              "browserTarget": "boldbi.web.client:build:development"
+              "buildTarget": "boldbi.web.client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "boldbi.web.client:build"
+            "buildTarget": "boldbi.web.client:build"
           }
         },
         "test": {

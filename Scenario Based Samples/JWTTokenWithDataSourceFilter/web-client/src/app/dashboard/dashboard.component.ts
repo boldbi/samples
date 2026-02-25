@@ -58,8 +58,6 @@ export class DashboardComponent implements OnInit {
       serverUrl: `${this.boldbisettings?.ServerUrl ?? ''}/${this.boldbisettings?.SiteIdentifier ?? ''}`,
       dashboardId: this.boldbisettings?.DashboardId,
       embedContainerId: "dashboard",
-      embedType: BoldBI.EmbedType.Component,
-      environment: this.boldbisettings?.Environment,
       mode: BoldBI.Mode.View,
       width: "100%",
       height: "100%",
@@ -69,9 +67,11 @@ export class DashboardComponent implements OnInit {
             "Authorization": "Bearer " + localStorage.getItem('token')
        }
       },
-      dashboardSettings: {
-        showHeader: false,
-      }
+      settings: {
+        viewer: {
+            header: false
+        }
+    }
     });
       this.dashboard?.loadDashboard();
     // You can perform additional actions here

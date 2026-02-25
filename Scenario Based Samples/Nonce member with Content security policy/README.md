@@ -1,6 +1,6 @@
 # Bold BI Embedded Sample in Angular with ASP.NET Core
 
-This project was created using ASP.NET Core 6.0. This application aims to demonstrate how to render the dashboard by embedding if you have restricted external scripts in your application.
+This project was created using ASP.NET Core 8.0. This application aims to demonstrate how to render the dashboard by embedding if you have restricted external scripts in your application.
 
 ## Dashboard view
 
@@ -28,7 +28,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 ## Requirements/Prerequisites
 
-* [.NET Core 6.0](https://dotnet.microsoft.com/en-us/download/dotnet-core)
+* [.NET Core 8.0](https://dotnet.microsoft.com/en-us/download/dotnet-core)
 * [Node.js](https://nodejs.org/en/)
 
  > **NOTE:** Node.js v14.20 to v18.18 are supported
@@ -39,7 +39,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
 
 #### Supported browsers
   
-* Google Chrome, Microsoft Edge, Mozilla Firefox, and Safari.
+* Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
 ## Configuration
 
