@@ -6,9 +6,12 @@
 
 ## Requirements/Prerequisites
 
-* [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
+* [.NET Core 8.0](https://dotnet.microsoft.com/download/dotnet-core)
+* [Node.js](https://nodejs.org/en/)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/download)
+
+ > **NOTE:** Node.js version supported from v20.20.
 
 ### Supported browsers
   
@@ -42,7 +45,7 @@
     | useremail      | UserEmail of the Admin in your Bold BI, which would be used to get the dashboards list                                                        |
     | embedsecret    | You could get your EmbedSecret key from Embed tab by enabling `Enable embed authentication` in Administration page <https://help.boldbi.com/embedded-bi/site-administration/embed-settings/?utm_source=github&utm_medium=backlinks> |
 
-  * Run the boldbi.web.api.sln sample
+  * Run the **boldbi.web.api.sln** sample
 
   * Open the [web-client](https://github.com/boldbi/samples/tree/master/Scenario%20Based%20Samples/JWTTokenWithDataSourceFilter/web-client) in the vscode and install all dependent packages, using the following command `npm install`.
 
